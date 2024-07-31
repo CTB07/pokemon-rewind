@@ -876,6 +876,8 @@ gBattleAnims_Moves::
 	.4byte Move_UPPER_HAND
 	.4byte Move_MALIGNANT_CHAIN
 	.4byte Move_SPIN_DASH
+	.4byte Move_BIG_DEBATE
+	.4byte Move_LEGION_BASH
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -17953,6 +17955,25 @@ Move_DRAGON_CHEER::
 Move_SUPERCELL_SLAM::
 Move_MALIGNANT_CHAIN::
 	end @to do
+
+Move_BIG_DEBATE::
+	loadspritegfx ANIM_TAG_ANGER
+	loadspritegfx ANIM_TAG_THOUGHT_BUBBLE
+	call SetPsychicBackground
+	createvisualtask AnimTask_TormentAttacker, 2
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendMonInAndOut, 2, ANIM_TARGET, RGB_RED, 10, 1, 1
+	createsprite gAngerMarkSpriteTemplate, ANIM_TARGET, 2, 1, -20, -28
+	playsewithpan SE_M_SWAGGER2, SOUND_PAN_TARGET
+	delay 20
+	createsprite gAngerMarkSpriteTemplate, ANIM_TARGET, 2, 1, 20, -28
+	playsewithpan SE_M_SWAGGER2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	call UnsetPsychicBg
+	end
+
+Move_LEGION_BASH::
+	goto Move_SLAM
 
 Move_SPIN_DASH::
 	loadspritegfx ANIM_TAG_SHADOW_BALL

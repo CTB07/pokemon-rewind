@@ -19840,6 +19840,44 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboMoves = {0}
     },
 
+    [MOVE_BIG_DEBATE] =
+    {
+        .name = COMPOUND_STRING("Big Debate"),
+        .description = COMPOUND_STRING(
+            "Roasts target in debate.\n"
+            "Has a chance to burn."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 90,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .soundMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BURN,
+            .chance = 30,
+        }),
+    },
+
+    [MOVE_LEGION_BASH] =
+    {
+        .name = COMPOUND_STRING("Legion Bash"),
+        .description = COMPOUND_STRING(
+            "Summons subscribers to\n"
+            "hit 3x with rising power."),
+        .effect = EFFECT_TRIPLE_KICK,
+        .power = 25,
+        .type = TYPE_STEEL,
+        .accuracy = 80,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .strikeCount = 3,
+    },
+    
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
