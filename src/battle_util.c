@@ -9307,6 +9307,11 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
         else
             atkStage = gBattleMons[battlerAtk].statStages[STAT_DEF];
     }
+    else if (gMovesInfo[move].effect == EFFECT_SPIN_DASH)
+    {
+        atkStat = gBattleMons[battlerAtk].speed;
+        atkStage = gBattleMons[battlerAtk].statStages[STAT_SPEED];
+    }
     else
     {
         if (IS_MOVE_PHYSICAL(move))
