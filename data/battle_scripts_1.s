@@ -1990,6 +1990,37 @@ BattleScript_ShiftGearTryAtk:
 BattleScript_ShiftGearEnd:
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectNarutoRun::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_ACC, MAX_STAT_STAGE, BattleScript_NarutoRunDoMoveAnim
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPEED, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+BattleScript_NarutoRunDoMoveAnim:
+	attackanimation
+	waitanimation
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	jumpifstat BS_ATTACKER, CMP_GREATER_THAN, STAT_ACC, 10, BattleScript_NarutoRunSpeedBy1
+	playstatchangeanimation BS_ATTACKER, BIT_ACC | BIT_SPEED, STAT_CHANGE_BY_TWO
+	setstatchanger STAT_ACC, 2, FALSE
+	goto BattleScript_NarutoRunDoSpeed
+BattleScript_NarutoRunSpeedBy1:
+	playstatchangeanimation BS_ATTACKER, BIT_ACC | BIT_SPEED, 0
+	setstatchanger STAT_ACC, 1, FALSE
+BattleScript_NarutoRunDoSpeed:
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_NarutoRunTryAcc
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_NarutoRunTryAcc
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_NarutoRunTryAcc:
+	setstatchanger STAT_SPEED, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_NarutoRunEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_NarutoRunEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_NarutoRunEnd:
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectCoil::
 	attackcanceler
 	attackstring

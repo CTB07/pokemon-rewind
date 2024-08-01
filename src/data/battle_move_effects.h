@@ -2244,4 +2244,17 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 7,
         .encourageEncore = TRUE,
     },
+
+    [EFFECT_NARUTO_RUN] =
+    {
+        .battleScript = BattleScript_EffectNarutoRun,
+        .battleTvScore = 0,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_DRAGON_DARTS] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 1,
+    },
 };

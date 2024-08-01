@@ -16588,15 +16588,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "The user attacks twice. Two\n"
             "targets are hit once each."),
-        .effect = EFFECT_HIT, // TODO: EFFECT_DRAGON_DARTS
+        .effect = EFFECT_DRAGON_DARTS,
         .power = 50,
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .strikeCount = 2,
         .parentalBondBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -20123,6 +20122,65 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+    },
+
+    [MOVE_NARUTO_RUN] =
+    {
+        .name = COMPOUND_STRING("Naruto Run"),
+        .description = COMPOUND_STRING(
+            "It's faster to run this way.\n"
+            "Ups Speed and Accuracy."),
+        .effect = EFFECT_NARUTO_RUN,
+        .power = 0,
+        .type = TYPE_FIGHTING,
+        .accuracy = 0,
+        .pp = 20,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+    },
+
+    [MOVE_LEEK_SPIN] =
+    {
+        .name = COMPOUND_STRING("Leek Spin"),
+        .description = COMPOUND_STRING(
+            "A weeb dance with a high\n"
+            "chance to raise Sp. Atk."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .danceMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
+            .self = TRUE,
+            .chance = 50,
+        }),
+    },
+
+    [MOVE_DOUBLE_CLICK] =
+    {
+        .name = COMPOUND_STRING("Double Click"),
+        .description = COMPOUND_STRING(
+            "Selects the foe with a \n"
+            "double click. Hits twice."),
+        .effect = EFFECT_DRAGON_DARTS,
+        .power = 50,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .parentalBondBanned = TRUE,
     },
 
     [MOVE_GAMER_RAGE] =

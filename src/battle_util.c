@@ -3581,7 +3581,7 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
             break;
         }
         case CANCELLER_MULTIHIT_MOVES:
-            if (gMovesInfo[gCurrentMove].effect == EFFECT_MULTI_HIT)
+            if (gMovesInfo[gCurrentMove].effect == EFFECT_MULTI_HIT || gMovesInfo[gCurrentMove].effect == EFFECT_DRAGON_DARTS)
             {
                 u32 ability = GetBattlerAbility(gBattlerAttacker);
 
@@ -3600,6 +3600,11 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                         gMultiHitCounter = 2;
                     else
                         gMultiHitCounter = 1;
+                else if (gMovesInfo[gCurrentMove].effect == EFFECT_DRAGON_DARTS)
+                    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && CountAliveMonsInBattle(BATTLE_ALIVE_SIDE, gBattlerTarget) == 2)
+                        gMultiHitCounter = 1;
+                    else
+                        gMultiHitCounter = 2;
                 else
                 {
                     SetRandomMultiHitCounter();
