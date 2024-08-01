@@ -19916,6 +19916,47 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .magicCoatAffected = TRUE,
     },
 
+    [MOVE_MORDANT_ACID] =
+    {
+        .name = COMPOUND_STRING("Mordant ACid"),
+        .description = COMPOUND_STRING(
+            "May badly poison. Super\n"
+            "effective against Steel."),
+        .effect = EFFECT_MORDANT_ACID,
+        .power = 70,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TOXIC,
+            .chance = 30
+        }),
+    },
+
+    [MOVE_VAPOR_WAVE] =
+    {
+        .name = COMPOUND_STRING("Vapor Wave"),
+        .description = COMPOUND_STRING(
+            "Smooth jazz heals entire\n"
+            "field. Causes sleep."),
+        .effect = EFFECT_REST,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .soundMove = TRUE,
+        .healingMove = TRUE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

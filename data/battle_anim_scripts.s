@@ -18005,6 +18005,12 @@ Move_MOB_MENTALITY::
 Move_MIC_DROP::
 	goto Move_PARTING_SHOT
 
+Move_MORDANT_ACID::
+	goto Move_ACID_SPRAY
+
+Move_VAPOR_WAVE::
+	goto Move_SING
+
 Move_SPIN_DASH::
 	loadspritegfx ANIM_TAG_SHADOW_BALL
 	monbg ANIM_ATTACKER

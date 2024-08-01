@@ -2231,4 +2231,17 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 5,
         .encourageEncore = TRUE,
     },
+
+    [EFFECT_MORDANT_ACID] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_VAPOR_WAVE] =
+    {
+        .battleScript = BattleScript_EffectRest,
+        .battleTvScore = 7,
+        .encourageEncore = TRUE,
+    },
 };
