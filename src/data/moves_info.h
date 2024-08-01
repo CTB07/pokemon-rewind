@@ -19880,7 +19880,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     
     [MOVE_MOB_MENTALITY] =
     {
-        .name = COMPOUND_STRING("Mob Mentality"),
+        .name = COMPOUND_STRING("MobMentality"),
         .description = COMPOUND_STRING(
             "A Fire/Ice dislike bomb.\n"
             "Hits fast, clears stat gains."),
@@ -19918,7 +19918,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_MORDANT_ACID] =
     {
-        .name = COMPOUND_STRING("Mordant ACid"),
+        .name = COMPOUND_STRING("Mordant Acid"),
         .description = COMPOUND_STRING(
             "May badly poison. Super\n"
             "effective against Steel."),
@@ -20011,7 +20011,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_PSYCH_OUT] =
     {
-        .name = COMPOUND_STRING("Fake Out"),
+        .name = COMPOUND_STRING("Psych Out"),
         .description = COMPOUND_STRING(
             "Surprises the foe first by\n"
             "ambushing with queries."),

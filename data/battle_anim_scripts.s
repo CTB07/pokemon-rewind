@@ -878,6 +878,14 @@ gBattleAnims_Moves::
 	.4byte Move_SPIN_DASH
 	.4byte Move_BIG_DEBATE
 	.4byte Move_LEGION_BASH
+	.4byte Move_MOB_MENTALITY
+	.4byte Move_MIC_DROP
+	.4byte Move_MORDANT_ACID
+	.4byte Move_VAPOR_WAVE
+	.4byte Move_LENS_FLARE
+	.4byte Move_JUSTICE_HAMMER
+	.4byte Move_LEAD_CANNON
+	.4byte Move_PSYCH_OUT
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
