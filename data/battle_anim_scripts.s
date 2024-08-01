@@ -875,6 +875,7 @@ gBattleAnims_Moves::
 	.4byte Move_PSYCHIC_NOISE
 	.4byte Move_UPPER_HAND
 	.4byte Move_MALIGNANT_CHAIN
+@@@@@@@@@@@@ REWIND @@@@@@@@@@@@
 	.4byte Move_SPIN_DASH
 	.4byte Move_BIG_DEBATE
 	.4byte Move_LEGION_BASH
@@ -886,6 +887,34 @@ gBattleAnims_Moves::
 	.4byte Move_JUSTICE_HAMMER
 	.4byte Move_LEAD_CANNON
 	.4byte Move_PSYCH_OUT
+	.4byte Move_PANIC_SWEAT
+    .4byte Move_PIXIE_PETAL
+    .4byte Move_MIND_PIECE
+    .4byte Move_DIVEBOMB
+    .4byte Move_REWIND
+    .4byte Move_MENTAL_STRIKE
+    .4byte Move_NARUTO_RUN
+    .4byte Move_LEEK_SPIN
+    .4byte Move_DOUBLE_CLICK
+    .4byte Move_BLUE_SCREEN
+    .4byte Move_SYNTH_WAVE
+    .4byte Move_ENVELOP
+    .4byte Move_FROSTBITE
+    .4byte Move_ASSASSINATE
+    .4byte Move_GUN
+    .4byte Move_VENT_KILL
+    .4byte Move_EJECT
+    .4byte Move_TOXIC_ATTITUDE
+    .4byte Move_HIVE_MIND
+    .4byte Move_TSUNAMI
+    .4byte Move_SANDBLASTER
+	.4byte Move_FREEZE_FRAME
+	.4byte Move_EROSION_RAY
+	.4byte Move_BROKEN_ARIA
+    .4byte Move_MOP
+    .4byte Move_GAMER_RAGE
+    .4byte Move_MOOD_CRUSH
+    .4byte Move_POWER_PROC
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -18031,6 +18060,37 @@ Move_LEAD_CANNON::
 Move_PSYCH_OUT::
 	goto Move_ROLE_PLAY
 
+Move_PANIC_SWEAT::
+	goto Move_FAKE_TEARS
+
+Move_PIXIE_PETAL::
+	goto Move_PETAL_BLIZZARD
+
+Move_MIND_PIECE::
+	goto Move_EXTRASENSORY
+
+Move_DIVEBOMB::
+	goto Move_SKY_ATTACK
+
+Move_REWIND::
+	goto Move_TELEKINESIS
+
+Move_MENTAL_STRIKE::
+	goto Move_SECRET_SWORD
+
+Move_NARUTO_RUN::
+	goto Move_AGILITY
+
+Move_LEEK_SPIN::
+	goto Move_PETAL_DANCE
+
+Move_DOUBLE_CLICK::
+	@loadspritegfx ANIM_TAG_MOUSE_CURSOR is added,  and also @gMouseCursorTemplate
+	goto Move_MEGAHORN
+
+Move_BLUE_SCREEN::
+	goto Move_EXPLOSION
+
 Move_SPIN_DASH::
 	loadspritegfx ANIM_TAG_SHADOW_BALL
 	monbg ANIM_ATTACKER
@@ -18047,6 +18107,111 @@ Move_SPIN_DASH::
 	delay 4
 	waitforvisualfinish
 	end
+
+Move_SYNTH_WAVE::
+	goto Move_THUNDER_SHOCK
+
+Move_ENVELOP::
+	goto Move_BODY_SLAM
+
+Move_FROSTBITE::
+	goto Move_GLACIATE
+
+Move_ASSASSINATE::
+	goto Move_NIGHT_SLASH
+
+Move_GUN::
+	goto Move_BULLET_SEED
+
+Move_VENT_KILL::
+	goto Move_U_TURN
+
+Move_EJECT:
+	goto Move_CIRCLE_THROW
+
+Move_TOXIC_ATTITUDE:
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_POISON_BUBBLE
+	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
+	createvisualtask AnimTask_MetallicShine, 5, 1, 1, RGB(24, 6, 23)
+	waitforvisualfinish
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 4
+	delay 6
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 4, 0, -10, 8, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 0, -10, ANIM_TARGET, 1
+    createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 6, 1
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	waitforvisualfinish
+	createvisualtask AnimTask_SetGrayscaleOrOriginalPal, 5, ANIM_ATTACKER, 1
+	clearmonbg ANIM_TARGET
+	blendoff
+	call PoisonBubblesEffect
+	waitforvisualfinish
+	end
+
+Move_HIVE_MIND:
+	goto Move_STRUGGLE_BUG
+
+Move_TSUNAMI:
+	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
+	delay 24
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	waitforvisualfinish
+	createvisualtask AnimTask_SlideOffScreen, 5, ANIM_TARGET, 8
+	waitforvisualfinish
+	end
+
+Move_SANDBLASTER:
+	loadspritegfx ANIM_TAG_BROWN_ORB
+	monbg ANIM_DEF_PARTNER
+	splitbgprio ANIM_TARGET
+	setalpha 12, 8
+	fadetobg BG_FISSURE
+	waitbgfadeout
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_ATTACKER, 0, 2, 46, 1
+	delay 6
+	createvisualtask AnimTask_StartSinAnimTimer, 5, 100
+	panse SE_M_WHIRLPOOL, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +1, 0
+	call MudShotOrbs
+	call MudShotOrbs
+	call MudShotOrbs
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 3, 0, 43, 1
+	call MudShotOrbs
+	call MudShotOrbs
+	call MudShotOrbs
+	call MudShotOrbs
+	call MudShotOrbs
+	call MudShotOrbs
+	call MudShotOrbs
+	call MudShotOrbs
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	call UnsetPsychicBg
+	end
+
+Move_FREEZE_FRAME::
+	goto Move_ICY_WIND
+
+Move_EROSION_RAY::
+	goto Move_HYPER_BEAM
+
+Move_BROKEN_ARIA::
+	goto Move_RELIC_SONG
+
+Move_MOP::
+	goto Move_WATER_SPORT
+
+Move_GAMER_RAGE::
+	goto Move_ZING_ZAP
+
+Move_MOOD_CRUSH::
+	goto Move_SPITE
+
+Move_POWER_PROC::
+	goto Move_KARATE_CHOP
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@
 Move_NONE:

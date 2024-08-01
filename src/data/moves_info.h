@@ -19979,7 +19979,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "Drops a hammer. Hits,\n"
             "starting Electric Terrain."),
-        .effect = EFFECT_ELECTRIC_TERRAIN,
+        .effect = EFFECT_HIT_SET_REMOVE_TERRAIN,
         .power = 60,
         .type = TYPE_STEEL,
         .accuracy = 100,
@@ -19987,6 +19987,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = ARG_SET_ELECTRIC_TERRAIN,
     },
 
     [MOVE_LEAD_CANNON] =
@@ -20027,6 +20028,22 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 100,
         }),
+    },
+
+    [MOVE_GAMER_RAGE] =
+    {
+        .name = COMPOUND_STRING("Gamer Rage"),
+        .description = COMPOUND_STRING(
+            "Hits once when healthy.\n"
+            "Hits twice under half HP."),
+        .effect = EFFECT_MULTI_HIT,
+        .power = 55,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
     },
 
     // Z-Moves

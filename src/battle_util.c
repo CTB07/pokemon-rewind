@@ -3595,6 +3595,11 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                 {
                     gMultiHitCounter = 3;
                 }
+                else if (gCurrentMove == MOVE_GAMER_RAGE) // Needs to be tested
+                    if  (gBattleMons[gBattlerAttacker].hp < (gBattleMons[gBattlerAttacker].maxHP / 2))
+                        gMultiHitCounter = 2;
+                    else
+                        gMultiHitCounter = 1;
                 else
                 {
                     SetRandomMultiHitCounter();
