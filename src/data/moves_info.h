@@ -19878,6 +19878,26 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .strikeCount = 3,
     },
     
+    [MOVE_MOB_MENTALITY] =
+    {
+        .name = COMPOUND_STRING("Mob Mentality"),
+        .description = COMPOUND_STRING(
+            "A Fire/Ice dislike bomb.\n"
+            "Hits fast, clears stat gains."),
+        .effect = EFFECT_TWO_TYPED_MOVE,
+        .power = 40,
+        .type = TYPE_ICE,
+        .accuracy = 85,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = TYPE_FIRE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CLEAR_SMOG,
+        }),
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
