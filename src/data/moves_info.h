@@ -20004,6 +20004,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLAME_BURST,
             .self = TRUE,
@@ -20028,6 +20029,100 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             .moveEffect = MOVE_EFFECT_FLINCH,
             .chance = 100,
         }),
+    },
+
+    [MOVE_PIXIE_PETAL] =
+    {
+        .name = COMPOUND_STRING("Pixie Petal"),
+        .description = COMPOUND_STRING(
+            "Petals perfume the foe,\n"
+            "starting Misty Terrain."),
+        .effect = EFFECT_HIT_SET_REMOVE_TERRAIN,
+        .power = 60,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = ARG_SET_MISTY_TERRAIN,
+    },
+
+    [MOVE_ACID_TRIP] =
+    {
+        .name = COMPOUND_STRING("Acid Trip"),
+        .description = COMPOUND_STRING(
+            "Floods with psychedelics,\n"
+            "starting Psychic Terrain."),
+        .effect = EFFECT_HIT_SET_REMOVE_TERRAIN,
+        .power = 60,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument = ARG_SET_PSYCHIC_TERRAIN,
+    },
+
+    [MOVE_DIVEBOMB] =
+    {
+        .name = COMPOUND_STRING("Divebomb"),
+        .description = COMPOUND_STRING(
+            "A 2-turn move that raises\n"
+            "Speed before attacking."),
+        .effect = EFFECT_TWO_TURNS_ATTACK,
+        .power = 120,
+        .type = TYPE_FLYING,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .instructBanned = TRUE,
+        .argument = TWO_TURN_ARG(STRINGID_METEORBEAMCHARGING),
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+            .self = TRUE,
+            .onChargeTurnOnly = TRUE,
+        }),
+    },
+
+    [MOVE_REWIND] =
+    {
+        .name = COMPOUND_STRING("Rewind"),
+        .description = COMPOUND_STRING(
+            "Drags foe back through\n"
+            "time, undoing stat changes."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 0,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CLEAR_SMOG,
+        }),
+    },
+
+    [MOVE_MENTAL_STRIKE] =
+    {
+        .name = COMPOUND_STRING("MentalStrike"),
+        .description = COMPOUND_STRING(
+            "A 2-turn move that raises\n"
+            "Speed before attacking."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
     },
 
     [MOVE_GAMER_RAGE] =

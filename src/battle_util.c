@@ -9522,7 +9522,7 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
         spDef = gBattleMons[battlerDef].spDefense;
     }
 
-    if (gMovesInfo[move].effect == EFFECT_PSYSHOCK || IS_MOVE_PHYSICAL(move)) // uses defense stat instead of sp.def
+    if (gMovesInfo[move].effect == EFFECT_PSYSHOCK || (IS_MOVE_PHYSICAL(move) && move != MOVE_MENTAL_STRIKE)) // uses defense stat instead of sp.def, Create a Mental Strike effect if there are more moves similar to it
     {
         defStat = def;
         defStage = gBattleMons[battlerDef].statStages[STAT_DEF];

@@ -16408,7 +16408,7 @@ void BS_SetRemoveTerrain(void)
     case EFFECT_HIT_SET_REMOVE_TERRAIN:
         switch (gMovesInfo[gCurrentMove].argument)
         {
-        case ARG_SET_PSYCHIC_TERRAIN: // Genesis Supernova
+        case ARG_SET_PSYCHIC_TERRAIN: // Genesis Supernova & Acid Trip
             statusFlag = STATUS_FIELD_PSYCHIC_TERRAIN;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_PSYCHIC;
             break;
@@ -16416,7 +16416,7 @@ void BS_SetRemoveTerrain(void)
             statusFlag = STATUS_FIELD_ELECTRIC_TERRAIN;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_ELECTRIC;
             break;
-        case ARG_SET_MISTY_TERRAIN: // Currently Unused
+        case ARG_SET_MISTY_TERRAIN: // Pixie Petal
             statusFlag = STATUS_FIELD_MISTY_TERRAIN;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_MISTY;
             break;
