@@ -2257,4 +2257,11 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleScript = BattleScript_EffectHit,
         .battleTvScore = 1,
     },
+
+    [EFFECT_BLUE_SCREEN] =
+    {
+        .battleScript = BattleScript_EffectBlueScreen,
+        .battleTvScore = 7,
+        .encourageEncore = TRUE,
+    },
 };

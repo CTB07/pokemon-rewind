@@ -20183,6 +20183,26 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .parentalBondBanned = TRUE,
     },
 
+    [MOVE_BLUE_SCREEN] =
+    {
+        .name = COMPOUND_STRING("Blue Screen"),
+        .description = COMPOUND_STRING(
+            "A critical error cuts HP\n"
+            "by 1/2. Sets dual screens."),
+        .effect = EFFECT_BLUE_SCREEN,
+        .power = 0,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .snatchAffected = TRUE,
+    },
+
     [MOVE_GAMER_RAGE] =
     {
         .name = COMPOUND_STRING("Gamer Rage"),
