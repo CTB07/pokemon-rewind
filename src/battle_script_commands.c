@@ -11284,7 +11284,7 @@ static void Cmd_trysetrest(void)
     gBattlerTarget = gBattlerAttacker;
     gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP * (-1);
 
-    if (gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP)
+    if (gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP && (gMovesInfo[gCurrentMove].effect != EFFECT_VAPOR_WAVE))
     {
         gBattlescriptCurrInstr = failInstr;
     }

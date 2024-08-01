@@ -18011,6 +18011,18 @@ Move_MORDANT_ACID::
 Move_VAPOR_WAVE::
 	goto Move_SING
 
+Move_LENS_FLARE::
+	goto Move_FLASH
+
+Move_JUSTICE_HAMMER::
+	goto Move_IRON_TAIL
+
+Move_LEAD_CANNON::
+	goto Move_STEEL_BEAM
+
+Move_PSYCH_OUT::
+	goto Move_ROLE_PLAY
+
 Move_SPIN_DASH::
 	loadspritegfx ANIM_TAG_SHADOW_BALL
 	monbg ANIM_ATTACKER

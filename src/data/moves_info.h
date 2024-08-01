@@ -19957,6 +19957,78 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .healingMove = TRUE,
     },
 
+    [MOVE_LENS_FLARE] =
+    {
+        .name = COMPOUND_STRING("Lens Flare"),
+        .description = COMPOUND_STRING(
+            "Strikes with a flash\n"
+            "before foe's attack."),
+        .effect = EFFECT_SUCKER_PUNCH,
+        .power = 70,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+    },
+    
+    [MOVE_JUSTICE_HAMMER] =
+    {
+        .name = HANDLE_EXPANDED_MOVE_NAME("Just Hammer", "Justice Hammer"),
+        .description = COMPOUND_STRING(
+            "Drops a hammer. Hits,\n"
+            "starting Electric Terrain."),
+        .effect = EFFECT_ELECTRIC_TERRAIN,
+        .power = 60,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+    },
+
+    [MOVE_LEAD_CANNON] =
+    {
+        .name = COMPOUND_STRING("Lead Cannon"),
+        .description = COMPOUND_STRING(
+            "A bullet blast bursts on\n"
+            "adjacent foes."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLAME_BURST,
+            .self = TRUE,
+        }),
+    },
+
+    [MOVE_PSYCH_OUT] =
+    {
+        .name = COMPOUND_STRING("Fake Out"),
+        .description = COMPOUND_STRING(
+            "Surprises the foe first by\n"
+            "ambushing with queries."),
+        .priority = B_UPDATED_MOVE_DATA >= GEN_5 ? 3 : 1,
+        .effect = EFFECT_FIRST_TURN_ONLY,
+        .power = 40,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 100,
+        }),
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
