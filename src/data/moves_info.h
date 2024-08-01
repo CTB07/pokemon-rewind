@@ -19898,6 +19898,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         }),
     },
 
+    [MOVE_MIC_DROP] =
+    {
+        .name = COMPOUND_STRING("Mic Drop"),
+        .description = COMPOUND_STRING(
+            "Passes the mic with flair,\n"
+            "switching after burning."),
+        .effect = EFFECT_MIC_DROP,
+        .power = 0,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
+        .magicCoatAffected = TRUE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

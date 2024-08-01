@@ -18002,6 +18002,9 @@ Move_MOB_MENTALITY::
 	blendoff
 	end
 
+Move_MIC_DROP::
+	goto Move_PARTING_SHOT
+
 Move_SPIN_DASH::
 	loadspritegfx ANIM_TAG_SHADOW_BALL
 	monbg ANIM_ATTACKER
