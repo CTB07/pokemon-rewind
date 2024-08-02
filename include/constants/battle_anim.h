@@ -409,6 +409,9 @@
 #define ANIM_TAG_IVY_CUDGEL_FIRE            (ANIM_SPRITES_START + 395)
 #define ANIM_TAG_IVY_CUDGEL_ROCK            (ANIM_SPRITES_START + 396)
 #define ANIM_TAG_IVY_CUDGEL_WATER           (ANIM_SPRITES_START + 397)
+#define ANIM_TAG_TERA_CRYSTAL               (ANIM_SPRITES_START + 398)
+#define ANIM_TAG_TERA_SHATTER               (ANIM_SPRITES_START + 399)
+#define ANIM_TAG_DREEPY_SHINY               (ANIM_SPRITES_START + 400)
 
 // battlers
 #define ANIM_ATTACKER         0
@@ -572,6 +575,10 @@
 #define B_ANIM_MAGIC_ROOM               47
 #define B_ANIM_TAILWIND                 48
 #define B_ANIM_NO_FUCKS                 49
+#define B_ANIM_FOG_CONTINUES            50
+#define B_ANIM_TERA_CHARGE              51
+#define B_ANIM_TERA_ACTIVATE            52
+#define B_ANIM_SIMPLE_HEAL              53
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
@@ -620,6 +627,7 @@
 #define ANIM_WEATHER_SANDSTORM 3
 #define ANIM_WEATHER_HAIL 4
 #define ANIM_WEATHER_SNOW 5
+#define ANIM_WEATHER_FOG 6
 
 // horseshoe/fist frames
 #define ANIM_RIGHT_FIST  0
