@@ -876,7 +876,6 @@ gBattleAnims_Moves::
 	.4byte Move_UPPER_HAND
 	.4byte Move_MALIGNANT_CHAIN
 @@@@@@@@@@@@ REWIND @@@@@@@@@@@@
-	.4byte Move_SPIN_DASH
 	.4byte Move_BIG_DEBATE
 	.4byte Move_LEGION_BASH
 	.4byte Move_MOB_MENTALITY
@@ -888,33 +887,34 @@ gBattleAnims_Moves::
 	.4byte Move_LEAD_CANNON
 	.4byte Move_PSYCH_OUT
 	.4byte Move_PANIC_SWEAT
-    .4byte Move_PIXIE_PETAL
-    .4byte Move_MIND_PIECE
-    .4byte Move_DIVEBOMB
-    .4byte Move_REWIND
-    .4byte Move_MENTAL_STRIKE
-    .4byte Move_NARUTO_RUN
-    .4byte Move_LEEK_SPIN
-    .4byte Move_DOUBLE_CLICK
-    .4byte Move_BLUE_SCREEN
-    .4byte Move_SYNTH_WAVE
-    .4byte Move_ENVELOP
-    .4byte Move_FROSTBITE
-    .4byte Move_ASSASSINATE
-    .4byte Move_GUN
-    .4byte Move_VENT_KILL
-    .4byte Move_EJECT
-    .4byte Move_TOXIC_ATTITUDE
-    .4byte Move_HIVE_MIND
-    .4byte Move_TSUNAMI
-    .4byte Move_SANDBLASTER
+	.4byte Move_PIXIE_PETAL
+	.4byte Move_MIND_PIECE
+	.4byte Move_DIVEBOMB
+	.4byte Move_REWIND
+	.4byte Move_MENTAL_STRIKE
+	.4byte Move_NARUTO_RUN
+	.4byte Move_LEEK_SPIN
+	.4byte Move_DOUBLE_CLICK
+	.4byte Move_BLUE_SCREEN
+	.4byte Move_SPIN_DASH
+	.4byte Move_SYNTH_WAVE
+	.4byte Move_ENVELOP
+	.4byte Move_FROSTBITE
+	.4byte Move_ASSASSINATE
+	.4byte Move_GUN
+	.4byte Move_VENT_KILL
+	.4byte Move_EJECT
+	.4byte Move_TOXIC_ATTITUDE
+	.4byte Move_HIVE_MIND
+	.4byte Move_TSUNAMI
+	.4byte Move_SANDBLASTER
 	.4byte Move_FREEZE_FRAME
 	.4byte Move_EROSION_RAY
 	.4byte Move_BROKEN_ARIA
-    .4byte Move_MOP
-    .4byte Move_GAMER_RAGE
-    .4byte Move_MOOD_CRUSH
-    .4byte Move_POWER_PROC
+	.4byte Move_MOP
+	.4byte Move_GAMER_RAGE
+	.4byte Move_MOOD_CRUSH
+	.4byte Move_POWER_PROC
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -18070,7 +18070,7 @@ Move_MIND_PIECE::
 	goto Move_EXTRASENSORY
 
 Move_DIVEBOMB::
-	goto Move_SKY_ATTACK
+	goto Move_GLACIATE
 
 Move_REWIND::
 	goto Move_TELEKINESIS
@@ -18126,10 +18126,10 @@ Move_GUN::
 Move_VENT_KILL::
 	goto Move_U_TURN
 
-Move_EJECT:
+Move_EJECT::
 	goto Move_CIRCLE_THROW
 
-Move_TOXIC_ATTITUDE:
+Move_TOXIC_ATTITUDE::
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
@@ -18151,10 +18151,10 @@ Move_TOXIC_ATTITUDE:
 	waitforvisualfinish
 	end
 
-Move_HIVE_MIND:
+Move_HIVE_MIND::
 	goto Move_STRUGGLE_BUG
 
-Move_TSUNAMI:
+Move_TSUNAMI::
 	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
 	delay 24
 	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
@@ -18163,7 +18163,7 @@ Move_TSUNAMI:
 	waitforvisualfinish
 	end
 
-Move_SANDBLASTER:
+Move_SANDBLASTER::
 	loadspritegfx ANIM_TAG_BROWN_ORB
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET

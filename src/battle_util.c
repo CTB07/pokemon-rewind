@@ -9317,6 +9317,15 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
         else
             atkStage = gBattleMons[battlerAtk].statStages[STAT_DEF];
     }
+    else if (gMovesInfo[move].effect == EFFECT_ENVELOP)
+    {
+        atkStat = gBattleMons[battlerAtk].spDefense;
+        // Edge case
+        if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM)
+            atkStage = gBattleMons[battlerAtk].statStages[STAT_DEF];
+        else
+            atkStage = gBattleMons[battlerAtk].statStages[STAT_SPDEF];
+    }
     else if (gMovesInfo[move].effect == EFFECT_SPIN_DASH)
     {
         atkStat = gBattleMons[battlerAtk].speed;
@@ -10141,6 +10150,10 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(2.0);
     if (gMovesInfo[move].effect == EFFECT_MORDANT_ACID && defType == TYPE_STEEL)
         mod = UQ_4_12(2.0);
+    if (move == MOVE_EJECT && defType == TYPE_DARK)
+        mod = UQ_4_12(2.0);
+    if (gMovesInfo[move].effect == EFFECT_TRIPLE_SUPER_EFFECTIVE && mod == UQ_4_12(2.0))
+        mod = UQ_4_12(3.0);
     if (moveType == TYPE_GROUND && defType == TYPE_FLYING && IsBattlerGrounded(battlerDef) && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
 

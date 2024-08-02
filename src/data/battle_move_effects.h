@@ -2264,4 +2264,29 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 7,
         .encourageEncore = TRUE,
     },
+
+    [EFFECT_ENVELOP] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_TRIPLE_SUPER_EFFECTIVE] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    
+    [EFFECT_TOXIC_ATTITUDE] =
+    {
+        .battleScript = BattleScript_EffectToxicAttitude,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [
+    EFFECT_HIVE_MIND] =
+    {
+        .battleScript = BattleScript_EffectHiveMind,
+        .battleTvScore = 0, // TODO: Assign points
+    },
 };

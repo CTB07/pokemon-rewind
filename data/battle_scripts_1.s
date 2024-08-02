@@ -4873,6 +4873,47 @@ BattleScript_EffectMicDrop::
 	seteffectprimary MOVE_EFFECT_BURN
 	goto BattleScript_MoveSwitch
 
+BattleScript_EffectToxicAttitude::
+	jumpifmorethanhalfHP BS_ATTACKER, BattleScript_EffectHit
+	call BattleScript_EffectHit_Ret
+	tryfaintmon BS_TARGET
+	seteffectprimary MOVE_EFFECT_POISON
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectHiveMind::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_TARGET
+	jumpifstatus BS_ATTACKER, STATUS1_ANY, BattleScript_EffectHiveMindCanWork
+	goto BattleScript_MoveEnd
+BattleScript_EffectHiveMindCanWork:
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_ButItFailed
+	jumpifsafeguard BattleScript_SafeguardProtected
+	trypsychoshift BattleScript_MoveEnd
+	copybyte gEffectBattler, gBattlerTarget
+	printfromtable gStatusConditionsStringIds
+	waitmessage B_WAIT_TIME_LONG
+	statusanimation BS_TARGET
+	updatestatusicon BS_TARGET
+	tryfaintmon BS_TARGET
+	goto BattleScript_MoveEnd
+
 BattleScript_WaterVeilPrevents::
 	call BattleScript_AbilityPopUp
 	copybyte gEffectBattler, gBattlerTarget

@@ -2416,11 +2416,6 @@
 	1:
 	.endm
 
-	.macro jumpifoverhalfhp ptr:req
-	various \battler, VARIOUS_JUMP_IF_OVER_HALF_HP
-	.4byte \ptr
-	.endm
-
 	@ Will jump to script pointer if the target weighs less than 200 kg, or 441 lbs.
 	.macro jumpifunder200 battler:req, failInstr:req
 	various \battler, VARIOUS_JUMP_IF_UNDER_200

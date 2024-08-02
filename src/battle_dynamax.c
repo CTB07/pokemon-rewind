@@ -342,7 +342,8 @@ u8 GetMaxMovePower(u16 move)
     // Exceptions to all other rules below:
     switch (move)
     {
-        case MOVE_TRIPLE_KICK:   return 80;
+        case MOVE_TRIPLE_KICK:
+        case MOVE_SYNTH_WAVE:    return 80;
         case MOVE_GEAR_GRIND:    return 100;
         case MOVE_DUAL_WINGBEAT: return 100;
         case MOVE_TRIPLE_AXEL:   return 140;

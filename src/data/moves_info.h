@@ -20203,6 +20203,145 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .snatchAffected = TRUE,
     },
 
+    [MOVE_SYNTH_WAVE] =
+    {
+        .name = COMPOUND_STRING("Synth Wave"),
+        .description = COMPOUND_STRING(
+            "Three electrosynth shocks\n"
+            "strike first. Rising power."),
+        .effect = EFFECT_TRIPLE_KICK,
+        .power = 10,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .strikeCount = 3,
+    },
+
+    [MOVE_ENVELOP] =
+    {
+        .name = COMPOUND_STRING("Envelop"),
+        .description = COMPOUND_STRING(
+            "Envelops the foe, using\n"
+            "Sp.Def, not Sp.Atk."),
+        .effect = EFFECT_ENVELOP,
+        .power = 70,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .metronomeBanned = TRUE,
+        .skyBattleBanned = B_EXTRAPOLATED_MOVE_FLAGS,
+    },
+
+    [MOVE_FROSTBITE] =
+    {
+        .name = COMPOUND_STRING("Frostbite"),
+        .description = COMPOUND_STRING(
+            "Super-effective hits deal\n"
+            "3x rather than 2x."),
+        .effect = EFFECT_TRIPLE_SUPER_EFFECTIVE,
+        .power = 65,
+        .type = TYPE_ICE,
+        .accuracy = 95,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+    },
+
+    [MOVE_VENT_KILL] =
+    {
+        .name = COMPOUND_STRING("Vent Kill"),
+        .description = COMPOUND_STRING(
+            "Crushes the foe, then \n"
+            "switches out via a vent."),
+        .effect = EFFECT_HIT_ESCAPE,
+        .power = 90,
+        .type = TYPE_DARK,
+        .accuracy = 80,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+    },
+
+    [MOVE_EJECT] =
+    {
+        .name = COMPOUND_STRING("Vent Kill"),
+        .description = COMPOUND_STRING(
+            "Hurls the foe out. Super\n"
+            "effective against Dark."),
+        .effect = EFFECT_HIT_SWITCH_TARGET,
+        .power = 60,
+        .type = TYPE_FIGHTING,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -6,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+    },
+
+    [MOVE_GUN] =
+    {
+        .name = COMPOUND_STRING("Gun"),
+        .description = COMPOUND_STRING(
+            "Pulls a fucking glock,\n"
+            "killing the foe instantly."),
+        .effect = EFFECT_OHKO,
+        .power = 1,
+        .type = TYPE_STEEL,
+        .accuracy = 30,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ballisticMove = TRUE,
+    },
+
+    [MOVE_TOXIC_ATTITUDE] =
+    {
+        .name = HANDLE_EXPANDED_MOVE_NAME("ToxcAttitude", "Toxic Attitude"),
+        .description = COMPOUND_STRING(
+            "If user is under 50% HP,\n"
+            "gets salty and poisons."),
+        .effect = EFFECT_TOXIC_ATTITUDE,
+        .power = 75,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+    },
+
+    [MOVE_HIVE_MIND] =
+    {
+        .name = COMPOUND_STRING("Hive Mind"),
+        .description = COMPOUND_STRING(
+            "If the user has status, the\n"
+            "target gains that status."),
+        .effect = EFFECT_HIVE_MIND,
+        .power = 80,
+        .type = TYPE_BUG,
+        .accuracy = 95,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+    },
+
     [MOVE_GAMER_RAGE] =
     {
         .name = COMPOUND_STRING("Gamer Rage"),
