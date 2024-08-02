@@ -2283,10 +2283,28 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 0, // TODO: Assign points
     },
 
-    [
-    EFFECT_HIVE_MIND] =
+    [EFFECT_HIVE_MIND] =
     {
         .battleScript = BattleScript_EffectHiveMind,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_SANDBLASTER] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_MOP] =
+    {
+        .battleScript = BattleScript_EffectMop,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_MOOD_CRUSH] =
+    {
+        .battleScript = BattleScript_EffectMoodCrush,
         .battleTvScore = 0, // TODO: Assign points
     },
 };

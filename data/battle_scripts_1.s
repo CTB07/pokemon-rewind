@@ -1635,6 +1635,40 @@ BattleScript_DefogTryHazardsWithAnim:
 	waitanimation
 	goto BattleScript_DefogTryHazards
 
+BattleScript_EffectMop::
+	setstatchanger STAT_SPEED, 1, TRUE
+	attackcanceler
+	jumpifsubstituteblocks BattleScript_MopIfCanClearHazards
+	jumpifstat BS_TARGET, CMP_NOT_EQUAL, STAT_SPEED, MIN_STAT_STAGE, BattleScript_MopWorks
+BattleScript_MopIfCanClearHazards:
+	trydefog FALSE, BattleScript_FailedFromAtkString
+BattleScript_MopWorks:
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_MopTryHazardsWithAnim
+	jumpifbyte CMP_LESS_THAN, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_MopDoAnim
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_FELL_EMPTY, BattleScript_MopTryHazardsWithAnim
+	pause B_WAIT_TIME_SHORT
+	goto BattleScript_MopPrintString
+BattleScript_MopDoAnim::
+	attackanimation
+	waitanimation
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+BattleScript_MopPrintString::
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_MopTryHazards::
+	copybyte gEffectBattler, gBattlerAttacker
+	trydefog TRUE, NULL
+	copybyte gBattlerAttacker, gEffectBattler
+	goto BattleScript_MoveEnd
+BattleScript_MopTryHazardsWithAnim:
+	attackanimation
+	waitanimation
+	goto BattleScript_MopTryHazards
+
 BattleScript_EffectCopycat::
 	attackcanceler
 	attackstring
@@ -2276,6 +2310,29 @@ BattleScript_EffectSimpleBeam::
 	attackanimation
 	waitanimation
 	printstring STRINGID_PKMNACQUIREDSIMPLE
+	waitmessage B_WAIT_TIME_LONG
+	trytoclearprimalweather
+	tryrevertweatherform
+	flushtextbox
+	tryendneutralizinggas BS_TARGET
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectMoodCrush::
+	call BattleScript_EffectHit_Ret
+	tryfaintmon BS_TARGET
+	setabilitydefeatist BS_TARGET, BattleScript_MoveEnd
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+.if B_ABILITY_POP_UP == TRUE
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+	showabilitypopup BS_TARGET
+	pause 60
+	sethword sABILITY_OVERWRITE, 0
+	updateabilitypopup BS_TARGET
+	pause 20
+	destroyabilitypopup
+	pause 40
+.endif
+	printstring STRINGID_PKMNACQUIREDABILITY
 	waitmessage B_WAIT_TIME_LONG
 	trytoclearprimalweather
 	tryrevertweatherform

@@ -20111,8 +20111,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("MentalStrike"),
         .description = COMPOUND_STRING(
-            "A 2-turn move that raises\n"
-            "Speed before attacking."),
+            "Strikes foe intelligently,\n"
+            "damaging on Sp. Def."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_FIGHTING,
@@ -20281,7 +20281,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "effective against Dark."),
         .effect = EFFECT_HIT_SWITCH_TARGET,
         .power = 60,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_PSYCHIC,
         .accuracy = 90,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
@@ -20342,6 +20342,113 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .category = DAMAGE_CATEGORY_SPECIAL,
     },
 
+    [MOVE_TSUNAMI] =
+    {
+        .name = COMPOUND_STRING("Tsunami"),
+        .description = COMPOUND_STRING(
+            "Summons a tidal wave\n"
+            "that washes foes away."),
+        .effect = EFFECT_HIT_SWITCH_TARGET,
+        .power = 100,
+        .type = TYPE_WATER,
+        .accuracy = 80,
+        .pp = 10,
+        .target = MOVE_TARGET_BOTH,
+        .priority = -6,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+    },
+
+    [MOVE_SANDBLASTER] =
+    {
+        .name = COMPOUND_STRING("Sandblaster"),
+        .description = COMPOUND_STRING(
+            "A blistering blast of sand.\n"
+            "1.5x power in sandstorm."),
+        .effect = EFFECT_SANDBLASTER,
+        .power = 100,
+        .type = TYPE_GROUND,
+        .accuracy = 75,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .skyBattleBanned = TRUE,
+    },
+
+    [MOVE_FREEZE_FRAME] =
+    {
+        .name = COMPOUND_STRING("Freeze Frame"),
+        .description = COMPOUND_STRING(
+            "An icy chill hits foes first.\n"
+            "Doesn't reduce below 1HP."),
+        .effect = EFFECT_FALSE_SWIPE,
+        .power = 70,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+    },
+
+    [MOVE_EROSION_RAY] =
+    {
+        .name = COMPOUND_STRING("Erosion Ray"),
+        .description = COMPOUND_STRING(
+            "Erodes itself, losing 1/2\n"
+            "HP into a blasting ray."),
+        .effect = EFFECT_MAX_HP_50_RECOIL,
+        .power = 130,
+        .type = TYPE_ROCK,
+        .accuracy = 85,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .metronomeBanned = TRUE,
+    },
+
+    [MOVE_BROKEN_ARIA] =
+    {
+        .name = COMPOUND_STRING("Broken Aria"),
+        .description = COMPOUND_STRING(
+            "Heart-rending song that\n"
+            "hurts user and may sleep."),
+        .effect = EFFECT_HIT,
+        .power = 110,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .recoil = 33,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .soundMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SLEEP,
+            .chance = 20,
+        }),
+    },
+
+    [MOVE_MOP] =
+    {
+        .name = COMPOUND_STRING("Mop"),
+        .description = COMPOUND_STRING(
+            "Wipes the floor clean of\n"
+            "hazards. Priority in rain."),
+        .effect = EFFECT_MOP,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_ACC_UP_1 },
+        .ignoresSubstitute = B_UPDATED_MOVE_FLAGS == GEN_4,
+        .magicCoatAffected = B_UPDATED_MOVE_FLAGS >= GEN_5,
+    },
+
     [MOVE_GAMER_RAGE] =
     {
         .name = COMPOUND_STRING("Gamer Rage"),
@@ -20358,6 +20465,62 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
     },
 
+    [MOVE_MOOD_CRUSH] =
+    {
+        .name = COMPOUND_STRING("Mood Crush"),
+        .description = COMPOUND_STRING(
+            "A crippling depression\n"
+            "makes the foe Defeatist."),
+        .effect = EFFECT_MOOD_CRUSH,
+        .power = 50,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+    },
+
+    [MOVE_TAPE_UP] =
+    {
+        .name = COMPOUND_STRING("Tape Up"),
+        .description = COMPOUND_STRING(
+            "Binds foe with strong tape.\n"
+            "Traps for "BINDING_TURNS" turns."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .metronomeBanned = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+        }),
+    },
+
+    [MOVE_REDISTRIBUTE] =
+    {
+        .name = COMPOUND_STRING("Redistribute"),
+        .description = COMPOUND_STRING(
+            "Makes the target's stat\n"
+            "changes match the user."),
+        .effect = EFFECT_PSYCH_UP,
+        .power = 0,
+        .type = TYPE_FIGHTING,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RECOVER_HP },
+        .ignoresSubstitute = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .snatchAffected = B_UPDATED_MOVE_FLAGS < GEN_5,
+    },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

@@ -9690,6 +9690,43 @@ static void Cmd_various(void)
         }
         return;
     }
+    case VARIOUS_SET_MOOD_CRUSH:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+        if (gAbilitiesInfo[gBattleMons[gBattlerTarget].ability].cantBeOverwritten
+            || gBattleMons[gBattlerTarget].ability == ABILITY_DEFEATIST)
+        {
+            RecordAbilityBattle(gBattlerTarget, gBattleMons[gBattlerTarget].ability);
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
+        else if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_ABILITY_SHIELD)
+        {
+            RecordItemEffectBattle(gBattlerTarget, HOLD_EFFECT_ABILITY_SHIELD);
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
+        else if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_PROTECTIVE_PADS)
+        {
+            RecordItemEffectBattle(gBattlerTarget, HOLD_EFFECT_PROTECTIVE_PADS);
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
+        else if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && IsBattlerAlive(gBattlerTarget)
+             && TARGET_TURN_DAMAGED)
+        {
+            if (gBattleMons[gBattlerTarget].ability == ABILITY_NEUTRALIZING_GAS)
+                gSpecialStatuses[gBattlerTarget].neutralizingGasRemoved = TRUE;
+
+            gBattleScripting.abilityPopupOverwrite = gBattleMons[gBattlerTarget].ability;
+            gBattleMons[gBattlerTarget].ability = gBattleStruct->overwrittenAbilities[gBattlerTarget] = ABILITY_DEFEATIST;
+            gLastUsedAbility = ABILITY_DEFEATIST;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
+        return;
+    }
     case VARIOUS_TRY_ENTRAINMENT:
     {
         VARIOUS_ARGS(const u8 *failInstr);
@@ -13640,10 +13677,19 @@ static void Cmd_copyfoestats(void)
 
     s32 i;
 
-    for (i = 0; i < NUM_BATTLE_STATS; i++)
-    {
-        gBattleMons[gBattlerAttacker].statStages[i] = gBattleMons[gBattlerTarget].statStages[i];
+    if (gCurrentMove == MOVE_PSYCH_UP){
+        for (i = 0; i < NUM_BATTLE_STATS; i++)
+            {
+            gBattleMons[gBattlerAttacker].statStages[i] = gBattleMons[gBattlerTarget].statStages[i];
+            }
     }
+    else {
+        for (i = 0; i < NUM_BATTLE_STATS; i++)
+            {
+            gBattleMons[gBattlerTarget].statStages[i] = gBattleMons[gBattlerAttacker].statStages[i];
+            }
+    }
+
 
     gBattlescriptCurrInstr = cmd->nextInstr; // Has an unused jump ptr(possibly for a failed attempt) parameter.
 }

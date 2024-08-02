@@ -236,6 +236,7 @@
 #define VARIOUS_STORE_HEALING_WISH                   144
 #define VARIOUS_HIT_SWITCH_TARGET_FAILED             145
 #define VARIOUS_TRY_REVIVAL_BLESSING                 146
+#define VARIOUS_SET_MOOD_CRUSH                       147 //Rewind
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

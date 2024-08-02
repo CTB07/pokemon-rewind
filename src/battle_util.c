@@ -9721,6 +9721,10 @@ static uq4_12_t GetWeatherDamageModifier(u32 battlerAtk, u32 move, u32 moveType,
             return UQ_4_12(1.0);
         return (moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }
+    if ((weather & B_WEATHER_SANDSTORM) && gMovesInfo[move].effect == EFFECT_SANDBLASTER)
+    {
+        return UQ_4_12(1.5);
+    }
     return UQ_4_12(1.0);
 }
 

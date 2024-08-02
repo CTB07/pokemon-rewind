@@ -826,9 +826,13 @@ extern const u8 BattleScript_EffectFilletAway[];
 extern const u8 BattleScript_EffectShedTail[];
 extern const u8 BattleScript_EffectUpperHand[];
 extern const u8 BattleScript_EffectTidyUp[];
+
+//Rewind
 extern const u8 BattleScript_EffectMicDrop[];
 extern const u8 BattleScript_EffectNarutoRun[];
 extern const u8 BattleScript_EffectBlueScreen[];
 extern const u8 BattleScript_EffectToxicAttitude[];
 extern const u8 BattleScript_EffectHiveMind[];
+extern const u8 BattleScript_EffectMop[];
+extern const u8 BattleScript_EffectMoodCrush[];
 #endif // GUARD_BATTLE_SCRIPTS_H

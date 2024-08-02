@@ -5086,7 +5086,8 @@ s8 GetMovePriority(u32 battler, u16 move)
     }
     else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
         priority += 3;
-
+    else if (move == MOVE_MOP && (gBattleWeather & B_WEATHER_RAIN))
+        priority++;
     if (gProtectStructs[battler].quash)
         priority = -8;
 

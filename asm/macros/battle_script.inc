@@ -1827,6 +1827,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro setabilitydefeatist battler:req, failInstr:req
+	various \battler VARIOUS_SET_MOOD_CRUSH
+	.4byte \failInstr
+	.endm
+
 	.macro tryentrainment failInstr:req
 	various BS_ATTACKER, VARIOUS_TRY_ENTRAINMENT
 	.4byte \failInstr

@@ -914,7 +914,9 @@ gBattleAnims_Moves::
 	.4byte Move_MOP
 	.4byte Move_GAMER_RAGE
 	.4byte Move_MOOD_CRUSH
-	.4byte Move_POWER_PROC
+	.4byte Move_ACID_TRIP
+	.4byte Move_TAPE_UP
+	.4byte Move_REDISTRIBUTE
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -18046,7 +18048,7 @@ Move_MORDANT_ACID::
 	goto Move_ACID_SPRAY
 
 Move_VAPOR_WAVE::
-	goto Move_SING
+	goto Move_PERISH_SONG
 
 Move_LENS_FLARE::
 	goto Move_FLASH
@@ -18070,7 +18072,7 @@ Move_MIND_PIECE::
 	goto Move_EXTRASENSORY
 
 Move_DIVEBOMB::
-	goto Move_GLACIATE
+	goto Move_SKY_ATTACK
 
 Move_REWIND::
 	goto Move_TELEKINESIS
@@ -18210,8 +18212,14 @@ Move_GAMER_RAGE::
 Move_MOOD_CRUSH::
 	goto Move_SPITE
 
-Move_POWER_PROC::
-	goto Move_KARATE_CHOP
+Move_ACID_TRIP::
+	goto Move_ACID
+
+Move_TAPE_UP::
+	goto Move_WRAP
+
+Move_REDISTRIBUTE::
+	goto Move_PSYCH_UP
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@
 Move_NONE:
