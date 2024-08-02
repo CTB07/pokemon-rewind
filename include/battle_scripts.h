@@ -835,4 +835,5 @@ extern const u8 BattleScript_EffectToxicAttitude[];
 extern const u8 BattleScript_EffectHiveMind[];
 extern const u8 BattleScript_EffectMop[];
 extern const u8 BattleScript_EffectMoodCrush[];
+extern const u8 BattleScript_NoFucksActivates[];
 #endif // GUARD_BATTLE_SCRIPTS_H

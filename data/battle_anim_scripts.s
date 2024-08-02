@@ -1074,6 +1074,7 @@ gBattleAnims_General::
 	.4byte General_WonderRoom               @ B_ANIM_WONDER_ROOM
 	.4byte General_MagicRoom                @ B_ANIM_MAGIC_ROOM
 	.4byte General_Tailwind                 @ B_ANIM_TAILLWIND
+	.4byte General_NoFucks                  @ B_ANIM_NO_FUCKS
 
 	.align 2
 gBattleAnims_Special::
@@ -28429,6 +28430,9 @@ General_Hail:
 
 General_Snow:
 	goto Move_SNOWSCAPE
+
+General_NoFucks:
+	goto Move_HAZE
 
 General_LeechSeedDrain:
 	createvisualtask AnimTask_GetBattlersFromArg, 5

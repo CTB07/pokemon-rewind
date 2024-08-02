@@ -2607,4 +2607,26 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    // REWIND ABILITIES
+    [ABILITY_TIE_BREAKER] =
+    {
+        .name = _("Tie Breaker"),
+        .description = COMPOUND_STRING("Wraps can't miss, hurt more."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_LOW_ODDS] =
+    {
+        .name = _("Low Odds"),
+        .description = COMPOUND_STRING("Lowers power but gets lucky."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_NO_FUCKS] =
+    {
+        .name = _("No Fucks"),
+        .description = COMPOUND_STRING("Stats reset on switch-out."),
+        .aiRating = 6,
+    },
 };

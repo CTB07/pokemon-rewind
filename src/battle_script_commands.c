@@ -1625,6 +1625,13 @@ static bool32 AccuracyCalcHelper(u16 move)
         }
     }
 
+    if (gBattleScripting.moveEffect == MOVE_EFFECT_WRAP && GetBattlerAbility(gBattlerAttacker) == ABILITY_TIE_BREAKER)
+    {
+        // If the attacker has the ability Tie Breaker, binding moves ignore acc checks.
+        JumpIfMoveFailed(7, move);
+        return TRUE;
+    }
+
     if (B_MINIMIZE_DMG_ACC >= GEN_6
      && (gStatuses3[gBattlerTarget] & STATUS3_MINIMIZED)
      && gMovesInfo[move].minimizeDoubleDamage)

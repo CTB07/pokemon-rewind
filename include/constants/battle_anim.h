@@ -571,6 +571,7 @@
 #define B_ANIM_WONDER_ROOM              46
 #define B_ANIM_MAGIC_ROOM               47
 #define B_ANIM_TAILWIND                 48
+#define B_ANIM_NO_FUCKS                 49
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

@@ -2595,7 +2595,9 @@ u8 DoBattlerEndTurnEffects(void)
                     gBattleScripting.animArg2 = gBattleStruct->wrappedMove[battler] >> 8;
                     PREPARE_MOVE_BUFFER(gBattleTextBuff1, gBattleStruct->wrappedMove[battler]);
                     gBattlescriptCurrInstr = BattleScript_WrapTurnDmg;
-                    if (GetBattlerHoldEffect(gBattleStruct->wrappedBy[battler], TRUE) == HOLD_EFFECT_BINDING_BAND)
+                    if ((GetBattlerHoldEffect(gBattleStruct->wrappedBy[battler], TRUE) == HOLD_EFFECT_BINDING_BAND) && GetBattlerAbility(gBattleStruct->wrappedBy[battler] == ABILITY_TIE_BREAKER))
+                        gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / (4);
+                    else if ((GetBattlerHoldEffect(gBattleStruct->wrappedBy[battler], TRUE) == HOLD_EFFECT_BINDING_BAND) || GetBattlerAbility(gBattleStruct->wrappedBy[battler] == ABILITY_TIE_BREAKER))
                         gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / (B_BINDING_DAMAGE >= GEN_6 ? 6 : 8);
                     else
                         gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / (B_BINDING_DAMAGE >= GEN_6 ? 8 : 16);
@@ -4835,6 +4837,16 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 SET_STATCHANGER(stat, 1, FALSE);
                 BattleScriptPushCursorAndCallback(BattleScript_BattlerAbilityStatRaiseOnSwitchIn);
+                effect++;
+            }
+            break;
+            case ABILITY_NO_FUCKS:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattlerAttacker = battler;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_NO_FUCKS;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_NoFucksActivates);
                 effect++;
             }
             break;
@@ -9146,7 +9158,12 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
+    case ABILITY_LOW_ODDS:
+        if (MoveIsAffectedByLowOdds(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(0.8));
+        break;
     }
+
 
     // field abilities
     if ((IsAbilityOnField(ABILITY_DARK_AURA) && moveType == TYPE_DARK)
@@ -11331,14 +11348,17 @@ bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
 u32 CalcSecondaryEffectChance(u32 battler, u32 battlerAbility, const struct AdditionalEffect *additionalEffect)
 {
     bool8 hasSereneGrace = (battlerAbility == ABILITY_SERENE_GRACE);
+    bool8 hasLowOdds = (battlerAbility == ABILITY_LOW_ODDS);
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
     u16 secondaryEffectChance = additionalEffect->chance;
 
-    if (hasRainbow && hasSereneGrace && additionalEffect->moveEffect == MOVE_EFFECT_FLINCH)
+    if (hasRainbow && (hasSereneGrace || hasLowOdds) && additionalEffect->moveEffect == MOVE_EFFECT_FLINCH) // Prevents Flinch Hax, Upper limit of 60% flinch
         return secondaryEffectChance * 2;
 
     if (hasSereneGrace)
         secondaryEffectChance *= 2;
+    if (hasLowOdds)
+        secondaryEffectChance *= 2.5;
     if (hasRainbow && additionalEffect->moveEffect != MOVE_EFFECT_SECRET_POWER)
         secondaryEffectChance *= 2;
 
@@ -11422,6 +11442,17 @@ bool32 MoveIsAffectedBySheerForce(u32 move)
     for (i = 0; i < gMovesInfo[move].numAdditionalEffects; i++)
     {
         if (gMovesInfo[move].additionalEffects[i].chance > 0)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+bool32 MoveIsAffectedByLowOdds(u32 move)
+{
+    u32 i;
+    for (i = 0; i < gMovesInfo[move].numAdditionalEffects; i++)
+    {
+        if (gMovesInfo[move].additionalEffects[i].chance > 0 && gMovesInfo[move].additionalEffects[i].chance < 100)
             return TRUE;
     }
     return FALSE;
