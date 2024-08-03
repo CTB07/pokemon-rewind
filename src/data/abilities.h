@@ -2636,4 +2636,18 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Switches out on recharge."),
         .aiRating = 8,
     },
+
+    [ABILITY_CASH_GRAB] =
+    {
+        .name = _("Cash Grab"),
+        .description = COMPOUND_STRING("Switches out on recharge."),
+        .aiRating = 1,
+    },
+
+    [ABILITY_ECHO_CHAMBER] =
+    {
+        .name = _("Echo Chamber"),
+        .description = COMPOUND_STRING("Boosts consecutive moves."),
+        .aiRating = 5,
+    },
 };

@@ -4918,6 +4918,13 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 BattleScriptPushCursorAndCallback(BattleScript_NoFucksActivates);
             }
             break;
+        case ABILITY_CASH_GRAB:
+            gBattlerAttacker = battler;
+            if (GetBattlerSide(battler) == B_SIDE_PLAYER)
+            {
+                gBattleStruct->moneyMultiplier *= 2;
+            }
+            break;   
         case ABILITY_TERA_SHIFT:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && gBattleMons[battler].species == SPECIES_TERAPAGOS_NORMAL
@@ -9137,6 +9144,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
     uq4_12_t holdEffectModifier;
     uq4_12_t modifier = UQ_4_12(1.0);
     u32 atkSide = GetBattlerSide(battlerAtk);
+    u32 percentBoost;
 
     // move effect
     switch (gMovesInfo[move].effect)
@@ -9344,6 +9352,14 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
     case ABILITY_LOW_ODDS:
         if (MoveIsAffectedByLowOdds(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(0.8));
+        break;
+    case ABILITY_CASH_GRAB:
+        if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_PAYDAY))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        break;
+    case ABILITY_ECHO_CHAMBER:
+        percentBoost = min((gBattleStruct->sameMoveTurns[battlerAtk] * 20), 100);
+        modifier = uq4_12_add(sPercentToModifier[percentBoost], UQ_4_12(1.0));
         break;
     }
 
