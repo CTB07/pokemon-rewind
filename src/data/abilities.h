@@ -2629,4 +2629,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Stats reset on switch-out."),
         .aiRating = 6,
     },
+
+    [ABILITY_BUFFOONERY] =
+    {
+        .name = _("Buffoonery"),
+        .description = COMPOUND_STRING("Switches out on recharge."),
+        .aiRating = 8,
+    },
 };

@@ -3398,6 +3398,11 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             case MOVE_EFFECT_RECHARGE:
+                if (battlerAbility == ABILITY_BUFFOONERY && IsBattlerAlive(gBattlerAttacker) && CanBattlerSwitch(gBattlerAttacker) && (CountUsablePartyMons(GetBattlerSide(gBattlerAttacker)) > 0))
+                {
+                    gBattlescriptCurrInstr = BattleScript_BuffooneryActivates;
+                    break;
+                }
                 gBattleMons[gEffectBattler].status2 |= STATUS2_RECHARGE;
                 gDisableStructs[gEffectBattler].rechargeTimer = 2;
                 gLockedMoves[gEffectBattler] = gCurrentMove;

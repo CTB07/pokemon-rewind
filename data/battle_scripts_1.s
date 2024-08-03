@@ -311,6 +311,30 @@ BattleScript_MoveSwitchOpenPartyScreen:
 BattleScript_MoveSwitchEnd:
 	end
 
+BattleScript_MoveSwitchBuffoonery:
+	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_MoveSwitchEnd
+	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_MoveSwitchEnd
+	printstring STRINGID_PKMNWENTBACK
+	waitmessage B_WAIT_TIME_SHORT
+BattleScript_MoveSwitchOpenPartyScreenBuffoonery:
+	openpartyscreen BS_ATTACKER, BattleScript_MoveSwitchEnd
+	switchoutabilities BS_ATTACKER
+	waitstate
+	switchhandleorder BS_ATTACKER, 2
+	returntoball BS_ATTACKER, FALSE
+	getswitchedmondata BS_ATTACKER
+	switchindataupdate BS_ATTACKER
+	hpthresholds BS_ATTACKER
+	trytoclearprimalweather
+	printstring STRINGID_EMPTYSTRING3
+	waitmessage 1
+	printstring STRINGID_SWITCHINMON
+	switchinanim BS_ATTACKER, TRUE
+	waitstate
+	switchineffects BS_ATTACKER
+BattleScript_MoveSwitchEndBuffoonery:
+	end
+
 BattleScript_EffectPledge::
 	attackcanceler
 	setpledge BattleScript_HitFromAccCheck
@@ -2858,6 +2882,26 @@ BattleScript_EffectHitEscape::
 	goto BattleScript_MoveSwitch
 BattleScript_HitEscapeEnd:
 	end
+
+BattleScript_BuffooneryActivates::
+	tryfaintmon BS_TARGET
+	moveendto MOVEEND_ATTACKER_VISIBLE
+	moveendfrom MOVEEND_TARGET_VISIBLE
+	jumpifbattleend BattleScript_HitEscapeEnd
+	jumpifbyte CMP_NOT_EQUAL, gBattleOutcome, 0, BattleScript_HitEscapeEnd
+	jumpifemergencyexited BS_TARGET, BattleScript_HitEscapeEnd
+	pause B_WAIT_TIME_SHORT
+	copybyte gBattlerAbility, gBattlerAttacker
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_BUFFOONERYACTIVATES
+	pause B_WAIT_TIME_MED
+	waitstate
+	returnatktoball
+	waitstate
+	makeinvisible BS_ATTACKER
+	call BattleScript_MoveSwitchBuffoonery
+	goto BattleScript_MoveEnd
+
 
 BattleScript_EffectPlaceholder::
 	attackcanceler

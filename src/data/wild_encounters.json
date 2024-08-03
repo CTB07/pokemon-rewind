@@ -83,9 +83,9 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 2,
-                "max_level": 2,
-                "species": "SPECIES_PORYGON"
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_SNORLAX"
               },
               {
                 "min_level": 2,
@@ -152,14 +152,14 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 3,
-                "max_level": 8,
-                "species": "SPECIES_MAGNEMITE"
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_WEEZING"
               },
               {
-                "min_level": 3,
+                "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_MAGNEMITE"
+                "species": "SPECIES_WEEZING"
               },
               {
                 "min_level": 10,
