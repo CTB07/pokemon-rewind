@@ -1665,6 +1665,7 @@ enum
     ENDTURN_TRICK_ROOM,
     ENDTURN_WONDER_ROOM,
     ENDTURN_MAGIC_ROOM,
+    ENDTURN_INVERSE_ROOM,
     ENDTURN_ELECTRIC_TERRAIN,
     ENDTURN_MISTY_TERRAIN,
     ENDTURN_GRASSY_TERRAIN,
@@ -2107,6 +2108,15 @@ u8 DoFieldEndTurnEffects(void)
             {
                 gFieldStatuses &= ~STATUS_FIELD_MAGIC_ROOM;
                 BattleScriptExecute(BattleScript_MagicRoomEnds);
+                effect++;
+            }
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_INVERSE_ROOM:
+            if (gFieldStatuses & STATUS_FIELD_INVERSE_ROOM && gFieldTimers.inverseRoomTimer > 0 && --gFieldTimers.inverseRoomTimer == 0)
+            {
+                gFieldStatuses &= ~STATUS_FIELD_INVERSE_ROOM;
+                BattleScriptExecute(BattleScript_InverseRoomEnds);
                 effect++;
             }
             gBattleStruct->turnCountersTracker++;
@@ -4191,6 +4201,19 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     effect = 1;
                 }
                 break;
+            case STARTING_STATUS_INVERSE_ROOM:
+                if (!(gFieldStatuses & STATUS_FIELD_INVERSE_ROOM))
+                {
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SET_INVERSE_ROOM;
+                    gFieldStatuses |= STATUS_FIELD_INVERSE_ROOM;
+                    gBattleScripting.animArg1 = B_ANIM_MAGIC_ROOM;
+                    if (timerVal == 0)
+                        gFieldTimers.wonderRoomTimer = 0;    // infinite
+                    else
+                        gFieldTimers.wonderRoomTimer = 5;
+                    effect = 1;
+                }
+                break;
             case STARTING_STATUS_TAILWIND_PLAYER:
                 if (!(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_TAILWIND))
                 {
@@ -4680,6 +4703,26 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_OPPOSITE_DAY:
+            if (!gSpecialStatuses[battler].switchInAbilityDone){
+                gBattlerAttacker = battler;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                if (gFieldStatuses & STATUS_FIELD_INVERSE_ROOM)
+                {
+                    gFieldStatuses &= ~STATUS_FIELD_INVERSE_ROOM;
+                    gFieldTimers.inverseRoomTimer = 0;
+                    gBattleCommunication[MULTISTRING_CHOOSER] = 7; //gRoomsStringIds -> STRINGID_INVERSEROOMENDS
+                }
+                else
+                {
+                    gFieldStatuses |= STATUS_FIELD_INVERSE_ROOM;
+                    gFieldTimers.inverseRoomTimer = 5;
+                    gBattleCommunication[MULTISTRING_CHOOSER] = 8; // gRoomsStringIds -> STRINGID_TYPECHARTINVERTEDPKMN
+                }
+                BattleScriptPushCursorAndCallback(BattleScript_OppositeDayActivates);
+                effect++;
+                }
+            break;
         case ABILITY_INTIMIDATE:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
@@ -5128,6 +5171,17 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     effect++;
                 }
                 break;
+            case ABILITY_CONTAGION:
+                if (CanBePoisoned(battler, battler, GetBattlerAbility(battler)))
+                {
+                    gBattleMons[battler].status1 = STATUS1_TOXIC_POISON;
+                    gBattleScripting.battler = battler;
+                    BattleScriptPushCursorAndCallback(BattleScript_ContagionActivatesEndTurn);
+                    BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[battler].status1);
+                    MarkBattlerForControllerExec(battler);
+                    effect++;
+                }
+                break;
             }
         }
         break;
@@ -5472,6 +5526,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_CONTAGION:
         case ABILITY_LINGERING_AROMA:
         case ABILITY_MUMMY:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
@@ -5482,6 +5537,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && gBattleStruct->overwrittenAbilities[gBattlerAttacker] != GetBattlerAbility(gBattlerTarget)
              && gBattleMons[gBattlerAttacker].ability != ABILITY_MUMMY
              && gBattleMons[gBattlerAttacker].ability != ABILITY_LINGERING_AROMA
+             && gBattleMons[gBattlerAttacker].ability != ABILITY_CONTAGION
              && !gAbilitiesInfo[gBattleMons[gBattlerAttacker].ability].cantBeSuppressed)
             {
                 if (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_ABILITY_SHIELD)
@@ -9289,6 +9345,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         if (moveType == TYPE_NORMAL && gBattleStruct->ateBoost[battlerAtk])
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
+    case ABILITY_TRIANGULATE:
+        if (moveType == TYPE_ICE && gBattleStruct->ateBoost[battlerAtk])
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+        break;
     case ABILITY_PUNK_ROCK:
         if (gMovesInfo[move].soundMove)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
@@ -9360,6 +9420,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
     case ABILITY_ECHO_CHAMBER:
         percentBoost = min((gBattleStruct->sameMoveTurns[battlerAtk] * 20), 100);
         modifier = uq4_12_add(sPercentToModifier[percentBoost], UQ_4_12(1.0));
+        break;
+    case ABILITY_ARTILLERY:
+        if (gMovesInfo[move].ballisticMove || gMovesInfo[move].pulseMove)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     }
 
@@ -10607,7 +10671,9 @@ uq4_12_t GetTypeEffectiveness(struct Pokemon *mon, u8 moveType)
 
 uq4_12_t GetTypeModifier(u32 atkType, u32 defType)
 {
-    if (B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE))
+    if ((B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE)) && gFieldStatuses & STATUS_FIELD_INVERSE_ROOM)
+        return gTypeEffectivenessTable[atkType][defType];
+    else if ((B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE)) || gFieldStatuses & STATUS_FIELD_INVERSE_ROOM)
         return GetInverseTypeMultiplier(gTypeEffectivenessTable[atkType][defType]);
     return gTypeEffectivenessTable[atkType][defType];
 }

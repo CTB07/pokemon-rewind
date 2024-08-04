@@ -854,4 +854,8 @@ extern const u8 BattleScript_EffectMop[];
 extern const u8 BattleScript_EffectMoodCrush[];
 extern const u8 BattleScript_NoFucksActivates[];
 extern const u8 BattleScript_BuffooneryActivates[];
+extern const u8 BattleScript_ContagionActivatesEndTurn[];
+extern const u8 BattleScript_EffectInverseRoom[];
+extern const u8 BattleScript_InverseRoomEnds[];
+extern const u8 BattleScript_OppositeDayActivates[];
 #endif // GUARD_BATTLE_SCRIPTS_H

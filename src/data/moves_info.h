@@ -21414,6 +21414,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .snatchAffected = B_UPDATED_MOVE_FLAGS < GEN_5,
         .battleAnimScript = Move_REDISTRIBUTE,
     },
+
+    [MOVE_INVERSE_ROOM] =
+    {
+        .name = COMPOUND_STRING("Inverse Room"),
+        .description = COMPOUND_STRING(
+            "Type matchups are flipped\n"
+            "for 5 turns."),
+        .effect = EFFECT_INVERSE_ROOM,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = B_UPDATED_MOVE_DATA >= GEN_6 ? 0 : -7,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPATK_UP_1 },
+        .ignoresProtect = TRUE,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_MONS_WITH_GOOD_APPEALS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = Move_MAGIC_ROOM,
+    },
+    
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

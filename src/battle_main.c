@@ -5702,6 +5702,9 @@ bool32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case ABILITY_AERILATE:
         ateType = TYPE_FLYING;
         break;
+    case ABILITY_TRIANGULATE:
+        ateType = TYPE_PSYCHIC;
+        break;
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;

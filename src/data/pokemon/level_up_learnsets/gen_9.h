@@ -7057,6 +7057,9 @@ static const struct LevelUpMove sSwampertLevelUpLearnset[] = {
 static const struct LevelUpMove sPoochyenaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 4, MOVE_HOWL),
+    LEVEL_UP_MOVE( 4, MOVE_SHADOW_CLAW),
+    LEVEL_UP_MOVE( 4, MOVE_TRICK_ROOM),
+    LEVEL_UP_MOVE( 4, MOVE_INVERSE_ROOM),
     LEVEL_UP_MOVE( 7, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE(10, MOVE_BITE),
     LEVEL_UP_MOVE(13, MOVE_LEER),

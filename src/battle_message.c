@@ -598,6 +598,9 @@ static const u8 sText_LuckyChantEnds[] = _("{B_ATK_TEAM1} team's Lucky Chant\nwo
 static const u8 sText_TrickRoomEnds[] = _("The twisted dimensions returned to\nnormal!");
 static const u8 sText_WonderRoomEnds[] = _("Wonder Room wore off, and Defense\nand Sp. Def stats returned to normal!");
 static const u8 sText_MagicRoomEnds[] = _("Magic Room wore off, and held items'\neffects returned to normal!");
+static const u8 sText_TypeChartInvertedPkmn[] = _("{B_ATK_NAME_WITH_PREFIX} inverted\nthe battleground!");
+static const u8 sText_TypeChartInverted[] = _("The type chart was flipped!\n All type matchups are now opposite!");
+static const u8 sText_InverseRoomEnds[] = _("Inverse Room wore off, and the type\nchart returned to normal!");
 static const u8 sText_MudSportEnds[] = _("The effects of Mud Sport have faded.");
 static const u8 sText_WaterSportEnds[] = _("The effects of Water Sport have faded.");
 static const u8 sText_GravityEnds[] = _("Gravity returned to normal!");
@@ -1440,6 +1443,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_TRICKROOMENDS - BATTLESTRINGS_TABLE_START] = sText_TrickRoomEnds,
     [STRINGID_WONDERROOMENDS - BATTLESTRINGS_TABLE_START] = sText_WonderRoomEnds,
     [STRINGID_MAGICROOMENDS - BATTLESTRINGS_TABLE_START] = sText_MagicRoomEnds,
+    [STRINGID_TYPECHARTINVERTEDPKMN - BATTLESTRINGS_TABLE_START] = sText_TypeChartInvertedPkmn,
+    [STRINGID_TYPECHARTINVERTED - BATTLESTRINGS_TABLE_START] = sText_TypeChartInverted,
+    [STRINGID_INVERSEROOMENDS - BATTLESTRINGS_TABLE_START] = sText_InverseRoomEnds,
     [STRINGID_MUDSPORTENDS - BATTLESTRINGS_TABLE_START] = sText_MudSportEnds,
     [STRINGID_WATERSPORTENDS - BATTLESTRINGS_TABLE_START] = sText_WaterSportEnds,
     [STRINGID_GRAVITYENDS - BATTLESTRINGS_TABLE_START] = sText_GravityEnds,
@@ -1596,6 +1602,7 @@ const u16 gStartingStatusStringIds[B_MSG_STARTING_STATUS_COUNT] =
     [B_MSG_SET_WONDER_ROOM]         = STRINGID_BIZARREAREACREATED,
     [B_MSG_SET_TAILWIND_PLAYER]     = STRINGID_TAILWINDBLEW,
     [B_MSG_SET_TAILWIND_OPPONENT]   = STRINGID_TAILWINDBLEW,
+    [B_MSG_SET_INVERSE_ROOM]        = STRINGID_TYPECHARTINVERTED,
 };
 
 const u16 gTerrainStringIds[B_MSG_TERRAIN_COUNT] =
@@ -2043,7 +2050,8 @@ const u16 gRoomsStringIds[] =
     STRINGID_PKMNTWISTEDDIMENSIONS, STRINGID_TRICKROOMENDS,
     STRINGID_SWAPSDEFANDSPDEFOFALLPOKEMON, STRINGID_WONDERROOMENDS,
     STRINGID_HELDITEMSLOSEEFFECTS, STRINGID_MAGICROOMENDS,
-    STRINGID_EMPTYSTRING3
+    STRINGID_TYPECHARTINVERTEDPKMN, STRINGID_INVERSEROOMENDS, // Added Inverse Room
+    STRINGID_TYPECHARTINVERTED, STRINGID_EMPTYSTRING3
 };
 
 const u16 gStatusConditionsStringIds[] =

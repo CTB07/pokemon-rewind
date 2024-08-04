@@ -2650,4 +2650,32 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Boosts consecutive moves."),
         .aiRating = 5,
     },
+
+    [ABILITY_ARTILLERY] =
+    {
+        .name = _("Artillery"),
+        .description = COMPOUND_STRING("Powers bomb/pulse moves."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_CONTAGION] =
+    {
+        .name = _("Contagion"),
+        .description = COMPOUND_STRING("Spreads with contact."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_TRIANGULATE] =
+    {
+        .name = _("Triangulate"),
+        .description = COMPOUND_STRING("Normal moves become Psychic."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_OPPOSITE_DAY] =
+    {
+        .name = _("Opposite Day"),
+        .description = COMPOUND_STRING("Inverts type chart."),
+        .aiRating = 7,
+    },
 };

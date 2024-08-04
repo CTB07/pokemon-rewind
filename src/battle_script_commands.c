@@ -14456,8 +14456,11 @@ static void Cmd_setroom(void)
     case EFFECT_MAGIC_ROOM:
         HandleRoomMove(STATUS_FIELD_MAGIC_ROOM, &gFieldTimers.magicRoomTimer, 4);
         break;
+    case EFFECT_INVERSE_ROOM:
+        HandleRoomMove(STATUS_FIELD_INVERSE_ROOM, &gFieldTimers.inverseRoomTimer, 6);
+        break;
     default:
-        gBattleCommunication[MULTISTRING_CHOOSER] = 6;
+        gBattleCommunication[MULTISTRING_CHOOSER] = 8;
         break;
     }
     gBattlescriptCurrInstr = cmd->nextInstr;

@@ -2735,6 +2735,7 @@ BattleScript_RoomServiceLoop_NextBattler:
 	restoretarget
 	return
 
+BattleScript_EffectInverseRoom::
 BattleScript_EffectWonderRoom::
 BattleScript_EffectMagicRoom::
 	attackcanceler
@@ -6228,6 +6229,11 @@ BattleScript_MagicRoomEnds::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
+BattleScript_InverseRoomEnds::
+	printstring STRINGID_INVERSEROOMENDS
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
 BattleScript_GrassyTerrainEnds::
 	call BattleScript_GrassyTerrainHeals_Ret
 	goto BattleScript_TerrainEnds
@@ -8005,6 +8011,14 @@ BattleScript_ShedSkinActivates::
 	updatestatusicon BS_ATTACKER
 	end3
 
+BattleScript_ContagionActivatesEndTurn::
+	waitmessage B_WAIT_TIME_MED
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNBADLYPOISONED
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_ATTACKER
+	end3
+
 BattleScript_ActivateWeatherAbilities:
 	savetarget
 	setbyte gBattlerTarget, 0
@@ -8343,6 +8357,16 @@ BattleScript_PsychicSurgeActivates::
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
 	call BattleScript_ActivateTerrainEffects
+	end3
+
+BattleScript_OppositeDayActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TYPECHARTINVERTEDPKMN
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_SCRIPTING, B_ANIM_MAGIC_ROOM
+	printfromtable gRoomsStringIds
+	waitmessage B_WAIT_TIME_LONG
 	end3
 
 BattleScript_BadDreamsActivates::
