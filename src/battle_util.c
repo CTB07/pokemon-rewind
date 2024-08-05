@@ -4723,6 +4723,23 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
                 }
             break;
+        case ABILITY_OMNIPOTENCE:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                u32 statId;
+                gBattlerAttacker = battler;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                statId = (Random() % NUM_BATTLE_STATS) + STAT_ATK;
+                if (CompareStat(battler, statId, MAX_STAT_STAGE, CMP_LESS_THAN))
+                {
+                    SET_STATCHANGER(statId, 3, FALSE);
+                    gBattlerAttacker = battler;
+                    PREPARE_STAT_BUFFER(gBattleTextBuff1, statId);
+                    BattleScriptPushCursorAndCallback(BattleScript_OmnipotenceRaisesStat); // Allows string to display "*stat* drastically rose"
+                    effect++;
+                }
+            }
+            break;
         case ABILITY_INTIMIDATE:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {

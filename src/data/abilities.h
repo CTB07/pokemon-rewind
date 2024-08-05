@@ -2678,4 +2678,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Inverts type chart."),
         .aiRating = 7,
     },
+
+    [ABILITY_OMNIPOTENCE] =
+    {
+        .name = _("Omnipotence"),
+        .description = COMPOUND_STRING("Ups random stat on switch."),
+        .aiRating = 7,
+    },
 };
