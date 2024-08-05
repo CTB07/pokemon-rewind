@@ -859,4 +859,5 @@ extern const u8 BattleScript_EffectInverseRoom[];
 extern const u8 BattleScript_InverseRoomEnds[];
 extern const u8 BattleScript_OppositeDayActivates[];
 extern const u8 BattleScript_OmnipotenceRaisesStat[];
+extern const u8 BattleScript_TherapistStopsMove[];
 #endif // GUARD_BATTLE_SCRIPTS_H

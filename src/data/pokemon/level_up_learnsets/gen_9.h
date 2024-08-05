@@ -7056,6 +7056,10 @@ static const struct LevelUpMove sSwampertLevelUpLearnset[] = {
 #if P_FAMILY_POOCHYENA
 static const struct LevelUpMove sPoochyenaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 2, MOVE_SUBSTITUTE),
+    LEVEL_UP_MOVE( 2, MOVE_OUTRAGE),
+    LEVEL_UP_MOVE( 2, MOVE_PAIN_SPLIT),
+    LEVEL_UP_MOVE( 2, MOVE_WILD_CHARGE),
     LEVEL_UP_MOVE( 4, MOVE_HOWL),
     LEVEL_UP_MOVE( 4, MOVE_SHADOW_CLAW),
     LEVEL_UP_MOVE( 4, MOVE_TRICK_ROOM),

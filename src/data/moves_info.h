@@ -776,6 +776,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_MIND_READER},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_JUMP_KICK,
     },
 
@@ -1022,6 +1023,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_HARDEN},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_TAKE_DOWN,
     },
 
@@ -1072,6 +1074,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_HARDEN},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_DOUBLE_EDGE,
     },
 
@@ -3099,6 +3102,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_SELF_DESTRUCT,
     },
 
@@ -3502,6 +3506,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_MIND_READER},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_HIGH_JUMP_KICK,
     },
 
@@ -3927,6 +3932,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_EXPLOSION,
     },
 
@@ -4197,6 +4203,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_SUBSTITUTE,
     },
 
@@ -4470,6 +4477,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_CURSE,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_CURSE,
     },
 
@@ -4780,6 +4788,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = COMBO_STARTER_BELLY_DRUM,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_BELLY_DRUM,
     },
 
@@ -4988,6 +4997,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_MEAN_LOOK, COMBO_STARTER_SING},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_PERISH_SONG,
     },
 
@@ -5603,6 +5613,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_ENDURE},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_PAIN_SPLIT,
     },
 
@@ -6663,6 +6674,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_MEMENTO,
     },
 
@@ -8715,6 +8727,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_VOLT_TACKLE,
     },
 
@@ -9127,6 +9140,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_HEALING_WISH,
     },
 
@@ -9911,6 +9925,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_FLARE_BLITZ,
     },
 
@@ -10369,6 +10384,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = COMBO_STARTER_BRAVE_BIRD,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_BRAVE_BIRD,
     },
 
@@ -11346,6 +11362,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_WOOD_HAMMER,
     },
 
@@ -11464,6 +11481,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_HEAD_SMASH,
     },
 
@@ -11558,6 +11576,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_LUNAR_DANCE,
     },
 
@@ -12857,6 +12876,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_FINAL_GAMBIT,
     },
 
@@ -13160,6 +13180,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_WILD_CHARGE,
     },
 
@@ -13517,6 +13538,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_HEAD_CHARGE,
     },
 
@@ -15365,6 +15387,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .metronomeBanned = TRUE,
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_LIGHT_OF_RUIN,
     },
 
@@ -16744,6 +16767,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_MIND_BLOWN,
     },
 
@@ -17438,6 +17462,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_CLANGOROUS_SOUL,
     },
 
@@ -17976,6 +18001,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_STEEL_BEAM,
     },
 
@@ -18117,6 +18143,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_MISTY_TERRAIN},
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_MISTY_EXPLOSION,
     },
 
@@ -18868,6 +18895,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .skyBattleBanned = B_EXTRAPOLATED_MOVE_FLAGS,
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_WAVE_CRASH,
     },
 
@@ -18885,6 +18913,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_CHLOROBLAST,
     },
 
@@ -19278,6 +19307,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             .moveEffect = MOVE_EFFECT_CONFUSION,
             .chance = 30,
         }),
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_AXE_KICK,
     },
 
@@ -19790,6 +19820,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .metronomeBanned = TRUE,
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_SHED_TAIL,
     },
 
@@ -20600,6 +20631,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_SUPERCELL_SLAM,
     },
 
@@ -21075,6 +21107,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .snatchAffected = TRUE,
+        .therapistBanned = TRUE,
         .battleAnimScript = Move_BLUE_SCREEN,
     },
 

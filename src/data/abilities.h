@@ -2685,4 +2685,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Ups random stat on switch."),
         .aiRating = 7,
     },
+
+    [ABILITY_THERAPIST] =
+    {
+        .name = _("Therapist"),
+        .description = COMPOUND_STRING("Prevents self-damage moves."),
+        .aiRating = 7,
+    },
 };
