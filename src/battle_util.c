@@ -3648,7 +3648,9 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                             || (gBattleMons[gBattlerAttacker].ability == ABILITY_MAGIC_GUARD && (gMovesInfo[gCurrentMove].effect == EFFECT_RECOIL_IF_MISS || IS_MOVE_RECOIL(gCurrentMove) || gMovesInfo[gCurrentMove].effect == EFFECT_MIND_BLOWN || gMovesInfo[gCurrentMove].effect == EFFECT_MAX_HP_50_RECOIL))
                             || (gBattleMons[gBattlerAttacker].ability == ABILITY_SOUNDPROOF && gCurrentMove == MOVE_PERISH_SONG)
                             || (gBattleMons[gBattlerAttacker].ability == ABILITY_NO_GUARD && gMovesInfo[gCurrentMove].effect == EFFECT_RECOIL_IF_MISS))
+                            //GetTotalAccuracy(gBattlerAttacker, gBattlerTarget, move, abilityAtk, abilityDef, holdEffectAtk, GetBattlerHoldEffect(gBattlerTarget, TRUE)
             {
+                gBattleStruct->atkCancellerTracker++;
                 break;
             }
             else if (therapistBattler && (gMovesInfo[gCurrentMove].therapistBanned))

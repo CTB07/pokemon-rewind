@@ -790,7 +790,7 @@ static const struct LevelUpMove sCleffaLevelUpLearnset[] = {
 #endif //P_GEN_2_CROSS_EVOS
 
 static const struct LevelUpMove sClefairyLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_POUND),
+    /*LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 1, MOVE_SING),
     LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
@@ -798,7 +798,8 @@ static const struct LevelUpMove sClefairyLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SPLASH),
     LEVEL_UP_MOVE( 1, MOVE_SWEET_KISS),
     LEVEL_UP_MOVE( 1, MOVE_CHARM),
-    LEVEL_UP_MOVE( 1, MOVE_COPYCAT),
+    LEVEL_UP_MOVE( 1, MOVE_COPYCAT),*/
+    LEVEL_UP_MOVE( 1, MOVE_JUMP_KICK),
     LEVEL_UP_MOVE( 4, MOVE_STORED_POWER),
     LEVEL_UP_MOVE( 8, MOVE_ENCORE),
     LEVEL_UP_MOVE(12, MOVE_AFTER_YOU),
@@ -1862,8 +1863,9 @@ static const struct LevelUpMove sTentacruelLevelUpLearnset[] = {
 
 #if P_FAMILY_GEODUDE
 static const struct LevelUpMove sGeodudeLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
-    LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
+    //LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    //LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
+    LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
     LEVEL_UP_MOVE( 6, MOVE_ROCK_POLISH),
     LEVEL_UP_MOVE(10, MOVE_ROLLOUT),
     LEVEL_UP_MOVE(12, MOVE_BULLDOZE),
@@ -7788,8 +7790,9 @@ static const struct LevelUpMove sShedinjaLevelUpLearnset[] = {
 
 #if P_FAMILY_WHISMUR
 static const struct LevelUpMove sWhismurLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
-    LEVEL_UP_MOVE( 1, MOVE_POUND),
+    //LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
+    //LEVEL_UP_MOVE( 1, MOVE_POUND),
+    LEVEL_UP_MOVE( 1, MOVE_PERISH_SONG),
     LEVEL_UP_MOVE( 5, MOVE_ECHOED_VOICE),
     LEVEL_UP_MOVE(10, MOVE_HOWL),
     LEVEL_UP_MOVE(15, MOVE_REST),
@@ -9514,8 +9517,9 @@ static const struct LevelUpMove sLuvdiscLevelUpLearnset[] = {
 
 #if P_FAMILY_BAGON
 static const struct LevelUpMove sBagonLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_LEER),
-    LEVEL_UP_MOVE( 1, MOVE_EMBER),
+    //LEVEL_UP_MOVE( 1, MOVE_LEER),
+    //LEVEL_UP_MOVE( 1, MOVE_EMBER),
+    LEVEL_UP_MOVE( 1, MOVE_WILD_CHARGE),
     LEVEL_UP_MOVE( 5, MOVE_BITE),
     LEVEL_UP_MOVE(10, MOVE_DRAGON_BREATH),
     LEVEL_UP_MOVE(15, MOVE_HEADBUTT),

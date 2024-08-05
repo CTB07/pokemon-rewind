@@ -2689,7 +2689,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_THERAPIST] =
     {
         .name = _("Therapist"),
-        .description = COMPOUND_STRING("Prevents self-damage moves."),
+        .description = COMPOUND_STRING("Stops self-damage moves."),
         .aiRating = 7,
     },
 };
