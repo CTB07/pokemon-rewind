@@ -3151,6 +3151,20 @@ BattleScript_AbsorbHealBlock::
 	tryfaintmon BS_TARGET
 	goto BattleScript_MoveEnd
 
+BattleScript_LifeDrinkerLiquidOoze::
+	call BattleScript_AbilityPopUp
+	pause 20
+	destroyabilitypopup
+	pause 20
+	call BattleScript_AbilityPopUpTarget
+	printstring STRINGID_LIFEDRINKERLIQUIDOOZE
+	waitmessage B_WAIT_TIME_LONG
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	tryfaintmon BS_ATTACKER
+	end3
+
 BattleScript_EffectExplosion::
 	attackcanceler
 	attackstring
@@ -7952,6 +7966,15 @@ BattleScript_RainDishActivates::
 	call BattleScript_AbilityHpHeal
 	end3
 
+BattleScript_LifeDrinkerActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_LIFEDRINKERACTIVATES
+	waitmessage B_WAIT_TIME_LONG
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	end3
+
 BattleScript_CheekPouchActivates::
 	copybyte sSAVED_BATTLER, gBattlerAttacker
 	copybyte gBattlerAttacker, gBattlerAbility
@@ -8172,6 +8195,18 @@ BattleScript_NoFucksActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_NOFUCKSENTERS
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_NO_FUCKS
+	waitanimation
+	normalisebuffs
+	printstring STRINGID_STATCHANGESGONE
+	waitmessage B_WAIT_TIME_LONG
+	end3
+
+BattleScript_DemonetizeActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_DEMONETIZEENTERS
 	waitstate
 	playanimation BS_BATTLER_0, B_ANIM_NO_FUCKS
 	waitanimation

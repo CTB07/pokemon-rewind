@@ -5012,6 +5012,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 BattleScriptPushCursorAndCallback(BattleScript_NoFucksActivates);
             }
             break;
+        case ABILITY_DEMONETIZE:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattlerAttacker = battler;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_DEMONETIZE;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_DemonetizeActivates);
+            }
+            break;
         case ABILITY_CASH_GRAB:
             gBattlerAttacker = battler;
             if (GetBattlerSide(battler) == B_SIDE_PLAYER)
@@ -6108,6 +6117,35 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
                 effect++;
             }
+        case ABILITY_LIFE_DRINKER:
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && IsBattlerAlive(gBattlerAttacker)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && TARGET_TURN_DAMAGED // Need to actually hit the target
+             && gBattleMons[gBattlerAttacker].hp != gBattleMons[gBattlerAttacker].maxHP
+             //&& gBattleMons[gBattlerTarget].ability != ABILITY_LIQUID_OOZE
+             && (B_HEAL_BLOCKING < GEN_5 || !(gStatuses3[battler] & STATUS3_HEAL_BLOCK)))
+            {
+                gBattleScripting.battler = gBattlerAttacker;
+                gBattleMoveDamage = GetDrainedBigRootHp(gBattleScripting.battler, (gSpecialStatuses[gBattlerTarget].shellBellDmg / 6));
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = -1;
+                
+                if (GetBattlerHoldEffect(gBattleScripting.battler, TRUE) != HOLD_EFFECT_SHELL_BELL)
+                    gSpecialStatuses[gBattlerTarget].shellBellDmg = 0; /// this is in shell bell and I don't know why to be honest. Prevents recursion and stacking w shell bell. If removed, probably leeches infinite hp all the time.
+                
+                if (gBattleMons[gBattlerTarget].ability == ABILITY_LIQUID_OOZE)
+                {
+                    gBattleMoveDamage = gBattleMoveDamage * -1;
+                    BattleScriptPushCursorAndCallback(BattleScript_LifeDrinkerLiquidOoze);
+                }
+                else
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_LifeDrinkerActivates);
+                }
+                effect++;
+            }
+            break;
         }
         break;
     case ABILITYEFFECT_MOVE_END_OTHER: // Abilities that activate on *another* battler's moveend: Dancer, Soul-Heart, Receiver, Symbiosis
@@ -9476,6 +9514,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         if (gMovesInfo[move].ballisticMove || gMovesInfo[move].pulseMove)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_OCEAN_MANTLE:
+        if (moveType == TYPE_WATER)
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
     }
 
 
@@ -9795,6 +9837,14 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
             if (updateFlags)
                 RecordAbilityBattle(battlerDef, ABILITY_THICK_FAT);
+        }
+        break;
+    case ABILITY_OCEAN_MANTLE:
+        if (moveType == TYPE_FIRE || moveType == TYPE_ICE)
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
+            if (updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_OCEAN_MANTLE);
         }
         break;
     }

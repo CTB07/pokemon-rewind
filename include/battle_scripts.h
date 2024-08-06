@@ -860,4 +860,7 @@ extern const u8 BattleScript_InverseRoomEnds[];
 extern const u8 BattleScript_OppositeDayActivates[];
 extern const u8 BattleScript_OmnipotenceRaisesStat[];
 extern const u8 BattleScript_TherapistStopsMove[];
+extern const u8 BattleScript_DemonetizeActivates[];
+extern const u8 BattleScript_LifeDrinkerActivates[];
+extern const u8 BattleScript_LifeDrinkerLiquidOoze[];
 #endif // GUARD_BATTLE_SCRIPTS_H

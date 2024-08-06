@@ -308,17 +308,17 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_BAGON"
+                "species": "SPECIES_GULPIN"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_CHANSEY"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_GEODUDE"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_CLEFAIRY"
+                "species": "SPECIES_TENTACOOL"
               },
               {
                 "min_level": 4,

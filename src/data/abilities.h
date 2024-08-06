@@ -2692,4 +2692,25 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Stops self-damage moves."),
         .aiRating = 7,
     },
+
+    [ABILITY_DEMONETIZE] =
+    {
+        .name = _("Demonetize"),
+        .description = COMPOUND_STRING("Stats reset on switch-out."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_OCEAN_MANTLE] =
+    {
+        .name = _("Ocean Mantle"),
+        .description = COMPOUND_STRING("Ups Water. Resists Fire/Ice."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_LIFE_DRINKER] =
+    {
+        .name = _("Life Drinker"),
+        .description = COMPOUND_STRING("Drains HP from all attacks."),
+        .aiRating = 8,
+    },
 };
