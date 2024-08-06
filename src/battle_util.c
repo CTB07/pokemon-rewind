@@ -3674,6 +3674,30 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
             gBattleStruct->atkCancellerTracker++;
             break;
         }
+        case CANCELLER_HORNY_JAIL:
+        {
+            u32 hornyJailBattler = IsAbilityOnField(ABILITY_HORNY_JAIL);
+            if (hornyJailBattler && (gMovesInfo[gCurrentMove].innuendoMove))
+            {
+                if (GetBattlerSide(gBattlerAttacker) == GetBattlerSide(gBattlerTarget)) // Foe uses move that targets itself (e.g. Substitute). If this didn't exist, for would appear as both attacker and defender in battle string.
+                {
+                    u32 i;
+                    for (i = 0; i < gBattlersCount; i++)
+                    {
+                        if (gBattleMons[i].ability == ABILITY_HORNY_JAIL)
+                        {
+                            gBattlerTarget = gBattlerAbility = i;
+                        }
+                    }
+                }
+                gBattleScripting.battler = hornyJailBattler - 1;
+                gBattlescriptCurrInstr = BattleScript_TherapistStopsMove;
+                gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
+                effect = 1;
+            }
+            gBattleStruct->atkCancellerTracker++;
+            break;
+        }
         case CANCELLER_MULTIHIT_MOVES:
             if (gMovesInfo[gCurrentMove].effect == EFFECT_MULTI_HIT)
             {

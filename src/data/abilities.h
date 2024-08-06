@@ -2713,4 +2713,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Drains HP from all attacks."),
         .aiRating = 8,
     },
+
+    [ABILITY_HORNY_JAIL] =
+    {
+        .name = _("Horny Jail"),
+        .description = COMPOUND_STRING("Prevents use of horny moves."),
+        .aiRating = 7,
+    },
 };
