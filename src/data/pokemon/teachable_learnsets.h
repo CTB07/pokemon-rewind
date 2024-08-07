@@ -1,6 +1,6 @@
 //
 // DO NOT MODIFY THIS FILE! It is auto-generated from tools/learnset_helpers/teachable.py
-//
+// ^ This is no longer true due to #define P_LEARNSET_HELPER_TEACHABLE being set to FALSE in include/config/pokemon.h
 
 // *************************************************** //
 // TM/HM moves found in "include/constants/tms_hms.h": //

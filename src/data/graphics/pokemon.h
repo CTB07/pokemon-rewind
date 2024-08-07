@@ -22001,6 +22001,22 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_PECHARUNT
 
+const u32 gMonFrontPic_Paropeat[] = INCBIN_U32("graphics/pokemon/paropeat/front.4bpp.lz");
+const u32 gMonBackPic_Paropeat[] = INCBIN_U32("graphics/pokemon/paropeat/back.4bpp.lz");
+const u32 gMonPalette_Paropeat[] = INCBIN_U32("graphics/pokemon/paropeat/normal.gbapal.lz");
+const u32 gMonShinyPalette_Paropeat[] = INCBIN_U32("graphics/pokemon/paropeat/shiny.gbapal.lz");
+const u8 gMonIcon_Paropeat[] = INCBIN_U8("graphics/pokemon/paropeat/icon.4bpp");
+const u32 gMonFrontPic_Macaument[] = INCBIN_U32("graphics/pokemon/macaument/front.4bpp.lz");
+const u32 gMonBackPic_Macaument[] = INCBIN_U32("graphics/pokemon/macaument/back.4bpp.lz");
+const u32 gMonPalette_Macaument[] = INCBIN_U32("graphics/pokemon/macaument/normal.gbapal.lz");
+const u32 gMonShinyPalette_Macaument[] = INCBIN_U32("graphics/pokemon/macaument/shiny.gbapal.lz");
+const u8 gMonIcon_Macaument[] = INCBIN_U8("graphics/pokemon/macaument/icon.4bpp");
+const u32 gMonFrontPic_Arguwint[] = INCBIN_U32("graphics/pokemon/arguwint/front.4bpp.lz");
+const u32 gMonBackPic_Arguwint[] = INCBIN_U32("graphics/pokemon/arguwint/back.4bpp.lz");
+const u32 gMonPalette_Arguwint[] = INCBIN_U32("graphics/pokemon/arguwint/normal.gbapal.lz");
+const u32 gMonShinyPalette_Arguwint[] = INCBIN_U32("graphics/pokemon/arguwint/shiny.gbapal.lz");
+const u8 gMonIcon_Arguwint[] = INCBIN_U8("graphics/pokemon/arguwint/icon.4bpp");
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

@@ -2,6 +2,11 @@
 #define GUARD_CONSTANTS_SPECIES_H
 
 #define SPECIES_NONE                                    0
+// Start Rewind
+#define SPECIES_PAROPEAT 1
+#define SPECIES_MACAUMENT 2
+#define SPECIES_ARGUWINT 3
+// End Rewind
 #define SPECIES_BULBASAUR                               1
 #define SPECIES_IVYSAUR                                 2
 #define SPECIES_VENUSAUR                                3
