@@ -720,8 +720,9 @@
 #define STRINGID_DEMONETIZEENTERS                     718
 #define STRINGID_LIFEDRINKERACTIVATES                 719
 #define STRINGID_LIFEDRINKERLIQUIDOOZE                720
+#define STRINGID_RADIATIONTOXIC                       721
 
-#define BATTLESTRINGS_COUNT                           721
+#define BATTLESTRINGS_COUNT                           722
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

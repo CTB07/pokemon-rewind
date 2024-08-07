@@ -2720,4 +2720,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Prevents use of horny moves."),
         .aiRating = 7,
     },
+
+    [ABILITY_RADIATION] =
+    {
+        .name = _("Radioactive"),
+        .description = COMPOUND_STRING("Badly poisons everyone."),
+        .aiRating = 9,
+    },
 };

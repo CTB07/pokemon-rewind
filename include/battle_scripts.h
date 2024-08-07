@@ -863,4 +863,5 @@ extern const u8 BattleScript_TherapistStopsMove[];
 extern const u8 BattleScript_DemonetizeActivates[];
 extern const u8 BattleScript_LifeDrinkerActivates[];
 extern const u8 BattleScript_LifeDrinkerLiquidOoze[];
+extern const u8 BattleScript_RadiationActivatesEndTurn[];
 #endif // GUARD_BATTLE_SCRIPTS_H

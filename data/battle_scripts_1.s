@@ -8040,6 +8040,68 @@ BattleScript_ContagionActivatesEndTurn::
 	printstring STRINGID_PKMNBADLYPOISONED
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_ATTACKER
+	waitstate
+	trytriggerstatusform
+	flushtextbox
+	end3
+
+BattleScript_RadiationActivatesEndTurn::
+BattleScript_RadiationFindNonPoisonLoop:
+	jumpifabsent BS_TARGET, BattleScript_RadiationLoopIncrement
+	jumpifability BS_TARGET, ABILITY_IMMUNITY, BattleScript_RadiationLoopIncrement
+	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_RadiationLoopIncrement
+	jumpifability BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_RadiationLoopIncrement
+	jumpifability BS_TARGET_SIDE, ABILITY_PASTEL_VEIL, BattleScript_RadiationLoopIncrement
+	jumpifflowerveil BattleScript_RadiationLoopIncrement
+	jumpifleafguardprotected BS_TARGET, BattleScript_RadiationLoopIncrement
+	jumpifshieldsdown BS_TARGET, BattleScript_RadiationLoopIncrement
+	jumpifsubstituteblocks BattleScript_RadiationLoopIncrement
+	jumpifstatus BS_TARGET, STATUS1_POISON, BattleScript_RadiationLoopIncrement
+	jumpifstatus BS_TARGET, STATUS1_TOXIC_POISON, BattleScript_RadiationLoopIncrement
+	jumpiftype BS_TARGET, TYPE_POISON, BattleScript_RadiationLoopIncrement
+	jumpiftype BS_TARGET, TYPE_STEEL, BattleScript_RadiationLoopIncrement
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_RadiationLoopIncrement
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_MISTY_TERRAIN, BattleScript_RadiationLoopIncrement
+	jumpifsafeguard BattleScript_RadiationLoopIncrement
+	goto BattleScript_RadiationAbilityPop
+BattleScript_RadiationLoopIncrement: @Finds if there is a non-poisoned PKMN
+	addbyte gBattlerTarget, 1
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_RadiationFindNonPoisonLoop
+	goto BattleScript_RadiationEnd
+BattleScript_RadiationAbilityPop:
+	savetarget
+	showabilitypopup BS_ATTACKER
+	pause B_WAIT_TIME_MED
+	printstring STRINGID_RADIATIONTOXIC
+	waitmessage B_WAIT_TIME_LONG
+	destroyabilitypopup
+	setbyte gBattlerTarget, 0
+	copybyte sBATTLER, gBattlerTarget
+BattleScript_RadiationEffect:
+	jumpifabsent BS_TARGET, BattleScript_RadiationLoopIncrement2
+	jumpifability BS_TARGET, ABILITY_IMMUNITY, BattleScript_RadiationLoopIncrement2
+	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_RadiationLoopIncrement2
+	jumpifability BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_RadiationLoopIncrement2
+	jumpifability BS_TARGET_SIDE, ABILITY_PASTEL_VEIL, BattleScript_RadiationLoopIncrement2
+	jumpifflowerveil BattleScript_RadiationLoopIncrement2
+	jumpifleafguardprotected BS_TARGET, BattleScript_RadiationLoopIncrement2
+	jumpifshieldsdown BS_TARGET, BattleScript_RadiationLoopIncrement2
+	jumpifsubstituteblocks BattleScript_RadiationLoopIncrement2
+	jumpifstatus BS_TARGET, STATUS1_POISON, BattleScript_RadiationLoopIncrement2
+	jumpifstatus BS_TARGET, STATUS1_TOXIC_POISON, BattleScript_RadiationLoopIncrement2
+	jumpiftype BS_TARGET, TYPE_POISON, BattleScript_RadiationLoopIncrement2
+	jumpiftype BS_TARGET, TYPE_STEEL, BattleScript_RadiationLoopIncrement2
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_RadiationLoopIncrement2
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_MISTY_TERRAIN, BattleScript_RadiationLoopIncrement2
+	jumpifsafeguard BattleScript_RadiationLoopIncrement2
+	copybyte gEffectBattler, gBattlerTarget
+	seteffectprimary MOVE_EFFECT_TOXIC
+	@call BattleScript_MoveEffectToxic
+BattleScript_RadiationLoopIncrement2: @ Poisons all Pokemon that can be poisoned
+	addbyte gBattlerTarget, 1
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_RadiationEffect
+	restoretarget
+BattleScript_RadiationEnd:
 	end3
 
 BattleScript_ActivateWeatherAbilities:
