@@ -2181,3 +2181,10 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TERAPAGOS
+
+// REWIND
+static const u16 sDisputrawFormSpeciesIdTable[] = {
+    SPECIES_DISPUTRAW,
+    SPECIES_DISPUTRAWSPECIAL,
+    FORM_SPECIES_END,
+};

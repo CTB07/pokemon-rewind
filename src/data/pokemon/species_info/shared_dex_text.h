@@ -287,3 +287,10 @@ const u8 gOgerponCornerstoneMaskPokedexText[] = _(
     "of stone. Its body is rock-solid,\n"
     "protecting it from all manner of\n"
     "attacks.");
+ 
+ //REWIND
+ const u8 gDisputrawPokedexText[] = _(
+    "Disputraw survive harsh beatings by being\n"
+    "flexible and easy to trample, like a tree in\n"
+    "a hurricane. They pretend to be stronger\n"
+    "Pokémon to scare off attackers.");

@@ -34,7 +34,9 @@
 #define EGG_GROUP_FIELD               5
 #define EGG_GROUP_FAIRY               6
 #define EGG_GROUP_GRASS               7
+#define EGG_GROUP_PLANT               7
 #define EGG_GROUP_HUMAN_LIKE          8
+#define EGG_GROUP_HUMANLIKE           8
 #define EGG_GROUP_WATER_3             9
 #define EGG_GROUP_MINERAL             10
 #define EGG_GROUP_AMORPHOUS           11
