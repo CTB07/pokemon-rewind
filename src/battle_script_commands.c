@@ -1149,7 +1149,7 @@ static bool32 TryAegiFormChange(void)
             return FALSE;
         gBattleMons[gBattlerAttacker].species = SPECIES_AEGISLASH_SHIELD;
         break;
-    case SPECIES_DISPUTRAW: // Physical -> Special
+    /*case SPECIES_DISPUTRAW: // Physical -> Special
         if (IS_MOVE_PHYSICAL(gCurrentMove) || IS_MOVE_STATUS(gCurrentMove))
             return FALSE;
         gBattleMons[gBattlerAttacker].species = SPECIES_DISPUTRAWSPECIAL;
@@ -1158,7 +1158,7 @@ static bool32 TryAegiFormChange(void)
         if (IS_MOVE_SPECIAL(gCurrentMove) || IS_MOVE_STATUS(gCurrentMove))
             return FALSE;
         gBattleMons[gBattlerAttacker].species = SPECIES_DISPUTRAW;
-        break;
+        break;*/
     }
 
     BattleScriptPushCursor();

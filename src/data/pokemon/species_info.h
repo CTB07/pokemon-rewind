@@ -1374,7 +1374,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .trainerOffset = 0,
        .frontPic = gMonFrontPic_Vanowl,
        .frontPicSize = MON_COORDS_SIZE(64, 64),
-       .frontPicYOffset = 8,
+       .frontPicYOffset = 0,
        .frontAnimFrames = sAnims_Vanowl,
       .backPic = gMonBackPic_Vanowl,
        .backPicSize = MON_COORDS_SIZE(64, 64),
@@ -1773,7 +1773,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        //.eggMoveLearnset = sDeviloatEggMoveLearnset,
 
 },
-[SPECIES_KITKAR] =
+/*[SPECIES_KITKAR] =
     {
         .baseHP        = 54,
         .baseAttack    = 50,
@@ -1880,7 +1880,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        //.teachableLearnset = sCannekoTeachableLearnset,
        //.eggMoveLearnset = sCannekoEggMoveLearnset,
 
-},
+},*/
 [SPECIES_PIKASH] =
     {
         .baseHP        = 50,
@@ -2588,7 +2588,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        //.eggMoveLearnset = sChrysapodEggMoveLearnset,
 
 },
-[SPECIES_ARGIGAMI] =
+/*[SPECIES_ARGIGAMI] =
     {
         .baseHP        = 50,
         .baseAttack    = 10,
@@ -2744,7 +2744,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        //.eggMoveLearnset = sDisputrawspecialEggMoveLearnset,
        .formSpeciesIdTable = sDisputrawFormSpeciesIdTable,
 
-},
+},*/
 
 
 };

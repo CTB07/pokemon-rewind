@@ -289,8 +289,8 @@ const u8 gOgerponCornerstoneMaskPokedexText[] = _(
     "attacks.");
  
  //REWIND
- const u8 gDisputrawPokedexText[] = _(
+ /*const u8 gDisputrawPokedexText[] = _(
     "Disputraw survive harsh beatings by being\n"
     "flexible and easy to trample, like a tree in\n"
     "a hurricane. They pretend to be stronger\n"
-    "Pokémon to scare off attackers.");
+    "Pokémon to scare off attackers.");*/
