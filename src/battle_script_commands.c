@@ -1635,6 +1635,9 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         if (IS_MOVE_PHYSICAL(move))
             calc = (calc * 80) / 100; // 1.2 hustle loss
         break;
+    case ABILITY_LOW_ODDS:
+        calc = (calc * 110) / 100; // 1.1 low odds boost
+        break;
     }
 
     // Target's ability

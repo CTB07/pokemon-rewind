@@ -20799,7 +20799,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Roasts target in debate.\n"
             "Has a chance to burn."),
         .effect = EFFECT_HIT,
-        .power = 100,
+        .power = 90,
         .type = TYPE_PSYCHIC,
         .accuracy = 90,
         .pp = 15,
@@ -20834,7 +20834,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     
     [MOVE_MOB_MENTALITY] =
     {
-        .name = COMPOUND_STRING("MobMentality"),
+        .name = HANDLE_EXPANDED_MOVE_NAME("MobMentality", "Mob Mentality"),
         .description = COMPOUND_STRING(
             "A Fire/Ice dislike bomb.\n"
             "Hits fast, clears stat gains."),
@@ -20935,7 +20935,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     
     [MOVE_JUSTICE_HAMMER] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("Just Hammer", "Justice Hammer"),
+        .name = HANDLE_EXPANDED_MOVE_NAME("JusticeHammr", "Justice Hammer"),
         .description = COMPOUND_STRING(
             "Drops a hammer. Hits,\n"
             "starting Electric Terrain."),
