@@ -3191,6 +3191,8 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
     else
     {
         toCpy = GetTrainerNameFromId(trainerId);
+        if (toCpy[0] == B_BUFF_PLACEHOLDER_BEGIN && toCpy[1] == B_TXT_RIVAL_NAME)
+            toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
     }
 
     return toCpy;
@@ -3527,6 +3529,10 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                     CopyTrainerHillTrainerText(TRAINER_HILL_TEXT_PLAYER_LOST, gTrainerBattleOpponent_A);
                     toCpy = gStringVar4;
                 }
+                else if (BATTLE_TYPE_TRAINER && GetTrainerBattleMode() == 13)
+                {
+                    toCpy = GetTrainerWonSpeech();
+                }
                 break;
             case B_TXT_26: // ?
                 if (GetBattlerSide(gBattleScripting.battler) != B_SIDE_PLAYER)
@@ -3676,6 +3682,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                     toCpy = sText_Your2;
                 else
                     toCpy = sText_Opposing2;
+                break;
+            case B_TXT_RIVAL_NAME:
+                toCpy = gSaveBlock2Ptr->rivalName;
                 break;
             }
 

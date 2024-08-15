@@ -90,7 +90,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_RIVAL_AND_PROFESSOR"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RIVAL",
@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_RIVAL_AND_PROFESSOR"
     }
   ],
   "warp_events": [
@@ -111,7 +111,7 @@
       "x": 35,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_HOMEGE_TOWN",
+      "dest_map": "MAP_HOMEGE_TOWN_PROFESSOR_SEQUOIAS_LAB",
       "dest_warp_id": "0"
     },
     {
@@ -128,9 +128,9 @@
       "x": 35,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_HOMEGE_INTRO_STATE",
+      "var_value": "3",
+      "script": "HomegeTown_EventScript_NeedToHelpFindPokemonTrigger"
     },
     {
       "type": "trigger",
@@ -167,6 +167,15 @@
       "var": "VAR_SEQUOIA_LAB_STATE",
       "var_value": "0",
       "script": "HomegeTown_EventScript_NeedPokemonTriggerBot"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_HOMEGE_INTRO_STATE",
+      "var_value": "2",
+      "script": "HomegeTown_EventScript_LabStarterTrigger"
     }
   ],
   "bg_events": [

@@ -273,9 +273,9 @@ HomegeTown_EventScript_LabStarterTrigger::
 # 137 "data/maps/HomegeTown/scripts.pory"
 	setvar VAR_HOMEGE_INTRO_STATE, 3
 # 138 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_0x8004, 29
+	setvar VAR_0x8004, 35
 # 139 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_0x8005, 6
+	setvar VAR_0x8005, 11
 # 140 "data/maps/HomegeTown/scripts.pory"
 	playbgm MUS_HELP, 0
 # 141 "data/maps/HomegeTown/scripts.pory"
@@ -295,7 +295,7 @@ HomegeTown_EventScript_LabStarterTrigger::
 # 148 "data/maps/HomegeTown/scripts.pory"
 	addobject LOCALID_PAROPEAT
 # 149 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PAROPEAT, 29, 6
+	setobjectxy LOCALID_PAROPEAT, 35, 11
 # 150 "data/maps/HomegeTown/scripts.pory"
 	applymovement LOCALID_PAROPEAT, HomegeTown_Movement_ParopeatRunaway
 # 151 "data/maps/HomegeTown/scripts.pory"
@@ -303,7 +303,7 @@ HomegeTown_EventScript_LabStarterTrigger::
 # 152 "data/maps/HomegeTown/scripts.pory"
 	addobject LOCALID_PRIMATIO
 # 153 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PRIMATIO, 29, 6
+	setobjectxy LOCALID_PRIMATIO, 35, 11
 # 154 "data/maps/HomegeTown/scripts.pory"
 	applymovement LOCALID_PRIMATIO, HomegeTown_Movement_PrimatioRunaway
 # 155 "data/maps/HomegeTown/scripts.pory"
@@ -311,17 +311,17 @@ HomegeTown_EventScript_LabStarterTrigger::
 # 156 "data/maps/HomegeTown/scripts.pory"
 	addobject LOCALID_SUBSTEE
 # 157 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_SUBSTEE, 29, 6
+	setobjectxy LOCALID_SUBSTEE, 35, 11
 # 158 "data/maps/HomegeTown/scripts.pory"
 	applymovement LOCALID_SUBSTEE, HomegeTown_Movement_SubsteeRunaway
 # 159 "data/maps/HomegeTown/scripts.pory"
 	waitmovement 0
 # 160 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PAROPEAT, 28, 36
+	setobjectxy LOCALID_PAROPEAT, 12, 28
 # 161 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PRIMATIO, 10, 38
+	setobjectxy LOCALID_PRIMATIO, 34, 45
 # 162 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_SUBSTEE, 6, 18
+	setobjectxy LOCALID_SUBSTEE, 13, 38
 # 163 "data/maps/HomegeTown/scripts.pory"
 	addobject LOCALID_PROF
 # 164 "data/maps/HomegeTown/scripts.pory"

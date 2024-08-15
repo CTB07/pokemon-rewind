@@ -859,6 +859,19 @@
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 
+#define TRAINER_REWIND_RYAN                   1
+#define TRAINER_REWIND_BILLY                  2
+#define TRAINER_REWIND_SHIZUKU                3
+#define TRAINER_RIVAL_LAB_PAROPEAT            4
+#define TRAINER_RIVAL_LAB_PRIMATIO            5
+#define TRAINER_RIVAL_LAB_SUBSTEE             6
+#define TRAINER_TIANA_ROUTE_1_PAROPEAT        7
+#define TRAINER_TIANA_ROUTE_1_PRIMATIO        8
+#define TRAINER_TIANA_ROUTE_1_SUBSTEE         9
+#define TRAINER_MATT_ROUTE_1_PAROPEAT        10
+#define TRAINER_MATT_ROUTE_1_PRIMATIO        11
+#define TRAINER_MATT_ROUTE_1_SUBSTEE         12
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space

@@ -44,7 +44,7 @@
 
 #define FLAG_HIDE_STARTERS   0x20 // Was Unused Flag, REWIND FLAG
 #define FLAG_HIDE_RIVAL_AND_PROFESSOR    0x21 // Was Unused Flag, REWIND FLAG
-#define FLAG_RECEIVE_STARTERS    0x28    0x22 // Unused Flag
+#define FLAG_RECEIVE_STARTERS      0x22 // Unused Flag
 #define FLAG_LAB_INTRO_SEQUENCE    0x23 // Unused Flag
 #define FLAG_HIDE_RIVAL_ROUTE_1    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag

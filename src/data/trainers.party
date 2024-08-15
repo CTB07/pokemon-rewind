@@ -124,7 +124,7 @@ Carvanha
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
+/*=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -135,9 +135,9 @@ AI: Check Bad Move
 
 Zubat
 Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe*/
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
+/*=== TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -148,9 +148,9 @@ AI: Check Bad Move
 
 Carvanha
 Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe*/
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
+/*=== TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
 Name: GRUNT
 Class: Team Aqua
 Pic: Aqua Grunt M
@@ -161,7 +161,7 @@ AI: Check Bad Move
 
 Poochyena
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe*/
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
 Name: GRUNT
@@ -16871,5 +16871,44 @@ Music: Male
 Double Battle: No
 
 Kyogre
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_RIVAL_LAB_PAROPEAT ===
+Name: {B_RIVAL_NAME}
+Class: Rival
+Pic: Rival
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Primatio
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_RIVAL_LAB_PRIMATIO ===
+Name: {B_RIVAL_NAME}
+Class: Rival
+Pic: Rival
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Substee
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_RIVAL_LAB_SUBSTEE ===
+Name: {B_RIVAL_NAME}
+Class: Rival
+Pic: Rival
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Paropeat
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

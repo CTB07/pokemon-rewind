@@ -34,20 +34,20 @@
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_HOMEGE_TOWN_PLAYER_HOUSE_2F",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     },
     {
       "x": 8,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_HOMEGE_TOWN_PLAYER_HOUSE_1F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_HOMEGE_TOWN",
+      "dest_warp_id": "1"
     },
     {
       "x": 9,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_HOMEGE_TOWN_PLAYER_HOUSE_1F",
+      "dest_map": "MAP_HOMEGE_TOWN",
       "dest_warp_id": "1"
     }
   ],
