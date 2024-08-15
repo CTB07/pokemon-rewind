@@ -1355,3 +1355,63 @@ static const struct SpriteFrameImage sPicTable_KirliaOld[] = {
 static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
     overworld_ascending_frames(gObjectEventPic_RubySapphireMayNormal, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Paropeat[] = {
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Paropeat, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Primatio[] = {
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Primatio, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Substee[] = {
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Substee, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_ProfSequoia[] = {
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 0),
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 1),
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 2),
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 3),
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 4),
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 5),
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 6),
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 7),
+    overworld_frame(gObjectEventPic_ProfSequoia, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Rival[] = {
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Rival, 2, 4, 8),
+};

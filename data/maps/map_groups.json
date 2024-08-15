@@ -1,5 +1,7 @@
 {
   "group_order": [
+    "gMapGroup_RewindTownsAndRoutes",
+    "gMapGroup_IndoorHomege",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -34,6 +36,14 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124"
+  ],
+  "gMapGroup_RewindTownsAndRoutes": [
+    "HomegeTown"
+  ],
+  "gMapGroup_IndoorHomege": [
+    "HomegeTown_PlayerHouse_1F",
+    "HomegeTown_PlayerHouse_2F",
+    "HomegeTown_ProfessorSequoiasLab"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

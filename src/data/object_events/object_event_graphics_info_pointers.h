@@ -236,6 +236,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphir
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireMay;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lugia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Paropeat;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Primatio;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Substee;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfSequoia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rival;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -488,6 +493,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LINK_RS_MAY] =              &gObjectEventGraphicsInfo_RubySapphireMay,
     [OBJ_EVENT_GFX_LUGIA] =                    &gObjectEventGraphicsInfo_Lugia,
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
+    [OBJ_EVENT_GFX_PAROPEAT] =                 &gObjectEventGraphicsInfo_Paropeat,
+    [OBJ_EVENT_GFX_PRIMATIO] =                 &gObjectEventGraphicsInfo_Primatio,
+    [OBJ_EVENT_GFX_SUBSTEE] =                  &gObjectEventGraphicsInfo_Substee,
+    [OBJ_EVENT_GFX_PROFSEQUOIA] =              &gObjectEventGraphicsInfo_ProfSequoia,
+    [OBJ_EVENT_GFX_RIVAL] =                    &gObjectEventGraphicsInfo_Rival,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
 };

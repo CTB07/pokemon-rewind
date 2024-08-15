@@ -1074,3 +1074,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/HomegeTown/scripts.inc"
+
+	.include "data/maps/HomegeTown_PlayerHouse_1F/scripts.inc"
+
+	.include "data/maps/HomegeTown_PlayerHouse_2F/scripts.inc"
+
+	.include "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.inc"

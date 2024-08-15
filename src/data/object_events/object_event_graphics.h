@@ -383,6 +383,23 @@ const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/pokemon/question_m
 
 const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal");
 
+// REWIND START
+const u32 gObjectEventPic_Paropeat[] = INCBIN_U32("graphics/object_events/pics/pokemon/paropeat.4bpp");
+const u16 gObjectEventPal_Paropeat[] = INCBIN_U16("graphics/object_events/palettes/paropeat.gbapal");
+
+const u32 gObjectEventPic_Primatio[] = INCBIN_U32("graphics/object_events/pics/pokemon/primatio.4bpp");
+const u16 gObjectEventPal_Primatio[] = INCBIN_U16("graphics/object_events/palettes/primatio.gbapal");
+
+const u32 gObjectEventPic_Substee[] = INCBIN_U32("graphics/object_events/pics/pokemon/substee.4bpp");
+const u16 gObjectEventPal_Substee[] = INCBIN_U16("graphics/object_events/palettes/substee.gbapal");
+
+const u32 gObjectEventPic_ProfSequoia[] = INCBIN_U32("graphics/object_events/pics/people/profsequoia.4bpp");
+const u16 gObjectEventPal_ProfSequoia[] = INCBIN_U16("graphics/object_events/palettes/profsequoia.gbapal");
+
+const u32 gObjectEventPic_Rival[] = INCBIN_U32("graphics/object_events/pics/people/rival.4bpp");
+const u16 gObjectEventPal_Rival[] = INCBIN_U16("graphics/object_events/palettes/rival.gbapal");
+// REWIND END 
+
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");
 const u32 gObjectEventPic_UltraBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_ultra.4bpp");

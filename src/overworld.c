@@ -1583,14 +1583,14 @@ static bool8 RunFieldCallback(void)
 void CB2_NewGame(void)
 {
     FieldClearVBlankHBlankCallbacks();
-    StopMapMusic();
+    //StopMapMusic();
     ResetSafariZoneFlag_();
     NewGameInitData();
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-    gFieldCallback = ExecuteTruckSequence;
+    //gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();

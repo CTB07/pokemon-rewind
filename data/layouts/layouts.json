@@ -4410,6 +4410,46 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOMEGE_TOWN",
+      "name": "HomegeTown_Layout",
+      "width": 44,
+      "height": 54,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Homege",
+      "border_filepath": "data/layouts/HomegeTown/border.bin",
+      "blockdata_filepath": "data/layouts/HomegeTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOMEGE_TOWN_PLAYER_HOUSE_1F",
+      "name": "HomegeTown_PlayerHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/HomegeTown_PlayerHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/HomegeTown_PlayerHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOMEGE_TOWN_PLAYER_HOUSE_2F",
+      "name": "HomegeTown_PlayerHouse_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/HomegeTown_PlayerHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/HomegeTown_PlayerHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOMEGE_TOWN_PROFESSOR_SEQUOIAS_LAB",
+      "name": "HomegeTown_ProfessorSequoiasLab_Layout",
+      "width": 13,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/HomegeTown_ProfessorSequoiasLab/border.bin",
+      "blockdata_filepath": "data/layouts/HomegeTown_ProfessorSequoiasLab/map.bin"
     }
   ]
 }
