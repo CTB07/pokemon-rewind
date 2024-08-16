@@ -791,7 +791,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger1::
 # 396 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
 # 397 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 # 398 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 # 399 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -835,7 +835,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger2::
 # 418 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
 # 419 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 # 420 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 # 421 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -879,7 +879,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger3::
 # 440 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
 # 441 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 # 442 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 # 443 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -923,7 +923,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger4::
 # 462 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
 # 463 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 # 464 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 # 465 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -967,7 +967,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger5::
 # 484 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
 # 485 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 # 486 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 # 487 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -1011,7 +1011,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger6::
 # 506 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
 # 507 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 # 508 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 # 509 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -1347,7 +1347,7 @@ HomegeTown_ProfessorSequoiasLab_Text_RivalPostBattle:
 # 674 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "I'm going to get a head start\n"
 # 675 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "by training my {STR_VAR_2}.\p"
+	.string "by training my Pokémon.\p"
 # 676 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "Later, loser.$"	
 # 677 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -1359,20 +1359,78 @@ HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToStarter::
 # 680 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	lockall
 # 681 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	bufferspeciesname 1, VAR_0x8005
+	compare VAR_STARTER_MON 0
 # 682 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	msgbox HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToStarter, MSGBOX_DEFAULT
+	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToPrimatio
 # 683 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	closemessage
+	compare VAR_STARTER_MON 1
 # 684 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	releaseall
+	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToSubstee
 # 685 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	end
+	compare VAR_STARTER_MON 2
 # 686 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-
+	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToParopeat
 # 687 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToStarter:
+	releaseall
 # 688 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "{RIVAL}: You hear me, {STR_VAR_2}?\p"
+	end
 # 689 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "We're going to dominate Vidioh.$$"
+
+# 690 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToPrimatio::
+# 691 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	msgbox HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToPrimatio, MSGBOX_DEFAULT
+# 692 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	closemessage
+# 693 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	releaseall
+# 694 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	end
+# 695 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+
+# 696 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToSubstee::
+# 697 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	msgbox HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToSubstee, MSGBOX_DEFAULT
+# 698 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	closemessage
+# 699 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	releaseall
+# 700 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	end
+# 701 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+
+# 702 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToParopeat::
+# 703 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	msgbox HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToParopeat, MSGBOX_DEFAULT
+# 704 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	closemessage
+# 705 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	releaseall
+# 706 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	end
+# 707 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+
+# 708 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToPrimatio:
+# 709 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	.string "{RIVAL}: You hear me, Primatio?\p"
+# 710 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	.string "We're going to dominate Vidioh.$"
+# 711 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+
+# 712 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToSubstee:
+# 713 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	.string "{RIVAL}: You hear me, Substee?\p"
+# 714 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	.string "We're going to dominate Vidioh.$"
+# 715 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+
+# 716 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToParopeat:
+# 717 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	.string "{RIVAL}: You hear me, Paropeat?\p"
+# 718 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
+	.string "We're going to dominate Vidioh.$"

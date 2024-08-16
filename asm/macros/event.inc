@@ -779,6 +779,11 @@
 	trainerbattle TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT, \trainer, 0, \lose_text
 	.endm
 
+	@ Starts a trainer battle with victory text if the player loses.
+	.macro trainerbattle_earlyrival trainer:req, lose_text:req, victory_text:req
+	trainerbattle TRAINER_BATTLE_EARLY_RIVAL, \trainer, 0, \lose_text, \victory_text
+	.endm
+
 	@ Starts a double battle with the player against two trainers
 	@ Takes two trainers and defeat text for each
 	.macro trainerbattle_two_trainers trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
@@ -788,11 +793,6 @@
 	.4byte \lose_text_a
 	.2byte \trainer_b
 	.4byte \lose_text_b
-	.endm
-
-	@ Starts a trainer battle with victory text if the player loses.
-	.macro trainerbattle_earlyrival trainer:req, lose_text:req, victory_text:req
-	trainerbattle TRAINER_BATTLE_EARLY_RIVAL, \trainer, 0, \lose_text, \victory_text
 	.endm
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by the scripts in trainer_battle.inc, which

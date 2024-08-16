@@ -1,0 +1,14 @@
+mapscripts HomegeTown_RivalHouse_1F_MapScripts {
+    
+}
+
+script HomegeTown_RivalHouse_1F_RivalSister {
+    lock
+    faceplayer
+    if (flag(FLAG_LAB_INTRO_SEQUENCE)) {
+        msgbox(format("Oh, if you were looking for {RIVAL}, you just missed him."))
+    } else {
+    	msgbox(format("You're looking for {RIVAL}? He's probably bullying the professor into giving him a starter."))
+        }
+    releaseall
+}

@@ -137,7 +137,7 @@ HomegeTown_PlayerHouse_1F_Movement_MomWalkBackRight:
 	step_end
 
 HomegeTown_PlayerHouse_1F_Text_MomIntro1:
-	.string "MOM: Ah, {PLAYER}! You're finally awake.$"
+	.string "Mom: Ah, {PLAYER}! You're finally awake.$"
 
 HomegeTown_PlayerHouse_1F_Text_MomIntro2:
 	.string "You must have been up late last night!\n"
@@ -146,7 +146,7 @@ HomegeTown_PlayerHouse_1F_Text_MomIntro2:
 	.string "sleeping.$"
 
 HomegeTown_PlayerHouse_1F_Text_MomGivesRunningShoes:
-	.string "MOM: Oh, I almost forgot. Before you\n"
+	.string "Mom: Oh, I almost forgot. Before you\n"
 	.string "head out, I wanted to give you these\l"
 	.string "RUNNING SHOES!$"
 
@@ -155,7 +155,7 @@ HomegeTown_PlayerHouse_1F_Text_SwitchShoesWithRunningShoes:
 	.string "RUNNING SHOES.$"
 
 HomegeTown_PlayerHouse_1F_Text_ExplainRunningShoes:
-	.string "MOM: {PLAYER}, those shoes came with\n"
+	.string "Mom: {PLAYER}, those shoes came with\n"
 	.string "instructions.\p"
 	.string "“Press the B Button while wearing these\n"
 	.string "RUNNING SHOES to run extra-fast!\p"
@@ -164,10 +164,18 @@ HomegeTown_PlayerHouse_1F_Text_ExplainRunningShoes:
 	.string "is, but I'm sure you'll figure it out!$"
 
 HomegeTown_PlayerHouse_1F_Text_ComeHomeIfAnythingHappens:
-	.string "MOM: Don't forget that PROF. SEQUOIA is\n"
+	.string "Mom: Don't forget that PROF. SEQUOIA is\n"
 	.string "waiting for you at the lab.\p"
 	.string "I can't believe you're already old\n"
 	.string "enough to get your first Pokémon!\p"
 	.string "I'll be at home if you need anything,\n"
 	.string "{PLAYER}.$"
+
+HomegeTown_PlayersHouse_1F_EventScript_Mom::
+	lock
+	faceplayer
+	goto_if_set FLAG_LAB_INTRO_SEQUENCE, PlayersHouse_1F_EventScript_MomHealsParty
+	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
+	release
+	end
 `

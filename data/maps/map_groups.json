@@ -38,12 +38,17 @@
     "gMapGroup_IndoorRoute124"
   ],
   "gMapGroup_RewindTownsAndRoutes": [
-    "HomegeTown"
+    "HomegeTown",
+    "Route1"
   ],
   "gMapGroup_IndoorHomege": [
     "HomegeTown_PlayerHouse_1F",
     "HomegeTown_PlayerHouse_2F",
-    "HomegeTown_ProfessorSequoiasLab"
+    "HomegeTown_ProfessorSequoiasLab",
+    "HomegeTown_RivalHouse_1F",
+    "HomegeTown_RivalHouse_2F",
+    "HomegeTown_MattTianaHouse_1F",
+    "HomegeTown_MattTianaHouse_2F"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

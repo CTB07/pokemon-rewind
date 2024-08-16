@@ -1082,3 +1082,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/HomegeTown_PlayerHouse_2F/scripts.inc"
 
 	.include "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.inc"
+
+	.include "data/maps/Route1/scripts.inc"
+
+	.include "data/maps/HomegeTown_RivalHouse_1F/scripts.inc"
+
+	.include "data/maps/HomegeTown_RivalHouse_2F/scripts.inc"
+
+	.include "data/maps/HomegeTown_MattTianaHouse_1F/scripts.inc"
+
+	.include "data/maps/HomegeTown_MattTianaHouse_2F/scripts.inc"

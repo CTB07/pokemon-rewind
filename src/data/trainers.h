@@ -42108,7 +42108,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 16788
-            .species = SPECIES_PRIMATIO,
+            .species = SPECIES_PAROPEAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16790
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -42140,7 +42140,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 16801
-            .species = SPECIES_SUBSTEE,
+            .species = SPECIES_PRIMATIO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16803
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -42172,7 +42172,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 16814
-            .species = SPECIES_PAROPEAT,
+            .species = SPECIES_SUBSTEE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16816
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

@@ -5,18 +5,20 @@ raw `
 .set LOCALID_SUBSTEE, 3
 .set LOCALID_RIVAL, 7
 .set LOCALID_PROF, 6
+.set LOCALID_NICERIVAL, 8
 
 HomegeTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, HomegeTown_OnTransition
 	.byte 0
 
 HomegeTown_OnTransition: 
+	call Common_EventScript_SetupRivalGfxId
 	compare VAR_HOMEGE_INTRO_STATE, 4
 	call_if_ge HomegeTown_EventScript_SetCamperPos
 	end
 
 HomegeTown_EventScript_SetCamperPos::
-	setobjectxyperm LOCALID_CAMPER, 30, 16
+	setobjectxyperm LOCALID_CAMPER, 35, 21
 	setobjectmovementtype LOCALID_CAMPER, MOVEMENT_TYPE_FACE_DOWN
 	return
 
@@ -26,6 +28,10 @@ HomegeTown_EventScript_Camper::
 
 HomegeTown_EventScript_TownSign:: 
 	msgbox HomegeTown_Text_TownSign, MSGBOX_SIGN
+	end
+
+HomegeTown_EventScript_LabDoorBack:: 
+	msgbox HomegeTown_Text_LabDoorBack, MSGBOX_SIGN
 	end
 
 HomegeTown_EventScript_FatMan:: 
@@ -402,6 +408,9 @@ HomegeTown_Text_TownSign:
 	.string "HOMEGE TOWN\n"
 	.string "“A small town full of ambition.”$"
 
+HomegeTown_Text_LabDoorBack: 
+	.string "It's locked.$"
+
 HomegeTown_Text_StopThem:
 .string "???: STOP THEM!$"
 
@@ -518,6 +527,89 @@ HomegeTown_EventScript_ReceivedSubstee::
 HomegeTown_EventScript_ReceiveAndNickname::
 	call Common_EventScript_GetGiftMonPartySlot
 	return
+
+HomegeTown_MattTianaHouseSign::
+	lockall
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq HomegeTown_MattTianaHouseSign_2
+	msgbox HomegeTown_MattTianaHouseSign_Text_1
+HomegeTown_MattTianaHouseSign_1:
+	releaseall
+	return
+
+HomegeTown_MattTianaHouseSign_2:
+	msgbox HomegeTown_MattTianaHouseSign_Text_0
+	goto HomegeTown_MattTianaHouseSign_1
+
+
+HomegeTown_MattTianaHouseSign_Text_0:
+	.string "Tiana's house$"
+
+HomegeTown_MattTianaHouseSign_Text_1:
+	.string "Matt's house$"
+
+HomegeTown_RivalHouseSign::
+	lockall
+	msgbox HomegeTown_RivalHouseSign_Text_0
+	releaseall
+	return
+
+
+HomegeTown_RivalHouseSign_Text_0:
+	.string "{RIVAL}'s house$"
+
+HomegeTown_PlayerHouseSign::
+	lockall
+	msgbox HomegeTown_PlayerHouseSign_Text_0
+	releaseall
+	return
+
+
+HomegeTown_PlayerHouseSign_Text_0:
+	.string "{PLAYER}'s house$"
+
+HomegeTown_MattTiana_Peptalk::
+	lockall
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq HomegeTown_MattTiana_Peptalk_2
+	goto_if_set FLAG_TEMP_1, HomegeTown_MattTiana_Peptalk_8
+	msgbox HomegeTown_MattTiana_Peptalk_Text_3
+HomegeTown_MattTiana_Peptalk_1:
+	setflag FLAG_TEMP_1
+	releaseall
+	return
+
+HomegeTown_MattTiana_Peptalk_2:
+	goto_if_set FLAG_TEMP_1, HomegeTown_MattTiana_Peptalk_5
+	msgbox HomegeTown_MattTiana_Peptalk_Text_1
+	goto HomegeTown_MattTiana_Peptalk_1
+
+HomegeTown_MattTiana_Peptalk_5:
+	msgbox HomegeTown_MattTiana_Peptalk_Text_0
+	goto HomegeTown_MattTiana_Peptalk_1
+
+HomegeTown_MattTiana_Peptalk_8:
+	msgbox HomegeTown_MattTiana_Peptalk_Text_2
+	goto HomegeTown_MattTiana_Peptalk_1
+
+
+HomegeTown_MattTiana_Peptalk_Text_0:
+	.string "Tiana is too focused to notice you.$"
+
+HomegeTown_MattTiana_Peptalk_Text_1:
+	.string "Tiana: I'm good enough, I'm smart\n"
+	.string "enough, and doggone it, people like me!$"
+
+HomegeTown_MattTiana_Peptalk_Text_2:
+	.string "Matt is too focused to notice you.$"
+
+HomegeTown_MattTiana_Peptalk_Text_3:
+	.string "Matt: I'm good enough, I'm smart enough,\n"
+	.string "and doggone it, people like me!$"
+
+
 
 HomegeTown_Text_PlayerReceivedParopeat:
 	.string "{PLAYER} rescued PAROPEAT!$"

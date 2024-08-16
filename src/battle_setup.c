@@ -787,6 +787,10 @@ u8 BattleSetup_GetTerrainId(void)
             return BATTLE_TERRAIN_POND;
         return BATTLE_TERRAIN_CAVE;
     case MAP_TYPE_INDOOR:
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HOMEGE_TOWN_PROFESSOR_SEQUOIAS_LAB) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HOMEGE_TOWN_PROFESSOR_SEQUOIAS_LAB)) //if (MetatileBehavior_IsLab(tileBehavior))
+            {
+                return BATTLE_TERRAIN_LAB;
+            }
     case MAP_TYPE_SECRET_BASE:
         return BATTLE_TERRAIN_BUILDING;
     case MAP_TYPE_UNDERWATER:

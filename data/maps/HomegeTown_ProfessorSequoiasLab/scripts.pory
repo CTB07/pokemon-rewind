@@ -394,7 +394,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger1::
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasPrimatio
 	compare VAR_STARTER_MON 1
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 	end
 
@@ -416,7 +416,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger2::
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasPrimatio
 	compare VAR_STARTER_MON 1
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 	end
 
@@ -438,7 +438,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger3::
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasPrimatio
 	compare VAR_STARTER_MON 1
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 	end
 
@@ -460,7 +460,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger4::
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasPrimatio
 	compare VAR_STARTER_MON 1
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 	end
 
@@ -482,7 +482,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger5::
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasPrimatio
 	compare VAR_STARTER_MON 1
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 	end
 
@@ -504,7 +504,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_Trigger6::
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasPrimatio
 	compare VAR_STARTER_MON 1
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee
-	compare VAR_STARTER_MON 1
+	compare VAR_STARTER_MON 2
 	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasParopeat
 	end
 
@@ -672,19 +672,49 @@ HomegeTown_ProfessorSequoiasLab_Movement_RivalExitSix:
 HomegeTown_ProfessorSequoiasLab_Text_RivalPostBattle:
 	.string "Heh, whatever.\p"
 	.string "I'm going to get a head start\n"
-	.string "by training my {STR_VAR_2}.\p"
+	.string "by training my Pokémon.\p"
 	.string "Later, loser.$"	
 
 
 HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToStarter::
 	lockall
-	bufferspeciesname 1, VAR_0x8005
-	msgbox HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToStarter, MSGBOX_DEFAULT
+	compare VAR_STARTER_MON 0
+	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToPrimatio
+	compare VAR_STARTER_MON 1
+	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToSubstee
+	compare VAR_STARTER_MON 2
+	goto_if_eq HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToParopeat
+	releaseall
+	end
+
+HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToPrimatio::
+	msgbox HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToPrimatio, MSGBOX_DEFAULT
 	closemessage
 	releaseall
 	end
 
-HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToStarter:
-	.string "{RIVAL}: You hear me, {STR_VAR_2}?\p"
-	.string "We're going to dominate Vidioh.$$"
+HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToSubstee::
+	msgbox HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToSubstee, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+HomegeTown_ProfessorSequoiasLab_EventScript_RivalTalkingToParopeat::
+	msgbox HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToParopeat, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToPrimatio:
+	.string "{RIVAL}: You hear me, Primatio?\p"
+	.string "We're going to dominate Vidioh.$"
+
+HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToSubstee:
+	.string "{RIVAL}: You hear me, Substee?\p"
+	.string "We're going to dominate Vidioh.$"
+
+HomegeTown_ProfessorSequoiasLab_Text_RivalTalkingToParopeat:
+	.string "{RIVAL}: You hear me, Paropeat?\p"
+	.string "We're going to dominate Vidioh.$"
+
 `

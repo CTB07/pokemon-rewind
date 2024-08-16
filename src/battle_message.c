@@ -33,6 +33,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/battle_setup.h"
 
 struct BattleWindowText
 {
@@ -3529,7 +3530,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                     CopyTrainerHillTrainerText(TRAINER_HILL_TEXT_PLAYER_LOST, gTrainerBattleOpponent_A);
                     toCpy = gStringVar4;
                 }
-                else if (BATTLE_TYPE_TRAINER && GetTrainerBattleMode() == 13)
+                else if (BATTLE_TYPE_TRAINER && GetTrainerBattleMode() == TRAINER_BATTLE_EARLY_RIVAL)
                 {
                     toCpy = GetTrainerWonSpeech();
                 }

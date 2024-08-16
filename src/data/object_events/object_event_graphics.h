@@ -398,6 +398,15 @@ const u16 gObjectEventPal_ProfSequoia[] = INCBIN_U16("graphics/object_events/pal
 
 const u32 gObjectEventPic_Rival[] = INCBIN_U32("graphics/object_events/pics/people/rival.4bpp");
 const u16 gObjectEventPal_Rival[] = INCBIN_U16("graphics/object_events/palettes/rival.gbapal");
+
+const u32 gObjectEventPic_RewindYoungster[] = INCBIN_U32("graphics/object_events/pics/people/rewind_youngster.4bpp");
+const u16 gObjectEventPal_RewindYoungster[] = INCBIN_U16("graphics/object_events/palettes/rewind_youngster.gbapal");
+
+const u32 gObjectEventPic_RewindLass[] = INCBIN_U32("graphics/object_events/pics/people/rewind_lass.4bpp");
+const u16 gObjectEventPal_RewindLass[] = INCBIN_U16("graphics/object_events/palettes/rewind_lass.gbapal");
+
+const u32 gObjectEventPic_RewindRichBoy[] = INCBIN_U32("graphics/object_events/pics/people/rewind_rich_boy.4bpp");
+const u16 gObjectEventPal_RewindRichBoy[] = INCBIN_U16("graphics/object_events/palettes/rewind_rich_boy.gbapal");
 // REWIND END 
 
 #if OW_FOLLOWERS_POKEBALLS

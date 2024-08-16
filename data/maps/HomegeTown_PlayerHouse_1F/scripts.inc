@@ -277,7 +277,7 @@ HomegeTown_PlayerHouse_1F_Movement_MomWalkBackRight:
 # 139 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 HomegeTown_PlayerHouse_1F_Text_MomIntro1:
 # 140 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
-	.string "MOM: Ah, {PLAYER}! You're finally awake.$"
+	.string "Mom: Ah, {PLAYER}! You're finally awake.$"
 # 141 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 
 # 142 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
@@ -295,7 +295,7 @@ HomegeTown_PlayerHouse_1F_Text_MomIntro2:
 # 148 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 HomegeTown_PlayerHouse_1F_Text_MomGivesRunningShoes:
 # 149 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
-	.string "MOM: Oh, I almost forgot. Before you\n"
+	.string "Mom: Oh, I almost forgot. Before you\n"
 # 150 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 	.string "head out, I wanted to give you these\l"
 # 151 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
@@ -313,7 +313,7 @@ HomegeTown_PlayerHouse_1F_Text_SwitchShoesWithRunningShoes:
 # 157 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 HomegeTown_PlayerHouse_1F_Text_ExplainRunningShoes:
 # 158 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
-	.string "MOM: {PLAYER}, those shoes came with\n"
+	.string "Mom: {PLAYER}, those shoes came with\n"
 # 159 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 	.string "instructions.\p"
 # 160 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
@@ -331,7 +331,7 @@ HomegeTown_PlayerHouse_1F_Text_ExplainRunningShoes:
 # 166 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 HomegeTown_PlayerHouse_1F_Text_ComeHomeIfAnythingHappens:
 # 167 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
-	.string "MOM: Don't forget that PROF. SEQUOIA is\n"
+	.string "Mom: Don't forget that PROF. SEQUOIA is\n"
 # 168 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 	.string "waiting for you at the lab.\p"
 # 169 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
@@ -342,3 +342,19 @@ HomegeTown_PlayerHouse_1F_Text_ComeHomeIfAnythingHappens:
 	.string "I'll be at home if you need anything,\n"
 # 172 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 	.string "{PLAYER}.$"
+# 173 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+
+# 174 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+HomegeTown_PlayersHouse_1F_EventScript_Mom::
+# 175 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+	lock
+# 176 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+	faceplayer
+# 177 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+	goto_if_set FLAG_LAB_INTRO_SEQUENCE, PlayersHouse_1F_EventScript_MomHealsParty
+# 178 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
+# 179 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+	release
+# 180 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+	end

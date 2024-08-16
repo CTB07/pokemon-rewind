@@ -4450,6 +4450,56 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/HomegeTown_ProfessorSequoiasLab/border.bin",
       "blockdata_filepath": "data/layouts/HomegeTown_ProfessorSequoiasLab/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE1",
+      "name": "Route1_Layout",
+      "width": 58,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route1/border.bin",
+      "blockdata_filepath": "data/layouts/Route1/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOMEGE_TOWN_RIVAL_HOUSE_1F",
+      "name": "HomegeTown_RivalHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/HomegeTown_RivalHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/HomegeTown_RivalHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOMEGE_TOWN_RIVAL_HOUSE_2F",
+      "name": "HomegeTown_RivalHouse_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/HomegeTown_RivalHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/HomegeTown_RivalHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOMEGE_TOWN_MATT_TIANA_HOUSE_1F",
+      "name": "HomegeTown_MattTianaHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/HomegeTown_MattTianaHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/HomegeTown_MattTianaHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOMEGE_TOWN_MATT_TIANA_HOUSE_2F",
+      "name": "HomegeTown_MattTianaHouse_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/HomegeTown_MattTianaHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/HomegeTown_MattTianaHouse_2F/map.bin"
     }
   ]
 }

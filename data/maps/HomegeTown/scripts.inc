@@ -13,1092 +13,1276 @@
 # 7 "data/maps/HomegeTown/scripts.pory"
 .set LOCALID_PROF, 6
 # 8 "data/maps/HomegeTown/scripts.pory"
-
+.set LOCALID_NICERIVAL, 8
 # 9 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_MapScripts::
+
 # 10 "data/maps/HomegeTown/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, HomegeTown_OnTransition
+HomegeTown_MapScripts::
 # 11 "data/maps/HomegeTown/scripts.pory"
-	.byte 0
+	map_script MAP_SCRIPT_ON_TRANSITION, HomegeTown_OnTransition
 # 12 "data/maps/HomegeTown/scripts.pory"
-
+	.byte 0
 # 13 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_OnTransition: 
+
 # 14 "data/maps/HomegeTown/scripts.pory"
-	compare VAR_HOMEGE_INTRO_STATE, 4
+HomegeTown_OnTransition: 
 # 15 "data/maps/HomegeTown/scripts.pory"
-	call_if_ge HomegeTown_EventScript_SetCamperPos
+	call Common_EventScript_SetupRivalGfxId
 # 16 "data/maps/HomegeTown/scripts.pory"
-	end
+	compare VAR_HOMEGE_INTRO_STATE, 4
 # 17 "data/maps/HomegeTown/scripts.pory"
-
+	call_if_ge HomegeTown_EventScript_SetCamperPos
 # 18 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_SetCamperPos::
+	end
 # 19 "data/maps/HomegeTown/scripts.pory"
-	setobjectxyperm LOCALID_CAMPER, 30, 16
+
 # 20 "data/maps/HomegeTown/scripts.pory"
-	setobjectmovementtype LOCALID_CAMPER, MOVEMENT_TYPE_FACE_DOWN
+HomegeTown_EventScript_SetCamperPos::
 # 21 "data/maps/HomegeTown/scripts.pory"
-	return
+	setobjectxyperm LOCALID_CAMPER, 35, 21
 # 22 "data/maps/HomegeTown/scripts.pory"
-
+	setobjectmovementtype LOCALID_CAMPER, MOVEMENT_TYPE_FACE_DOWN
 # 23 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_Camper:: 
-# 24 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_Camper, MSGBOX_NPC
-# 25 "data/maps/HomegeTown/scripts.pory"
-	end
-# 26 "data/maps/HomegeTown/scripts.pory"
-
-# 27 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_TownSign:: 
-# 28 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_TownSign, MSGBOX_SIGN
-# 29 "data/maps/HomegeTown/scripts.pory"
-	end
-# 30 "data/maps/HomegeTown/scripts.pory"
-
-# 31 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_FatMan:: 
-# 32 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_FatManTech, MSGBOX_NPC
-# 33 "data/maps/HomegeTown/scripts.pory"
-	end
-# 34 "data/maps/HomegeTown/scripts.pory"
-
-# 35 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_NeedPokemonTriggerTop:: 
-# 36 "data/maps/HomegeTown/scripts.pory"
-	lockall
-# 37 "data/maps/HomegeTown/scripts.pory"
-	playse SE_PIN
-# 38 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerTop
-# 39 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 40 "data/maps/HomegeTown/scripts.pory"
-	call HomegeTown_EventScript_DangerousWithoutPokemon
-# 41 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_TopCamperReturnRight
-# 42 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 43 "data/maps/HomegeTown/scripts.pory"
-	releaseall
-# 44 "data/maps/HomegeTown/scripts.pory"
-	end
-# 45 "data/maps/HomegeTown/scripts.pory"
-
-# 46 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_NeedPokemonTriggerMidTop:: 
-# 47 "data/maps/HomegeTown/scripts.pory"
-	lockall
-# 48 "data/maps/HomegeTown/scripts.pory"
-	playse SE_PIN
-# 49 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerMidTop
-# 50 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 51 "data/maps/HomegeTown/scripts.pory"
-	call HomegeTown_EventScript_DangerousWithoutPokemon
-# 52 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_MidTopCamperReturnRight
-# 53 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 54 "data/maps/HomegeTown/scripts.pory"
-	releaseall
-# 55 "data/maps/HomegeTown/scripts.pory"
-	end
-# 56 "data/maps/HomegeTown/scripts.pory"
-
-# 57 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_NeedPokemonTriggerMidBot:: 
-# 58 "data/maps/HomegeTown/scripts.pory"
-	lockall
-# 59 "data/maps/HomegeTown/scripts.pory"
-	playse SE_PIN
-# 60 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerMidBot
-# 61 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 62 "data/maps/HomegeTown/scripts.pory"
-	call HomegeTown_EventScript_DangerousWithoutPokemon
-# 63 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_MidBotCamperReturnRight
-# 64 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 65 "data/maps/HomegeTown/scripts.pory"
-	releaseall
-# 66 "data/maps/HomegeTown/scripts.pory"
-	end
-# 67 "data/maps/HomegeTown/scripts.pory"
-
-# 68 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_NeedPokemonTriggerBot:: 
-# 69 "data/maps/HomegeTown/scripts.pory"
-	lockall
-# 70 "data/maps/HomegeTown/scripts.pory"
-	playse SE_PIN
-# 71 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerBot
-# 72 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 73 "data/maps/HomegeTown/scripts.pory"
-	call HomegeTown_EventScript_DangerousWithoutPokemon
-# 74 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_BotCamperReturnRight
-# 75 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 76 "data/maps/HomegeTown/scripts.pory"
-	releaseall
-# 77 "data/maps/HomegeTown/scripts.pory"
-	end
-# 78 "data/maps/HomegeTown/scripts.pory"
-
-# 79 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_DangerousWithoutPokemon::
-# 80 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_SorryPalNoPokemon, MSGBOX_DEFAULT
-# 81 "data/maps/HomegeTown/scripts.pory"
-	closemessage
-# 82 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperPushPlayerFromRoute
-# 83 "data/maps/HomegeTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_PushPlayerBackFromRoute
-# 84 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 85 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_GoTalkToProfForPokemon, MSGBOX_DEFAULT
-# 86 "data/maps/HomegeTown/scripts.pory"
-	closemessage
-# 87 "data/maps/HomegeTown/scripts.pory"
 	return
-# 88 "data/maps/HomegeTown/scripts.pory"
+# 24 "data/maps/HomegeTown/scripts.pory"
 
-# 89 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_NeedToHelpFindPokemonTrigger::
-# 90 "data/maps/HomegeTown/scripts.pory"
+# 25 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_Camper:: 
+# 26 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_Camper, MSGBOX_NPC
+# 27 "data/maps/HomegeTown/scripts.pory"
+	end
+# 28 "data/maps/HomegeTown/scripts.pory"
+
+# 29 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_TownSign:: 
+# 30 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_TownSign, MSGBOX_SIGN
+# 31 "data/maps/HomegeTown/scripts.pory"
+	end
+# 32 "data/maps/HomegeTown/scripts.pory"
+
+# 33 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_LabDoorBack:: 
+# 34 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_LabDoorBack, MSGBOX_SIGN
+# 35 "data/maps/HomegeTown/scripts.pory"
+	end
+# 36 "data/maps/HomegeTown/scripts.pory"
+
+# 37 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_FatMan:: 
+# 38 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_FatManTech, MSGBOX_NPC
+# 39 "data/maps/HomegeTown/scripts.pory"
+	end
+# 40 "data/maps/HomegeTown/scripts.pory"
+
+# 41 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_NeedPokemonTriggerTop:: 
+# 42 "data/maps/HomegeTown/scripts.pory"
 	lockall
+# 43 "data/maps/HomegeTown/scripts.pory"
+	playse SE_PIN
+# 44 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerTop
+# 45 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
+# 46 "data/maps/HomegeTown/scripts.pory"
+	call HomegeTown_EventScript_DangerousWithoutPokemon
+# 47 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_TopCamperReturnRight
+# 48 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
+# 49 "data/maps/HomegeTown/scripts.pory"
+	releaseall
+# 50 "data/maps/HomegeTown/scripts.pory"
+	end
+# 51 "data/maps/HomegeTown/scripts.pory"
+
+# 52 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_NeedPokemonTriggerMidTop:: 
+# 53 "data/maps/HomegeTown/scripts.pory"
+	lockall
+# 54 "data/maps/HomegeTown/scripts.pory"
+	playse SE_PIN
+# 55 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerMidTop
+# 56 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
+# 57 "data/maps/HomegeTown/scripts.pory"
+	call HomegeTown_EventScript_DangerousWithoutPokemon
+# 58 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_MidTopCamperReturnRight
+# 59 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
+# 60 "data/maps/HomegeTown/scripts.pory"
+	releaseall
+# 61 "data/maps/HomegeTown/scripts.pory"
+	end
+# 62 "data/maps/HomegeTown/scripts.pory"
+
+# 63 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_NeedPokemonTriggerMidBot:: 
+# 64 "data/maps/HomegeTown/scripts.pory"
+	lockall
+# 65 "data/maps/HomegeTown/scripts.pory"
+	playse SE_PIN
+# 66 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerMidBot
+# 67 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
+# 68 "data/maps/HomegeTown/scripts.pory"
+	call HomegeTown_EventScript_DangerousWithoutPokemon
+# 69 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_MidBotCamperReturnRight
+# 70 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
+# 71 "data/maps/HomegeTown/scripts.pory"
+	releaseall
+# 72 "data/maps/HomegeTown/scripts.pory"
+	end
+# 73 "data/maps/HomegeTown/scripts.pory"
+
+# 74 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_NeedPokemonTriggerBot:: 
+# 75 "data/maps/HomegeTown/scripts.pory"
+	lockall
+# 76 "data/maps/HomegeTown/scripts.pory"
+	playse SE_PIN
+# 77 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerBot
+# 78 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
+# 79 "data/maps/HomegeTown/scripts.pory"
+	call HomegeTown_EventScript_DangerousWithoutPokemon
+# 80 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_BotCamperReturnRight
+# 81 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
+# 82 "data/maps/HomegeTown/scripts.pory"
+	releaseall
+# 83 "data/maps/HomegeTown/scripts.pory"
+	end
+# 84 "data/maps/HomegeTown/scripts.pory"
+
+# 85 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_DangerousWithoutPokemon::
+# 86 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_SorryPalNoPokemon, MSGBOX_DEFAULT
+# 87 "data/maps/HomegeTown/scripts.pory"
+	closemessage
+# 88 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperPushPlayerFromRoute
+# 89 "data/maps/HomegeTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_PushPlayerBackFromRoute
+# 90 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
 # 91 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_NeedToHelpFindPokemon, MSGBOX_DEFAULT
+	msgbox HomegeTown_Text_GoTalkToProfForPokemon, MSGBOX_DEFAULT
 # 92 "data/maps/HomegeTown/scripts.pory"
 	closemessage
 # 93 "data/maps/HomegeTown/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
+	return
 # 94 "data/maps/HomegeTown/scripts.pory"
-	switch VAR_RESULT
-# 95 "data/maps/HomegeTown/scripts.pory"
-	case DIR_EAST, HomegeTown_EventScript_LabTriggerFromLeft
-# 96 "data/maps/HomegeTown/scripts.pory"
-	case DIR_WEST, HomegeTown_EventScript_LabTriggerFromRight
-# 97 "data/maps/HomegeTown/scripts.pory"
-	case DIR_NORTH, HomegeTown_EventScript_LabTriggerFromBottom
-# 98 "data/maps/HomegeTown/scripts.pory"
-	releaseall
-# 99 "data/maps/HomegeTown/scripts.pory"
-	end
-# 100 "data/maps/HomegeTown/scripts.pory"
 
+# 95 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_NeedToHelpFindPokemonTrigger::
+# 96 "data/maps/HomegeTown/scripts.pory"
+	lockall
+# 97 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_NeedToHelpFindPokemon, MSGBOX_DEFAULT
+# 98 "data/maps/HomegeTown/scripts.pory"
+	closemessage
+# 99 "data/maps/HomegeTown/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 100 "data/maps/HomegeTown/scripts.pory"
+	switch VAR_RESULT
 # 101 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_NeedToHelpFindPokemon: 
+	case DIR_EAST, HomegeTown_EventScript_LabTriggerFromLeft
 # 102 "data/maps/HomegeTown/scripts.pory"
-	.string "PROF. SEQUOIA needs me to help search\n"
+	case DIR_WEST, HomegeTown_EventScript_LabTriggerFromRight
 # 103 "data/maps/HomegeTown/scripts.pory"
-	.string "for the runaway Pokémon.\p"
+	case DIR_NORTH, HomegeTown_EventScript_LabTriggerFromBottom
 # 104 "data/maps/HomegeTown/scripts.pory"
-	.string "They can't be in his lab, so I should\n"
+	releaseall
 # 105 "data/maps/HomegeTown/scripts.pory"
-	.string "check somewhere else."
+	end
 # 106 "data/maps/HomegeTown/scripts.pory"
 
 # 107 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_LabTriggerFromLeft::
+HomegeTown_Text_NeedToHelpFindPokemon: 
 # 108 "data/maps/HomegeTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_LabTriggerPushPlayerLeft
+	.string "PROF. SEQUOIA needs me to help search\n"
 # 109 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
+	.string "for the runaway Pokémon.\p"
 # 110 "data/maps/HomegeTown/scripts.pory"
-	end
+	.string "They can't be in his lab, so I should\n"
 # 111 "data/maps/HomegeTown/scripts.pory"
-
+	.string "check somewhere else."
 # 112 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_LabTriggerFromRight::
+
 # 113 "data/maps/HomegeTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_LabTriggerPushPlayerRight
+HomegeTown_EventScript_LabTriggerFromLeft::
 # 114 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_LabTriggerPushPlayerLeft
 # 115 "data/maps/HomegeTown/scripts.pory"
-	end
+	waitmovement 0
 # 116 "data/maps/HomegeTown/scripts.pory"
-
-# 117 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_LabTriggerFromBottom::
-# 118 "data/maps/HomegeTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_LabTriggerPushPlayerDown
-# 119 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
-# 120 "data/maps/HomegeTown/scripts.pory"
 	end
+# 117 "data/maps/HomegeTown/scripts.pory"
+
+# 118 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_LabTriggerFromRight::
+# 119 "data/maps/HomegeTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_LabTriggerPushPlayerRight
+# 120 "data/maps/HomegeTown/scripts.pory"
+	waitmovement 0
 # 121 "data/maps/HomegeTown/scripts.pory"
-
+	end
 # 122 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_LabTriggerPushPlayerLeft:
+
 # 123 "data/maps/HomegeTown/scripts.pory"
-	walk_left
+HomegeTown_EventScript_LabTriggerFromBottom::
 # 124 "data/maps/HomegeTown/scripts.pory"
-	step_end
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_LabTriggerPushPlayerDown
 # 125 "data/maps/HomegeTown/scripts.pory"
-
+	waitmovement 0
 # 126 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_LabTriggerPushPlayerRight:
+	end
 # 127 "data/maps/HomegeTown/scripts.pory"
-	walk_right
+
 # 128 "data/maps/HomegeTown/scripts.pory"
-	step_end
+HomegeTown_Movement_LabTriggerPushPlayerLeft:
 # 129 "data/maps/HomegeTown/scripts.pory"
-
+	walk_left
 # 130 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_LabTriggerPushPlayerDown:
-# 131 "data/maps/HomegeTown/scripts.pory"
-	walk_down
-# 132 "data/maps/HomegeTown/scripts.pory"
 	step_end
-# 133 "data/maps/HomegeTown/scripts.pory"
+# 131 "data/maps/HomegeTown/scripts.pory"
 
+# 132 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Movement_LabTriggerPushPlayerRight:
+# 133 "data/maps/HomegeTown/scripts.pory"
+	walk_right
 # 134 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_LabStarterTrigger::
+	step_end
 # 135 "data/maps/HomegeTown/scripts.pory"
-	lockall
+
 # 136 "data/maps/HomegeTown/scripts.pory"
-	playse SE_PIN
+HomegeTown_Movement_LabTriggerPushPlayerDown:
 # 137 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_HOMEGE_INTRO_STATE, 3
+	walk_down
 # 138 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_0x8004, 35
+	step_end
 # 139 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_0x8005, 11
+
 # 140 "data/maps/HomegeTown/scripts.pory"
-	playbgm MUS_HELP, 0
+HomegeTown_EventScript_LabStarterTrigger::
 # 141 "data/maps/HomegeTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_Exclaim
+	lockall
 # 142 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_StopThem, MSGBOX_DEFAULT
+	playse SE_PIN
 # 143 "data/maps/HomegeTown/scripts.pory"
-	closemessage
+	setvar VAR_HOMEGE_INTRO_STATE, 3
 # 144 "data/maps/HomegeTown/scripts.pory"
-	opendoor VAR_0x8004, VAR_0x8005
+	setvar VAR_0x8004, 35
 # 145 "data/maps/HomegeTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_PlayerStepsAwayFromLabDoor
+	setvar VAR_0x8005, 11
 # 146 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
+	playbgm MUS_HELP, 0
 # 147 "data/maps/HomegeTown/scripts.pory"
-	delay 10
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_Exclaim
 # 148 "data/maps/HomegeTown/scripts.pory"
-	addobject LOCALID_PAROPEAT
+	msgbox HomegeTown_Text_StopThem, MSGBOX_DEFAULT
 # 149 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PAROPEAT, 35, 11
+	closemessage
 # 150 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_PAROPEAT, HomegeTown_Movement_ParopeatRunaway
+	opendoor VAR_0x8004, VAR_0x8005
 # 151 "data/maps/HomegeTown/scripts.pory"
-	delay 10
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_PlayerStepsAwayFromLabDoor
 # 152 "data/maps/HomegeTown/scripts.pory"
-	addobject LOCALID_PRIMATIO
-# 153 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PRIMATIO, 35, 11
-# 154 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_PRIMATIO, HomegeTown_Movement_PrimatioRunaway
-# 155 "data/maps/HomegeTown/scripts.pory"
-	delay 10
-# 156 "data/maps/HomegeTown/scripts.pory"
-	addobject LOCALID_SUBSTEE
-# 157 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_SUBSTEE, 35, 11
-# 158 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_SUBSTEE, HomegeTown_Movement_SubsteeRunaway
-# 159 "data/maps/HomegeTown/scripts.pory"
 	waitmovement 0
+# 153 "data/maps/HomegeTown/scripts.pory"
+	delay 10
+# 154 "data/maps/HomegeTown/scripts.pory"
+	addobject LOCALID_PAROPEAT
+# 155 "data/maps/HomegeTown/scripts.pory"
+	setobjectxy LOCALID_PAROPEAT, 35, 11
+# 156 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_PAROPEAT, HomegeTown_Movement_ParopeatRunaway
+# 157 "data/maps/HomegeTown/scripts.pory"
+	delay 10
+# 158 "data/maps/HomegeTown/scripts.pory"
+	addobject LOCALID_PRIMATIO
+# 159 "data/maps/HomegeTown/scripts.pory"
+	setobjectxy LOCALID_PRIMATIO, 35, 11
 # 160 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PAROPEAT, 12, 28
+	applymovement LOCALID_PRIMATIO, HomegeTown_Movement_PrimatioRunaway
 # 161 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PRIMATIO, 34, 45
+	delay 10
 # 162 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_SUBSTEE, 13, 38
+	addobject LOCALID_SUBSTEE
 # 163 "data/maps/HomegeTown/scripts.pory"
-	addobject LOCALID_PROF
+	setobjectxy LOCALID_SUBSTEE, 35, 11
 # 164 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_PROF, HomegeTown_Movement_ProfRunsOutOfLab
+	applymovement LOCALID_SUBSTEE, HomegeTown_Movement_SubsteeRunaway
 # 165 "data/maps/HomegeTown/scripts.pory"
 	waitmovement 0
 # 166 "data/maps/HomegeTown/scripts.pory"
-	addobject LOCALID_RIVAL
+	setobjectxy LOCALID_PAROPEAT, 12, 28
 # 167 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_RIVAL, HomegeTown_Movement_RivalWalksOutOfLab
+	setobjectxy LOCALID_PRIMATIO, 34, 45
 # 168 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
+	setobjectxy LOCALID_SUBSTEE, 13, 38
 # 169 "data/maps/HomegeTown/scripts.pory"
-	closedoor VAR_0x8004, VAR_0x8005
+	addobject LOCALID_PROF
 # 170 "data/maps/HomegeTown/scripts.pory"
-	delay 50
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfRunsOutOfLab
 # 171 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_PROF, HomegeTown_Movement_ProfApproachesPlayerRival
+	waitmovement 0
 # 172 "data/maps/HomegeTown/scripts.pory"
-	waitmovement 0
+	addobject LOCALID_RIVAL
 # 173 "data/maps/HomegeTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_PlayerLooksDown
+	applymovement LOCALID_RIVAL, HomegeTown_Movement_RivalWalksOutOfLab
 # 174 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_ProfNeedsHelp, MSGBOX_DEFAULT
-# 175 "data/maps/HomegeTown/scripts.pory"
-	closemessage
-# 176 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_RIVAL, HomegeTown_Movement_RivalStepTalk
-# 177 "data/maps/HomegeTown/scripts.pory"
 	waitmovement 0
+# 175 "data/maps/HomegeTown/scripts.pory"
+	closedoor VAR_0x8004, VAR_0x8005
+# 176 "data/maps/HomegeTown/scripts.pory"
+	delay 50
+# 177 "data/maps/HomegeTown/scripts.pory"
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfApproachesPlayerRival
 # 178 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_RivalWhatever, MSGBOX_DEFAULT
+	waitmovement 0
 # 179 "data/maps/HomegeTown/scripts.pory"
-	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_PlayerLooksDown
 # 180 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_ProfLetsGetMoving, MSGBOX_DEFAULT
+	msgbox HomegeTown_Text_ProfNeedsHelp, MSGBOX_DEFAULT
 # 181 "data/maps/HomegeTown/scripts.pory"
 	closemessage
 # 182 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_PROF, HomegeTown_Movement_ProfStartsSearching
+	applymovement LOCALID_RIVAL, HomegeTown_Movement_RivalStepTalk
 # 183 "data/maps/HomegeTown/scripts.pory"
-	applymovement LOCALID_RIVAL, HomegeTown_Movement_RivalStartsSearching
-# 184 "data/maps/HomegeTown/scripts.pory"
 	waitmovement 0
+# 184 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_RivalWhatever, MSGBOX_DEFAULT
 # 185 "data/maps/HomegeTown/scripts.pory"
-	removeobject LOCALID_RIVAL
+	closemessage
 # 186 "data/maps/HomegeTown/scripts.pory"
-	removeobject LOCALID_PROF
+	msgbox HomegeTown_Text_ProfLetsGetMoving, MSGBOX_DEFAULT
 # 187 "data/maps/HomegeTown/scripts.pory"
-	fadedefaultbgm
+	closemessage
 # 188 "data/maps/HomegeTown/scripts.pory"
-	clearflag FLAG_HIDE_STARTERS 		@ Should show the starers in Overworld
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfStartsSearching
 # 189 "data/maps/HomegeTown/scripts.pory"
-	releaseall
+	applymovement LOCALID_RIVAL, HomegeTown_Movement_RivalStartsSearching
 # 190 "data/maps/HomegeTown/scripts.pory"
-	end
+	waitmovement 0
 # 191 "data/maps/HomegeTown/scripts.pory"
-
+	removeobject LOCALID_RIVAL
 # 192 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_Paropeat::
+	removeobject LOCALID_PROF
 # 193 "data/maps/HomegeTown/scripts.pory"
-	lockall
+	fadedefaultbgm
 # 194 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_STARTER_MON 0
+	clearflag FLAG_HIDE_STARTERS 		@ Should show the starers in Overworld
 # 195 "data/maps/HomegeTown/scripts.pory"
-	showmonpic SPECIES_PAROPEAT, 10, 3
+	releaseall
 # 196 "data/maps/HomegeTown/scripts.pory"
-	playmoncry SPECIES_PAROPEAT, 0
+	end
 # 197 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_ParopeatIntro, MSGBOX_DEFAULT
+
 # 198 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_RescueParopeatYesNo, MSGBOX_YESNO
+HomegeTown_EventScript_Paropeat::
 # 199 "data/maps/HomegeTown/scripts.pory"
-	waitmoncry
+	lockall
 # 200 "data/maps/HomegeTown/scripts.pory"
-	compare VAR_RESULT, YES
+	setvar VAR_STARTER_MON 0
 # 201 "data/maps/HomegeTown/scripts.pory"
-	call_if_eq HomegeTown_EventScript_RescuedParopeat
+	showmonpic SPECIES_PAROPEAT, 10, 3
 # 202 "data/maps/HomegeTown/scripts.pory"
-	hidemonpic
+	playmoncry SPECIES_PAROPEAT, 0
 # 203 "data/maps/HomegeTown/scripts.pory"
-	closemessage
+	msgbox HomegeTown_Text_ParopeatIntro, MSGBOX_DEFAULT
 # 204 "data/maps/HomegeTown/scripts.pory"
-	release
+	msgbox HomegeTown_Text_RescueParopeatYesNo, MSGBOX_YESNO
 # 205 "data/maps/HomegeTown/scripts.pory"
-	end
+	waitmoncry
 # 206 "data/maps/HomegeTown/scripts.pory"
-
+	compare VAR_RESULT, YES
 # 207 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_Primatio::
+	call_if_eq HomegeTown_EventScript_RescuedParopeat
 # 208 "data/maps/HomegeTown/scripts.pory"
-	lockall
+	hidemonpic
 # 209 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_STARTER_MON 1
+	closemessage
 # 210 "data/maps/HomegeTown/scripts.pory"
-	showmonpic SPECIES_PRIMATIO, 10, 3
+	release
 # 211 "data/maps/HomegeTown/scripts.pory"
-	playmoncry SPECIES_PRIMATIO, 0
+	end
 # 212 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_PrimatioIntro, MSGBOX_DEFAULT
+
 # 213 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_RescuePrimatioYesNo, MSGBOX_YESNO
+HomegeTown_EventScript_Primatio::
 # 214 "data/maps/HomegeTown/scripts.pory"
-	waitmoncry
-# 215 "data/maps/HomegeTown/scripts.pory"
-	compare VAR_RESULT, YES
-# 216 "data/maps/HomegeTown/scripts.pory"
-	call_if_eq HomegeTown_EventScript_RescuedPrimatio
-# 217 "data/maps/HomegeTown/scripts.pory"
-	hidemonpic
-# 218 "data/maps/HomegeTown/scripts.pory"
-	closemessage
-# 219 "data/maps/HomegeTown/scripts.pory"
-	release
-# 220 "data/maps/HomegeTown/scripts.pory"
-	end
-# 221 "data/maps/HomegeTown/scripts.pory"
-
-# 222 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_Substee::
-# 223 "data/maps/HomegeTown/scripts.pory"
 	lockall
-# 224 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_STARTER_MON 2
-# 225 "data/maps/HomegeTown/scripts.pory"
-	playmoncry SPECIES_SUBSTEE, 0
-# 226 "data/maps/HomegeTown/scripts.pory"
-	showmonpic SPECIES_SUBSTEE, 10, 3
-# 227 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_SubsteeIntro, MSGBOX_DEFAULT
-# 228 "data/maps/HomegeTown/scripts.pory"
-	msgbox HomegeTown_Text_RescueSubsteeYesNo, MSGBOX_YESNO
-# 229 "data/maps/HomegeTown/scripts.pory"
+# 215 "data/maps/HomegeTown/scripts.pory"
+	setvar VAR_STARTER_MON 1
+# 216 "data/maps/HomegeTown/scripts.pory"
+	showmonpic SPECIES_PRIMATIO, 10, 3
+# 217 "data/maps/HomegeTown/scripts.pory"
+	playmoncry SPECIES_PRIMATIO, 0
+# 218 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_PrimatioIntro, MSGBOX_DEFAULT
+# 219 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_RescuePrimatioYesNo, MSGBOX_YESNO
+# 220 "data/maps/HomegeTown/scripts.pory"
 	waitmoncry
-# 230 "data/maps/HomegeTown/scripts.pory"
+# 221 "data/maps/HomegeTown/scripts.pory"
 	compare VAR_RESULT, YES
-# 231 "data/maps/HomegeTown/scripts.pory"
-	call_if_eq HomegeTown_EventScript_RescuedSubstee
-# 232 "data/maps/HomegeTown/scripts.pory"
+# 222 "data/maps/HomegeTown/scripts.pory"
+	call_if_eq HomegeTown_EventScript_RescuedPrimatio
+# 223 "data/maps/HomegeTown/scripts.pory"
 	hidemonpic
-# 233 "data/maps/HomegeTown/scripts.pory"
+# 224 "data/maps/HomegeTown/scripts.pory"
 	closemessage
-# 234 "data/maps/HomegeTown/scripts.pory"
+# 225 "data/maps/HomegeTown/scripts.pory"
 	release
-# 235 "data/maps/HomegeTown/scripts.pory"
+# 226 "data/maps/HomegeTown/scripts.pory"
 	end
+# 227 "data/maps/HomegeTown/scripts.pory"
+
+# 228 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_Substee::
+# 229 "data/maps/HomegeTown/scripts.pory"
+	lockall
+# 230 "data/maps/HomegeTown/scripts.pory"
+	setvar VAR_STARTER_MON 2
+# 231 "data/maps/HomegeTown/scripts.pory"
+	playmoncry SPECIES_SUBSTEE, 0
+# 232 "data/maps/HomegeTown/scripts.pory"
+	showmonpic SPECIES_SUBSTEE, 10, 3
+# 233 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_SubsteeIntro, MSGBOX_DEFAULT
+# 234 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_Text_RescueSubsteeYesNo, MSGBOX_YESNO
+# 235 "data/maps/HomegeTown/scripts.pory"
+	waitmoncry
 # 236 "data/maps/HomegeTown/scripts.pory"
-
+	compare VAR_RESULT, YES
 # 237 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_Exclaim:
+	call_if_eq HomegeTown_EventScript_RescuedSubstee
 # 238 "data/maps/HomegeTown/scripts.pory"
-	emote_exclamation_mark
+	hidemonpic
 # 239 "data/maps/HomegeTown/scripts.pory"
-	step_end
+	closemessage
 # 240 "data/maps/HomegeTown/scripts.pory"
-
+	release
 # 241 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_ParopeatRunaway:
+	end
 # 242 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
+
 # 243 "data/maps/HomegeTown/scripts.pory"
-	jump_down
+HomegeTown_Movement_Exclaim:
 # 244 "data/maps/HomegeTown/scripts.pory"
-	jump_down
+	emote_exclamation_mark
 # 245 "data/maps/HomegeTown/scripts.pory"
-	jump_down
+	step_end
 # 246 "data/maps/HomegeTown/scripts.pory"
-	jump_right
+
 # 247 "data/maps/HomegeTown/scripts.pory"
-	jump_down
+HomegeTown_Movement_ParopeatRunaway:
 # 248 "data/maps/HomegeTown/scripts.pory"
-	jump_down
+	walk_fast_down
 # 249 "data/maps/HomegeTown/scripts.pory"
 	jump_down
 # 250 "data/maps/HomegeTown/scripts.pory"
-	step_end
+	jump_down
 # 251 "data/maps/HomegeTown/scripts.pory"
-
+	jump_down
 # 252 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_PrimatioRunaway:
+	jump_right
 # 253 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
+	jump_down
 # 254 "data/maps/HomegeTown/scripts.pory"
 	jump_down
 # 255 "data/maps/HomegeTown/scripts.pory"
-	jump_left
+	jump_down
 # 256 "data/maps/HomegeTown/scripts.pory"
-	jump_down
+	step_end
 # 257 "data/maps/HomegeTown/scripts.pory"
-	jump_left
+
 # 258 "data/maps/HomegeTown/scripts.pory"
-	jump_down
+HomegeTown_Movement_PrimatioRunaway:
 # 259 "data/maps/HomegeTown/scripts.pory"
-	jump_left
+	walk_fast_down
 # 260 "data/maps/HomegeTown/scripts.pory"
-	jump_left
-# 261 "data/maps/HomegeTown/scripts.pory"
 	jump_down
+# 261 "data/maps/HomegeTown/scripts.pory"
+	jump_left
 # 262 "data/maps/HomegeTown/scripts.pory"
 	jump_down
 # 263 "data/maps/HomegeTown/scripts.pory"
-	jump_down
+	jump_left
 # 264 "data/maps/HomegeTown/scripts.pory"
-	step_end
-# 265 "data/maps/HomegeTown/scripts.pory"
-
-# 266 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_SubsteeRunaway:
-# 267 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 268 "data/maps/HomegeTown/scripts.pory"
-	jump_left
-# 269 "data/maps/HomegeTown/scripts.pory"
-	jump_left
-# 270 "data/maps/HomegeTown/scripts.pory"
-	jump_left
-# 271 "data/maps/HomegeTown/scripts.pory"
 	jump_down
+# 265 "data/maps/HomegeTown/scripts.pory"
+	jump_left
+# 266 "data/maps/HomegeTown/scripts.pory"
+	jump_left
+# 267 "data/maps/HomegeTown/scripts.pory"
+	jump_down
+# 268 "data/maps/HomegeTown/scripts.pory"
+	jump_down
+# 269 "data/maps/HomegeTown/scripts.pory"
+	jump_down
+# 270 "data/maps/HomegeTown/scripts.pory"
+	step_end
+# 271 "data/maps/HomegeTown/scripts.pory"
+
 # 272 "data/maps/HomegeTown/scripts.pory"
-	jump_left
+HomegeTown_Movement_SubsteeRunaway:
 # 273 "data/maps/HomegeTown/scripts.pory"
-	jump_left
+	walk_fast_down
 # 274 "data/maps/HomegeTown/scripts.pory"
-	jump_up
+	jump_left
 # 275 "data/maps/HomegeTown/scripts.pory"
 	jump_left
 # 276 "data/maps/HomegeTown/scripts.pory"
 	jump_left
 # 277 "data/maps/HomegeTown/scripts.pory"
-	step_end
+	jump_down
 # 278 "data/maps/HomegeTown/scripts.pory"
-
+	jump_left
 # 279 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_ProfRunsOutOfLab:
+	jump_left
 # 280 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
+	jump_up
 # 281 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
+	jump_left
 # 282 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
+	jump_left
 # 283 "data/maps/HomegeTown/scripts.pory"
-	face_down
+	step_end
 # 284 "data/maps/HomegeTown/scripts.pory"
-	step_end
+
 # 285 "data/maps/HomegeTown/scripts.pory"
-
+HomegeTown_Movement_ProfRunsOutOfLab:
 # 286 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_RivalWalksOutOfLab:
+	walk_fast_down
 # 287 "data/maps/HomegeTown/scripts.pory"
-	walk_down
+	walk_fast_down
 # 288 "data/maps/HomegeTown/scripts.pory"
-	step_end
+	walk_fast_left
 # 289 "data/maps/HomegeTown/scripts.pory"
-
-# 290 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_PlayerLooksDown:
-# 291 "data/maps/HomegeTown/scripts.pory"
 	face_down
+# 290 "data/maps/HomegeTown/scripts.pory"
+	step_end
+# 291 "data/maps/HomegeTown/scripts.pory"
+
 # 292 "data/maps/HomegeTown/scripts.pory"
-	step_end
+HomegeTown_Movement_RivalWalksOutOfLab:
 # 293 "data/maps/HomegeTown/scripts.pory"
-
+	walk_down
 # 294 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_ProfApproachesPlayerRival:
+	step_end
 # 295 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_right
+
 # 296 "data/maps/HomegeTown/scripts.pory"
-	face_up
+HomegeTown_Movement_PlayerLooksDown:
 # 297 "data/maps/HomegeTown/scripts.pory"
-	step_end
+	face_down
 # 298 "data/maps/HomegeTown/scripts.pory"
-
-# 299 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_ProfStartsSearching:
-# 300 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 301 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 302 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 303 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 304 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 305 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 306 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 307 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 308 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 309 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 310 "data/maps/HomegeTown/scripts.pory"
-	step_end	
-# 311 "data/maps/HomegeTown/scripts.pory"
-
-# 312 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_RivalStartsSearching:
-# 313 "data/maps/HomegeTown/scripts.pory"
-	delay_8
-# 314 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 315 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 316 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 317 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 318 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 319 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_left
-# 320 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 321 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 322 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 323 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 324 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 325 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_down
-# 326 "data/maps/HomegeTown/scripts.pory"
-	step_end	
-# 327 "data/maps/HomegeTown/scripts.pory"
-
-# 328 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_CamperApproachPlayerTop:
-# 329 "data/maps/HomegeTown/scripts.pory"
-	emote_exclamation_mark
-# 330 "data/maps/HomegeTown/scripts.pory"
-	walk_up
-# 331 "data/maps/HomegeTown/scripts.pory"
-	walk_left
-# 332 "data/maps/HomegeTown/scripts.pory"
 	step_end
+# 299 "data/maps/HomegeTown/scripts.pory"
+
+# 300 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Movement_ProfApproachesPlayerRival:
+# 301 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_right
+# 302 "data/maps/HomegeTown/scripts.pory"
+	face_up
+# 303 "data/maps/HomegeTown/scripts.pory"
+	step_end
+# 304 "data/maps/HomegeTown/scripts.pory"
+
+# 305 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Movement_ProfStartsSearching:
+# 306 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 307 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 308 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 309 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 310 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 311 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 312 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 313 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 314 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 315 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 316 "data/maps/HomegeTown/scripts.pory"
+	step_end	
+# 317 "data/maps/HomegeTown/scripts.pory"
+
+# 318 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Movement_RivalStartsSearching:
+# 319 "data/maps/HomegeTown/scripts.pory"
+	delay_8
+# 320 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 321 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 322 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 323 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 324 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 325 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_left
+# 326 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 327 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 328 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 329 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 330 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 331 "data/maps/HomegeTown/scripts.pory"
+	walk_fast_down
+# 332 "data/maps/HomegeTown/scripts.pory"
+	step_end	
 # 333 "data/maps/HomegeTown/scripts.pory"
 
 # 334 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_TopCamperReturnRight:
+HomegeTown_Movement_CamperApproachPlayerTop:
 # 335 "data/maps/HomegeTown/scripts.pory"
-	walk_right
-# 336 "data/maps/HomegeTown/scripts.pory"
-	walk_right
-# 337 "data/maps/HomegeTown/scripts.pory"
-	walk_down
-# 338 "data/maps/HomegeTown/scripts.pory"
-	face_left
-# 339 "data/maps/HomegeTown/scripts.pory"
-	step_end
-# 340 "data/maps/HomegeTown/scripts.pory"
-
-# 341 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_CamperApproachPlayerMidTop:
-# 342 "data/maps/HomegeTown/scripts.pory"
 	emote_exclamation_mark
-# 343 "data/maps/HomegeTown/scripts.pory"
+# 336 "data/maps/HomegeTown/scripts.pory"
+	walk_up
+# 337 "data/maps/HomegeTown/scripts.pory"
 	walk_left
-# 344 "data/maps/HomegeTown/scripts.pory"
+# 338 "data/maps/HomegeTown/scripts.pory"
 	step_end
-# 345 "data/maps/HomegeTown/scripts.pory"
+# 339 "data/maps/HomegeTown/scripts.pory"
 
-# 346 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_MidTopCamperReturnRight:
-# 347 "data/maps/HomegeTown/scripts.pory"
+# 340 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Movement_TopCamperReturnRight:
+# 341 "data/maps/HomegeTown/scripts.pory"
 	walk_right
-# 348 "data/maps/HomegeTown/scripts.pory"
+# 342 "data/maps/HomegeTown/scripts.pory"
 	walk_right
-# 349 "data/maps/HomegeTown/scripts.pory"
+# 343 "data/maps/HomegeTown/scripts.pory"
+	walk_down
+# 344 "data/maps/HomegeTown/scripts.pory"
 	face_left
+# 345 "data/maps/HomegeTown/scripts.pory"
+	step_end
+# 346 "data/maps/HomegeTown/scripts.pory"
+
+# 347 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Movement_CamperApproachPlayerMidTop:
+# 348 "data/maps/HomegeTown/scripts.pory"
+	emote_exclamation_mark
+# 349 "data/maps/HomegeTown/scripts.pory"
+	walk_left
 # 350 "data/maps/HomegeTown/scripts.pory"
 	step_end
 # 351 "data/maps/HomegeTown/scripts.pory"
 
 # 352 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_CamperApproachPlayerMidBot:
+HomegeTown_Movement_MidTopCamperReturnRight:
 # 353 "data/maps/HomegeTown/scripts.pory"
-	emote_exclamation_mark
+	walk_right
 # 354 "data/maps/HomegeTown/scripts.pory"
-	walk_down
+	walk_right
 # 355 "data/maps/HomegeTown/scripts.pory"
-	walk_left
+	face_left
 # 356 "data/maps/HomegeTown/scripts.pory"
 	step_end
 # 357 "data/maps/HomegeTown/scripts.pory"
 
 # 358 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_MidBotCamperReturnRight:
+HomegeTown_Movement_CamperApproachPlayerMidBot:
 # 359 "data/maps/HomegeTown/scripts.pory"
-	walk_right
-# 360 "data/maps/HomegeTown/scripts.pory"
-	walk_right
-# 361 "data/maps/HomegeTown/scripts.pory"
-	walk_up
-# 362 "data/maps/HomegeTown/scripts.pory"
-	face_left
-# 363 "data/maps/HomegeTown/scripts.pory"
-	step_end
-# 364 "data/maps/HomegeTown/scripts.pory"
-
-# 365 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_CamperApproachPlayerBot:
-# 366 "data/maps/HomegeTown/scripts.pory"
 	emote_exclamation_mark
+# 360 "data/maps/HomegeTown/scripts.pory"
+	walk_down
+# 361 "data/maps/HomegeTown/scripts.pory"
+	walk_left
+# 362 "data/maps/HomegeTown/scripts.pory"
+	step_end
+# 363 "data/maps/HomegeTown/scripts.pory"
+
+# 364 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Movement_MidBotCamperReturnRight:
+# 365 "data/maps/HomegeTown/scripts.pory"
+	walk_right
+# 366 "data/maps/HomegeTown/scripts.pory"
+	walk_right
 # 367 "data/maps/HomegeTown/scripts.pory"
-	walk_down
+	walk_up
 # 368 "data/maps/HomegeTown/scripts.pory"
-	walk_down
-# 369 "data/maps/HomegeTown/scripts.pory"
-	walk_left
-# 370 "data/maps/HomegeTown/scripts.pory"
-	step_end
-# 371 "data/maps/HomegeTown/scripts.pory"
-
-# 372 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_BotCamperReturnRight:
-# 373 "data/maps/HomegeTown/scripts.pory"
-	walk_right
-# 374 "data/maps/HomegeTown/scripts.pory"
-	walk_right
-# 375 "data/maps/HomegeTown/scripts.pory"
-	walk_up
-# 376 "data/maps/HomegeTown/scripts.pory"
-	walk_up
-# 377 "data/maps/HomegeTown/scripts.pory"
 	face_left
+# 369 "data/maps/HomegeTown/scripts.pory"
+	step_end
+# 370 "data/maps/HomegeTown/scripts.pory"
+
+# 371 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Movement_CamperApproachPlayerBot:
+# 372 "data/maps/HomegeTown/scripts.pory"
+	emote_exclamation_mark
+# 373 "data/maps/HomegeTown/scripts.pory"
+	walk_down
+# 374 "data/maps/HomegeTown/scripts.pory"
+	walk_down
+# 375 "data/maps/HomegeTown/scripts.pory"
+	walk_left
+# 376 "data/maps/HomegeTown/scripts.pory"
+	step_end
+# 377 "data/maps/HomegeTown/scripts.pory"
+
 # 378 "data/maps/HomegeTown/scripts.pory"
-	step_end
+HomegeTown_Movement_BotCamperReturnRight:
 # 379 "data/maps/HomegeTown/scripts.pory"
-
+	walk_right
 # 380 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_CamperPushPlayerFromRoute:
+	walk_right
 # 381 "data/maps/HomegeTown/scripts.pory"
-	walk_left
+	walk_up
 # 382 "data/maps/HomegeTown/scripts.pory"
-	step_end
+	walk_up
 # 383 "data/maps/HomegeTown/scripts.pory"
-
+	face_left
 # 384 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_PushPlayerBackFromRoute:
+	step_end
 # 385 "data/maps/HomegeTown/scripts.pory"
-	lock_facing_direction
+
 # 386 "data/maps/HomegeTown/scripts.pory"
-	walk_left
+HomegeTown_Movement_CamperPushPlayerFromRoute:
 # 387 "data/maps/HomegeTown/scripts.pory"
-	unlock_facing_direction
+	walk_left
 # 388 "data/maps/HomegeTown/scripts.pory"
 	step_end
 # 389 "data/maps/HomegeTown/scripts.pory"
 
 # 390 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_PlayerStepsAwayFromLabDoor:
+HomegeTown_Movement_PushPlayerBackFromRoute:
 # 391 "data/maps/HomegeTown/scripts.pory"
-	face_left
-# 392 "data/maps/HomegeTown/scripts.pory"
 	lock_facing_direction
+# 392 "data/maps/HomegeTown/scripts.pory"
+	walk_left
 # 393 "data/maps/HomegeTown/scripts.pory"
-	walk_fast_right
-# 394 "data/maps/HomegeTown/scripts.pory"
 	unlock_facing_direction
-# 395 "data/maps/HomegeTown/scripts.pory"
+# 394 "data/maps/HomegeTown/scripts.pory"
 	step_end
+# 395 "data/maps/HomegeTown/scripts.pory"
+
 # 396 "data/maps/HomegeTown/scripts.pory"
-
+HomegeTown_Movement_PlayerStepsAwayFromLabDoor:
 # 397 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Movement_RivalStepTalk:
+	face_left
 # 398 "data/maps/HomegeTown/scripts.pory"
-	walk_in_place_down
+	lock_facing_direction
 # 399 "data/maps/HomegeTown/scripts.pory"
-	step_end	
+	walk_fast_right
 # 400 "data/maps/HomegeTown/scripts.pory"
-
+	unlock_facing_direction
 # 401 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_TownSign: 
+	step_end
 # 402 "data/maps/HomegeTown/scripts.pory"
-	.string "HOMEGE TOWN\n"
+
 # 403 "data/maps/HomegeTown/scripts.pory"
-	.string "“A small town full of ambition.”$"
+HomegeTown_Movement_RivalStepTalk:
 # 404 "data/maps/HomegeTown/scripts.pory"
-
+	walk_in_place_down
 # 405 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_StopThem:
+	step_end	
 # 406 "data/maps/HomegeTown/scripts.pory"
-.string "???: STOP THEM!$"
+
 # 407 "data/maps/HomegeTown/scripts.pory"
-
+HomegeTown_Text_TownSign: 
 # 408 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_ProfNeedsHelp:
+	.string "HOMEGE TOWN\n"
 # 409 "data/maps/HomegeTown/scripts.pory"
-.string "PROF. SEQUOIA: {RIVAL}, {PLAYER}, I need\n"
+	.string "“A small town full of ambition.”$"
 # 410 "data/maps/HomegeTown/scripts.pory"
-.string "your help!\p"
+
 # 411 "data/maps/HomegeTown/scripts.pory"
-.string "We need to get these Pokémon back\n"
+HomegeTown_Text_LabDoorBack: 
 # 412 "data/maps/HomegeTown/scripts.pory"
-.string "quickly!\p"
+	.string "It's locked.$"
 # 413 "data/maps/HomegeTown/scripts.pory"
-.string "Will you two please help me find the\n"
+
 # 414 "data/maps/HomegeTown/scripts.pory"
-.string "runaway Pokémon?$"
+HomegeTown_Text_StopThem:
 # 415 "data/maps/HomegeTown/scripts.pory"
-
+.string "???: STOP THEM!$"
 # 416 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_RivalWhatever:
-# 417 "data/maps/HomegeTown/scripts.pory"
-.string "{RIVAL}: Yeah, sure. Whatever.$"
-# 418 "data/maps/HomegeTown/scripts.pory"
 
+# 417 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_ProfNeedsHelp:
+# 418 "data/maps/HomegeTown/scripts.pory"
+.string "PROF. SEQUOIA: {RIVAL}, {PLAYER}, I need\n"
 # 419 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_ProfLetsGetMoving:
+.string "your help!\p"
 # 420 "data/maps/HomegeTown/scripts.pory"
-.string "SEQUOIA: Great, now let's get searching.\n"
+.string "We need to get these Pokémon back\n"
 # 421 "data/maps/HomegeTown/scripts.pory"
-.string "They couldn't have gone far.\p"
+.string "quickly!\p"
 # 422 "data/maps/HomegeTown/scripts.pory"
-.string "SEQUOIA: After we find them, come back\n"
+.string "Will you two please help me find the\n"
 # 423 "data/maps/HomegeTown/scripts.pory"
-.string "to my lab immediately!$"
+.string "runaway Pokémon?$"
 # 424 "data/maps/HomegeTown/scripts.pory"
 
 # 425 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_ParopeatIntro:
+HomegeTown_Text_RivalWhatever:
 # 426 "data/maps/HomegeTown/scripts.pory"
-.string "This is PAROPEAT, the ECHO POKéMON.\n$"
+.string "{RIVAL}: Yeah, sure. Whatever.$"
 # 427 "data/maps/HomegeTown/scripts.pory"
 
 # 428 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_PrimatioIntro:
+HomegeTown_Text_ProfLetsGetMoving:
 # 429 "data/maps/HomegeTown/scripts.pory"
-.string "This is PRIMATIO, the FEEDBACK\n"
+.string "SEQUOIA: Great, now let's get searching.\n"
 # 430 "data/maps/HomegeTown/scripts.pory"
-.string "POKéMON.$"
+.string "They couldn't have gone far.\p"
 # 431 "data/maps/HomegeTown/scripts.pory"
-
+.string "SEQUOIA: After we find them, come back\n"
 # 432 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_SubsteeIntro:
+.string "to my lab immediately!$"
 # 433 "data/maps/HomegeTown/scripts.pory"
-.string "This is SUBSTEE, the SUPPORTER\n"
+
 # 434 "data/maps/HomegeTown/scripts.pory"
-.string "POKéMON.$"
+HomegeTown_Text_ParopeatIntro:
 # 435 "data/maps/HomegeTown/scripts.pory"
-
+.string "This is PAROPEAT, the ECHO POKéMON.\n$"
 # 436 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_RescueParopeatYesNo:
+
 # 437 "data/maps/HomegeTown/scripts.pory"
-.string "Will you rescue PAROPEAT?$"
+HomegeTown_Text_PrimatioIntro:
 # 438 "data/maps/HomegeTown/scripts.pory"
-
+.string "This is PRIMATIO, the FEEDBACK\n"
 # 439 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_RescuePrimatioYesNo:
+.string "POKéMON.$"
 # 440 "data/maps/HomegeTown/scripts.pory"
-.string "Will you rescue PRIMATIO?$"
-# 441 "data/maps/HomegeTown/scripts.pory"
 
+# 441 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_SubsteeIntro:
 # 442 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_RescueSubsteeYesNo:
+.string "This is SUBSTEE, the SUPPORTER\n"
 # 443 "data/maps/HomegeTown/scripts.pory"
-.string "Will you rescue SUBSTEE?$"
+.string "POKéMON.$"
 # 444 "data/maps/HomegeTown/scripts.pory"
 
 # 445 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_RescuedParopeat::
+HomegeTown_Text_RescueParopeatYesNo:
 # 446 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_PAROPEAT
+.string "Will you rescue PAROPEAT?$"
 # 447 "data/maps/HomegeTown/scripts.pory"
-	removeobject LOCALID_PAROPEAT
+
 # 448 "data/maps/HomegeTown/scripts.pory"
-	removeobject LOCALID_PRIMATIO
+HomegeTown_Text_RescuePrimatioYesNo:
 # 449 "data/maps/HomegeTown/scripts.pory"
-	removeobject LOCALID_SUBSTEE
+.string "Will you rescue PRIMATIO?$"
 # 450 "data/maps/HomegeTown/scripts.pory"
-	setflag FLAG_HIDE_STARTERS
+
 # 451 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_HOMEGE_INTRO_STATE 4
+HomegeTown_Text_RescueSubsteeYesNo:
 # 452 "data/maps/HomegeTown/scripts.pory"
-	givemon SPECIES_PAROPEAT, 5, ITEM_NONE
+.string "Will you rescue SUBSTEE?$"
 # 453 "data/maps/HomegeTown/scripts.pory"
-	call HomegeTown_EventScript_ReceiveStarter
+
 # 454 "data/maps/HomegeTown/scripts.pory"
-	end
+HomegeTown_EventScript_RescuedParopeat::
 # 455 "data/maps/HomegeTown/scripts.pory"
-
+	setvar VAR_TEMP_1, SPECIES_PAROPEAT
 # 456 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_RescuedPrimatio::
+	removeobject LOCALID_PAROPEAT
 # 457 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_PRIMATIO
+	removeobject LOCALID_PRIMATIO
 # 458 "data/maps/HomegeTown/scripts.pory"
-	removeobject LOCALID_PAROPEAT
+	removeobject LOCALID_SUBSTEE
 # 459 "data/maps/HomegeTown/scripts.pory"
-	removeobject LOCALID_PRIMATIO
+	setflag FLAG_HIDE_STARTERS
 # 460 "data/maps/HomegeTown/scripts.pory"
-	removeobject LOCALID_SUBSTEE
+	setvar VAR_HOMEGE_INTRO_STATE 4
 # 461 "data/maps/HomegeTown/scripts.pory"
-	setflag FLAG_HIDE_STARTERS
+	givemon SPECIES_PAROPEAT, 5, ITEM_NONE
 # 462 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_HOMEGE_INTRO_STATE 4
+	call HomegeTown_EventScript_ReceiveStarter
 # 463 "data/maps/HomegeTown/scripts.pory"
-	givemon SPECIES_PRIMATIO, 5, ITEM_NONE
+	end
 # 464 "data/maps/HomegeTown/scripts.pory"
-	call HomegeTown_EventScript_ReceiveStarter
+
 # 465 "data/maps/HomegeTown/scripts.pory"
-	end
+HomegeTown_EventScript_RescuedPrimatio::
 # 466 "data/maps/HomegeTown/scripts.pory"
-
+	setvar VAR_TEMP_1, SPECIES_PRIMATIO
 # 467 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_RescuedSubstee::
-# 468 "data/maps/HomegeTown/scripts.pory"
-	setvar VAR_TEMP_1, SPECIES_SUBSTEE
-# 469 "data/maps/HomegeTown/scripts.pory"
 	removeobject LOCALID_PAROPEAT
-# 470 "data/maps/HomegeTown/scripts.pory"
+# 468 "data/maps/HomegeTown/scripts.pory"
 	removeobject LOCALID_PRIMATIO
-# 471 "data/maps/HomegeTown/scripts.pory"
+# 469 "data/maps/HomegeTown/scripts.pory"
 	removeobject LOCALID_SUBSTEE
-# 472 "data/maps/HomegeTown/scripts.pory"
+# 470 "data/maps/HomegeTown/scripts.pory"
 	setflag FLAG_HIDE_STARTERS
-# 473 "data/maps/HomegeTown/scripts.pory"
+# 471 "data/maps/HomegeTown/scripts.pory"
 	setvar VAR_HOMEGE_INTRO_STATE 4
-# 474 "data/maps/HomegeTown/scripts.pory"
-	givemon SPECIES_SUBSTEE, 5, ITEM_NONE
-# 475 "data/maps/HomegeTown/scripts.pory"
+# 472 "data/maps/HomegeTown/scripts.pory"
+	givemon SPECIES_PRIMATIO, 5, ITEM_NONE
+# 473 "data/maps/HomegeTown/scripts.pory"
 	call HomegeTown_EventScript_ReceiveStarter
+# 474 "data/maps/HomegeTown/scripts.pory"
+	end
+# 475 "data/maps/HomegeTown/scripts.pory"
+
 # 476 "data/maps/HomegeTown/scripts.pory"
-	end
+HomegeTown_EventScript_RescuedSubstee::
 # 477 "data/maps/HomegeTown/scripts.pory"
-
+	setvar VAR_TEMP_1, SPECIES_SUBSTEE
 # 478 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_ReceiveStarter::
+	removeobject LOCALID_PAROPEAT
 # 479 "data/maps/HomegeTown/scripts.pory"
-	hidemonpic
+	removeobject LOCALID_PRIMATIO
 # 480 "data/maps/HomegeTown/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	removeobject LOCALID_SUBSTEE
 # 481 "data/maps/HomegeTown/scripts.pory"
-	compare VAR_STARTER_MON 0
+	setflag FLAG_HIDE_STARTERS
 # 482 "data/maps/HomegeTown/scripts.pory"
-	call_if_eq HomegeTown_EventScript_ReceivedParopeat
+	setvar VAR_HOMEGE_INTRO_STATE 4
 # 483 "data/maps/HomegeTown/scripts.pory"
-	compare VAR_STARTER_MON 1
+	givemon SPECIES_SUBSTEE, 5, ITEM_NONE
 # 484 "data/maps/HomegeTown/scripts.pory"
-	call_if_eq HomegeTown_EventScript_ReceivedPrimatio
+	call HomegeTown_EventScript_ReceiveStarter
 # 485 "data/maps/HomegeTown/scripts.pory"
-	compare VAR_STARTER_MON 2
-# 486 "data/maps/HomegeTown/scripts.pory"
-	call_if_eq HomegeTown_EventScript_ReceivedSubstee
-# 487 "data/maps/HomegeTown/scripts.pory"
-	call HomegeTown_EventScript_ReceiveAndNickname
-# 488 "data/maps/HomegeTown/scripts.pory"
-	closemessage
-# 489 "data/maps/HomegeTown/scripts.pory"
-	warp MAP_HOMEGE_TOWN_PROFESSOR_SEQUOIAS_LAB, 255, 6, 5
-# 490 "data/maps/HomegeTown/scripts.pory"
-	waitstate
-# 491 "data/maps/HomegeTown/scripts.pory"
-	releaseall
-# 492 "data/maps/HomegeTown/scripts.pory"
 	end
+# 486 "data/maps/HomegeTown/scripts.pory"
+
+# 487 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_ReceiveStarter::
+# 488 "data/maps/HomegeTown/scripts.pory"
+	hidemonpic
+# 489 "data/maps/HomegeTown/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 490 "data/maps/HomegeTown/scripts.pory"
+	compare VAR_STARTER_MON 0
+# 491 "data/maps/HomegeTown/scripts.pory"
+	call_if_eq HomegeTown_EventScript_ReceivedParopeat
+# 492 "data/maps/HomegeTown/scripts.pory"
+	compare VAR_STARTER_MON 1
 # 493 "data/maps/HomegeTown/scripts.pory"
-
+	call_if_eq HomegeTown_EventScript_ReceivedPrimatio
 # 494 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_ReceivedParopeat::
+	compare VAR_STARTER_MON 2
 # 495 "data/maps/HomegeTown/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	call_if_eq HomegeTown_EventScript_ReceivedSubstee
 # 496 "data/maps/HomegeTown/scripts.pory"
-	message HomegeTown_Text_PlayerReceivedParopeat
+	call HomegeTown_EventScript_ReceiveAndNickname
 # 497 "data/maps/HomegeTown/scripts.pory"
-	waitmessage
+	closemessage
 # 498 "data/maps/HomegeTown/scripts.pory"
-	waitfanfare
+	warp MAP_HOMEGE_TOWN_PROFESSOR_SEQUOIAS_LAB, 255, 6, 5
 # 499 "data/maps/HomegeTown/scripts.pory"
-	bufferspeciesname 0, SPECIES_PAROPEAT
+	waitstate
 # 500 "data/maps/HomegeTown/scripts.pory"
-	return
+	releaseall
 # 501 "data/maps/HomegeTown/scripts.pory"
-
+	end
 # 502 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_ReceivedPrimatio::
+
 # 503 "data/maps/HomegeTown/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+HomegeTown_EventScript_ReceivedParopeat::
 # 504 "data/maps/HomegeTown/scripts.pory"
-	message HomegeTown_Text_PlayerReceivedPrimatio
-# 505 "data/maps/HomegeTown/scripts.pory"
-	waitmessage
-# 506 "data/maps/HomegeTown/scripts.pory"
-	waitfanfare
-# 507 "data/maps/HomegeTown/scripts.pory"
-	bufferspeciesname 0, SPECIES_PRIMATIO
-# 508 "data/maps/HomegeTown/scripts.pory"
-	return
-# 509 "data/maps/HomegeTown/scripts.pory"
-
-# 510 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_ReceivedSubstee::
-# 511 "data/maps/HomegeTown/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 512 "data/maps/HomegeTown/scripts.pory"
-	message HomegeTown_Text_PlayerReceivedSubstee
-# 513 "data/maps/HomegeTown/scripts.pory"
+# 505 "data/maps/HomegeTown/scripts.pory"
+	message HomegeTown_Text_PlayerReceivedParopeat
+# 506 "data/maps/HomegeTown/scripts.pory"
 	waitmessage
-# 514 "data/maps/HomegeTown/scripts.pory"
+# 507 "data/maps/HomegeTown/scripts.pory"
 	waitfanfare
+# 508 "data/maps/HomegeTown/scripts.pory"
+	bufferspeciesname 0, SPECIES_PAROPEAT
+# 509 "data/maps/HomegeTown/scripts.pory"
+	return
+# 510 "data/maps/HomegeTown/scripts.pory"
+
+# 511 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_ReceivedPrimatio::
+# 512 "data/maps/HomegeTown/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 513 "data/maps/HomegeTown/scripts.pory"
+	message HomegeTown_Text_PlayerReceivedPrimatio
+# 514 "data/maps/HomegeTown/scripts.pory"
+	waitmessage
 # 515 "data/maps/HomegeTown/scripts.pory"
-	bufferspeciesname 0, SPECIES_SUBSTEE
+	waitfanfare
 # 516 "data/maps/HomegeTown/scripts.pory"
-	return
+	bufferspeciesname 0, SPECIES_PRIMATIO
 # 517 "data/maps/HomegeTown/scripts.pory"
-
-# 518 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_EventScript_ReceiveAndNickname::
-# 519 "data/maps/HomegeTown/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 520 "data/maps/HomegeTown/scripts.pory"
 	return
+# 518 "data/maps/HomegeTown/scripts.pory"
+
+# 519 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_ReceivedSubstee::
+# 520 "data/maps/HomegeTown/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
 # 521 "data/maps/HomegeTown/scripts.pory"
-
+	message HomegeTown_Text_PlayerReceivedSubstee
 # 522 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_PlayerReceivedParopeat:
+	waitmessage
 # 523 "data/maps/HomegeTown/scripts.pory"
-	.string "{PLAYER} rescued PAROPEAT!$"
+	waitfanfare
 # 524 "data/maps/HomegeTown/scripts.pory"
-
+	bufferspeciesname 0, SPECIES_SUBSTEE
 # 525 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_PlayerReceivedPrimatio:
+	return
 # 526 "data/maps/HomegeTown/scripts.pory"
-	.string "{PLAYER} rescued PRIMATIO!$"
-# 527 "data/maps/HomegeTown/scripts.pory"
 
+# 527 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_EventScript_ReceiveAndNickname::
 # 528 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_PlayerReceivedSubstee:
+	call Common_EventScript_GetGiftMonPartySlot
 # 529 "data/maps/HomegeTown/scripts.pory"
-	.string "{PLAYER} rescued SUBSTEE!$"
+	return
 # 530 "data/maps/HomegeTown/scripts.pory"
 
 # 531 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_FatManTech: 
+HomegeTown_MattTianaHouseSign::
 # 532 "data/maps/HomegeTown/scripts.pory"
-	.string "The power of technology is astounding!\n"
+	lockall
 # 533 "data/maps/HomegeTown/scripts.pory"
-	.string "I can download and play roms on my PC,\l"
+	checkplayergender
 # 534 "data/maps/HomegeTown/scripts.pory"
-	.string "and I don't even need to pay\l"
+	compare VAR_RESULT, MALE
 # 535 "data/maps/HomegeTown/scripts.pory"
-	.string "anything!\p"
+	goto_if_eq HomegeTown_MattTianaHouseSign_2
 # 536 "data/maps/HomegeTown/scripts.pory"
-	.string "...What do you mean that's not legal?$"
+	msgbox HomegeTown_MattTianaHouseSign_Text_1
 # 537 "data/maps/HomegeTown/scripts.pory"
-
+HomegeTown_MattTianaHouseSign_1:
 # 538 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_SorryPalNoPokemon: 
+	releaseall
 # 539 "data/maps/HomegeTown/scripts.pory"
-	.string "Sorry, pal.$"
+	return
 # 540 "data/maps/HomegeTown/scripts.pory"
 
 # 541 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_GoTalkToProfForPokemon: 
+HomegeTown_MattTianaHouseSign_2:
 # 542 "data/maps/HomegeTown/scripts.pory"
-	.string "You don't have any Pokémon on you,\n"
+	msgbox HomegeTown_MattTianaHouseSign_Text_0
 # 543 "data/maps/HomegeTown/scripts.pory"
-	.string "and there are some strong Pokémon\l"
+	goto HomegeTown_MattTianaHouseSign_1
 # 544 "data/maps/HomegeTown/scripts.pory"
-	.string "out there!\p"
+
 # 545 "data/maps/HomegeTown/scripts.pory"
-	.string "I heard the professor has Pokémon.\n"
+
 # 546 "data/maps/HomegeTown/scripts.pory"
-	.string "Go talk to him. If you're lucky, he might\l"
+HomegeTown_MattTianaHouseSign_Text_0:
 # 547 "data/maps/HomegeTown/scripts.pory"
-	.string "give you one.$"
+	.string "Tiana's house$"
 # 548 "data/maps/HomegeTown/scripts.pory"
-	
+
 # 549 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_Camper:
+HomegeTown_MattTianaHouseSign_Text_1:
 # 550 "data/maps/HomegeTown/scripts.pory"
-	.string "Huh, so you got a Pokémon?\p"
+	.string "Matt's house$"
 # 551 "data/maps/HomegeTown/scripts.pory"
-	.string "Wonder what I'm going to do with\n"
+
 # 552 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_RivalHouseSign::
+# 553 "data/maps/HomegeTown/scripts.pory"
+	lockall
+# 554 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_RivalHouseSign_Text_0
+# 555 "data/maps/HomegeTown/scripts.pory"
+	releaseall
+# 556 "data/maps/HomegeTown/scripts.pory"
+	return
+# 557 "data/maps/HomegeTown/scripts.pory"
+
+# 558 "data/maps/HomegeTown/scripts.pory"
+
+# 559 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_RivalHouseSign_Text_0:
+# 560 "data/maps/HomegeTown/scripts.pory"
+	.string "{RIVAL}'s house$"
+# 561 "data/maps/HomegeTown/scripts.pory"
+
+# 562 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_PlayerHouseSign::
+# 563 "data/maps/HomegeTown/scripts.pory"
+	lockall
+# 564 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_PlayerHouseSign_Text_0
+# 565 "data/maps/HomegeTown/scripts.pory"
+	releaseall
+# 566 "data/maps/HomegeTown/scripts.pory"
+	return
+# 567 "data/maps/HomegeTown/scripts.pory"
+
+# 568 "data/maps/HomegeTown/scripts.pory"
+
+# 569 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_PlayerHouseSign_Text_0:
+# 570 "data/maps/HomegeTown/scripts.pory"
+	.string "{PLAYER}'s house$"
+# 571 "data/maps/HomegeTown/scripts.pory"
+
+# 572 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk::
+# 573 "data/maps/HomegeTown/scripts.pory"
+	lockall
+# 574 "data/maps/HomegeTown/scripts.pory"
+	checkplayergender
+# 575 "data/maps/HomegeTown/scripts.pory"
+	compare VAR_RESULT, MALE
+# 576 "data/maps/HomegeTown/scripts.pory"
+	goto_if_eq HomegeTown_MattTiana_Peptalk_2
+# 577 "data/maps/HomegeTown/scripts.pory"
+	goto_if_set FLAG_TEMP_1, HomegeTown_MattTiana_Peptalk_8
+# 578 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_MattTiana_Peptalk_Text_3
+# 579 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk_1:
+# 580 "data/maps/HomegeTown/scripts.pory"
+	setflag FLAG_TEMP_1
+# 581 "data/maps/HomegeTown/scripts.pory"
+	releaseall
+# 582 "data/maps/HomegeTown/scripts.pory"
+	return
+# 583 "data/maps/HomegeTown/scripts.pory"
+
+# 584 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk_2:
+# 585 "data/maps/HomegeTown/scripts.pory"
+	goto_if_set FLAG_TEMP_1, HomegeTown_MattTiana_Peptalk_5
+# 586 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_MattTiana_Peptalk_Text_1
+# 587 "data/maps/HomegeTown/scripts.pory"
+	goto HomegeTown_MattTiana_Peptalk_1
+# 588 "data/maps/HomegeTown/scripts.pory"
+
+# 589 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk_5:
+# 590 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_MattTiana_Peptalk_Text_0
+# 591 "data/maps/HomegeTown/scripts.pory"
+	goto HomegeTown_MattTiana_Peptalk_1
+# 592 "data/maps/HomegeTown/scripts.pory"
+
+# 593 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk_8:
+# 594 "data/maps/HomegeTown/scripts.pory"
+	msgbox HomegeTown_MattTiana_Peptalk_Text_2
+# 595 "data/maps/HomegeTown/scripts.pory"
+	goto HomegeTown_MattTiana_Peptalk_1
+# 596 "data/maps/HomegeTown/scripts.pory"
+
+# 597 "data/maps/HomegeTown/scripts.pory"
+
+# 598 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk_Text_0:
+# 599 "data/maps/HomegeTown/scripts.pory"
+	.string "Tiana is too focused to notice you.$"
+# 600 "data/maps/HomegeTown/scripts.pory"
+
+# 601 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk_Text_1:
+# 602 "data/maps/HomegeTown/scripts.pory"
+	.string "Tiana: I'm good enough, I'm smart\n"
+# 603 "data/maps/HomegeTown/scripts.pory"
+	.string "enough, and doggone it, people like me!$"
+# 604 "data/maps/HomegeTown/scripts.pory"
+
+# 605 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk_Text_2:
+# 606 "data/maps/HomegeTown/scripts.pory"
+	.string "Matt is too focused to notice you.$"
+# 607 "data/maps/HomegeTown/scripts.pory"
+
+# 608 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_MattTiana_Peptalk_Text_3:
+# 609 "data/maps/HomegeTown/scripts.pory"
+	.string "Matt: I'm good enough, I'm smart enough,\n"
+# 610 "data/maps/HomegeTown/scripts.pory"
+	.string "and doggone it, people like me!$"
+# 611 "data/maps/HomegeTown/scripts.pory"
+
+# 612 "data/maps/HomegeTown/scripts.pory"
+
+# 613 "data/maps/HomegeTown/scripts.pory"
+
+# 614 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_PlayerReceivedParopeat:
+# 615 "data/maps/HomegeTown/scripts.pory"
+	.string "{PLAYER} rescued PAROPEAT!$"
+# 616 "data/maps/HomegeTown/scripts.pory"
+
+# 617 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_PlayerReceivedPrimatio:
+# 618 "data/maps/HomegeTown/scripts.pory"
+	.string "{PLAYER} rescued PRIMATIO!$"
+# 619 "data/maps/HomegeTown/scripts.pory"
+
+# 620 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_PlayerReceivedSubstee:
+# 621 "data/maps/HomegeTown/scripts.pory"
+	.string "{PLAYER} rescued SUBSTEE!$"
+# 622 "data/maps/HomegeTown/scripts.pory"
+
+# 623 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_FatManTech: 
+# 624 "data/maps/HomegeTown/scripts.pory"
+	.string "The power of technology is astounding!\n"
+# 625 "data/maps/HomegeTown/scripts.pory"
+	.string "I can download and play roms on my PC,\l"
+# 626 "data/maps/HomegeTown/scripts.pory"
+	.string "and I don't even need to pay\l"
+# 627 "data/maps/HomegeTown/scripts.pory"
+	.string "anything!\p"
+# 628 "data/maps/HomegeTown/scripts.pory"
+	.string "...What do you mean that's not legal?$"
+# 629 "data/maps/HomegeTown/scripts.pory"
+
+# 630 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_SorryPalNoPokemon: 
+# 631 "data/maps/HomegeTown/scripts.pory"
+	.string "Sorry, pal.$"
+# 632 "data/maps/HomegeTown/scripts.pory"
+
+# 633 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_GoTalkToProfForPokemon: 
+# 634 "data/maps/HomegeTown/scripts.pory"
+	.string "You don't have any Pokémon on you,\n"
+# 635 "data/maps/HomegeTown/scripts.pory"
+	.string "and there are some strong Pokémon\l"
+# 636 "data/maps/HomegeTown/scripts.pory"
+	.string "out there!\p"
+# 637 "data/maps/HomegeTown/scripts.pory"
+	.string "I heard the professor has Pokémon.\n"
+# 638 "data/maps/HomegeTown/scripts.pory"
+	.string "Go talk to him. If you're lucky, he might\l"
+# 639 "data/maps/HomegeTown/scripts.pory"
+	.string "give you one.$"
+# 640 "data/maps/HomegeTown/scripts.pory"
+	
+# 641 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_Camper:
+# 642 "data/maps/HomegeTown/scripts.pory"
+	.string "Huh, so you got a Pokémon?\p"
+# 643 "data/maps/HomegeTown/scripts.pory"
+	.string "Wonder what I'm going to do with\n"
+# 644 "data/maps/HomegeTown/scripts.pory"
 	.string "my life now...$"
