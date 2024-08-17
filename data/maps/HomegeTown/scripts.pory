@@ -596,18 +596,20 @@ HomegeTown_MattTiana_Peptalk_8:
 
 
 HomegeTown_MattTiana_Peptalk_Text_0:
-	.string "Tiana is too focused to notice you.$"
+	.string "This person is too focused to notice\n"
+	.string "you.$"
 
 HomegeTown_MattTiana_Peptalk_Text_1:
-	.string "Tiana: I'm good enough, I'm smart\n"
+	.string "???: I'm good enough, I'm smart\n"
 	.string "enough, and doggone it, people like me!$"
 
 HomegeTown_MattTiana_Peptalk_Text_2:
-	.string "Matt is too focused to notice you.$"
+	.string "This person is too focused to notice\n"
+	.string "you.$"
 
 HomegeTown_MattTiana_Peptalk_Text_3:
-	.string "Matt: I'm good enough, I'm smart enough,\n"
-	.string "and doggone it, people like me!$"
+	.string "This person is too focused to notice\n"
+	.string "you.$"
 
 
 

@@ -164,7 +164,7 @@ HomegeTown_PlayerHouse_1F_Text_ExplainRunningShoes:
 	.string "is, but I'm sure you'll figure it out!$"
 
 HomegeTown_PlayerHouse_1F_Text_ComeHomeIfAnythingHappens:
-	.string "Mom: Don't forget that PROF. SEQUOIA is\n"
+	.string "Mom: Don't forget that Prof. Sequoia is\n"
 	.string "waiting for you at the lab.\p"
 	.string "I can't believe you're already old\n"
 	.string "enough to get your first Pokémon!\p"

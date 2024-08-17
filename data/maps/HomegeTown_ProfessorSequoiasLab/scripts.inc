@@ -257,15 +257,15 @@ HomegeTown_ProfessorSequoiasLab_EventScript_GiveStarterEvent::
 # 129 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfAppreciatesRescue:
 # 130 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: That was quite the\n"
+	.string "Prof. Sequoia: That was quite the\n"
 # 131 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "adventure, wasn't it?\p"
 # 132 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: Thank you both so much\n"
+	.string "Prof. Sequoia: Thank you both so much\n"
 # 133 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "for helping me rescue these Pokémon!\p"
 # 134 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: I'll make sure they\n"
+	.string "Prof. Sequoia: I'll make sure they\n"
 # 135 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "don't manage to slip out again.\p"
 # 136 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -273,7 +273,7 @@ HomegeTown_ProfessorSequoiasLab_Text_ProfAppreciatesRescue:
 # 137 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "that would be much appreciated!\p"
 # 138 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: Then I could properly\n"
+	.string "Prof. Sequoia: Then I could properly\n"
 # 139 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "give both of you your first Pokémon!$"
 # 140 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -535,7 +535,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_ProfessorMovesDown:
 # 268 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfMentionsBond:
 # 269 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: Hmm, how interesting!\p"
+	.string "Prof. Sequoia: Hmm, how interesting!\p"
 # 270 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "In the short time that both of you were\n"
 # 271 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -549,15 +549,15 @@ HomegeTown_ProfessorSequoiasLab_Text_ProfMentionsBond:
 # 275 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfPonders:
 # 276 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: ...\p"
+	.string "Prof. Sequoia: ...\p"
 # 277 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: It's final, then...$"
+	.string "Prof. Sequoia: It's final, then...$"
 # 278 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 
 # 279 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfLetsYouKeepStarter:
 # 280 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: I have made up my mind.\p"
+	.string "Prof. Sequoia: I have made up my mind.\p"
 # 281 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "I have decided to let you both keep the\n"
 # 282 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -569,7 +569,7 @@ HomegeTown_ProfessorSequoiasLab_Text_ProfLetsYouKeepStarter:
 # 285 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfAsksNickname:
 # 286 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: {PLAYER}, would you like to\n"
+	.string "Prof. Sequoia: {PLAYER}, would you like to\n"
 # 287 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "name your {STR_VAR_1}?$"
 # 288 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -587,7 +587,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_NicknameStarter::
 # 294 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfAsksRivalNickname:
 # 295 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: How about you, {RIVAL}?\p"
+	.string "Prof. Sequoia: How about you, {RIVAL}?\p"
 # 296 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "Would you like to nickname your\n"
 # 297 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -619,7 +619,7 @@ HomegeTown_ProfessorSequoiasLab_Text_RivalDoesNotWantNickname:
 # 310 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfLetsMoveOn:
 # 311 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: Right, let's move onto\n"
+	.string "Prof. Sequoia: Right, let's move onto\n"
 # 312 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "deeper discussion.$"
 # 313 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -651,7 +651,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_RivalPicksUpStarter:
 # 326 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfGivesPokedex:
 # 327 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: As you two should know\n"
+	.string "Prof. Sequoia: As you two should know\n"
 # 328 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "by now, you are both officially Pokémon\l"
 # 329 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -685,7 +685,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_ProfessorMovesTowardsRival:
 # 343 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfGivesRivalPokedex:
 # 344 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: Here's your PokéDex,\n"
+	.string "Prof. Sequoia: Here's your PokéDex,\n"
 # 345 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "{RIVAL}.$"
 # 346 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -703,7 +703,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_ProfessorBackToPlayer:
 # 352 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfExplainsPokedex:
 # 353 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: This special device allows\n"
+	.string "Prof. Sequoia: This special device allows\n"
 # 354 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "you to identify and collect data for\l"
 # 355 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
@@ -739,7 +739,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_ProfessorFaceLeftFaceDown:
 # 370 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_ProfSendsYouOff:
 # 371 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "PROF. SEQUOIA: Well, that should be\n"
+	.string "Prof. Sequoia: Well, that should be\n"
 # 372 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 	.string "everything.\p"
 # 373 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"

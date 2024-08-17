@@ -127,15 +127,15 @@ HomegeTown_ProfessorSequoiasLab_EventScript_GiveStarterEvent::
 	end
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfAppreciatesRescue:
-	.string "PROF. SEQUOIA: That was quite the\n"
+	.string "Prof. Sequoia: That was quite the\n"
 	.string "adventure, wasn't it?\p"
-	.string "PROF. SEQUOIA: Thank you both so much\n"
+	.string "Prof. Sequoia: Thank you both so much\n"
 	.string "for helping me rescue these Pokémon!\p"
-	.string "PROF. SEQUOIA: I'll make sure they\n"
+	.string "Prof. Sequoia: I'll make sure they\n"
 	.string "don't manage to slip out again.\p"
 	.string "If you don't mind handing them back now,\n"
 	.string "that would be much appreciated!\p"
-	.string "PROF. SEQUOIA: Then I could properly\n"
+	.string "Prof. Sequoia: Then I could properly\n"
 	.string "give both of you your first Pokémon!$"
 
 HomegeTown_ProfessorSequoiasLab_EventScript_ParopeatAttachedToPlayer::
@@ -266,24 +266,24 @@ HomegeTown_ProfessorSequoiasLab_Movement_ProfessorMovesDown:
 	step_end
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfMentionsBond:
-	.string "PROF. SEQUOIA: Hmm, how interesting!\p"
+	.string "Prof. Sequoia: Hmm, how interesting!\p"
 	.string "In the short time that both of you were\n"
 	.string "with the Pokémon you two rescued, they\l"
 	.string "seem to have created a bond with both\l"
 	.string "of you!$"
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfPonders:
-	.string "PROF. SEQUOIA: ...\p"
-	.string "PROF. SEQUOIA: It's final, then...$"
+	.string "Prof. Sequoia: ...\p"
+	.string "Prof. Sequoia: It's final, then...$"
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfLetsYouKeepStarter:
-	.string "PROF. SEQUOIA: I have made up my mind.\p"
+	.string "Prof. Sequoia: I have made up my mind.\p"
 	.string "I have decided to let you both keep the\n"
 	.string "Pokémon that you helped save.\p"
 	.string "{PLAYER} received {STR_VAR_1}!$"
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfAsksNickname:
-	.string "PROF. SEQUOIA: {PLAYER}, would you like to\n"
+	.string "Prof. Sequoia: {PLAYER}, would you like to\n"
 	.string "name your {STR_VAR_1}?$"
 
 HomegeTown_ProfessorSequoiasLab_EventScript_NicknameStarter::
@@ -292,7 +292,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_NicknameStarter::
 	return
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfAsksRivalNickname:
-	.string "PROF. SEQUOIA: How about you, {RIVAL}?\p"
+	.string "Prof. Sequoia: How about you, {RIVAL}?\p"
 	.string "Would you like to nickname your\n"
 	.string "{STR_VAR_2}?$"
 
@@ -308,7 +308,7 @@ HomegeTown_ProfessorSequoiasLab_Text_RivalDoesNotWantNickname:
 	.string "unnecessary.$"
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfLetsMoveOn:
-	.string "PROF. SEQUOIA: Right, let's move onto\n"
+	.string "Prof. Sequoia: Right, let's move onto\n"
 	.string "deeper discussion.$"
 
 HomegeTown_ProfessorSequoiasLab_Movement_PlayerPicksUpStarter:
@@ -324,7 +324,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_RivalPicksUpStarter:
 	step_end
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfGivesPokedex:
-	.string "PROF. SEQUOIA: As you two should know\n"
+	.string "Prof. Sequoia: As you two should know\n"
 	.string "by now, you are both officially Pokémon\l"
 	.string "trainers.\p"
 	.string "What is a Pokémon trainer without a\n"
@@ -341,7 +341,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_ProfessorMovesTowardsRival:
 	step_end
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfGivesRivalPokedex:
-	.string "PROF. SEQUOIA: Here's your PokéDex,\n"
+	.string "Prof. Sequoia: Here's your PokéDex,\n"
 	.string "{RIVAL}.$"
 
 HomegeTown_ProfessorSequoiasLab_Movement_ProfessorBackToPlayer:
@@ -350,7 +350,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_ProfessorBackToPlayer:
 	step_end
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfExplainsPokedex:
-	.string "PROF. SEQUOIA: This special device allows\n"
+	.string "Prof. Sequoia: This special device allows\n"
 	.string "you to identify and collect data for\l"
 	.string "various Pokémon species.\p"
 	.string "The two of you will help me discover\n"
@@ -368,7 +368,7 @@ HomegeTown_ProfessorSequoiasLab_Movement_ProfessorFaceLeftFaceDown:
 	step_end
 
 HomegeTown_ProfessorSequoiasLab_Text_ProfSendsYouOff:
-	.string "PROF. SEQUOIA: Well, that should be\n"
+	.string "Prof. Sequoia: Well, that should be\n"
 	.string "everything.\p"
 	.string "Be cautious on your journey, and\n"
 	.string "occasionally come back to my lab so\l"

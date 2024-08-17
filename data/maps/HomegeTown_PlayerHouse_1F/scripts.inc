@@ -331,7 +331,7 @@ HomegeTown_PlayerHouse_1F_Text_ExplainRunningShoes:
 # 166 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 HomegeTown_PlayerHouse_1F_Text_ComeHomeIfAnythingHappens:
 # 167 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
-	.string "Mom: Don't forget that PROF. SEQUOIA is\n"
+	.string "Mom: Don't forget that Prof. Sequoia is\n"
 # 168 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 	.string "waiting for you at the lab.\p"
 # 169 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"

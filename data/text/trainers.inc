@@ -4794,3 +4794,42 @@ VSSeeker_Text_TrainersNotReady::
 	.string "The other Trainers don't appear\n"
 	.string "to be ready for battle.\p"
 	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
+
+Route1_Text_RyanIntro: 
+	.string "You know the rules - eye contact\n"
+	.string "means we have to fight!$"
+
+Route1_Text_RyanDefeated: 
+	.string "What? We didn't make eye contact\n"
+	.string "until I called you out?$"
+
+Route1_Text_RyanPostBattle: 
+	.string "Well, yeah - do you have any idea\n"
+	.string "how hard it is to make eye contact\l"
+	.string "with someone who's running away?$"
+
+Route1_Text_BillyIntro: 
+	.string "Have you ever had a dreams?$"
+
+Route1_Text_BillyDefeated: 
+	.string "That-\n"
+	.string "s-$"
+
+Route1_Text_BillyPostBattle: 
+	.string "That you, um, you had, you d-, you\n"
+	.string "w-, you could, you'll do, you w-\l"
+	.string "you wants, you, you could do so,\l"
+	.string "you- you'll do, you could- you, you\l"
+	.string "want, you want them to do you so\l"
+	.string "much you could do anything?$"
+
+Route1_Text_ShizukuIntro: 
+	.string "All I listen to is lofi hip hop radio!$"
+
+Route1_Text_ShizukuDefeated: 
+	.string "Well...\n"
+	.string "That wasn't relaxing at all.$"
+
+Route1_Text_ShizukuPostBattle: 
+	.string "I guess this music is only for studying,\n"
+	.string "not battling...$"

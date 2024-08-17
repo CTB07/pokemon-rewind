@@ -778,8 +778,10 @@ u8 BattleSetup_GetTerrainId(void)
     {
     case MAP_TYPE_TOWN:
     case MAP_TYPE_CITY:
-    case MAP_TYPE_ROUTE:
         break;
+    case MAP_TYPE_ROUTE:
+        return BATTLE_TERRAIN_GRASS;
+        //break;
     case MAP_TYPE_UNDERGROUND:
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
             return BATTLE_TERRAIN_BUILDING;

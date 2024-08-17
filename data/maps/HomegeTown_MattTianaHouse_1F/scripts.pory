@@ -3,23 +3,13 @@ mapscripts HomegeTown_MattTianaHouse_1F_MapScripts {}
 script HomegeTown_MattTianaHouse_1F_Mom {
     lock
     faceplayer
-    checkplayergender
-    if (var(VAR_RESULT) == MALE) {
-        msgbox(format("We're so proud of our darling Tiana!"))
-    } else {
-        msgbox(format("We're so proud of our superstar Matt!"))
-        }
+    msgbox(format("We're so proud of our son!"))
     releaseall
 }
 
 script HomegeTown_MattTianaHouse_1F_Dad {
     lock
     faceplayer
-    checkplayergender
-    if (var(VAR_RESULT) == MALE) {
-        msgbox(format("Tiana starts her Pokémon journey today!\pHey, have you seen her anywhere?"))
-    } else {
-        msgbox(format("Matt starts his Pokémon journey today!\pHey, have you seen him anywhere?"))
-        }
+    msgbox(format("Our son left a few months ago to start his Pokémon journey.\pMaybe you'll get to see him again when you start your adventure!"))
     releaseall
 }
