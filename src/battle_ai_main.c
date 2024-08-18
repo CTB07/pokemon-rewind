@@ -27,6 +27,8 @@
 #include "constants/items.h"
 #include "constants/trainers.h"
 
+//
+
 #define AI_ACTION_DONE          (1 << 0)
 #define AI_ACTION_FLEE          (1 << 1)
 #define AI_ACTION_WATCH         (1 << 2)
