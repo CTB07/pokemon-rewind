@@ -8,6 +8,7 @@
 // gMapGroup_RewindTownsAndRoutes
 #define MAP_HOMEGE_TOWN (0 | (0 << 8))
 #define MAP_ROUTE1      (1 | (0 << 8))
+#define MAP_ROUTE2      (2 | (0 << 8))
 
 // gMapGroup_IndoorHomege
 #define MAP_HOMEGE_TOWN_PLAYER_HOUSE_1F        (0 | (1 << 8))

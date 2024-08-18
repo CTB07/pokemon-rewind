@@ -39,7 +39,8 @@
   ],
   "gMapGroup_RewindTownsAndRoutes": [
     "HomegeTown",
-    "Route1"
+    "Route1",
+    "Route2"
   ],
   "gMapGroup_IndoorHomege": [
     "HomegeTown_PlayerHouse_1F",

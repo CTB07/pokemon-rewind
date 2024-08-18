@@ -1092,3 +1092,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/HomegeTown_MattTianaHouse_1F/scripts.inc"
 
 	.include "data/maps/HomegeTown_MattTianaHouse_2F/scripts.inc"
+
+	.include "data/maps/Route2/scripts.inc"
