@@ -1195,94 +1195,98 @@ HomegeTown_MattTiana_Peptalk_8:
 # 598 "data/maps/HomegeTown/scripts.pory"
 HomegeTown_MattTiana_Peptalk_Text_0:
 # 599 "data/maps/HomegeTown/scripts.pory"
-	.string "Tiana is too focused to notice you.$"
+	.string "This person is too focused to notice\n"
 # 600 "data/maps/HomegeTown/scripts.pory"
-
+	.string "you.$"
 # 601 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_MattTiana_Peptalk_Text_1:
+
 # 602 "data/maps/HomegeTown/scripts.pory"
-	.string "Tiana: I'm good enough, I'm smart\n"
+HomegeTown_MattTiana_Peptalk_Text_1:
 # 603 "data/maps/HomegeTown/scripts.pory"
-	.string "enough, and doggone it, people like me!$"
+	.string "???: I'm good enough, I'm smart\n"
 # 604 "data/maps/HomegeTown/scripts.pory"
-
+	.string "enough, and doggone it, people like me!$"
 # 605 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_MattTiana_Peptalk_Text_2:
+
 # 606 "data/maps/HomegeTown/scripts.pory"
-	.string "Matt is too focused to notice you.$"
+HomegeTown_MattTiana_Peptalk_Text_2:
 # 607 "data/maps/HomegeTown/scripts.pory"
-
+	.string "This person is too focused to notice\n"
 # 608 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_MattTiana_Peptalk_Text_3:
+	.string "you.$"
 # 609 "data/maps/HomegeTown/scripts.pory"
-	.string "Matt: I'm good enough, I'm smart enough,\n"
+
 # 610 "data/maps/HomegeTown/scripts.pory"
-	.string "and doggone it, people like me!$"
+HomegeTown_MattTiana_Peptalk_Text_3:
 # 611 "data/maps/HomegeTown/scripts.pory"
-
+	.string "This person is too focused to notice\n"
 # 612 "data/maps/HomegeTown/scripts.pory"
-
+	.string "you.$"
 # 613 "data/maps/HomegeTown/scripts.pory"
 
 # 614 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_PlayerReceivedParopeat:
+
 # 615 "data/maps/HomegeTown/scripts.pory"
-	.string "{PLAYER} rescued PAROPEAT!$"
+
 # 616 "data/maps/HomegeTown/scripts.pory"
-
+HomegeTown_Text_PlayerReceivedParopeat:
 # 617 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_PlayerReceivedPrimatio:
+	.string "{PLAYER} rescued PAROPEAT!$"
 # 618 "data/maps/HomegeTown/scripts.pory"
-	.string "{PLAYER} rescued PRIMATIO!$"
+
 # 619 "data/maps/HomegeTown/scripts.pory"
-
+HomegeTown_Text_PlayerReceivedPrimatio:
 # 620 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_PlayerReceivedSubstee:
+	.string "{PLAYER} rescued PRIMATIO!$"
 # 621 "data/maps/HomegeTown/scripts.pory"
-	.string "{PLAYER} rescued SUBSTEE!$"
+
 # 622 "data/maps/HomegeTown/scripts.pory"
-
+HomegeTown_Text_PlayerReceivedSubstee:
 # 623 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_FatManTech: 
+	.string "{PLAYER} rescued SUBSTEE!$"
 # 624 "data/maps/HomegeTown/scripts.pory"
-	.string "The power of technology is astounding!\n"
+
 # 625 "data/maps/HomegeTown/scripts.pory"
-	.string "I can download and play roms on my PC,\l"
+HomegeTown_Text_FatManTech: 
 # 626 "data/maps/HomegeTown/scripts.pory"
-	.string "and I don't even need to pay\l"
+	.string "The power of technology is astounding!\n"
 # 627 "data/maps/HomegeTown/scripts.pory"
-	.string "anything!\p"
+	.string "I can download and play roms on my PC,\l"
 # 628 "data/maps/HomegeTown/scripts.pory"
-	.string "...What do you mean that's not legal?$"
+	.string "and I don't even need to pay\l"
 # 629 "data/maps/HomegeTown/scripts.pory"
-
+	.string "anything!\p"
 # 630 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_SorryPalNoPokemon: 
+	.string "...What do you mean that's not legal?$"
 # 631 "data/maps/HomegeTown/scripts.pory"
-	.string "Sorry, pal.$"
-# 632 "data/maps/HomegeTown/scripts.pory"
 
+# 632 "data/maps/HomegeTown/scripts.pory"
+HomegeTown_Text_SorryPalNoPokemon: 
 # 633 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_GoTalkToProfForPokemon: 
+	.string "Sorry, pal.$"
 # 634 "data/maps/HomegeTown/scripts.pory"
-	.string "You don't have any Pokémon on you,\n"
+
 # 635 "data/maps/HomegeTown/scripts.pory"
-	.string "and there are some strong Pokémon\l"
+HomegeTown_Text_GoTalkToProfForPokemon: 
 # 636 "data/maps/HomegeTown/scripts.pory"
-	.string "out there!\p"
+	.string "You don't have any Pokémon on you,\n"
 # 637 "data/maps/HomegeTown/scripts.pory"
-	.string "I heard the professor has Pokémon.\n"
+	.string "and there are some strong Pokémon\l"
 # 638 "data/maps/HomegeTown/scripts.pory"
-	.string "Go talk to him. If you're lucky, he might\l"
+	.string "out there!\p"
 # 639 "data/maps/HomegeTown/scripts.pory"
-	.string "give you one.$"
+	.string "I heard the professor has Pokémon.\n"
 # 640 "data/maps/HomegeTown/scripts.pory"
-	
+	.string "Go talk to him. If you're lucky, he might\l"
 # 641 "data/maps/HomegeTown/scripts.pory"
-HomegeTown_Text_Camper:
+	.string "give you one.$"
 # 642 "data/maps/HomegeTown/scripts.pory"
-	.string "Huh, so you got a Pokémon?\p"
+	
 # 643 "data/maps/HomegeTown/scripts.pory"
-	.string "Wonder what I'm going to do with\n"
+HomegeTown_Text_Camper:
 # 644 "data/maps/HomegeTown/scripts.pory"
+	.string "Huh, so you got a Pokémon?\p"
+# 645 "data/maps/HomegeTown/scripts.pory"
+	.string "Wonder what I'm going to do with\n"
+# 646 "data/maps/HomegeTown/scripts.pory"
 	.string "my life now...$"
