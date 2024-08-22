@@ -17,6 +17,11 @@
       "map": "MAP_HOMEGE_TOWN",
       "offset": 22,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ICOVALE_CITY",
+      "offset": -31,
+      "direction": "right"
     }
   ],
   "object_events": [

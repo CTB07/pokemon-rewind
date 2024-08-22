@@ -836,3 +836,14 @@ const struct Tileset gTileset_Homege =
     .metatileAttributes = gMetatileAttributes_Homege,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Icovale =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Icovale,
+    .palettes = gTilesetPalettes_Icovale,
+    .metatiles = gMetatiles_Icovale,
+    .metatileAttributes = gMetatileAttributes_Icovale,
+    .callback = NULL,
+};

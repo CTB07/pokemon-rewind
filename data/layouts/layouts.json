@@ -4520,6 +4520,16 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route3/border.bin",
       "blockdata_filepath": "data/layouts/Route3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY",
+      "name": "IcovaleCity_Layout",
+      "width": 53,
+      "height": 53,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Icovale",
+      "border_filepath": "data/layouts/IcovaleCity/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity/map.bin"
     }
   ]
 }
