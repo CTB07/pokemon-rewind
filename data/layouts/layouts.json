@@ -4530,6 +4530,16 @@
       "secondary_tileset": "gTileset_Icovale",
       "border_filepath": "data/layouts/IcovaleCity/border.bin",
       "blockdata_filepath": "data/layouts/IcovaleCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_NUVUE_FOREST",
+      "name": "NuvueForest_Layout",
+      "width": 50,
+      "height": 70,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/NuvueForest/border.bin",
+      "blockdata_filepath": "data/layouts/NuvueForest/map.bin"
     }
   ]
 }
