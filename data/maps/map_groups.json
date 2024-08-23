@@ -1,6 +1,7 @@
 {
   "group_order": [
     "gMapGroup_RewindTownsAndRoutes",
+    "gMapGroup_RewindDungeons",
     "gMapGroup_IndoorHomege",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
@@ -43,6 +44,8 @@
     "Route2",
     "Route3",
     "IcovaleCity"
+  ],
+  "gMapGroup_RewindDungeons": [
   ],
   "gMapGroup_IndoorHomege": [
     "HomegeTown_PlayerHouse_1F",

@@ -783,7 +783,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .palette = gMonPalette_Weepillar,
        .shinyPalette = gMonShinyPalette_Weepillar,
        .iconSprite = gMonIcon_Weepillar,
-       .iconPalIndex = 1,
+       .iconPalIndex = 4,
        //FOOTPRINT(Weepillar)
        .levelUpLearnset = sWeepillarLevelUpLearnset,
        //.teachableLearnset = sWeepillarTeachableLearnset,
@@ -2199,7 +2199,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .palette = gMonPalette_Kwizbee,
        .shinyPalette = gMonShinyPalette_Kwizbee,
        .iconSprite = gMonIcon_Kwizbee,
-       .iconPalIndex = 1,
+       .iconPalIndex = 0,
        //FOOTPRINT(Kwizbee)
        .levelUpLearnset = sKwizbeeLevelUpLearnset,
        //.teachableLearnset = sKwizbeeTeachableLearnset,
