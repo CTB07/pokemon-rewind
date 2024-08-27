@@ -6537,7 +6537,8 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 
                     break;
                 case FORM_CHANGE_BEGIN_BATTLE:
                 case FORM_CHANGE_END_BATTLE:
-                    if (heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
+                    if ((heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
+                    && (ability == formChanges[i].param2 || formChanges[i].param2 == ABILITY_NONE))
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_CHANGE_END_BATTLE_TERRAIN:
@@ -6547,7 +6548,8 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 
                 case FORM_CHANGE_WITHDRAW:
                 case FORM_CHANGE_FAINT:
                 case FORM_CHANGE_DAYS_PASSED:
-                    targetSpecies = formChanges[i].targetSpecies;
+                    if (ability == formChanges[i].param2 || formChanges[i].param2 == ABILITY_NONE)
+                        targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_CHANGE_STATUS:
                     if (GetBoxMonData(boxMon, MON_DATA_STATUS, NULL) & formChanges[i].param1)

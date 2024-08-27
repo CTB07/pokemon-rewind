@@ -163,7 +163,7 @@ HomegeTown_EventScript_LabStarterTrigger::
 	setobjectxy LOCALID_SUBSTEE, 35, 11
 	applymovement LOCALID_SUBSTEE, HomegeTown_Movement_SubsteeRunaway
 	waitmovement 0
-	setobjectxy LOCALID_PAROPEAT, 12, 28
+	setobjectxy LOCALID_PAROPEAT, 12, 27
 	setobjectxy LOCALID_PRIMATIO, 34, 45
 	setobjectxy LOCALID_SUBSTEE, 13, 38
 	addobject LOCALID_PROF

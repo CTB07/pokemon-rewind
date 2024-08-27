@@ -2333,8 +2333,10 @@ static void Cmd_datahpupdate(void)
                 gBattleStruct->changedSpecies[side][gBattlerPartyIndexes[battler]] = gBattleMons[battler].species;
             if (gBattleMons[battler].species == SPECIES_MIMIKYU_TOTEM_DISGUISED)
                 gBattleMons[battler].species = SPECIES_MIMIKYU_TOTEM_BUSTED;
-            else
+            else if (gBattleMons[battler].species == SPECIES_MIMIKYU_DISGUISED)
                 gBattleMons[battler].species = SPECIES_MIMIKYU_BUSTED;
+            else
+                //gBattleMons[battler].species = SPECIES_MIMICRATE;
             if (B_DISGUISE_HP_LOSS >= GEN_8)
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 8;
             BattleScriptPush(cmd->nextInstr);

@@ -2254,7 +2254,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .palette = gMonPalette_Cosmonarch,
        .shinyPalette = gMonShinyPalette_Cosmonarch,
        .iconSprite = gMonIcon_Cosmonarch,
-       .iconPalIndex = 0,
+       .iconPalIndex = 5,
        //FOOTPRINT(Cosmonarch)
        .levelUpLearnset = sCosmonarchLevelUpLearnset,
        //.teachableLearnset = sCosmonarchTeachableLearnset,
@@ -2954,7 +2954,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .palette = gMonPalette_Muncharlie,
        .shinyPalette = gMonShinyPalette_Muncharlie,
        .iconSprite = gMonIcon_Muncharlie,
-       .iconPalIndex = 1,
+       .iconPalIndex = 3,
        //FOOTPRINT(Muncharlie)
        .levelUpLearnset = sMuncharlieLevelUpLearnset,
        //.teachableLearnset = sMuncharlieTeachableLearnset,
