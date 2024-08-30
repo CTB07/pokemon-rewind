@@ -732,7 +732,8 @@ static void InheritPokeball(struct Pokemon *egg, struct BoxPokemon *father, stru
     {
         if (GET_BASE_SPECIES_ID(fatherSpecies) == GET_BASE_SPECIES_ID(motherSpecies))
             inheritBall = (Random() % 2 == 0 ? motherBall : fatherBall);
-        else if (motherSpecies != SPECIES_DITTO)
+        //else if (motherSpecies != SPECIES_DITTO)
+        else if (motherSpecies != SPECIES_WHALLIC || motherSpecies != SPECIES_ENORMEAT)
             inheritBall = motherBall;
         else
             inheritBall = fatherBall;
@@ -751,7 +752,8 @@ static void InheritAbility(struct Pokemon *egg, struct BoxPokemon *father, struc
     u16 motherSpecies = GetBoxMonData(mother, MON_DATA_SPECIES);
     u16 inheritAbility = motherAbility;
 
-    if (motherSpecies == SPECIES_DITTO)
+    //if (motherSpecies == SPECIES_DITTO)
+    if (motherSpecies == SPECIES_WHALLIC || motherSpecies == SPECIES_ENORMEAT)
     {
         if (P_ABILITY_INHERITANCE >= GEN_6)
             inheritAbility = fatherAbility;
@@ -1005,7 +1007,8 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
     for (i = 0; i < DAYCARE_MON_COUNT; i++)
     {
         species[i] = GetBoxMonData(&daycare->mons[i].mon, MON_DATA_SPECIES);
-        if (species[i] == SPECIES_DITTO)
+        //if (species[i] == SPECIES_DITTO)
+        if (species[i] == SPECIES_WHALLIC || species[i] == SPECIES_ENORMEAT)
         {
             parentSlots[0] = i ^ 1;
             parentSlots[1] = i;
@@ -1018,7 +1021,7 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
     }
 
     eggSpecies = GetEggSpecies(species[parentSlots[0]]);
-    if (eggSpecies == SPECIES_NIDORAN_F && daycare->offspringPersonality & EGG_GENDER_MALE)
+    if /*(eggSpecies == SPECIES_NIDORAN_F && daycare->offspringPersonality & EGG_GENDER_MALE)
         eggSpecies = SPECIES_NIDORAN_M;
     else if (eggSpecies == SPECIES_ILLUMISE && daycare->offspringPersonality & EGG_GENDER_MALE)
         eggSpecies = SPECIES_VOLBEAT;
@@ -1026,7 +1029,7 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
         eggSpecies = SPECIES_NIDORAN_F;
     else if (P_NIDORAN_M_DITTO_BREED >= GEN_5 && eggSpecies == SPECIES_VOLBEAT && !(daycare->offspringPersonality & EGG_GENDER_MALE))
         eggSpecies = SPECIES_ILLUMISE;
-    else if (eggSpecies == SPECIES_MANAPHY)
+    else if */(eggSpecies == SPECIES_MANAPHY)
         eggSpecies = SPECIES_PHIONE;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)
         eggSpecies = SPECIES_ROTOM;
@@ -1043,7 +1046,15 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
         eggSpecies = SPECIES_TOGEDEMARU;
 
     // Make Ditto the "mother" slot if the other daycare mon is male.
-    if (species[parentSlots[1]] == SPECIES_DITTO && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
+    /*if (species[parentSlots[1]] == SPECIES_DITTO && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
+    {
+        u8 ditto = parentSlots[1];
+        parentSlots[1] = parentSlots[0];
+        parentSlots[0] = ditto;
+    }
+
+    return eggSpecies;*/
+    if ((species[parentSlots[1]] == SPECIES_WHALLIC || species[parentSlots[1]] == SPECIES_ENORMEAT) && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
     {
         u8 ditto = parentSlots[1];
         parentSlots[1] = parentSlots[0];

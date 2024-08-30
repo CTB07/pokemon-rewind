@@ -1177,8 +1177,8 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u
         text[3] = fontId;
         stringPtr = StringCopy(text + 4, GetSpeciesName(currMon->species));
 
-        if (currMon->species != SPECIES_NIDORAN_M && currMon->species != SPECIES_NIDORAN_F)
-        {
+        //if (currMon->species != SPECIES_NIDORAN_M && currMon->species != SPECIES_NIDORAN_F)
+        //{
             switch (GetGenderFromSpeciesAndPersonality(currMon->species, currMon->personality))
             {
             case MON_MALE:
@@ -1190,7 +1190,7 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u
                 stringPtr++;
                 break;
             }
-        }
+        //}
 
         stringPtr[0] = EOS;
         AddTextPrinterParameterized3(0, FONT_NORMAL, 0x80, 1, sMonInfoTextColors, TEXT_SKIP_DRAW, text);
