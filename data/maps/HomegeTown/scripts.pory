@@ -644,4 +644,5 @@ HomegeTown_Text_Camper:
 	.string "Huh, so you got a Pokémon?\p"
 	.string "Wonder what I'm going to do with\n"
 	.string "my life now...$"
+
 `

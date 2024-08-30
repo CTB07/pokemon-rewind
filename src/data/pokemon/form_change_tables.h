@@ -1294,12 +1294,12 @@ static const struct FormChange sTerapagosFormChangeTable[] = {
 #endif //P_FAMILY_TERAPAGOS
 
 //REWIND
-/*static const struct FormChange sMimicrateFormChangeTable[] = {
+static const struct FormChange sMimicrateFormChangeTable[] = {
     {FORM_CHANGE_BEGIN_BATTLE, SPECIES_MIMICRATE_DISGUISED, ITEM_NONE, ABILITY_DISGUISE},
     {FORM_CHANGE_FAINT, SPECIES_MIMICRATE_DISGUISED, ITEM_NONE, ABILITY_DISGUISE},
     {FORM_CHANGE_END_BATTLE, SPECIES_MIMICRATE_DISGUISED, ITEM_NONE, ABILITY_DISGUISE},
     {FORM_CHANGE_TERMINATOR},
-};*/
+};
 
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

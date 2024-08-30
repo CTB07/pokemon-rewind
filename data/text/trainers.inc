@@ -4833,3 +4833,4 @@ Route1_Text_ShizukuDefeated:
 Route1_Text_ShizukuPostBattle: 
 	.string "I guess this music is only for studying,\n"
 	.string "not battling...$"
+	

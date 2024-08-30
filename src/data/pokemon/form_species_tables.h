@@ -2189,8 +2189,8 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };*/
 
-/*static const u16 sMimicrateFormSpeciesIdTable[] = {
+static const u16 sMimicrateFormSpeciesIdTable[] = {
     SPECIES_MIMICRATE_DISGUISED,
     SPECIES_MIMICRATE,
     FORM_SPECIES_END,
-};*/
+};

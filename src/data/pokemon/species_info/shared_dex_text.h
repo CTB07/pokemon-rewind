@@ -294,3 +294,9 @@ const u8 gOgerponCornerstoneMaskPokedexText[] = _(
     "flexible and easy to trample, like a tree in\n"
     "a hurricane. They pretend to be stronger\n"
     "Pokémon to scare off attackers.");*/
+
+const u8 gMimicratePokedexText[] = _(
+    "Some Mimicrate react differently to a\n"
+    "trainer trying to open it. Most will spring\n"
+    "out and fight. Curiously, some choose\n"
+    "to stay hidden inside until attacked.");

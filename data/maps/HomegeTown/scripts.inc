@@ -329,7 +329,7 @@ HomegeTown_EventScript_LabStarterTrigger::
 # 165 "data/maps/HomegeTown/scripts.pory"
 	waitmovement 0
 # 166 "data/maps/HomegeTown/scripts.pory"
-	setobjectxy LOCALID_PAROPEAT, 12, 28
+	setobjectxy LOCALID_PAROPEAT, 12, 27
 # 167 "data/maps/HomegeTown/scripts.pory"
 	setobjectxy LOCALID_PRIMATIO, 34, 45
 # 168 "data/maps/HomegeTown/scripts.pory"
