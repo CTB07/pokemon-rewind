@@ -22375,8 +22375,8 @@ static const struct LevelUpMove sMacaumentLevelUpLearnset[] = {
         LEVEL_UP_END
 };
 static const struct LevelUpMove sArguwintLevelUpLearnset[] = {
-        LEVEL_UP_MOVE(0, MOVE_PSYCHIC),
-        LEVEL_UP_MOVE(1, MOVE_PSYCHIC),
+        LEVEL_UP_MOVE(0, MOVE_BIG_DEBATE),
+        LEVEL_UP_MOVE(1, MOVE_BIG_DEBATE),
         LEVEL_UP_MOVE(1, MOVE_TAILWIND), 
         LEVEL_UP_MOVE(1, MOVE_SLEEP_POWDER), 
         LEVEL_UP_MOVE(1, MOVE_TACKLE),  
@@ -22395,11 +22395,11 @@ static const struct LevelUpMove sArguwintLevelUpLearnset[] = {
         LEVEL_UP_MOVE(32, MOVE_AIR_SLASH),
         LEVEL_UP_MOVE(38, MOVE_LEAF_BLADE),
         LEVEL_UP_MOVE(42, MOVE_ROOST),
-        LEVEL_UP_MOVE(46, MOVE_BIG_DEBATE),
+        LEVEL_UP_MOVE(46, MOVE_PSYCHIC),
         LEVEL_UP_MOVE(50, MOVE_GIGA_DRAIN),
         LEVEL_UP_MOVE(53, MOVE_LEAF_STORM),
         LEVEL_UP_MOVE(57, MOVE_HURRICANE),
-        LEVEL_UP_MOVE(62, MOVE_QUIVER_DANCE),
+        LEVEL_UP_MOVE(62, MOVE_FRENZY_PLANT),
         LEVEL_UP_END
 };
 static const struct LevelUpMove sPrimatioLevelUpLearnset[] = {
@@ -23795,10 +23795,9 @@ static const struct LevelUpMove sMimicrateLevelUpLearnset[] = {
         LEVEL_UP_MOVE( 49, MOVE_SWALLOW),
         LEVEL_UP_MOVE( 49, MOVE_SPIT_UP),
         LEVEL_UP_MOVE( 52, MOVE_ENVELOP),
-        LEVEL_UP_MOVE( 55, MOVE_CURSE),
-        LEVEL_UP_MOVE( 58, MOVE_GYRO_BALL),
+        LEVEL_UP_MOVE( 56, MOVE_GYRO_BALL),
         LEVEL_UP_MOVE( 60, MOVE_PAIN_SPLIT),
-        LEVEL_UP_MOVE( 63, MOVE_DOUBLE_EDGE),
+        LEVEL_UP_MOVE( 64, MOVE_DOUBLE_EDGE),
         LEVEL_UP_END
 };
 static const struct LevelUpMove sWhallicLevelUpLearnset[] = {

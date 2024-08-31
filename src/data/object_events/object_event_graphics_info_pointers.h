@@ -244,6 +244,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rival;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RewindYoungster;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RewindLass;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RewindRichBoy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlgoTechGruntF;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -504,6 +505,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REWINDYOUNGSTER] =          &gObjectEventGraphicsInfo_RewindYoungster,
     [OBJ_EVENT_GFX_REWINDLASS] =               &gObjectEventGraphicsInfo_RewindLass,
     [OBJ_EVENT_GFX_REWINDRICHBOY] =            &gObjectEventGraphicsInfo_RewindRichBoy,
+    [OBJ_EVENT_GFX_ALGOTECH_GRUNT_F] =         &gObjectEventGraphicsInfo_AlgoTechGruntF,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
 };

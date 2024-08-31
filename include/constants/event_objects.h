@@ -250,11 +250,12 @@
 #define OBJ_EVENT_GFX_REWINDYOUNGSTER            246
 #define OBJ_EVENT_GFX_REWINDLASS                 247
 #define OBJ_EVENT_GFX_REWINDRICHBOY              248
+#define OBJ_EVENT_GFX_ALGOTECH_GRUNT_F           249
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        249
+#define NUM_OBJ_EVENT_GFX                        250
 
 
 // These are dynamic object gfx ids.
@@ -390,6 +391,7 @@
 #define OBJ_EVENT_PAL_TAG_REWINDYOUNGSTER         0x112A
 #define OBJ_EVENT_PAL_TAG_REWINDLASS              0x112B
 #define OBJ_EVENT_PAL_TAG_REWINDRICHBOY           0x112C
+#define OBJ_EVENT_PAL_TAG_ALGOTECH_GRUNT          0x112D
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

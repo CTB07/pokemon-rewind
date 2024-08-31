@@ -515,6 +515,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RewindYoungster,       OBJ_EVENT_PAL_TAG_REWINDYOUNGSTER},
     {gObjectEventPal_RewindLass,            OBJ_EVENT_PAL_TAG_REWINDLASS},
     {gObjectEventPal_RewindRichBoy,         OBJ_EVENT_PAL_TAG_REWINDRICHBOY},
+    {gObjectEventPal_AlgoTechGrunt,         OBJ_EVENT_PAL_TAG_ALGOTECH_GRUNT},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},

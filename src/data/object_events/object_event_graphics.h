@@ -407,6 +407,9 @@ const u16 gObjectEventPal_RewindLass[] = INCBIN_U16("graphics/object_events/pale
 
 const u32 gObjectEventPic_RewindRichBoy[] = INCBIN_U32("graphics/object_events/pics/people/rewind_rich_boy.4bpp");
 const u16 gObjectEventPal_RewindRichBoy[] = INCBIN_U16("graphics/object_events/palettes/rewind_rich_boy.gbapal");
+
+const u32 gObjectEventPic_AlgoTechGruntF[] = INCBIN_U32("graphics/object_events/pics/people/algotech_grunt_f.4bpp");
+const u16 gObjectEventPal_AlgoTechGrunt[] = INCBIN_U16("graphics/object_events/palettes/algotech_grunt.gbapal");
 // REWIND END 
 
 #if OW_FOLLOWERS_POKEBALLS
