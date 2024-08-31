@@ -4853,3 +4853,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
 .endif @ P_CRIES_ENABLED
+.if P_FAMILY_PAROPEAT == TRUE
+	cry_reverse Cry_Paropeat
+.endif @ P_FAMILY_PAROPEAT
+.endif @ P_CRIES_ENABLED

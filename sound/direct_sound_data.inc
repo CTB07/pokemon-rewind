@@ -6156,6 +6156,13 @@ Cry_Pecharunt::
 .endif @ P_FAMILY_PECHARUNT
 .endif @ P_CRIES_ENABLED
 
+.if P_FAMILY_PAROPEAT == TRUE
+	.align 2
+Cry_Paropeat::
+	.incbin "sound/direct_sound_samples/cries/paropeat.bin"
+.endif @ P_FAMILY_PAROPEAT
+.endif @ P_CRIES_ENABLED
+
 	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
