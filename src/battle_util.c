@@ -9481,7 +9481,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         if (moveType == TYPE_NORMAL && gBattleStruct->ateBoost[battlerAtk])
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
-    case ABILITY_TRIANGULATE:
+    case ABILITY_OVERTHINKER:
         if (moveType == TYPE_ICE && gBattleStruct->ateBoost[battlerAtk])
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;

@@ -2665,9 +2665,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
     },
 
-    [ABILITY_TRIANGULATE] =
+    [ABILITY_OVERTHINKER] =
     {
-        .name = _("Triangulate"),
+        .name = _("Overthinker"),
         .description = COMPOUND_STRING("Normal moves become Psychic."),
         .aiRating = 8,
     },
