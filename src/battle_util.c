@@ -6074,6 +6074,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             break;
         }
         break;
+
     case ABILITYEFFECT_MOVE_END_ATTACKER: // Same as above, but for attacker
         switch (gLastUsedAbility)
         {
@@ -6177,6 +6178,21 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_SYMBIOTE:
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && TARGET_TURN_DAMAGED
+                && (IsBattlerAlive(gBattlerAttacker))
+                && !gSpecialStatuses[gBattlerAttacker].preventLifeOrbDamage
+                && gSpecialStatuses[gBattlerAttacker].damagedMons)
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_SolarPowerActivates);
+                gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 5;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+                effect++;
+            }
+            break;         
         }
         break;
     case ABILITYEFFECT_MOVE_END_OTHER: // Abilities that activate on *another* battler's moveend: Dancer, Soul-Heart, Receiver, Symbiosis
@@ -9548,6 +9564,9 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
     case ABILITY_OCEAN_MANTLE:
         if (moveType == TYPE_WATER)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_SYMBIOTE:
+        modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     }
 

@@ -2727,4 +2727,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Badly poisons everyone."),
         .aiRating = 9,
     },
+
+    [ABILITY_SYMBIOTE] =
+    {
+        .name = _("Symbiote"),
+        .description = COMPOUND_STRING("Deals more damage at a cost."),
+        .aiRating = 7,
+    },
 };
