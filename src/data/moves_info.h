@@ -21254,7 +21254,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_EJECT] =
     {
-        .name = COMPOUND_STRING("Vent Kill"),
+        .name = COMPOUND_STRING("Eject"),
         .description = COMPOUND_STRING(
             "Hurls the foe out. Super\n"
             "effective against Dark."),
