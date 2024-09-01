@@ -5114,10 +5114,11 @@ BattleScript_EffectHiveMind::
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_TARGET
+	jumpifhasnohp BS_TARGET, BattleScript_MoveEnd
 	jumpifstatus BS_ATTACKER, STATUS1_ANY, BattleScript_EffectHiveMindCanWork
 	goto BattleScript_MoveEnd
 BattleScript_EffectHiveMindCanWork:
-	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_ButItFailed
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_MoveEnd
 	jumpifsafeguard BattleScript_SafeguardProtected
 	trypsychoshift BattleScript_MoveEnd
 	copybyte gEffectBattler, gBattlerTarget
