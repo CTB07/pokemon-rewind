@@ -2731,7 +2731,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SYMBIOTE] =
     {
         .name = _("Symbiote"),
-        .description = COMPOUND_STRING("Deals more damage at a cost."),
+        .description = COMPOUND_STRING("Deals more damage at cost."),
         .aiRating = 7,
     },
 };
