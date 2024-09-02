@@ -2338,4 +2338,16 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleScript = BattleScript_EffectInverseRoom,
         .battleTvScore = 0, // TODO: Assign points
     },
+
+    [EFFECT_GOLDEN_SHOWER] =
+    {
+        .battleScript = BattleScript_EffectGoldenShower,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+    [EFFECT_GRAPE_INQUIRY] =
+    {
+        .battleScript = BattleScript_EffectGrapeInquiry,
+        .battleTvScore = 0, // TODO: Assign points
+    },
 };

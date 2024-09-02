@@ -891,6 +891,8 @@ extern const u8 Move_MOOD_CRUSH[];
 extern const u8 Move_ACID_TRIP[];
 extern const u8 Move_TAPE_UP[];
 extern const u8 Move_REDISTRIBUTE[];
+extern const u8 Move_GOLDEN_SHOWER[];
+extern const u8 Move_GRAPE_INQUIRY[];
 // End of Rewind Moves
 extern const u8 Move_BREAKNECK_BLITZ[];
 extern const u8 Move_ALL_OUT_PUMMELING[];

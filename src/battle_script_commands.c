@@ -13709,7 +13709,7 @@ static void Cmd_copyfoestats(void)
             gBattleMons[gBattlerAttacker].statStages[i] = gBattleMons[gBattlerTarget].statStages[i];
             }
     }
-    else {
+    else { // Redistribute effect
         for (i = 0; i < NUM_BATTLE_STATS; i++)
             {
             gBattleMons[gBattlerTarget].statStages[i] = gBattleMons[gBattlerAttacker].statStages[i];

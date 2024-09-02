@@ -21537,7 +21537,47 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboMoves = {0},
         .battleAnimScript = Move_MAGIC_ROOM,
     },
-    
+
+    [MOVE_GOLDEN_SHOWER] =
+    {
+        .name = HANDLE_EXPANDED_MOVE_NAME("GoldenShower", "Golden Shower"),
+        .description = COMPOUND_STRING(
+            "Launches stream into air,\n"
+            "setting rain for 5 turns."),
+        .effect = EFFECT_GOLDEN_SHOWER,
+        .power = 60,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .battleAnimScript = Move_GOLDEN_SHOWER,
+    },
+
+    [MOVE_GRAPE_INQUIRY] =
+    {
+        .name = HANDLE_EXPANDED_MOVE_NAME("GrapeInquiry", "Grape Inquiry"),
+        .description = COMPOUND_STRING(
+            "An annoying question that\n"
+            "taunts the foe."),
+        .effect = EFFECT_GRAPE_INQUIRY,
+        .power = 70,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .soundMove = TRUE,
+        .ignoresSubstitute = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = Move_GRAPE_INQUIRY,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

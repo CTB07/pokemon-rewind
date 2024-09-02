@@ -5091,6 +5091,7 @@ BattleScript_EffectToxicAttitude::
 	jumpifmorethanhalfHP BS_ATTACKER, BattleScript_EffectHit
 	call BattleScript_EffectHit_Ret
 	tryfaintmon BS_TARGET
+	jumpifhasnohp BS_TARGET, BattleScript_MoveEnd
 	seteffectprimary MOVE_EFFECT_POISON
 	goto BattleScript_MoveEnd
 
@@ -5127,6 +5128,29 @@ BattleScript_EffectHiveMindCanWork:
 	statusanimation BS_TARGET
 	updatestatusicon BS_TARGET
 	tryfaintmon BS_TARGET
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectGoldenShower::
+	call BattleScript_EffectHit_Ret
+	tryfaintmon BS_TARGET
+	jumpifmovehadnoeffect BattleScript_MoveEnd
+	jumpifbattleend BattleScript_MoveEnd
+	jumpifbyte CMP_NOT_EQUAL, gBattleOutcome, 0, BattleScript_MoveEnd
+	call BattleScript_CheckPrimalWeather
+	setfieldweather ENUM_WEATHER_RAIN
+	playanimation BS_ATTACKER, B_ANIM_RAIN_CONTINUES
+	call BattleScript_MoveWeatherChangeRet
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectGrapeInquiry::
+	call BattleScript_EffectHit_Ret
+	tryfaintmon BS_TARGET
+	jumpifmovehadnoeffect BattleScript_MoveEnd
+	jumpifhasnohp BS_TARGET, BattleScript_MoveEnd
+	jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, BattleScript_AromaVeilProtects
+	settaunt BattleScript_MoveEnd
+	printstring STRINGID_PKMNFELLFORTAUNT
+	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
 BattleScript_WaterVeilPrevents::
