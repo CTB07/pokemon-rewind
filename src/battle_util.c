@@ -6072,6 +6072,52 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_AFTERTASTE:
+        {
+            u32 ability = GetBattlerAbility(gBattlerAttacker);
+            if ((!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_POISON) 
+            && (GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)))
+            {
+                u32 poison, paralysis, sleep;
+
+                if (gMovesInfo[gCurrentMove].bitingMove)
+                {
+                    poison = 20;
+                    paralysis = 40;
+                    sleep = 60;
+                }
+                else
+                {
+                    poison = 10;
+                    paralysis = 20;
+                    sleep = 30;
+                }
+
+                i = RandomUniform(RNG_EFFECT_SPORE, 0, B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? 99 : 299);
+                if (i < poison)
+                    goto POISON_POINT;
+                if (i < paralysis)
+                    goto STATIC;
+                // Sleep
+                if (i < sleep
+                 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && IsBattlerAlive(gBattlerAttacker)
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && TARGET_TURN_DAMAGED
+                 && CanBeSlept(gBattlerAttacker, ability)
+                 && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_PROTECTIVE_PADS
+                 && IsMoveMakingContact(move, gBattlerAttacker))
+                {
+                    gBattleScripting.moveEffect = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_SLEEP;
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
+                    gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                    effect++;
+                }
+            }
+        }
+            break;
         }
         break;
 
@@ -11833,7 +11879,7 @@ u32 CalcSecondaryEffectChance(u32 battler, u32 battlerAbility, const struct Addi
     bool8 hasRainbow = (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_RAINBOW) != 0;
     u16 secondaryEffectChance = additionalEffect->chance;
 
-    if (hasRainbow && (hasSereneGrace || hasLowOdds) && additionalEffect->moveEffect == MOVE_EFFECT_FLINCH) // Prevents Flinch Hax, Upper limit of 60% flinch
+    if (((hasRainbow && hasSereneGrace) || hasLowOdds) && additionalEffect->moveEffect == MOVE_EFFECT_FLINCH) // Prevents Flinch Hax, Upper limit of 60% flinch
         return secondaryEffectChance * 2;
 
     if (hasSereneGrace)

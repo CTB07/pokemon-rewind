@@ -2734,4 +2734,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Deals more damage at cost."),
         .aiRating = 7,
     },
+
+    [ABILITY_AFTERTASTE] =
+    {
+        .name = _("Aftertaste"),
+        .description = COMPOUND_STRING("Can status on contact."),
+        .aiRating = 4,
+    },
 };

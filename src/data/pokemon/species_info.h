@@ -2856,23 +2856,23 @@ const struct SpeciesInfo gSpeciesInfo[] =
 [SPECIES_LEMONAVIAN] =
     {
         .baseHP        = 60,
-        .baseAttack    = 98,
+        .baseAttack    = 68,
         .baseDefense   = 75,
-        .baseSpeed   = 57,
-        .baseSpAttack   = 89,
+        .baseSpeed   = 87,
+        .baseSpAttack   = 100,
         .baseSpDefense   = 98,
         .types = MON_TYPES(TYPE_GRASS, TYPE_FLYING),
         .catchRate = 87,
         .expYield = 162,
         .evYield_SpDefense = 1,
-        .itemCommon = ITEM_NONE,
-        .itemRare = ITEM_NONE,
+        .itemCommon = ITEM_BLUK_BERRY,
+        .itemRare = ITEM_LEMONADE,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_PLANT),
-        .abilities = {ABILITY_RIPEN, ABILITY_CHLOROPHYLL, ABILITY_GLUTTONY},
+        .abilities = {ABILITY_RIPEN, ABILITY_CHLOROPHYLL, ABILITY_GRASSY_SURGE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
         .speciesName = _("Lemonavian"),
@@ -3630,15 +3630,15 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .levelUpLearnset = sDreamieLevelUpLearnset,
        //.teachableLearnset = sDreamieTeachableLearnset,
        //.eggMoveLearnset = sDreamieEggMoveLearnset,
-       .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_DREAMENACE}),
+       .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_DREAMENACE}),
 },
 [SPECIES_DREAMENACE] =
     {
         .baseHP        = 55,
-        .baseAttack    = 105,
+        .baseAttack    = 130,
         .baseDefense   = 70,
         .baseSpeed   = 70,
-        .baseSpAttack   = 150,
+        .baseSpAttack   = 105,
         .baseSpDefense   = 55,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FIGHTING),
         .catchRate = 57,
@@ -3883,7 +3883,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .weight = 0,
        .description = COMPOUND_STRING(
               "Tortomotiv's quirk with the phrase\n"
-              ""I like trains" has caused the phrase to\n"
+              "I like trains has caused the phrase to\n"
               "be verbally blacklisted. It will barrel\n"
               "over anyone who utters the sentence."),
 
