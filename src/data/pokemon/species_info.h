@@ -2347,7 +2347,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
               "Sheepastry have a tendency to be total\n"
               "loners, which is often problematic for\n"
               "trainers seeking to run a balanced team.\n"
-              "The champion of Galar's only Pokémon is one."),
+              "The champion of Galar's owns one."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -2388,7 +2388,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_CUTE_CHARM, ABILITY_VOLT_ABSORB, ABILITY_ELECTRIC_SURGE},
+        .abilities = {ABILITY_FUR_COAT, ABILITY_VOLT_ABSORB, ABILITY_ELECTRIC_SURGE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .speciesName = _("Typurr"),
@@ -2443,7 +2443,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = {ABILITY_CUTE_CHARM, ABILITY_VOLT_ABSORB, ABILITY_ELECTRIC_SURGE},
+        .abilities = {ABILITY_FUR_COAT, ABILITY_VOLT_ABSORB, ABILITY_ELECTRIC_SURGE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .speciesName = _("Calikey"),
@@ -2605,7 +2605,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_SCREEN_CLEANER, ABILITY_INNARDS_OUT},
+        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_EFFECT_SPORE, ABILITY_INNARDS_OUT},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = TRUE,
         .speciesName = _("Bubozoa"),
@@ -2660,7 +2660,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_SCREEN_CLEANER, ABILITY_INNARDS_OUT},
+        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_EFFECT_SPORE, ABILITY_INNARDS_OUT},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = TRUE,
         .speciesName = _("Chrysapod"),
@@ -2936,10 +2936,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              "It has a rare and insatiable taste for human\n"
-              "flesh, especially fingers. They used to be\n"
-              "popular as pets before an epidemic of missing\n"
-              "fingers and flushed-away Muncharlies."),
+              "It constantly cries and throws fits\n"
+              "over the organism that has latched itself\n"
+              "onto a Muncharlie's hand. This is usually\n"
+              "a sign of their step out of infancy."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -2990,7 +2990,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "The once tear welling organism on its\n"
+              "hand has begun its acquistion of the\n"
+              "Pokemon's arm. It is only a matter of time\n"
+              "until everything is lost."),
 
 
 
@@ -3044,7 +3047,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "The parastic has completely enveloped\n"
+              "this Pokemon's arm, and also its\n"
+              "thought process. It is no longer\n"
+              "capable of independent thought."),
 
 
 
@@ -3088,7 +3094,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FLYING),
-        .abilities = {ABILITY_GALE_WINGS, ABILITY_GUTS, ABILITY_MULTISCALE},
+        .abilities = {ABILITY_EARLY_BIRD, ABILITY_GUTS, ABILITY_MULTISCALE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = TRUE,
         .speciesName = _("Owlie"),
@@ -3152,7 +3158,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "Constantly oblovious, they are aware\n"
+              "of their surroundings only 20% of\n"
+              "the time. Males do their best to put\n"
+              "down female Chrythical."),
 
 
 
@@ -3206,8 +3215,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              "\n"
-
+              "Griffeter are notorious for its many\n"
+              "acts of tomfoolery and endless mishaps.\n"
               "Luckily, Pitagrifin embodies those good-old\n"
               "fashioned values on which we used to rely."),
        .pokemonScale = 356,
@@ -3262,8 +3271,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .description = COMPOUND_STRING(
               "Terrifying and territorial, Mustelit\n"
               "will viciously attack literally anything.\n"
-              "There are reliable reports of Mustelit \n"
-              "territories catching fire during snowfalls."),
+              "because Mustelit don't care. Mustelit\n"
+              "don't give a shit."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -3316,9 +3325,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .weight = 0,
        .description = COMPOUND_STRING(
               "Few Trainers dare even attempt to capture\n"
-              " a Capensear, much less use one in battle, \n"
+              "a Capensear, much less use one in battle,\n"
               "though it's a terrifyingly good guardian\n"
-              " for the few who manage to bond with it."),
+              "for the few who manage to bond with it."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -3369,7 +3378,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "Dathokyd try their hardest to make use\n"
+              "of their blade. Unfortunately, it only\n"
+              "succeeds in making a fool of itself.\n"
+              "It is laughed at constantly."),
 
 
 
@@ -3423,7 +3435,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "From sheer resentment from the barrage\n"
+              "of goadings, this Pokemon has worked\n"
+              "tirelessly to no longer be seen as a joke.\n"
+              "It is still laughed at constantly."),
 
 
 
@@ -3477,7 +3492,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "If one senses a calm shiver down their\n"
+              "spine, but also the surrender of the\n"
+              "control of their body. It is most likely\n"
+              "the doing of a Murmic."),
 
 
 
@@ -3532,7 +3550,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "Passerbys tend to go missing on routes\n"
+              "where Whispectra inhabit. Eyewitnesses\n"
+              "have reported the victims were under a\n"
+              "trance before their disappearance."),
 
 
 
@@ -3586,10 +3607,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              "Dreamie use powers of emotional suggestion\n"
+              "They use powers of emotional suggestion\n"
               "to become popular with children, while\n"
               "they feed off of their emotional energy.\n"
-              "They often try to sing, but don't do very well."),
+              "They often try to sing, but don't do well."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -3643,8 +3664,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .description = COMPOUND_STRING(
               "Dreamenace use bizarre magical powers to\n"
               "gain immense quantities of luck. They're\n"
-              "often banned from any sort of competition\n"
-              "involving Pokémon due to sheer unfairness."),
+              "often banned from any competition\n"
+              "involving Pokémon due to the unfairness."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -3695,7 +3716,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "Some theorize that Cubble and Cubchoo\n"
+              "are distant relatives. The former of which\n"
+              "uses the mucus in its body to develop\n"
+              "the bubbles in which it rests on.\n"),
 
 
 
@@ -3750,8 +3774,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .weight = 0,
        .description = COMPOUND_STRING(
               "Gesundha's immune system is filled to the\n"
-              "brim with diseases. Its stability is a result\n"
-              "of many diseases cancelling each other out,\n"
+              "brim with toxins. Its stability is a result\n"
+              "of its diseases cancelling each other out,\n"
               "so any sort of cure would kill it quickly."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
@@ -3858,7 +3882,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "Tortomotiv's quirk with the phrase\n"
+              ""I like trains" has caused the phrase to\n"
+              "be verbally blacklisted. It will barrel\n"
+              "over anyone who utters the sentence."),
 
 
 
@@ -3912,7 +3939,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "Dinuggets are said to smell and taste\n"
+              "like chicken nuggets. When combined with\n"
+              "honey mustard, they are considered a\n"
+              "delicacy by children and some adults."),
 
 
 
@@ -3967,7 +3997,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "If its children are eaten, it retaliates by\n"
+              "eating whatever ate its children. Oddly\n"
+              "enough, its blood-soaked body will start\n"
+              "to taste like ketchup given enough time."),
 
 
 
@@ -4021,7 +4054,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "Ganeck commonly mimic human\n"
+              "emotions. When a tragedy occurs, it\n"
+              "feigns despair to gain attention from\n"
+              "nearby people."),
 
 
 
@@ -4075,7 +4111,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "Alienoose uses its rope-like appendage to\n"
+              "carry people. Its carelessness usually\n"
+              "kills whoever it is carrying by lifting the\n"
+              "person by the neck, suffocating them."),
 
 
 
@@ -4236,10 +4275,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              "When kept in captivity, Whallic need a\n"
-              "constant supply of medicines to stay alive.\n"
-              "Freshwater will make them shrink quite\n"
-              "considerably."),
+              "When kept in captivity, Whallic need\n"
+              "a constant supply of medicines to\n"
+              "stay alive. Freshwater will make them\n"
+              "shrink quite considerably."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -4389,7 +4428,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_PLANT),
-        .abilities = {ABILITY_THICK_FAT, ABILITY_GLUTTONY, ABILITY_RIPEN},
+        .abilities = {ABILITY_THICK_FAT, ABILITY_GLUTTONY, ABILITY_DROUGHT},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .speciesName = _("Gluttocado"),
@@ -4401,8 +4440,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .description = COMPOUND_STRING(
               "Unlike Vegava, Gluttocado are known for\n"
               "their lethargic aura and childish\n"
-              "outbursts. Studies revealed that it yearns\n"
-              "for its days as a Vegava."),
+              "outbursts. Studies revealed that it\n"
+              "yearns for its days as a Vegava."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -4454,8 +4493,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .weight = 0,
        .description = COMPOUND_STRING(
               "This Pokemon is often mistaken for a box\n"
-              " to be delivered, even slipping by rigorous\n"
-              " inspection. Because of this, Postle are \n"
+              "to be delivered, even slipping by rigorous\n"
+              "inspection. Because of this, Postle are\n"
               "accidentally delivered all over the world."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
@@ -4562,7 +4601,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              "This Pokémon is an ambitious lawbreaker, \nand will enthusiastically attack others for \ntheir pocket money. Its erratic behavior \nmakes it difficult to take seriously."),
+              "This Pokémon is an ambitious lawbreaker,\n"
+              "and will enthusiastically attack others for\n"
+              "their pocket money. Its erratic behavior\n"
+              "makes it difficult to take seriously."),
 
 
 
@@ -4660,7 +4702,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 90,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_MINERAL),
-        .abilities = {ABILITY_WATER_ABSORB, ABILITY_EMERGENCY_EXIT, ABILITY_DRIZZLE},
+        .abilities = {ABILITY_TECHNICIAN, ABILITY_EMERGENCY_EXIT, ABILITY_DRIZZLE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = TRUE,
         .speciesName = _("Locomalter"),
@@ -4782,7 +4824,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
               "As it grows older and stronger, Pyrulpes'\n"
               "flames eat through its protective helmet. \n"
               "It emanates a hallucinogenic aura, but\n"
-              " has grown immune to its effects"),
+              "has grown immune to its effects"),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -4998,8 +5040,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              "As a living fossil, they're often referred to\n"
-              "as the modern stone-age Pokémon.\n"
+              "As a living fossil, they're often referred\n"
+              "to as the modern stone-age Pokémon.\n"
               "Despite how old they are, they've adapted\n"
               "spectactularly to the world around them."),
        .pokemonScale = 356,
@@ -5712,7 +5754,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
               "The false faces on its upper half are used\n"
               "to draw victims in. If one stares deeply\n"
               "into Macabrerg's eyes, they will see\n"
-              "horrific events as it feeds upon their soul."),
+              "horrific events as it feeds on their soul."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -5932,7 +5974,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              "Fresh off the motherfuckin' block,\nDesmanther are known to be signs of good\nluck and happiness. Sadness is seldom\nseen in trainers who possess this Pokémon."),
+              "Fresh off the motherfuckin' block,\n"
+              "Desmanther are known to be signs of good\n"
+              "luck and happiness. Sadness is seldom\n"
+              "seen in trainers who own this Pokémon."),
 
 
 
@@ -6043,9 +6088,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .weight = 0,
        .description = COMPOUND_STRING(
               "Flexail even work underwater! They can\n"
-              "effortlessly tear a boat in half, which they\n"
-              "then tape back together with their bodies\n"
-              "and use it as a shell."),
+              "effortlessly tear a boat in half, which\n"
+              "they then tape back together with their\n"
+              "bodies and use it as a shell."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -6370,9 +6415,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .weight = 0,
        .description = COMPOUND_STRING(
               "Skelipede can send shivers down a grown\n"
-              "man's spine with just one call. Though their\n"
-              "screams are shrill and terrifying, their sole\n"
-              "intention is to socialize with humans."),
+              "man's spine with just one call. Though the\n"
+              "screams are shrill and terrifying, their\n"
+              "sole intention is to socialize with humans."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -6426,7 +6471,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
               "Due to feeling neglect as a tiny Skelipede,\n"
               "Coffinsect hold a grudge against most of\n"
               "humanity and celebrate when one dies,\n"
-              "dancing around and feasting on the corpse."),
+              "dancing and feasting on the corpse."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -6479,8 +6524,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .description = COMPOUND_STRING(
               "Despite their highly unstable personality,\n"
               "this Pokémon can avoid many attacks, due\n"
-              "to being made of light. Each side of its body\n"
-              "is considered a separate consciousness."),
+              "to being made of light. Each side of its\n"
+              "body is of a separate consciousness."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
@@ -6535,7 +6580,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .description = COMPOUND_STRING(
               "Cursworm are often placed on fishing\n"
               "hooks to attract wild Pokemon. Despite \n"
-              "possibilities of being eaten, it doesn't mind,\n"
+              "high odds of being eaten, it doesn't mind,\n"
               "thriving on any and all forms of attention."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
@@ -6645,8 +6690,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .description = COMPOUND_STRING(
               "Despite being multiple entities, Pupparmy\n"
               "is considered a single Pokemon due to its\n"
-              "inherent nature to stick together. It has a\n"
-              "peculiar fondness for Sweden."),
+              "inherent nature to stick together. They\n"
+              "have been observed migrating to Scandinavia."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
        .trainerScale = 256,
