@@ -11529,8 +11529,8 @@
                 "species": "SPECIES_ACTURUNK"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 3,
+                "max_level": 4,
                 "species": "SPECIES_GRUBFEED"
               },
               {
@@ -11539,7 +11539,7 @@
                 "species": "SPECIES_PAASTEL"
               },
               {
-                "min_level": 5,
+                "min_level": 4,
                 "max_level": 5,
                 "species": "SPECIES_GRUBFEED"
               },
