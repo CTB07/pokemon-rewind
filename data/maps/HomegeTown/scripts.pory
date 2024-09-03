@@ -596,8 +596,8 @@ HomegeTown_MattTiana_Peptalk_8:
 
 
 HomegeTown_MattTiana_Peptalk_Text_0:
-	.string "This person is too focused to notice\n"
-	.string "you.$"
+	.string "???: I'm good enough, I'm smart\n"
+	.string "enough, and doggone it, people like me!$"
 
 HomegeTown_MattTiana_Peptalk_Text_1:
 	.string "???: I'm good enough, I'm smart\n"
