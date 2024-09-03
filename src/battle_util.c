@@ -3626,7 +3626,7 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
         {
             u32 therapistBattler = IsAbilityOnField(ABILITY_THERAPIST);
             if  ((gBattleMons[gBattlerAttacker].ability == ABILITY_ROCK_HEAD && IS_MOVE_RECOIL(gCurrentMove))
-                            || (gCurrentMove == MOVE_CURSE && (gBattleMons[gBattlerAttacker].type1 != TYPE_GHOST || gBattleMons[gBattlerAttacker].type2 != TYPE_GHOST || gBattleMons[gBattlerAttacker].type3 != TYPE_GHOST))
+                            || (gCurrentMove == MOVE_CURSE && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
                             || (gBattleMons[gBattlerAttacker].ability == ABILITY_MAGIC_GUARD && (gMovesInfo[gCurrentMove].effect == EFFECT_RECOIL_IF_MISS || IS_MOVE_RECOIL(gCurrentMove) || gMovesInfo[gCurrentMove].effect == EFFECT_MIND_BLOWN || gMovesInfo[gCurrentMove].effect == EFFECT_MAX_HP_50_RECOIL))
                             || (gBattleMons[gBattlerAttacker].ability == ABILITY_SOUNDPROOF && gCurrentMove == MOVE_PERISH_SONG)
                             || (gBattleMons[gBattlerAttacker].ability == ABILITY_NO_GUARD && gMovesInfo[gCurrentMove].effect == EFFECT_RECOIL_IF_MISS))
