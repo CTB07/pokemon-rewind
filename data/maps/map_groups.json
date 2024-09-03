@@ -3,6 +3,7 @@
     "gMapGroup_RewindTownsAndRoutes",
     "gMapGroup_RewindDungeons",
     "gMapGroup_IndoorHomege",
+    "gMapGroup_IndoorIcovale",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -56,6 +57,9 @@
     "HomegeTown_RivalHouse_2F",
     "HomegeTown_MattTianaHouse_1F",
     "HomegeTown_MattTianaHouse_2F"
+  ],
+  "gMapGroup_IndoorIcovale": [
+
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

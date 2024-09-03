@@ -1,1 +1,21 @@
 mapscripts IcovaleCity_MapScripts {}
+
+script IcovaleCity_YoungsterFountain {
+    msgbox(format("I heard from meemaw that there used to be a giant Crimbark tree on this very spot!"), MSGBOX_NPC)
+}
+
+script IcovaleCity_MotherFountain {
+    msgbox(format("Mother told me as well that when they cut down the tree, it was enough to supply the wood for all the houses here back then!\pBack when the houses here were made of wood that is..."), MSGBOX_NPC)
+}
+
+script IcovaleCity_OldWomanFarmland {
+    msgbox(format("Things have changed around here. This was all farmland as far as the eye could see back then."), MSGBOX_NPC)
+}
+
+script IcovaleCity_BusinessMan {
+    msgbox(format("Icovale has developed a lot over the years. Some of the old residents here disdain it though. It seems more plastic they say.\pI'm not sure what they're talking about!"), MSGBOX_NPC)
+}
+
+script IcovaleCity_CitySign {
+    msgbox(format("ICOVALE CITY\n“A new era of Vidioh!”"), MSGBOX_SIGN)
+}
