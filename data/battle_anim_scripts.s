@@ -17971,6 +17971,8 @@ Move_GRAPE_INQUIRY::
 	end
 
 Move_JUMPSCARE::
+	fadetobg BG_GHOST
+	waitbgfadein
 	playsewithpan SE_M_FLATTER, 0
 	createvisualtask AnimTask_FakeOut, 5
 	waitforvisualfinish
@@ -17979,9 +17981,7 @@ Move_JUMPSCARE::
 	createvisualtask AnimTask_StretchTargetUp, 3
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 3, 16, 0, RGB_WHITE
-	fadetobg BG_GHOST
 	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
-	waitbgfadein
 	monbg ANIM_DEF_PARTNER
 	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 2, 6, 0, 8, RGB_WHITE
 	createvisualtask AnimTask_SpiteTargetShadow, 2

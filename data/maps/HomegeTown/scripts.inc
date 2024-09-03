@@ -1195,9 +1195,9 @@ HomegeTown_MattTiana_Peptalk_8:
 # 598 "data/maps/HomegeTown/scripts.pory"
 HomegeTown_MattTiana_Peptalk_Text_0:
 # 599 "data/maps/HomegeTown/scripts.pory"
-	.string "This person is too focused to notice\n"
+	.string "???: I'm good enough, I'm smart\n"
 # 600 "data/maps/HomegeTown/scripts.pory"
-	.string "you.$"
+	.string "enough, and doggone it, people like me!$"
 # 601 "data/maps/HomegeTown/scripts.pory"
 
 # 602 "data/maps/HomegeTown/scripts.pory"
