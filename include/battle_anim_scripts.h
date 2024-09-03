@@ -893,6 +893,7 @@ extern const u8 Move_TAPE_UP[];
 extern const u8 Move_REDISTRIBUTE[];
 extern const u8 Move_GOLDEN_SHOWER[];
 extern const u8 Move_GRAPE_INQUIRY[];
+extern const u8 Move_JUMPSCARE[];
 // End of Rewind Moves
 extern const u8 Move_BREAKNECK_BLITZ[];
 extern const u8 Move_ALL_OUT_PUMMELING[];

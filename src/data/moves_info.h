@@ -21578,6 +21578,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .battleAnimScript = Move_GRAPE_INQUIRY,
     },
 
+    [MOVE_JUMPSCARE] =
+    {
+        .name = COMPOUND_STRING("Jumpscare"),
+        .description = COMPOUND_STRING(
+            "Quickly flinches foe.\n"
+            "Only works first turn."),
+        .priority = B_UPDATED_MOVE_DATA >= GEN_5 ? 3 : 1,
+        .makesContact = B_UPDATED_MOVE_DATA >= GEN_4,
+        .effect = EFFECT_FIRST_TURN_ONLY,
+        .power = 50,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = COMBO_STARTER_FAKE_OUT,
+        .contestComboMoves = {0},
+        .battleAnimScript = Move_JUMPSCARE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
