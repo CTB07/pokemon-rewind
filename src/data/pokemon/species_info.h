@@ -3158,7 +3158,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              "Constantly oblovious, they are aware\n"
+              "Constantly oblivious, they are aware\n"
               "of their surroundings only 20% of\n"
               "the time. Males do their best to put\n"
               "down female Chrythical."),
@@ -3217,7 +3217,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .description = COMPOUND_STRING(
               "Griffeter are notorious for its many\n"
               "acts of tomfoolery and endless mishaps.\n"
-              "Luckily, Pitagrifin embodies those good-old\n"
+              "Luckily, Griffeter embodies those good-old\n"
               "fashioned values on which we used to rely."),
        .pokemonScale = 356,
        .pokemonOffset = 17,
