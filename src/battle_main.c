@@ -5411,7 +5411,10 @@ static void HandleEndTurn_BattleWon(void)
             PlayBGM(MUS_VICTORY_GYM_LEADER);
             break;
         default:
-            PlayBGM(MUS_VICTORY_TRAINER);
+            if (gTrainerBattleOpponent_A == TRAINER_HOMEGE_MOM)
+                PlayBGM(MUS_RG_VICTORY_TRAINER);
+            else
+                PlayBGM(MUS_VICTORY_TRAINER);
             break;
         }
     }

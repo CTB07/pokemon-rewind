@@ -1051,7 +1051,7 @@ HomegeTown_ProfessorSequoiasLab_EventScript_RivalHasSubstee::
 # 526 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 HomegeTown_ProfessorSequoiasLab_Text_RivalHey:
 # 527 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
-	.string "Hey!$"
+	.string "{RIVAL}: Hey!$"
 # 528 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"
 
 # 529 "data/maps/HomegeTown_ProfessorSequoiasLab/scripts.pory"

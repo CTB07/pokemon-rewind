@@ -2,7 +2,20 @@ raw `
 .set LOCALID_MOM, 1
 
 HomegeTown_PlayerHouse_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, HomegeTown_PlayerHouse_1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, HomegeTown_PlayerHouse_1F_OnFrame
 	.byte 0
+
+HomegeTown_PlayerHouse_1F_OnFrame:
+	map_script_2 VAR_HOMEGE_INTRO_STATE, 5, HomegeTown_PlayerHouse_1F_EventScript_MomReactsStarter
+	.2byte 0
+
+HomegeTown_PlayerHouse_1F_OnTransition: 
+	end
+
+HomegeTown_PlayerHouse_1F_EventScript_MomIsOutside::
+	removeobject LOCALID_MOM
+	end
 
 HomegeTown_PlayerHouse_1F_EventScript_MomIntroTrigger0::
 	compare VAR_HOMEGE_INTRO_STATE, 2
@@ -83,8 +96,88 @@ HomegeTown_PlayerHouse_1F_EventScript_GiveRunningShoes::
 	delay 30
 	return
 
+HomegeTown_PlayerHouse_1F_EventScript_MomReactsStarter::
+	lockall
+	playse SE_PIN
+	applymovement LOCALID_MOM, HomegeTown_PlayerHouse_1F_Movement_MomFacePlayer
+	waitmovement 0
+	msgbox HomegeTown_PlayerHouse_1F_Text_BackAlready, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MOM, HomegeTown_PlayerHouse_1F_Movement_MomWalkToEntrance
+	waitmovement 0
+	msgbox HomegeTown_PlayerHouse_1F_Text_EatSomething, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_HEAL
+	waitfanfare
+	special HealPlayerParty
+	setobjectxy OBJ_EVENT_ID_PLAYER, 2, 6
+	setobjectxy LOCALID_MOM, 0, 3
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_MOM, Common_Movement_FaceUp
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, HomegeTown_PlayerHouse_1F_Movement_CameraMovementFromEntrance
+	waitmovement 0
+	special RemoveCameraObject
+	callnative UpdateFollowingPokemon
+	fadescreen FADE_FROM_BLACK
+	incrementgamestat GAME_STAT_RESTED_AT_HOME
+	applymovement LOCALID_MOM, HomegeTown_PlayerHouse_1F_Movement_MomKitchenToTable
+	waitmovement 0
+	msgbox HomegeTown_PlayerHouse_1F_Text_HereYouGo, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MOM, HomegeTown_PlayerHouse_1F_Movement_MomKitchenEnd
+	waitmovement 0
+	delay 30
+	msgbox HomegeTown_PlayerHouse_1F_Text_TellMeAbout, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	switch VAR_STARTER_MON
+	case 0, HomegeTown_PlayerHouse_1F_EventScript_MomParopeat
+	case 1, HomegeTown_PlayerHouse_1F_EventScript_MomPrimatio
+	case 2, HomegeTown_PlayerHouse_1F_EventScript_MomSubstee
+	end
+
+HomegeTown_PlayerHouse_1F_EventScript_MomBattleChat::
+	msgbox HomegeTown_PlayerHouse_1F_Text_MomBattleWithRival, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_MOM, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 30
+	delay 30
+	msgbox HomegeTown_PlayerHouse_1F_Text_MomFunIdea, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MOM, HomegeTown_PlayerHouse_1F_Movement_MomGoesOutside
+	waitmovement 0
+	removeobject LOCALID_MOM
+	playse SE_EXIT
+	setvar VAR_HOMEGE_INTRO_STATE, 6
+	setflag FLAG_HIDE_MOM
+	releaseall
+	end
+
+HomegeTown_PlayerHouse_1F_EventScript_MomParopeat::
+	msgbox HomegeTown_PlayerHouse_1F_Text_MomParopeat, MSGBOX_DEFAULT
+	closemessage
+	goto HomegeTown_PlayerHouse_1F_EventScript_MomBattleChat
+	end
+
+HomegeTown_PlayerHouse_1F_EventScript_MomPrimatio::
+	msgbox HomegeTown_PlayerHouse_1F_Text_MomPrimatio, MSGBOX_DEFAULT
+	closemessage
+	goto HomegeTown_PlayerHouse_1F_EventScript_MomBattleChat
+	end
+
+HomegeTown_PlayerHouse_1F_EventScript_MomSubstee::
+	msgbox HomegeTown_PlayerHouse_1F_Text_MomSubstee, MSGBOX_DEFAULT
+	closemessage
+	goto HomegeTown_PlayerHouse_1F_EventScript_MomBattleChat
+	end
+
 HomegeTown_PlayerHouse_1F_Movement_MomFacePlayer:
 	face_right
+	emote_exclamation_mark
 	step_end
 
 HomegeTown_PlayerHouse_1F_Movement_PlayerFaceMom:
@@ -103,6 +196,13 @@ HomegeTown_PlayerHouse_1F_Movement_MomWalkToPlayerMid:
 	walk_right
 	walk_right
 	walk_up
+	step_end
+
+HomegeTown_PlayerHouse_1F_Movement_MomWalkToEntrance:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
 	step_end
 
 HomegeTown_PlayerHouse_1F_Movement_MomWalkToPlayerRight:
@@ -136,6 +236,54 @@ HomegeTown_PlayerHouse_1F_Movement_MomWalkBackRight:
 	walk_left
 	step_end
 
+HomegeTown_PlayerHouse_1F_Movement_MomKitchenToTable:
+	delay_16
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	delay_16
+	delay_16
+	walk_left
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	walk_left
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+HomegeTown_PlayerHouse_1F_Movement_MomKitchenEnd:
+	walk_right
+	walk_right
+	walk_down
+	face_left
+	step_end
+
+HomegeTown_PlayerHouse_1F_Movement_CameraMovementFromEntrance:
+ 	walk_faster_up
+	walk_faster_up
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	step_end
+
+HomegeTown_PlayerHouse_1F_Movement_MomGoesOutside:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	step_end
+
 HomegeTown_PlayerHouse_1F_Text_MomIntro1:
 	.string "Mom: Ah, {PLAYER}! You're finally awake.$"
 
@@ -159,7 +307,7 @@ HomegeTown_PlayerHouse_1F_Text_ExplainRunningShoes:
 	.string "instructions.\p"
 	.string "“Press the B Button while wearing these\n"
 	.string "RUNNING SHOES to run extra-fast!\p"
-	.string "...\p"
+	.string "…\p"
 	.string "I'm not really sure what a “B Button”\n"
 	.string "is, but I'm sure you'll figure it out!$"
 
@@ -170,6 +318,55 @@ HomegeTown_PlayerHouse_1F_Text_ComeHomeIfAnythingHappens:
 	.string "enough to get your first Pokémon!\p"
 	.string "I'll be at home if you need anything,\n"
 	.string "{PLAYER}.$"
+
+HomegeTown_PlayerHouse_1F_Text_BackAlready:
+	.string "Mom: Oh! You're back already? That was\n"
+	.string "quick!$"
+
+HomegeTown_PlayerHouse_1F_Text_EatSomething:
+	.string "Mom: You have to tell me how it went!\p"
+	.string "Let's get you something to eat first.$"
+
+HomegeTown_PlayerHouse_1F_Text_HereYouGo:
+	.string "Mom: Here you go! Eat up now that\n"
+	.string "you're rested.$"
+
+HomegeTown_PlayerHouse_1F_Text_TellMeAbout:
+	.string "Mom: So…tell me about everything!\n"
+	.string "What starter did you pick?$"
+
+HomegeTown_PlayerHouse_1F_Text_MomParopeat:
+	.string "Mom: …\p"
+	.string "Ooh, Paropeat? Good choice!$"
+
+HomegeTown_PlayerHouse_1F_Text_MomPrimatio:
+	.string "Mom: …\p"
+	.string "Ooh, Primatio? Good choice!$"
+
+HomegeTown_PlayerHouse_1F_Text_MomSubstee:
+	.string "Mom: …\p"
+	.string "Ooh, Substee? Good choice!$"
+
+HomegeTown_PlayerHouse_1F_Text_MomBattleWithRival:
+	.string "Mom: …\p"
+	.string "You had a battle with {RIVAL}?\n"
+	.string "How did it go?\p"
+	.string "Mom: …\p"
+	.string "Mom: Well, sounds like it was thrilling!\n"
+	.string "I can't even remember the last time\l"
+	.string "I had a battle with someone…\p"
+	.string "Mom: … … …$"
+
+HomegeTown_PlayerHouse_1F_Text_MomFunIdea:	
+	.string "Mom: I have a fun idea!\p"
+	.string "Instead of telling me, why don't you\n"
+	.string "show me what battling means to you?\p"
+	.string "Let's quickly battle in front of\n"
+	.string "the house before you set out on\l"
+	.string "your adventure.\p"
+	.string "Mom: I'll be waiting for you\n"
+	.string "outside!$"
+
 
 HomegeTown_PlayersHouse_1F_EventScript_Mom::
 	lock

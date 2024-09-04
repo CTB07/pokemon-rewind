@@ -25,40 +25,6 @@
         {
         },
     },
-#line 290
-    [TRAINER_GRUNT_SEAFLOOR_CAVERN_4] =
-    {
-#line 291
-        .trainerName = _("GRUNT"),
-#line 292
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-#line 293
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .encounterMusic_gender = 
-#line 294
-F_TRAINER_FEMALE | 
-#line 295
-            TRAINER_ENCOUNTER_MUSIC_AQUA,
-#line 296
-        .doubleBattle = FALSE,
-#line 297
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = 1,
-        .party = (const struct TrainerMon[])
-        {
-            {
-#line 299
-            .species = SPECIES_CARVANHA,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-#line 301
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-#line 300
-            .lvl = 36,
-            .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            },
-        },
-    },
 #line 303
     [TRAINER_DECLAN] =
     {
@@ -42115,6 +42081,39 @@ F_TRAINER_FEMALE |
 #line 17052
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 17051
+            .lvl = 5,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
+#line 17054
+    [TRAINER_HOMEGE_MOM] =
+    {
+#line 17055
+        .trainerName = _("Mom"),
+#line 17056
+        .trainerPic = TRAINER_PIC_AROMA_LADY,
+        .encounterMusic_gender = 
+#line 17057
+F_TRAINER_FEMALE | 
+#line 17058
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+#line 17059
+        .doubleBattle = FALSE,
+#line 17060
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 17062
+            .species = SPECIES_STANDAAD,
+#line 17062
+            .gender = TRAINER_MON_FEMALE,
+#line 17064
+            .iv = TRAINER_PARTY_IVS(7, 7, 7, 7, 7, 7),
+#line 17063
             .lvl = 5,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,

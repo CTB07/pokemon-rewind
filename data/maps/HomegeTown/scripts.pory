@@ -6,21 +6,135 @@ raw `
 .set LOCALID_RIVAL, 7
 .set LOCALID_PROF, 6
 .set LOCALID_NICERIVAL, 8
+.set LOCALID_MOM, 9
 
 HomegeTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, HomegeTown_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, HomegeTown_OnFrame
 	.byte 0
 
 HomegeTown_OnTransition: 
 	call Common_EventScript_SetupRivalGfxId
-	compare VAR_HOMEGE_INTRO_STATE, 4
+	compare VAR_HOMEGE_INTRO_STATE, 6
+	call_if_eq HomegeTown_EventScript_MomBattleSetup
 	call_if_ge HomegeTown_EventScript_SetCamperPos
 	end
+
+HomegeTown_OnFrame:
+	map_script_2 VAR_HOMEGE_INTRO_STATE, 6, HomegeTown_EventScript_MomBattle
+	.2byte 0
 
 HomegeTown_EventScript_SetCamperPos::
 	setobjectxyperm LOCALID_CAMPER, 35, 21
 	setobjectmovementtype LOCALID_CAMPER, MOVEMENT_TYPE_FACE_DOWN
 	return
+
+HomegeTown_EventScript_MomBattle::
+	waitmovement 0
+	lockall
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_SurprisedFaceMom
+	msgbox HomegeTown_Text_MomOverHere, MSGBOX_DEFAULT
+	closemessage
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_WalkDownAndFaceMom
+	waitmovement 0 
+	msgbox HomegeTown_Text_MomExcitedBattle, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	applymovement LOCALID_MOM, Common_Movement_WalkLeft
+	waitmovement 0
+	trainerbattle_earlyrival TRAINER_HOMEGE_MOM, HomegeTown_Text_MomDefeated, HomegeTown_Text_MomVictory
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, HomegeTown_EventScript_WonMomBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, HomegeTown_EventScript_LostMomBattle
+	end
+
+HomegeTown_EventScript_MomBattleSetup::
+	addobject LOCALID_MOM
+	setobjectxyperm LOCALID_MOM, 17, 19
+	return
+
+HomegeTown_EventScript_WonMomBattle::
+	msgbox HomegeTown_Text_WonMomPostBattle, MSGBOX_DEFAULT
+	closemessage
+	goto HomegeTown_EventScript_MomPostBattle
+	end
+
+HomegeTown_EventScript_LostMomBattle::
+	msgbox HomegeTown_Text_LostMomPostBattle, MSGBOX_DEFAULT
+	closemessage
+	goto HomegeTown_EventScript_MomPostBattle
+	end
+
+HomegeTown_EventScript_MomPostBattle::
+	setvar VAR_0x8004, 13
+	setvar VAR_0x8005, 16
+	msgbox HomegeTown_Text_MomPostBattle, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MOM, HomegeTown_Movement_MomGoesInside
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement LOCALID_MOM, MAP_HOMEGE_TOWN
+	opendoor VAR_0x8004, VAR_0x8005
+	waitdooranim
+	applymovement LOCALID_MOM, Common_Movement_WalkUp
+	waitmovement 0
+	setobjectxyperm LOCALID_MOM, 0, 0
+	removeobject LOCALID_MOM
+	closedoor VAR_0x8004, VAR_0x8005
+	waitdooranim
+	setvar VAR_HOMEGE_INTRO_STATE, 7
+	clearflag FLAG_HIDE_MOM
+	end
+
+HomegeTown_Text_MomDefeated:
+	.string "...\n"
+	.string "{PLAYER}, I'm so proud of you.$"
+
+HomegeTown_Text_MomVictory:
+	.string "Ha, ha!\n"
+	.string "Looks like I've still got it!$"
+
+HomegeTown_Text_WonMomPostBattle:
+	.string "Mom: {PLAYER}, you have grown so much\n"
+	.string "in the past 24 hours. I'm so excited\l"
+	.string "to see you grow, not only as a trainer\l"
+	.string "but as a person.$"
+
+HomegeTown_Text_LostMomPostBattle:
+	.string "Mom: Hee hee!\p"
+	.string "Maybe next time, dear! Looks like\n"
+	.string "you've got some training to do!\p"
+	.string "Don't worry about the loss, I still\n"
+	.string "believe in you, {PLAYER}!$"
+
+HomegeTown_Text_MomPostBattle:
+	.string "Mom: Anyhoo…\p"
+	.string "It's best you get on your way. I would\n"
+	.string "love to battle you again. Maybe when\l"
+	.string "you have a few badges under your belt.\p"
+	.string "Take care, {PLAYER}! Don't be afraid to\n"
+	.string "visit your mother every now and then!$"
+
+HomegeTown_Movement_SurprisedFaceMom:
+	emote_exclamation_mark
+	face_right
+	step_end
+
+HomegeTown_Movement_WalkDownAndFaceMom:
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+HomegeTown_Movement_MomGoesInside:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
 
 HomegeTown_EventScript_Camper:: 
 	msgbox HomegeTown_Text_Camper, MSGBOX_NPC
@@ -90,6 +204,47 @@ HomegeTown_EventScript_DangerousWithoutPokemon::
 	waitmovement 0
 	msgbox HomegeTown_Text_GoTalkToProfForPokemon, MSGBOX_DEFAULT
 	closemessage
+	return
+
+HomegeTown_EventScript_TalkToMomTriggerTop:: 
+	lockall
+	playse SE_PIN
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerTop
+	waitmovement 0
+	call HomegeTown_EventScript_SayByeToMom
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_TopCamperReturnRight
+	waitmovement 0
+	releaseall
+	end
+
+HomegeTown_EventScript_TalkToMomTriggerMid:: 
+	lockall
+	playse SE_PIN
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerMidTop
+	waitmovement 0
+	call HomegeTown_EventScript_SayByeToMom
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_MidTopCamperReturnRight
+	waitmovement 0
+	releaseall
+	end
+
+HomegeTown_EventScript_TalkToMomTriggerBot:: 
+	lockall
+	playse SE_PIN
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperApproachPlayerMidBot
+	waitmovement 0
+	call HomegeTown_EventScript_SayByeToMom
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_MidBotCamperReturnRight
+	waitmovement 0
+	releaseall
+	end
+
+HomegeTown_EventScript_SayByeToMom::
+	msgbox HomegeTown_Text_SayByeToMom, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CAMPER, HomegeTown_Movement_CamperPushPlayerFromRoute
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_PushPlayerBackFromRoute
+	waitmovement 0
 	return
 
 HomegeTown_EventScript_NeedToHelpFindPokemonTrigger::
@@ -611,8 +766,6 @@ HomegeTown_MattTiana_Peptalk_Text_3:
 	.string "This person is too focused to notice\n"
 	.string "you.$"
 
-
-
 HomegeTown_Text_PlayerReceivedParopeat:
 	.string "{PLAYER} rescued PAROPEAT!$"
 
@@ -632,6 +785,10 @@ HomegeTown_Text_FatManTech:
 HomegeTown_Text_SorryPalNoPokemon: 
 	.string "Sorry, pal.$"
 
+HomegeTown_Text_SayByeToMom:
+	.string "Shouldn't you say bye to your mom\n"
+	.string "before you leave?$"
+
 HomegeTown_Text_GoTalkToProfForPokemon: 
 	.string "You don't have any Pokémon on you,\n"
 	.string "and there are some strong Pokémon\l"
@@ -641,8 +798,15 @@ HomegeTown_Text_GoTalkToProfForPokemon:
 	.string "give you one.$"
 	
 HomegeTown_Text_Camper:
-	.string "Huh, so you got a Pokémon?\p"
+	.string "Can't believe you have a Pokémon.\p"
 	.string "Wonder what I'm going to do with\n"
 	.string "my life now...$"
+
+HomegeTown_Text_MomOverHere:
+	.string "Mom: I'm over here, sweetie!$"
+
+HomegeTown_Text_MomExcitedBattle:
+	.string "Mom: I can't wait to see what kind\n"
+	.string "of trainer you are, {PLAYER}!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
 
 `

@@ -872,6 +872,7 @@
 #define TRAINER_MATT_ROUTE_1_PRIMATIO        11
 #define TRAINER_MATT_ROUTE_1_SUBSTEE         12
 #define TRAINER_ALGOTECH_GRUNT_F_1           13
+#define TRAINER_HOMEGE_MOM                   14
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
