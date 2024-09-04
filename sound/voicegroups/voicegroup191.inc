@@ -118,3 +118,4 @@ voicegroup191::                                                   @ All instrume
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                @                                    (116)
 	voice_directsound 20, 104, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 235                         @ Taiko Drum                         (117)
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                @                                    (118)
+	

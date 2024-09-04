@@ -613,6 +613,8 @@ gSongTable::
 	song ph_nurse_solo, 2, 2
 	song mus_route1, 0, 0
 	song mus_dokidoki, 0, 0
+	song mus_vidioh_mart_theme, 0, 0
+	song mus_lake_serenity, 0, 0
 
 	.align 2
 dummy_song_header:
