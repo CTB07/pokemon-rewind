@@ -6397,3 +6397,43 @@ DirectSoundWaveData_sd90_classical_whistle::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
+
+	.align 2
+DirectSoundWaveData_clarinet_C4::
+	.incbin "sound/direct_sound_samples/clarinet_C4.bin"
+	
+	.align 2
+DirectSoundWaveData_clarinet_C5::
+	.incbin "sound/direct_sound_samples/clarinet_C5.bin"
+	
+	.align 2
+DirectSoundWaveData_clarinet_C6::
+	.incbin "sound/direct_sound_samples/clarinet_C6.bin"
+
+	.align 2
+DirectSoundWaveData_dppt_altosax::
+	.incbin "sound/direct_sound_samples/sax_C4.bin"
+	
+	.align 2
+DirectSoundWaveData_dokidoki::
+	.incbin "sound/direct_sound_samples/voice_dokidoki.bin"
+
+	.align 2
+DirectSoundWaveData_gmg_clarinet_55::
+	.incbin "sound/direct_sound_samples/gmg_clarinet_55.bin"
+	
+	.align 2
+DirectSoundWaveData_gmg_clarinet_64::
+	.incbin "sound/direct_sound_samples/gmg_clarinet_64.bin"
+	
+	.align 2
+DirectSoundWaveData_gmg_clarinet_70::
+	.incbin "sound/direct_sound_samples/gmg_clarinet_70.bin"
+	
+	.align 2
+DirectSoundWaveData_gmg_clarinet_75::
+	.incbin "sound/direct_sound_samples/gmg_clarinet_75.bin"
+	
+	.align 2
+DirectSoundWaveData_gmg_clarinet_95::
+	.incbin "sound/direct_sound_samples/gmg_clarinet_95.bin"
