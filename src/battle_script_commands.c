@@ -9137,6 +9137,7 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
             BattleScriptPushCursor();
             gBattlescriptCurrInstr = BattleScript_IllusionOff;
+            //PlayCry_ByMode(gBattleMons[battler].species, BattleAnimAdjustPanning(SOUND_PAN_ATTACKER), CRY_MODE_NORMAL); Astlure Cry Plays after Illusion breaks?
             return;
         }
         break;

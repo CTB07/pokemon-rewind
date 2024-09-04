@@ -135,6 +135,12 @@ static const u8 sDoorAnimTiles_RedHomege[] = INCBIN_U8("graphics/door_anims/red_
 static const u16 sDoorNullPalette50[16] = {};
 static const u8 sDoorAnimTiles_LabHomege[] = INCBIN_U8("graphics/door_anims/homege_lab_door.4bpp");
 static const u16 sDoorNullPalette51[16] = {};
+static const u8 sDoorAnimTiles_IcovaleDoor1[] = INCBIN_U8("graphics/door_anims/icovale_door_1.4bpp");
+static const u16 sDoorNullPalette52[16] = {};
+static const u8 sDoorAnimTiles_IcovaleDoor2[] = INCBIN_U8("graphics/door_anims/icovale_door_2.4bpp");
+static const u16 sDoorNullPalette53[16] = {};
+static const u8 sDoorAnimTiles_IcovaleDoor3[] = INCBIN_U8("graphics/door_anims/icovale_door_3.4bpp");
+static const u16 sDoorNullPalette54[16] = {};
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -226,6 +232,7 @@ static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7,
 static const u8 sDoorAnimPalettes_RedHomege[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_BlueHomege[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static const u8 sDoorAnimPalettes_LabHomege[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_Icovale[] = {7, 7, 7, 7, 7, 7, 7, 7};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -287,6 +294,9 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_Homege_DoorRed,                               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_RedHomege, sDoorAnimPalettes_RedHomege},
     {METATILE_Homege_DoorBlue,                              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_RedHomege, sDoorAnimPalettes_BlueHomege},
     {METATILE_Homege_LabDoor,                               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_LabHomege, sDoorAnimPalettes_LabHomege},
+    {METATILE_Icovale_Door1,                                DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_IcovaleDoor1, sDoorAnimPalettes_Icovale},
+    {METATILE_Icovale_Door2,                                DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_IcovaleDoor2, sDoorAnimPalettes_Icovale},
+    {METATILE_Icovale_Door3,                                DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_IcovaleDoor3, sDoorAnimPalettes_Icovale},
     {},
 };
 

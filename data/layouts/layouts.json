@@ -4540,6 +4540,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/NuvueForest/border.bin",
       "blockdata_filepath": "data/layouts/NuvueForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY_HOUSE1",
+      "name": "IcovaleCity_House1_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/IcovaleCity_House1/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity_House1/map.bin"
     }
   ]
 }

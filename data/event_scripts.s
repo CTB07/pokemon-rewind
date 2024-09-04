@@ -1100,3 +1100,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/IcovaleCity/scripts.inc"
 
 	.include "data/maps/NuvueForest/scripts.inc"
+
+	.include "data/maps/IcovaleCity_House1/scripts.inc"

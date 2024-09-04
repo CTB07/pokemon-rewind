@@ -25,6 +25,7 @@
 #define MAP_HOMEGE_TOWN_MATT_TIANA_HOUSE_2F    (6 | (2 << 8))
 
 // gMapGroup_IndoorIcovale
+#define MAP_ICOVALE_CITY_HOUSE1 (0 | (3 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (4 << 8))
