@@ -1276,4 +1276,10 @@ $(MID_SUBDIR)/mus_lake_serenity.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v100 
 
 $(MID_SUBDIR)/mus_encounter_f_ruin_maniac.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v110 
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v110
+
+$(MID_SUBDIR)/mus_encounter_artist.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v95
+
+$(MID_SUBDIR)/mus_gym_vsauce.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v110

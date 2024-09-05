@@ -4680,6 +4680,8 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_VIDIOH_MART_THEME) \
     X(MUS_LAKE_SERENITY) \
     X(MUS_ENCOUNTER_F_RUIN_MANIAC) \
+    X(MUS_ENCOUNTER_ARTIST) \
+    X(MUS_GYM_VSAUCE) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

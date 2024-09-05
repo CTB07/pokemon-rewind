@@ -547,7 +547,9 @@
 #define MUS_VIDIOH_MART_THEME       612
 #define MUS_LAKE_SERENITY           613
 #define MUS_ENCOUNTER_F_RUIN_MANIAC 614
-#define END_MUS                     MUS_ENCOUNTER_F_RUIN_MANIAC
+#define MUS_ENCOUNTER_ARTIST        615
+#define MUS_GYM_VSAUCE              616
+#define END_MUS                     MUS_GYM_VSAUCE
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
