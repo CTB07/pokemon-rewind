@@ -176,6 +176,7 @@ HomegeTown_PlayerHouse_1F_EventScript_MomSubstee::
 	end
 
 HomegeTown_PlayerHouse_1F_Movement_MomFacePlayer:
+	emote_exclamation_mark
 	face_right
 	step_end
 

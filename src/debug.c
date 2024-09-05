@@ -4675,6 +4675,11 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(PH_NURSE_BLEND) \
     X(PH_NURSE_HELD) \
     X(PH_NURSE_SOLO) \
+    X(MUS_ROUTE1) \
+    X(MUS_DOKIDOKI) \
+    X(MUS_VIDIOH_MART_THEME) \
+    X(MUS_LAKE_SERENITY) \
+    X(MUS_ENCOUNTER_F_RUIN_MANIAC) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

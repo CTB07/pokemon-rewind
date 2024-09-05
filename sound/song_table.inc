@@ -615,6 +615,7 @@ gSongTable::
 	song mus_dokidoki, 0, 0
 	song mus_vidioh_mart_theme, 0, 0
 	song mus_lake_serenity, 0, 0
+	song mus_encounter_f_ruin_maniac, 0, 0
 
 	.align 2
 dummy_song_header:

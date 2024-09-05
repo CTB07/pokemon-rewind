@@ -490,7 +490,6 @@
 #define MUS_RG_TRAINER_TOWER        556 // MUS_RG_T_TOWER
 #define MUS_RG_SLOW_PALLET          557 // MUS_RG_SLOWMASARA
 #define MUS_RG_TEACHY_TV_MENU       558 // MUS_RG_TVNOIZE
-#define END_MUS                     MUS_RG_TEACHY_TV_MENU
 
 #define PH_TRAP_BLEND               559
 #define PH_TRAP_HELD                560
@@ -547,6 +546,8 @@
 #define MUS_DOKIDOKI                611
 #define MUS_VIDIOH_MART_THEME       612
 #define MUS_LAKE_SERENITY           613
+#define MUS_ENCOUNTER_F_RUIN_MANIAC 614
+#define END_MUS                     MUS_ENCOUNTER_F_RUIN_MANIAC
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

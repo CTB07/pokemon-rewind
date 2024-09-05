@@ -1264,13 +1264,16 @@ $(MID_SUBDIR)/se_dex_search.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G127 -v100 -P5
 
 $(MID_SUBDIR)/mus_route1.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -V100
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -V90
 
 $(MID_SUBDIR)/mus_dokidoki.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v100 
 
 $(MID_SUBDIR)/mus_vidioh_mart_theme.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v100
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v80
 
 $(MID_SUBDIR)/mus_lake_serenity.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v100 
+
+$(MID_SUBDIR)/mus_encounter_f_ruin_maniac.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v110 

@@ -355,9 +355,9 @@ HomegeTown_PlayerHouse_1F_EventScript_MomSubstee::
 # 178 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 HomegeTown_PlayerHouse_1F_Movement_MomFacePlayer:
 # 179 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
-	face_right
-# 180 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 	emote_exclamation_mark
+# 180 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
+	face_right
 # 181 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"
 	step_end
 # 182 "data/maps/HomegeTown_PlayerHouse_1F/scripts.pory"

@@ -1267,6 +1267,7 @@ SECTIONS {
         sound/songs/midi/mus_dokidoki.o(.rodata);
         sound/songs/midi/mus_vidioh_mart_theme.o(.rodata);
         sound/songs/midi/mus_lake_serenity.o(.rodata);
+        sound/songs/midi/mus_encounter_f_ruin_maniac.o(.rodata);
     } > ROM =0
 
     lib_rodata :
