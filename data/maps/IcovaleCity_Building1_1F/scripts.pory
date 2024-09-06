@@ -1,0 +1,11 @@
+mapscripts IcovaleCity_Building1_1F_MapScripts {}
+
+script IcovaleCity_Building1_1F_UngratefulWife {
+    msgbox(format("My husband is a complete moron.\pIt's a miracle that he has a well-paying job and can afford a house like this."), MSGBOX_NPC)
+}
+
+script IcovaleCity_Building1_1F_CBDMan {
+    msgbox(format("Hey, I got some CBD, want a free sample?\p"
+    "It has a lot of health benefits.\p"
+    "One day, I couldn't make up my mind so I rubbed some on my forehead and I knew I wanted a sandwich right away."), MSGBOX_NPC)
+}

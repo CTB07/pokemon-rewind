@@ -246,6 +246,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RewindLass;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RewindRichBoy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlgoTechGruntF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AlgoTechGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ArtistF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Morshu;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clown;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RewindSwimmerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RewindSwimmerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiacF;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -508,6 +514,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REWINDRICHBOY] =            &gObjectEventGraphicsInfo_RewindRichBoy,
     [OBJ_EVENT_GFX_ALGOTECH_GRUNT_F] =         &gObjectEventGraphicsInfo_AlgoTechGruntF,
     [OBJ_EVENT_GFX_ALGOTECH_GRUNT_M] =         &gObjectEventGraphicsInfo_AlgoTechGruntM,
+    [OBJ_EVENT_GFX_ARTIST_F] =                 &gObjectEventGraphicsInfo_ArtistF,
+    [OBJ_EVENT_GFX_MORSHU] =                   &gObjectEventGraphicsInfo_Morshu,
+    [OBJ_EVENT_GFX_CLOWN] =                    &gObjectEventGraphicsInfo_Clown,
+    [OBJ_EVENT_GFX_REWIND_SWIMMER_M] =         &gObjectEventGraphicsInfo_RewindSwimmerM,
+    [OBJ_EVENT_GFX_REWIND_SWIMMER_F] =         &gObjectEventGraphicsInfo_RewindSwimmerF,
+    [OBJ_EVENT_GFX_RUIN_MANIAC_F] =            &gObjectEventGraphicsInfo_RuinManiacF,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
 };

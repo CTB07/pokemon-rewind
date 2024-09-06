@@ -1,0 +1,172 @@
+mapscripts IcovaleOffice_1F_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ICOVALE_CITY_STATE, 0: IcovaleOffice_1F_OnFrame
+    ]
+}
+
+const LOCALID_GREETER = 1
+const LOCALID_GRUBHUB = 6
+const LOCALID_OLDWOMAN = 7
+
+script IcovaleOffice_1F_OnFrame {
+    lock
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_PLAYER, IcovaleOffice_PersonSurprisesFromLeft)
+    applymovement(LOCALID_GREETER, IcovaleOffice_PersonSurprisesFromLeft)
+    applymovement(LOCALID_OLDWOMAN, IcovaleOffice_PersonSurprisesFromLeft)
+    msgbox(format("???: I CAN'T DO THIS ANYMORE!\nI QUIT!"), MSGBOX_DEFAULT)
+    waitmovement(0)
+    applymovement(LOCALID_OLDWOMAN, IcovaleOffice_OldWomanWatchesFatMan)
+    applymovement(LOCALID_GREETER, IcovaleOffice_GreeterWatchesFatMan)
+    applymovement(OBJ_EVENT_ID_PLAYER, IcovaleOffice_PlayerWatchesFatMan)
+    applymovement(LOCALID_GRUBHUB, IcovaleOffice_FatManWalksFromLeft)
+    waitmovement(LOCALID_GRUBHUB)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, IcovaleOffice_PanUp)
+	waitmovement(0)
+    msgbox(format("I don't care about this company anymore!\p"
+    "I will go on without you lethargic cum hamsters. It will die and it will be because of me!"), MSGBOX_DEFAULT)
+    applymovement(OBJ_EVENT_ID_CAMERA, IcovaleOffice_PanDown)
+    applymovement(LOCALID_GRUBHUB, Common_Movement_WalkDown)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    waitmovement(LOCALID_GRUBHUB)
+    special(RemoveCameraObject)
+    msgbox(format("What do YOU want?\nAre you here for a job?\p…You're gonna want this to stay sane. I don't need it anymore."), MSGBOX_DEFAULT)
+    giveitem(ITEM_METRONOME)
+    call_if_eq(VAR_RESULT, FALSE, IcovaleOffice_1F_MetronomeBagIsFull)
+    msgbox(format("Now get out of my way.\nI've got people I have to pretend to be."), MSGBOX_DEFAULT)
+    applymovement(OBJ_EVENT_ID_PLAYER, IcovaleOffice_PlayerMovesAwayFromEntrance)
+    waitmovement(0)
+    applymovement(LOCALID_GRUBHUB, Common_Movement_WalkDown)
+    waitmovement(0)
+    removeobject(LOCALID_GRUBHUB)
+    playse(SE_EXIT)
+    setflag(FLAG_RECEIVED_METRONOME_FAT_MAN)
+    setvar(VAR_ICOVALE_CITY_STATE, 1)
+    release
+    end
+}
+
+script IcovaleOffice_1F_MetronomeBagIsFull {
+    msgbox(format("Oh?\nWhat's that?\p"
+    "Your bag is full?\nHa…like that's my problem!"), MSGBOX_DEFAULT)
+}
+
+movement IcovaleOffice_OldWomanWatchesFatMan {
+    delay_16 * 2
+    face_down
+    delay_16 
+    face_right
+	step_end
+}
+
+movement IcovaleOffice_GreeterWatchesFatMan {
+    delay_16 * 4
+    face_down
+	step_end
+}
+
+movement IcovaleOffice_PlayerWatchesFatMan {
+    delay_16 * 4
+    face_up
+	step_end
+}
+
+movement IcovaleOffice_FatManWalksFromLeft {
+    walk_right * 8
+    face_up
+	step_end
+}
+
+movement IcovaleOffice_PlayerMovesAwayFromEntrance {
+    face_right
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	step_end
+}
+
+movement IcovaleOffice_PanUp {
+    walk_up
+    walk_up
+	step_end
+}
+
+movement IcovaleOffice_PanDown {
+    walk_fast_down
+    walk_fast_down
+	step_end
+}
+
+script IcovaleOffice_UnpleasantGreeter {
+    if (var(VAR_TEMP_0) == 2) {
+        msgbox(format("Please stop talking to me.\nI don't actually want to help you."), MSGBOX_NPC)
+    }
+    elif (var(VAR_TEMP_0) == 1) {
+        addvar(VAR_TEMP_0, 1)
+        msgbox(format("…"), MSGBOX_NPC)
+    } else {
+        addvar(VAR_TEMP_0, 1)
+        msgbox(format("Welcome to Icovale Offices!\pLet me know if I can help you with anything!"), MSGBOX_NPC) 
+    }
+}
+
+script IcovaleOffice_GreeterStopsPlayer {
+        lock
+        
+        applymovement(LOCALID_GREETER, Common_Movement_FaceRight)
+        playse(SE_PIN)
+        applymovement(OBJ_EVENT_ID_PLAYER, IcovaleOffice_PersonSurprisesFromLeft)
+        checkplayergender
+        if (var(VAR_RESULT) == MALE){
+            msgbox(format("Sir, please step back.\pYou're not allowed back here."), MSGBOX_DEFAULT) 
+        }
+        else {
+            msgbox(format("Miss, please step back.\pYou're not allowed back here."), MSGBOX_DEFAULT)
+        }
+        applymovement(OBJ_EVENT_ID_PLAYER, IcovaleOffice_MoveAwayFromOfficeCounter)
+        waitmovement(0)
+        msgbox(format("Thank you for your understanding.\pNow, move along."), MSGBOX_DEFAULT)
+        applymovement(LOCALID_GREETER, Common_Movement_FaceDown)
+        waitmovement(0)
+        release
+        end
+    }
+
+
+script IcovaleOffice_OldWomanFatGuy {
+        msgbox(format("That large man that stormed out of here?\p"
+        "None of us know his real name.\n"
+        "Every time he arrived, he would introduce himself as someone else.\p"
+        "What a weirdo."), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_OldManThirtyYears {
+        msgbox(format("In just a few weeks, I'll have worked here for 30 years.\p"
+        "All of these young-uns come and go. Where's their company loyalty?"), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_NerdyGuy {
+        msgbox(format("I thought I was going to be working on some cool engineering projects when I applied for this job.\p"
+        "Instead, I'm just punching numbers into a spreadsheet."), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_PCWoman {
+        msgbox(format("The locals keep complaining about how nice and new everything is."
+        "Says we ruined their “livelihood” or something.\pWhat do they have to complain for?\p"
+        "Their houses were also renovated and are much nicer now."), MSGBOX_NPC) 
+    }
+
+movement IcovaleOffice_PersonSurprisesFromLeft {
+    emote_exclamation_mark
+    face_left
+    step_end
+}
+
+movement IcovaleOffice_MoveAwayFromOfficeCounter {
+    face_up
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+}

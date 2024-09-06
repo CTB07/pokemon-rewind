@@ -2,7 +2,7 @@
   "id": "MAP_ICOVALE_CITY_HOUSE1",
   "name": "IcovaleCity_House1",
   "layout": "LAYOUT_ICOVALE_CITY_HOUSE1",
-  "music": "MUS_B_PYRAMID_TOP",
+  "music": "MUS_GSC_PEWTER",
   "region_map_section": "MAPSEC_ICOVALE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "IcovaleCity_House2_1F_YoungMan",
       "flag": "0"
     },
     {
@@ -37,23 +37,30 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "IcovaleCity_House2_1F_HikerReckon",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 6,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_ICOVALE_CITY",
       "dest_warp_id": "0"
     },
     {
-      "x": 4,
+      "x": 7,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_ICOVALE_CITY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ICOVALE_CITY_HOUSE1_2F",
       "dest_warp_id": "0"
     }
   ],

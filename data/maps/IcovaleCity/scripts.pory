@@ -5,7 +5,8 @@ script IcovaleCity_YoungsterFountain {
 }
 
 script IcovaleCity_MotherFountain {
-    msgbox(format("Mother told me as well that when they cut down the tree, it was enough to supply the wood for all the houses here back then!\pBack when the houses here were made of wood that is..."), MSGBOX_NPC)
+    msgbox(format("Mother told me as well that when they cut down the tree, it was enough to supply the wood for all the houses here back then!\p"
+    "Back when the houses here were made of wood that is..."), MSGBOX_NPC)
 }
 
 script IcovaleCity_OldWomanFarmland {
@@ -13,9 +14,21 @@ script IcovaleCity_OldWomanFarmland {
 }
 
 script IcovaleCity_BusinessMan {
-    msgbox(format("Icovale has developed a lot over the years. Some of the old residents here disdain it though. It seems more plastic they say.\pI'm not sure what they're talking about!"), MSGBOX_NPC)
+    msgbox(format("Icovale has developed a lot over the years. Some of the old residents here disdain it though. It seems more plastic they say.\p"
+    "I'm not sure what they're talking about!"), MSGBOX_NPC)
+}
+
+script IcovaleCity_ArtistBuildings {
+    msgbox(format("I'm not sure how to feel about the more modern style that Icovale has developed.\p"
+    "As an artist, I say we should protect our past, our relics of a time not so long ago…\p…but as an ARTIST…\nI say we should knock down some more buildings to see what we can paint.\p"
+    "…\p"
+    "There are two artists inside of me, and I can't control either of them."), MSGBOX_NPC)
 }
 
 script IcovaleCity_CitySign {
     msgbox(format("ICOVALE CITY\n“A new era of Vidioh!”"), MSGBOX_SIGN)
+}
+
+script IcovaleCity_OfficeSign {
+    msgbox(format("Icovale Offices\n“Work is where the heart is!”"), MSGBOX_SIGN)
 }

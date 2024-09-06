@@ -1,1 +1,36 @@
 mapscripts IcovaleCity_House1_MapScripts {}
+
+script IcovaleCity_House2_1F_HikerReckon{
+    msgbox(IcovaleCity_House2_1F_Text_HikerReckon, MSGBOX_NPC)
+	end
+}
+
+script IcovaleCity_House2_1F_YoungMan{
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+    msgbox(IcovaleCity_House2_1F_Text_MYoungMan, MSGBOX_NPC)
+    } else {
+        msgbox(IcovaleCity_House2_1F_Text_FYoungMan, MSGBOX_NPC)
+    }
+	end
+}
+
+text IcovaleCity_House2_1F_Text_HikerReckon {
+    format("Hello there!\n"
+    "You heading to Lake Serenity?\pMight wanna steer clear of that spot for now.\p"
+    "I done seen some folks actin' mighty shady 'round there.")
+}
+
+text IcovaleCity_House2_1F_Text_MYoungMan {
+    format("Argh!\n"
+    "I've gotta get back to work at the office in less than 30 minutes.\p"
+    "…Me?\nRetired?\p"
+    "Son, I'm only 30.")
+}
+
+text IcovaleCity_House2_1F_Text_FYoungMan {
+    format("Argh!\n"
+    "I've gotta get back to work at the office in less than 30 minutes.\p"
+    "…Me?\nRetired?\p"
+    "Miss, I'm only 30.")
+}

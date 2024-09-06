@@ -1,0 +1,85 @@
+mapscripts IcovaleCity_House2_2F_MapScripts {}
+
+script IcovaleCity_House2_2F_EventScript_Trader{
+	lock
+	faceplayer
+	if (flag(FLAG_RUSTBORO_NPC_TRADE_COMPLETED)) {
+        goto(IcovaleCity_House2_2F_EventScript_TradeCompleted)
+    }
+	setvar(VAR_0x8008, INGAME_TRADE_DREAMIE)
+	copyvar(VAR_0x8004, VAR_0x8008)
+	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
+	copyvar(VAR_0x8009, VAR_RESULT)
+	msgbox(IcovaleCity_House2_2F_Text_IllTradeIfYouWant, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+        goto(IcovaleCity_House2_2F_EventScript_DeclineTrade)
+    }
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_0x800A, VAR_0x8004)
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+        goto(IcovaleCity_House2_2F_EventScript_DeclineTrade)
+    }
+	copyvar(VAR_0x8005, VAR_0x800A)
+	specialvar(VAR_RESULT, GetTradeSpecies)
+	copyvar(VAR_0x800B, VAR_RESULT)
+	if (var(VAR_RESULT) != VAR_0x8009) { 
+        goto(IcovaleCity_House2_2F_EventScript_NotRequestedMon)
+    }
+	copyvar(VAR_0x8004, VAR_0x8008)
+	copyvar(VAR_0x8005, VAR_0x800A)
+	special(CreateInGameTradePokemon)
+	special(DoInGameTradeScene)
+	waitstate
+	msgbox(IcovaleCity_House2_2F_Text_PleaseBeGoodToMyPokemon, MSGBOX_DEFAULT)
+	setflag(FLAG_ICOVALE_NPC_TRADE_COMPLETED)
+	release
+	end
+}
+
+script IcovaleCity_House2_2F_EventScript_DeclineTrade{
+	msgbox(IcovaleCity_House2_2F_Text_YouDontWantToThatsOkay, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script IcovaleCity_House2_2F_EventScript_NotRequestedMon{
+	bufferspeciesname(STR_VAR_1, VAR_0x8009)
+	msgbox(IcovaleCity_House2_2F_Text_DoesntLookLikeMonToMe, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script IcovaleCity_House2_2F_EventScript_TradeCompleted{
+	msgbox(IcovaleCity_House2_2F_Text_AnyPokemonCanBeCute, MSGBOX_DEFAULT)
+	release
+	end
+}
+
+text IcovaleCity_House2_2F_Text_IllTradeIfYouWant{
+    format("I renounce my sexuality!\p"
+    "Oh…\n…Sorry about that.\pI just found out that this guy I have a crush on cheated in a children's block game, and now I can't stand him.\p"
+    "The thing is…\n…I have this Pokémon that reminds me so much of him, and I don't think I can keep it around any longer.\p"
+    "I-If you happen to have a {STR_VAR_1}, I'll trade you my {STR_VAR_2}.\pIt's supposedly pretty lucky…\nSo how about it?\p"
+	"Do you wanna trade your {STR_VAR_1} for my {STR_VAR_2}?")
+}
+
+text IcovaleCity_House2_2F_Text_PleaseBeGoodToMyPokemon{
+    format("Despite trading my {STR_VAR_2} away, I still cherish it. I just know it deserves better.\pPlease take care of {STR_VAR_2} for me!")
+}
+
+text IcovaleCity_House2_2F_Text_DoesntLookLikeMonToMe{
+	format("Um……\n"
+	"That's not a {STR_VAR_1}…\p"
+    "If you're trying to look for one, you can apparently find them on Route 1.")
+}
+
+text IcovaleCity_House2_2F_Text_YouDontWantToThatsOkay{
+    format("You don't want my {STR_VAR_2}? Okay, well let me know if you change your mind.\p"
+    "If you're having trouble finding a {STR_VAR_1}, they should be on Route 1.")
+}
+
+text IcovaleCity_House2_2F_Text_AnyPokemonCanBeCute{
+    format("Yay!\n"
+    "Now Paastel is my favorite Pokémon!")
+}

@@ -403,7 +403,7 @@ const u32 gObjectEventPic_RewindYoungster[] = INCBIN_U32("graphics/object_events
 const u16 gObjectEventPal_RewindYoungster[] = INCBIN_U16("graphics/object_events/palettes/rewind_youngster.gbapal");
 
 const u32 gObjectEventPic_RewindLass[] = INCBIN_U32("graphics/object_events/pics/people/rewind_lass.4bpp");
-const u16 gObjectEventPal_RewindLass[] = INCBIN_U16("graphics/object_events/palettes/rewind_lass.gbapal");
+// Lass uses NPC 3 Pal
 
 const u32 gObjectEventPic_RewindRichBoy[] = INCBIN_U32("graphics/object_events/pics/people/rewind_rich_boy.4bpp");
 const u16 gObjectEventPal_RewindRichBoy[] = INCBIN_U16("graphics/object_events/palettes/rewind_rich_boy.gbapal");
@@ -411,6 +411,18 @@ const u16 gObjectEventPal_RewindRichBoy[] = INCBIN_U16("graphics/object_events/p
 const u32 gObjectEventPic_AlgoTechGruntF[] = INCBIN_U32("graphics/object_events/pics/people/algotech_grunt_f.4bpp");
 const u32 gObjectEventPic_AlgoTechGruntM[] = INCBIN_U32("graphics/object_events/pics/people/algotech_grunt_m.4bpp");
 const u16 gObjectEventPal_AlgoTechGrunt[] = INCBIN_U16("graphics/object_events/palettes/algotech_grunt.gbapal");
+
+const u32 gObjectEventPic_ArtistF[] = INCBIN_U32("graphics/object_events/pics/people/artist_f.4bpp");
+
+const u32 gObjectEventPic_Morshu[] = INCBIN_U32("graphics/object_events/pics/people/morshu.4bpp");
+
+const u32 gObjectEventPic_Clown[] = INCBIN_U32("graphics/object_events/pics/people/clown.4bpp");
+
+const u32 gObjectEventPic_RewindSwimmerM[] = INCBIN_U32("graphics/object_events/pics/people/rewind_swimmer_m.4bpp");
+
+const u32 gObjectEventPic_RewindSwimmerF[] = INCBIN_U32("graphics/object_events/pics/people/rewind_swimmer_f.4bpp");
+
+const u32 gObjectEventPic_RuinManiacF[] = INCBIN_U32("graphics/object_events/pics/people/ruin_maniac_f.4bpp");
 // REWIND END 
 
 #if OW_FOLLOWERS_POKEBALLS

@@ -2619,7 +2619,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LOW_ODDS] =
     {
         .name = _("Low Odds"),
-        .description = COMPOUND_STRING("Lowers power but gets lucky."),
+        .description = COMPOUND_STRING("Lowers power, gets lucky."),
         .aiRating = 7,
     },
 

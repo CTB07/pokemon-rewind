@@ -59,7 +59,13 @@
     "HomegeTown_MattTianaHouse_2F"
   ],
   "gMapGroup_IndoorIcovale": [
-    "IcovaleCity_House1"
+    "IcovaleCity_House1",
+    "IcovaleCity_House1_2F",
+    "IcovaleCity_House2_1F",
+    "IcovaleCity_House2_2F",
+    "IcovaleCity_Building1_1F",
+    "IcovaleCity_Building1_2F",
+    "IcovaleOffice_1F"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

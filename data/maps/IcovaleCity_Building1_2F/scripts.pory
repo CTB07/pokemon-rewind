@@ -1,0 +1,42 @@
+mapscripts IcovaleCity_Building1_2F_MapScripts {}
+
+script IcovaleCity_Building1_2F_UpsetSister {
+    msgbox(format("Waaaaah!\nMake him stop!"), MSGBOX_NPC)
+}
+
+script IcovaleCity_Building1_2F_PsychoBrother {
+    lock
+    faceplayer
+    msgbox(format("I like shooting my Pokemon in the head with daddy's gun!\p"
+    "Then, my Hootube rewinds them back to when they were alive!\p"
+    "After that, I get to do it all over again!\p"
+    "Ha ha ha!"), MSGBOX_DEFAULT)
+    release
+    end
+}
+
+script IcovaleCity_Building1_2F_HurtPokemon {
+    lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_PAROPEAT, CRY_MODE_WEAK)
+	msgbox(format("Paropeat: Paro-wooaa…\p"
+    "This Paropeat has clearly been through…\p"
+    "…\p"
+    "…well, a lot…"), MSGBOX_DEFAULT)
+	waitmoncry
+	release
+	end
+}
+
+script IcovaleCity_Building1_2F_Hootube {
+    lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_HOOTUBE, CRY_MODE_WEAK)
+	msgbox(format("Hootube: Hoo-tuuube…\p"
+    "Hootube doesn't appear to like this activity."), MSGBOX_DEFAULT)
+	waitmoncry
+	release
+	end
+}

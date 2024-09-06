@@ -1,0 +1,23 @@
+mapscripts IcovaleCity_House2_1F_MapScripts {}
+
+script IcovaleCity_House2_1F_GBKid{
+    msgbox(IcovaleCity_House2_1F_Text_Dreamsexual, MSGBOX_NPC)
+	end
+}
+
+script IcovaleCity_House2_1F_BackInMyDay{
+    msgbox(IcovaleCity_House2_1F_Text_BackInMyDay, MSGBOX_NPC)
+	end
+}
+
+text IcovaleCity_House2_1F_Text_Dreamsexual {
+    format("My sister upstairs keeps going on and on about how she's “dreamsexual.”\p"
+    "…\p"
+    "What does that even mean?")
+}
+
+text IcovaleCity_House2_1F_Text_BackInMyDay {
+    format("Back in my day, our town's architecture was a symbol of pride…\p"
+    "…and Pokémon didn't have these newfangled scientific names either!\p"
+    "My “Evecho” was named Hamilton, and he was grateful!")
+} 
