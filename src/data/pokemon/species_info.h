@@ -1964,7 +1964,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .height = 0,
        .weight = 0,
        .description = COMPOUND_STRING(
-              ""),
+              "To protect the world from its dangerous,\n"
+              "broken mind, it isolates itself from other\n"
+              "Pokémon. It is believed to have fully\n"
+              "dissociated from its Hugream memories."),
 
 
 
@@ -1982,7 +1985,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
        .palette = gMonPalette_Traumare,
        .shinyPalette = gMonShinyPalette_Traumare,
        .iconSprite = gMonIcon_Traumare,
-       .iconPalIndex = 1,
+       .iconPalIndex = 2,
        //FOOTPRINT(Traumare)
        .levelUpLearnset = sTraumareLevelUpLearnset,
        //.teachableLearnset = sTraumareTeachableLearnset,
