@@ -403,7 +403,7 @@ const u32 gObjectEventPic_RewindYoungster[] = INCBIN_U32("graphics/object_events
 const u16 gObjectEventPal_RewindYoungster[] = INCBIN_U16("graphics/object_events/palettes/rewind_youngster.gbapal");
 
 const u32 gObjectEventPic_RewindLass[] = INCBIN_U32("graphics/object_events/pics/people/rewind_lass.4bpp");
-// Lass uses NPC 3 Pal
+const u16 gObjectEventPal_RewindLass[] = INCBIN_U16("graphics/object_events/palettes/rewind_lass.gbapal");
 
 const u32 gObjectEventPic_RewindRichBoy[] = INCBIN_U32("graphics/object_events/pics/people/rewind_rich_boy.4bpp");
 const u16 gObjectEventPal_RewindRichBoy[] = INCBIN_U16("graphics/object_events/palettes/rewind_rich_boy.gbapal");
@@ -423,6 +423,8 @@ const u32 gObjectEventPic_RewindSwimmerM[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_RewindSwimmerF[] = INCBIN_U32("graphics/object_events/pics/people/rewind_swimmer_f.4bpp");
 
 const u32 gObjectEventPic_RuinManiacF[] = INCBIN_U32("graphics/object_events/pics/people/ruin_maniac_f.4bpp");
+
+const u16 gObjectEventPal_Mom[] = INCBIN_U16("graphics/object_events/palettes/mom.gbapal");
 // REWIND END 
 
 #if OW_FOLLOWERS_POKEBALLS
