@@ -24,6 +24,41 @@ HomegeTown_OnFrame:
 	map_script_2 VAR_HOMEGE_INTRO_STATE, 6, HomegeTown_EventScript_MomBattle
 	.2byte 0
 
+HomegeTown_EventScript_ProfLeavesSetup::
+	clearflag FLAG_HIDE_RIVAL_AND_PROFESSOR
+	setobjectxyperm LOCALID_PROF, 31, 21
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_Exclaim
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfLeavesSetup
+	msgbox HomegeTown_Text_ProfLeaves, MSGBOX_DEFAULT
+	closemessage
+	waitmovement 0
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfLeavesAgain
+	end
+
+HomegeTown_Movement_ProfLeavesSetup:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	face_up
+	step_end
+	
+HomegeTown_Movement_ProfLeavesAgain:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+	
 HomegeTown_EventScript_SetCamperPos::
 	setobjectxyperm LOCALID_CAMPER, 35, 21
 	setobjectmovementtype LOCALID_CAMPER, MOVEMENT_TYPE_FACE_DOWN
@@ -808,5 +843,9 @@ HomegeTown_Text_MomOverHere:
 HomegeTown_Text_MomExcitedBattle:
 	.string "Mom: I can't wait to see what kind\n"
 	.string "of trainer you are, {PLAYER}!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+
+HomegeTown_Text_ProfLeaves:
+	.string "{PLAYER}, I have matters to attend\n"
+	.string "to in Icovale. I'll see you there.$"
 
 `
