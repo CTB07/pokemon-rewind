@@ -24,15 +24,64 @@ HomegeTown_OnFrame:
 	map_script_2 VAR_HOMEGE_INTRO_STATE, 6, HomegeTown_EventScript_MomBattle
 	.2byte 0
 
-HomegeTown_EventScript_ProfLeavesSetup::
+HomegeTown_EventScript_ProfLeavesSetupTop::
+	lock
 	clearflag FLAG_HIDE_RIVAL_AND_PROFESSOR
-	setobjectxyperm LOCALID_PROF, 31, 21
+	addobject LOCALID_PROF
+	showobjectat LOCALID_PROF, MAP_HOMEGE_TOWN
+	setobjectxy LOCALID_PROF, 31, 22
+	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_Exclaim
 	applymovement LOCALID_PROF, HomegeTown_Movement_ProfLeavesSetup
+	waitmovement LOCALID_PROF
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	msgbox HomegeTown_Text_ProfLeaves, MSGBOX_DEFAULT
 	closemessage
-	waitmovement 0
 	applymovement LOCALID_PROF, HomegeTown_Movement_ProfLeavesAgain
+	waitmovement 0
+	removeobject LOCALID_PROF
+	addvar VAR_HOMEGE_INTRO_STATE, 1
+	release
+	end
+
+HomegeTown_EventScript_ProfLeavesSetupMid::
+	lock
+	clearflag FLAG_HIDE_RIVAL_AND_PROFESSOR
+	addobject LOCALID_PROF
+	showobjectat LOCALID_PROF, MAP_HOMEGE_TOWN
+	setobjectxy LOCALID_PROF, 31, 23
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_Exclaim
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfLeavesSetup
+	waitmovement LOCALID_PROF
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	msgbox HomegeTown_Text_ProfLeaves, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfLeavesAgain
+	waitmovement 0
+	removeobject LOCALID_PROF
+	addvar VAR_HOMEGE_INTRO_STATE, 1
+	release
+	end
+
+HomegeTown_EventScript_ProfLeavesSetupBot::
+	lock
+	clearflag FLAG_HIDE_RIVAL_AND_PROFESSOR
+	addobject LOCALID_PROF
+	showobjectat LOCALID_PROF, MAP_HOMEGE_TOWN
+	setobjectxy LOCALID_PROF, 31, 22
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, HomegeTown_Movement_Exclaim
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfLeavesSetupBot
+	waitmovement LOCALID_PROF
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	msgbox HomegeTown_Text_ProfLeaves, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PROF, HomegeTown_Movement_ProfLeavesAgain
+	waitmovement 0
+	removeobject LOCALID_PROF
+	addvar VAR_HOMEGE_INTRO_STATE, 1
+	release
 	end
 
 HomegeTown_Movement_ProfLeavesSetup:
@@ -43,7 +92,20 @@ HomegeTown_Movement_ProfLeavesSetup:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	walk_fast_right
 	face_up
+	step_end
+
+HomegeTown_Movement_ProfLeavesSetupBot:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	face_down
 	step_end
 	
 HomegeTown_Movement_ProfLeavesAgain:
@@ -53,6 +115,7 @@ HomegeTown_Movement_ProfLeavesAgain:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	walk_fast_down
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
