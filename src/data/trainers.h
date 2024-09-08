@@ -42066,7 +42066,7 @@ F_TRAINER_FEMALE |
 #line 17045
 F_TRAINER_FEMALE | 
 #line 17046
-            TRAINER_ENCOUNTER_MUSIC_MAGMA,
+            TRAINER_ENCOUNTER_MUSIC_AQUA,
 #line 17047
         .doubleBattle = FALSE,
 #line 17048

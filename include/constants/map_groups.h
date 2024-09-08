@@ -25,13 +25,17 @@
 #define MAP_HOMEGE_TOWN_MATT_TIANA_HOUSE_2F    (6 | (2 << 8))
 
 // gMapGroup_IndoorIcovale
-#define MAP_ICOVALE_CITY_HOUSE1       (0 | (3 << 8))
-#define MAP_ICOVALE_CITY_HOUSE1_2F    (1 | (3 << 8))
-#define MAP_ICOVALE_CITY_HOUSE2_1F    (2 | (3 << 8))
-#define MAP_ICOVALE_CITY_HOUSE2_2F    (3 | (3 << 8))
-#define MAP_ICOVALE_CITY_BUILDING1_1F (4 | (3 << 8))
-#define MAP_ICOVALE_CITY_BUILDING1_2F (5 | (3 << 8))
-#define MAP_ICOVALE_OFFICE_1F         (6 | (3 << 8))
+#define MAP_ICOVALE_CITY_HOUSE1        (0 | (3 << 8))
+#define MAP_ICOVALE_CITY_HOUSE1_2F     (1 | (3 << 8))
+#define MAP_ICOVALE_CITY_HOUSE2_1F     (2 | (3 << 8))
+#define MAP_ICOVALE_CITY_HOUSE2_2F     (3 | (3 << 8))
+#define MAP_ICOVALE_CITY_BUILDING1_1F  (4 | (3 << 8))
+#define MAP_ICOVALE_CITY_BUILDING1_2F  (5 | (3 << 8))
+#define MAP_ICOVALE_OFFICE_1F          (6 | (3 << 8))
+#define MAP_ICOVALE_OFFICE_2F          (7 | (3 << 8))
+#define MAP_ICOVALE_OFFICE_2F_BROFFICE (8 | (3 << 8))
+#define MAP_ICOVALE_OFFICE_2F_BLOFFICE (9 | (3 << 8))
+#define MAP_ICOVALE_OFFICE_TLOFFICE    (10 | (3 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (4 << 8))

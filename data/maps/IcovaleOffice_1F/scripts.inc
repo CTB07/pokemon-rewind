@@ -215,84 +215,106 @@ IcovaleOffice_UnpleasantGreeter_2:
 IcovaleOffice_GreeterStopsPlayer::
 # 115 "data/maps/IcovaleOffice_1F/scripts.pory"
 	lock
-# 117 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 116 "data/maps/IcovaleOffice_1F/scripts.pory"
 	applymovement 1, Common_Movement_FaceRight
-# 118 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 117 "data/maps/IcovaleOffice_1F/scripts.pory"
 	playse SE_PIN
-# 119 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 118 "data/maps/IcovaleOffice_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, IcovaleOffice_PersonSurprisesFromLeft
-# 120 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 119 "data/maps/IcovaleOffice_1F/scripts.pory"
 	checkplayergender
-# 121 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 120 "data/maps/IcovaleOffice_1F/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq IcovaleOffice_GreeterStopsPlayer_2
-# 125 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 124 "data/maps/IcovaleOffice_1F/scripts.pory"
 	msgbox IcovaleOffice_GreeterStopsPlayer_Text_1, MSGBOX_DEFAULT
 IcovaleOffice_GreeterStopsPlayer_1:
-# 127 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 126 "data/maps/IcovaleOffice_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, IcovaleOffice_MoveAwayFromOfficeCounter
+# 127 "data/maps/IcovaleOffice_1F/scripts.pory"
+	waitmovement 0
 # 128 "data/maps/IcovaleOffice_1F/scripts.pory"
-	waitmovement 0
-# 129 "data/maps/IcovaleOffice_1F/scripts.pory"
 	msgbox IcovaleOffice_GreeterStopsPlayer_Text_2, MSGBOX_DEFAULT
-# 130 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 129 "data/maps/IcovaleOffice_1F/scripts.pory"
 	applymovement 1, Common_Movement_FaceDown
-# 131 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 130 "data/maps/IcovaleOffice_1F/scripts.pory"
 	waitmovement 0
-# 132 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 131 "data/maps/IcovaleOffice_1F/scripts.pory"
 	release
 	end
 
 IcovaleOffice_GreeterStopsPlayer_2:
-# 122 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 121 "data/maps/IcovaleOffice_1F/scripts.pory"
 	msgbox IcovaleOffice_GreeterStopsPlayer_Text_0, MSGBOX_DEFAULT
 	goto IcovaleOffice_GreeterStopsPlayer_1
 
 
 IcovaleOffice_OldWomanFatGuy::
-# 138 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 137 "data/maps/IcovaleOffice_1F/scripts.pory"
 	msgbox IcovaleOffice_OldWomanFatGuy_Text_0, MSGBOX_NPC
 	return
 
 
 IcovaleOffice_OldManThirtyYears::
-# 145 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 144 "data/maps/IcovaleOffice_1F/scripts.pory"
 	msgbox IcovaleOffice_OldManThirtyYears_Text_0, MSGBOX_NPC
 	return
 
 
 IcovaleOffice_NerdyGuy::
-# 150 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 149 "data/maps/IcovaleOffice_1F/scripts.pory"
 	msgbox IcovaleOffice_NerdyGuy_Text_0, MSGBOX_NPC
 	return
 
 
 IcovaleOffice_PCWoman::
-# 155 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 154 "data/maps/IcovaleOffice_1F/scripts.pory"
 	msgbox IcovaleOffice_PCWoman_Text_0, MSGBOX_NPC
 	return
 
 
+IcovaleOffice_SnoozingGuard::
 # 160 "data/maps/IcovaleOffice_1F/scripts.pory"
-IcovaleOffice_PersonSurprisesFromLeft:
+	lock
 # 161 "data/maps/IcovaleOffice_1F/scripts.pory"
-	emote_exclamation_mark
-# 162 "data/maps/IcovaleOffice_1F/scripts.pory"
-	face_left
+	msgbox IcovaleOffice_SnoozingGuard_Text_0, MSGBOX_DEFAULT
 # 163 "data/maps/IcovaleOffice_1F/scripts.pory"
+	release
+	return
+
+
+IcovaleOffice_PaperOnTable::
+# 167 "data/maps/IcovaleOffice_1F/scripts.pory"
+	msgbox IcovaleOffice_PaperOnTable_Text_0, MSGBOX_SIGN
+	return
+
+
+IcovaleOffice_ManOnBreak::
+# 171 "data/maps/IcovaleOffice_1F/scripts.pory"
+	msgbox IcovaleOffice_ManOnBreak_Text_0, MSGBOX_NPC
+	return
+
+
+# 175 "data/maps/IcovaleOffice_1F/scripts.pory"
+IcovaleOffice_PersonSurprisesFromLeft:
+# 176 "data/maps/IcovaleOffice_1F/scripts.pory"
+	emote_exclamation_mark
+# 177 "data/maps/IcovaleOffice_1F/scripts.pory"
+	face_left
+# 178 "data/maps/IcovaleOffice_1F/scripts.pory"
 	step_end
 
-# 166 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 181 "data/maps/IcovaleOffice_1F/scripts.pory"
 IcovaleOffice_MoveAwayFromOfficeCounter:
-# 167 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 182 "data/maps/IcovaleOffice_1F/scripts.pory"
 	face_up
-# 168 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 183 "data/maps/IcovaleOffice_1F/scripts.pory"
 	lock_facing_direction
-# 169 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 184 "data/maps/IcovaleOffice_1F/scripts.pory"
 	walk_down
-# 170 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 185 "data/maps/IcovaleOffice_1F/scripts.pory"
 	unlock_facing_direction
-# 171 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 186 "data/maps/IcovaleOffice_1F/scripts.pory"
 	step_end
 
 IcovaleOffice_1F_OnFrame_Text_0:
@@ -343,22 +365,22 @@ IcovaleOffice_UnpleasantGreeter_Text_2:
 	.string "anything!$"
 
 IcovaleOffice_GreeterStopsPlayer_Text_0:
-# 122 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 121 "data/maps/IcovaleOffice_1F/scripts.pory"
 	.string "Sir, please step back.\p"
 	.string "You're not allowed back here.$"
 
 IcovaleOffice_GreeterStopsPlayer_Text_1:
-# 125 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 124 "data/maps/IcovaleOffice_1F/scripts.pory"
 	.string "Miss, please step back.\p"
 	.string "You're not allowed back here.$"
 
 IcovaleOffice_GreeterStopsPlayer_Text_2:
-# 129 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 128 "data/maps/IcovaleOffice_1F/scripts.pory"
 	.string "Thank you for your understanding.\p"
 	.string "Now, move along.$"
 
 IcovaleOffice_OldWomanFatGuy_Text_0:
-# 138 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 137 "data/maps/IcovaleOffice_1F/scripts.pory"
 	.string "That large man that stormed out of\n"
 	.string "here?\p"
 	.string "None of us know his real name.\n"
@@ -367,14 +389,14 @@ IcovaleOffice_OldWomanFatGuy_Text_0:
 	.string "What a weirdo.$"
 
 IcovaleOffice_OldManThirtyYears_Text_0:
-# 145 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 144 "data/maps/IcovaleOffice_1F/scripts.pory"
 	.string "In just a few weeks, I'll have worked\n"
 	.string "here for 30 years.\p"
 	.string "All of these young-uns come and go.\n"
 	.string "Where's their company loyalty?$"
 
 IcovaleOffice_NerdyGuy_Text_0:
-# 150 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 149 "data/maps/IcovaleOffice_1F/scripts.pory"
 	.string "I thought I was going to be working on\n"
 	.string "some cool engineering projects when I\l"
 	.string "applied for this job.\p"
@@ -382,10 +404,25 @@ IcovaleOffice_NerdyGuy_Text_0:
 	.string "a spreadsheet.$"
 
 IcovaleOffice_PCWoman_Text_0:
-# 155 "data/maps/IcovaleOffice_1F/scripts.pory"
+# 154 "data/maps/IcovaleOffice_1F/scripts.pory"
 	.string "The locals keep complaining about how\n"
 	.string "nice and new everything is. Says we\l"
 	.string "ruined their “livelihood” or something.\p"
 	.string "What do they have to complain for?\p"
 	.string "Their houses were also renovated and\n"
 	.string "are much nicer now.$"
+
+IcovaleOffice_SnoozingGuard_Text_0:
+# 161 "data/maps/IcovaleOffice_1F/scripts.pory"
+	.string "Zzzzz…zzz…\p"
+	.string "This guard seems to have fallen asleep.$"
+
+IcovaleOffice_PaperOnTable_Text_0:
+# 167 "data/maps/IcovaleOffice_1F/scripts.pory"
+	.string "It appears to be an outline for some\n"
+	.string "sort of ad campaign.$"
+
+IcovaleOffice_ManOnBreak_Text_0:
+# 171 "data/maps/IcovaleOffice_1F/scripts.pory"
+	.string "Can't you see I'm on break!?\p"
+	.string "Scram!$"

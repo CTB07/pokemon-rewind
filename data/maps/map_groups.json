@@ -65,7 +65,11 @@
     "IcovaleCity_House2_2F",
     "IcovaleCity_Building1_1F",
     "IcovaleCity_Building1_2F",
-    "IcovaleOffice_1F"
+    "IcovaleOffice_1F",
+    "IcovaleOffice_2F",
+    "IcovaleOffice_2F_BROffice",
+    "IcovaleOffice_2F_BLOffice",
+    "IcovaleOffice_TLOffice"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

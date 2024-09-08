@@ -1114,3 +1114,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/IcovaleCity_Building1_2F/scripts.inc"
 
 	.include "data/maps/IcovaleOffice_1F/scripts.inc"
+
+	.include "data/maps/IcovaleOffice_2F/scripts.inc"
+
+	.include "data/maps/IcovaleOffice_2F_BROffice/scripts.inc"
+
+	.include "data/maps/IcovaleOffice_2F_BLOffice/scripts.inc"
+
+	.include "data/maps/IcovaleOffice_TLOffice/scripts.inc"

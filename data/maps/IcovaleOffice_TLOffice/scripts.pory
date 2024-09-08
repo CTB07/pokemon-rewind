@@ -1,0 +1,199 @@
+const LOCALID_PREZ = 3
+const LOCALID_PROF = 4
+
+mapscripts IcovaleOffice_TLOffice_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_ICOVALE_CITY_STATE) > 1){
+            hideobjectat(LOCALID_PROF, MAP_ICOVALE_OFFICE_TLOFFICE)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ICOVALE_CITY_STATE, 1: IcovaleOffice_TLOffice_OnFrame
+    ]
+}
+
+script IcovaleOffice_TLOffice_OnFrame {
+    lock
+    delay(30)
+    fadeoutbgm(1)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, IcovaleOffice_TLOffice_PanUp)
+	waitmovement(0)
+    playbgm(MUS_ABNORMAL_WEATHER, 0)
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: This is an outrage! I won't let this happen!\pI…\n…I can't!"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PREZ, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Look, Michael, as I've alr-"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceFasterUp)
+    msgbox(format("Prof. Sequoia: It's Professor Sequoia to you."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PREZ, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("R-Right, Professor Sequoia…\pThis meeting…\p"
+    "It's a mere formality.\p"
+    "As you are the gym leader of Icovale, we thought it would be appropriate to inform you that the company is being absorbed.\p"
+    "Your reaction is truly…unfortunate."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: Now, now!\p"
+    "You KNOW that's not the reason why I'm upset!\p"
+    "That conglomerate…moving into my hometown…next to my gym…\p"
+    "My lab is in the next town over!\nYou…\p"
+    "You can't just let them do this!"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PREZ, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia, the signs that they were moving here have been present for a long time now."
+    "Why do you think they helped pay for all of these building rennovations?\p"
+    "Besides, it's not all bad.\nThe quality of life has significantly improved, don't you agree?"), MSGBOX_DEFAULT)
+    closemessage
+    playse(SE_M_METRONOME)
+    applymovement(LOCALID_PROF, Common_Movement_QuestionMark)
+    waitse
+    applymovement(LOCALID_PROF, IcovaleOffice_TLOffice_ProfWalkLeftTwiceFaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: So…\n……\p"
+    "No one else in this room is gonna stand up against these fiends?"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, IcovaleOffice_TLOffice_ProfWalkRightTwiceFaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: Not a SINGLE person!?"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(format("………\n………"), MSGBOX_DEFAULT)
+    closemessage
+    delay(20)
+    applymovement(LOCALID_PROF, IcovaleOffice_TLOffice_ProfWalkLeftTwiceFaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: …\nFine…\p"
+    "I…\n…I need to go clear my head…"), MSGBOX_DEFAULT)
+    closemessage
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, IcovaleOffice_TLOffice_PanDown)
+    applymovement(LOCALID_PROF, IcovaleOffice_TLOffice_ProfessorWalkDown)
+    waitmovement(LOCALID_PROF)
+    playse(SE_PIN)
+    waitse
+    delay(20)
+    special(RemoveCameraObject)
+    fadeoutbgm(0)
+    msgbox(format("Prof. Sequoia: Oh! {PLAYER}…"), MSGBOX_DEFAULT)
+    applymovement(LOCALID_PROF, Common_Movement_FaceRight)
+    waitmovement(LOCALID_PROF)
+    msgbox(format("……"), MSGBOX_DEFAULT)
+    closemessage
+    delay(20)
+    applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+    waitmovement(LOCALID_PROF)
+    msgbox(format("Prof. Sequoia: Sorry, you had to see me like that.\p"
+    "…Surprise…\n…I'm the gym leader…"), MSGBOX_DEFAULT)
+    closemessage
+    delay(20)
+    applymovement(LOCALID_PROF, Common_Movement_FaceRight)
+    waitmovement(LOCALID_PROF)
+    msgbox(format("……"), MSGBOX_DEFAULT)
+    closemessage
+    delay(20)
+    applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+    waitmovement(LOCALID_PROF)
+    msgbox(format("Prof. Sequoia: H-Have you checked out that Trainer School yet?\p"
+    "I-It'll probably help you prepare for your gym battle!"), MSGBOX_DEFAULT)
+    closemessage
+    playse(SE_M_METRONOME)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+    waitmovement(0)
+    waitse
+    delay(30)
+    msgbox(format("Prof. Sequoia: …Look…\n…This isn't really something I want to involve you in. No good can come of it…\p"
+    "……\p…Something terrible is coming to Icovale…\p"
+    "…I'm going to Lake Serenity to calm down. It connects to Route 2, which is east of Icovale. If you meet me there, maybe I'll explain what's going on.\p"
+    "See you there, {PLAYER}.\nBe careful."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, IcovaleOffice_TLOffice_ProfessorExits)
+    waitmovement(LOCALID_PROF)
+    removeobject(LOCALID_PROF)
+    playse(SE_EXIT)
+    delay(30)
+    playbgm(MUS_GSC_PEWTER, 1)
+    setvar(VAR_ICOVALE_CITY_STATE, 2)
+    release
+}
+
+movement IcovaleOffice_TLOffice_PanUp {
+    walk_slow_diag_northwest
+    walk_slow_up
+	step_end
+}
+
+movement IcovaleOffice_TLOffice_ProfWalkLeftTwiceFaceUp {
+    walk_left * 2
+    face_up
+	step_end
+}
+
+movement IcovaleOffice_TLOffice_ProfWalkRightTwiceFaceUp {
+    walk_right * 4
+    face_up
+	step_end
+}
+
+movement IcovaleOffice_TLOffice_PanDown {
+    walk_diag_southeast
+    walk_down
+	step_end
+}
+
+movement IcovaleOffice_TLOffice_ProfessorWalkDown {
+    walk_right
+    walk_down
+    emote_exclamation_mark
+	step_end
+}
+
+movement IcovaleOffice_TLOffice_ProfessorExits {
+    walk_right
+    walk_down
+	step_end
+}
+
+script IcovaleOffice_TLOffice_OldWomanBoardroom {
+        msgbox(format("Between you and me, the professor is right.\p"
+        "I have the least authority in this room though, and, even if I was the president, it's too late to go back now."), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_TLOffice_SmugGuyLeft {
+        lock
+        applymovement(1, Common_Movement_WalkInPlaceRight)
+        waitmovement(1)
+        delay(20)
+        msgbox(format("This is nonsense. What's good for the company is good for the consumer!"), MSGBOX_DEFAULT)
+        release 
+    }
+
+script IcovaleOffice_TLOffice_PresidentBoardroom {
+        msgbox(format("Erm…\n"
+        "Welcome to the Icovale Offices boardroom…\p"
+        "…How did you get up here?"), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_TLOffice_OldManRight {
+        msgbox(format("Eh…\nWho knows how many years I've got left anyway?\p"
+        "Might as well live them with my pockets filled."), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_TLOffice_WomanRight {
+        lock
+        applymovement(6, Common_Movement_WalkInPlaceLeft)
+        waitmovement(6)
+        delay(20)
+        msgbox(format("You handled that brilliantly, sir! There's no doubt this company takeover was a great idea!"), MSGBOX_DEFAULT)
+        closemessage
+        delay(20)
+        msgbox(format("……\n……\p"
+        "We're doomed."), MSGBOX_NPC)
+    }

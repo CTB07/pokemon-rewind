@@ -1,0 +1,22 @@
+mapscripts IcovaleOffice_2F_MapScripts {}
+
+script IcovaleOffice_2F_CutCostPaperOnTable {
+        msgbox(format("It seems to be a plan to cut costs."), MSGBOX_SIGN) 
+    }
+
+script IcovaleOffice_2F_TrickPaperOnTable {
+        msgbox(format("It seems to be a plan to falsely reassure everyone that the company is doing okay."), MSGBOX_SIGN) 
+    }
+
+script IcovaleOffice_2F_FatMan {
+        msgbox(format("Welcome to the second floor. I'm working on cutting costs and which employees to layoff."), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_2F_TrickEmployee {
+        msgbox(format("This company is bound to fall any day now. I'm not even entirely sure what we're selling.\p"
+        "Lies, maybe."), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_2F_OfficeIsLocked {
+        msgbox(format("The office door is locked."), MSGBOX_SIGN) 
+    }

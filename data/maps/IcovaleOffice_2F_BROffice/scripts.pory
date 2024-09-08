@@ -1,0 +1,6 @@
+mapscripts IcovaleOffice_2F_BROffice_MapScripts {}
+
+script IcovaleOffice_OldManNoPart {
+        msgbox(format("I want no part of what's happening in that boardroom.\p"
+        "Nothing good can come from it."), MSGBOX_NPC) 
+    }

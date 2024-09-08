@@ -4610,6 +4610,46 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/IcovaleOffice_1F/border.bin",
       "blockdata_filepath": "data/layouts/IcovaleOffice_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_OFFICE_2F",
+      "name": "IcovaleOffice_2F_Layout",
+      "width": 24,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/IcovaleOffice_2F/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleOffice_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_OFFICE_2F_BROFFICE",
+      "name": "IcovaleOffice_2F_BROffice_Layout",
+      "width": 9,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/IcovaleOffice_2F_BROffice/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleOffice_2F_BROffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_OFFICE_2F_BLOFFICE",
+      "name": "IcovaleOffice_2F_BLOffice_Layout",
+      "width": 9,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/IcovaleOffice_2F_BLOffice/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleOffice_2F_BLOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_OFFICE_TLOFFICE",
+      "name": "IcovaleOffice_TLOffice_Layout",
+      "width": 9,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/IcovaleOffice_TLOffice/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleOffice_TLOffice/map.bin"
     }
   ]
 }

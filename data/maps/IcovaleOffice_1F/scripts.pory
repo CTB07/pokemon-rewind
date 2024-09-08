@@ -113,7 +113,6 @@ script IcovaleOffice_UnpleasantGreeter {
 
 script IcovaleOffice_GreeterStopsPlayer {
         lock
-        
         applymovement(LOCALID_GREETER, Common_Movement_FaceRight)
         playse(SE_PIN)
         applymovement(OBJ_EVENT_ID_PLAYER, IcovaleOffice_PersonSurprisesFromLeft)
@@ -155,6 +154,22 @@ script IcovaleOffice_PCWoman {
         msgbox(format("The locals keep complaining about how nice and new everything is."
         "Says we ruined their “livelihood” or something.\pWhat do they have to complain for?\p"
         "Their houses were also renovated and are much nicer now."), MSGBOX_NPC) 
+    }
+
+script IcovaleOffice_SnoozingGuard {
+        lock
+        msgbox(format("Zzzzz…zzz…\p"
+        "This guard seems to have fallen asleep."), MSGBOX_DEFAULT)
+        release
+    }
+
+script IcovaleOffice_PaperOnTable {
+        msgbox(format("It appears to be an outline for some sort of ad campaign."), MSGBOX_SIGN) 
+    }
+
+script IcovaleOffice_ManOnBreak {
+        msgbox(format("Can't you see I'm on break!?\p"
+        "Scram!"), MSGBOX_NPC) 
     }
 
 movement IcovaleOffice_PersonSurprisesFromLeft {
