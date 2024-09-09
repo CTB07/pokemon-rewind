@@ -2741,4 +2741,25 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Can status on contact."),
         .aiRating = 4,
     },
+
+    [ABILITY_IGNITE] =
+    {
+        .name = _("Ignite"),
+        .description = COMPOUND_STRING("Normal moves become Fire."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_DRACONIFY] =
+    {
+        .name = _("Draconify"),
+        .description = COMPOUND_STRING("Normal moves become Dragon."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_LIQUIDATE] =
+    {
+        .name = _("Liquidate"),
+        .description = COMPOUND_STRING("Normal moves become Water."),
+        .aiRating = 8,
+    },
 };

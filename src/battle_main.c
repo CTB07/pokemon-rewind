@@ -5785,6 +5785,15 @@ bool32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;
+    case ABILITY_IGNITE:
+        ateType = TYPE_FIRE;
+        break;
+    case ABILITY_DRACONIFY:
+        ateType = TYPE_DRAGON;
+        break;
+    case ABILITY_LIQUIDATE:
+        ateType = TYPE_WATER;
+        break;
     default:
         ateType = TYPE_NONE;
         break;
