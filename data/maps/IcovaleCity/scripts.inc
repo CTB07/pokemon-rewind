@@ -38,8 +38,36 @@ IcovaleCity_CitySign::
 	return
 
 
-IcovaleCity_OfficeSign::
+IcovaleCity_MattTianaHouseSign::
 # 33 "data/maps/IcovaleCity/scripts.pory"
+	checkplayergender
+# 34 "data/maps/IcovaleCity/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq IcovaleCity_MattTianaHouseSign_1
+# 38 "data/maps/IcovaleCity/scripts.pory"
+	msgbox IcovaleCity_MattTianaHouseSign_Text_1, MSGBOX_SIGN
+	return
+
+IcovaleCity_MattTianaHouseSign_1:
+# 35 "data/maps/IcovaleCity/scripts.pory"
+	msgbox IcovaleCity_MattTianaHouseSign_Text_0, MSGBOX_SIGN
+	return
+
+
+IcovaleCity_ProfHouseSign::
+# 43 "data/maps/IcovaleCity/scripts.pory"
+	msgbox IcovaleCity_ProfHouseSign_Text_0, MSGBOX_SIGN
+	return
+
+
+IcovaleCity_ProfHouseLockedSign::
+# 47 "data/maps/IcovaleCity/scripts.pory"
+	msgbox IcovaleCity_ProfHouseLockedSign_Text_0, MSGBOX_SIGN
+	return
+
+
+IcovaleCity_OfficeSign::
+# 52 "data/maps/IcovaleCity/scripts.pory"
 	msgbox IcovaleCity_OfficeSign_Text_0, MSGBOX_SIGN
 	return
 
@@ -93,7 +121,25 @@ IcovaleCity_CitySign_Text_0:
 	.string "ICOVALE CITY\n"
 	.string "“A new era of Vidioh!”$"
 
+IcovaleCity_MattTianaHouseSign_Text_0:
+# 35 "data/maps/IcovaleCity/scripts.pory"
+	.string "Tiana's House$"
+
+IcovaleCity_MattTianaHouseSign_Text_1:
+# 38 "data/maps/IcovaleCity/scripts.pory"
+	.string "Matt's House$"
+
+IcovaleCity_ProfHouseSign_Text_0:
+# 43 "data/maps/IcovaleCity/scripts.pory"
+	.string "Prof. Sequoia's House$"
+
+IcovaleCity_ProfHouseLockedSign_Text_0:
+# 47 "data/maps/IcovaleCity/scripts.pory"
+	.string "“I'm not home at the moment.\n"
+	.string "Sorry!”\p"
+	.string "-Prof. Sequoia$"
+
 IcovaleCity_OfficeSign_Text_0:
-# 33 "data/maps/IcovaleCity/scripts.pory"
+# 52 "data/maps/IcovaleCity/scripts.pory"
 	.string "Icovale Offices\n"
 	.string "“Work is where the heart is!”$"

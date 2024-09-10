@@ -1,0 +1,64 @@
+const LOCALID_MORSHU = 1
+const LOCALID_KAREN = 2
+
+mapscripts IcovaleCity_Mart_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: IcovaleCity_Mart_OnFrame
+    ]
+}
+
+script IcovaleCity_Mart_OnFrame {
+    if(!flag(FLAG_VISITED_POKEMART)){
+        lock
+        delay(20)
+        special(SpawnCameraObject)
+        applymovement(OBJ_EVENT_ID_CAMERA, IcovaleCity_Mart_PanUp)
+	    waitmovement(0)
+        applymovement(LOCALID_MORSHU, Common_Movement_WalkInPlaceDown)
+        waitmovement(0)
+        msgbox(format("Lamp oil, rope, bombs?\p"
+        "You want it? It's yours, my friend.\nAs long as you have enough rupees."), MSGBOX_DEFAULT)
+        closemessage
+        applymovement(OBJ_EVENT_ID_CAMERA, IcovaleCity_Mart_PanDown)
+        waitmovement(0)
+        special(RemoveCameraObject)
+        setflag(FLAG_VISITED_POKEMART)
+        release
+    } else {
+        setvar(VAR_TEMP_0, 1)
+    }
+}
+
+script IcovaleCity_Mart_Clerk {
+	lock
+	faceplayer
+	message(gText_HowMayIServeYou)
+	waitmessage
+	pokemart(IcovaleCity_Mart_Items)
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+}
+script IcovaleCity_Mart_Karen {
+	lock
+    applymovement(LOCALID_KAREN, Common_Movement_WalkInPlaceUp)
+    waitmovement(0)
+    msgbox(format("What do you mean you don't sell any Ultra balls?\p"
+    "I'd like to speak to your manager."), MSGBOX_DEFAULT)
+    release
+}
+
+mart IcovaleCity_Mart_Items {
+	ITEM_POKE_BALL
+	ITEM_POTION
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+}
+
+movement IcovaleCity_Mart_PanUp {
+    walk_up * 3
+}
+
+movement IcovaleCity_Mart_PanDown {
+    walk_down * 3
+}

@@ -2,11 +2,6 @@ const LOCALID_PREZ = 3
 const LOCALID_PROF = 4
 
 mapscripts IcovaleOffice_TLOffice_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_ICOVALE_CITY_STATE) > 1){
-            hideobjectat(LOCALID_PROF, MAP_ICOVALE_OFFICE_TLOFFICE)
-        }
-    }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_ICOVALE_CITY_STATE, 1: IcovaleOffice_TLOffice_OnFrame
     ]
@@ -109,8 +104,8 @@ script IcovaleOffice_TLOffice_OnFrame {
     waitmovement(0)
     waitse
     delay(30)
-    msgbox(format("Prof. Sequoia: …Look…\n…This isn't really something I want to involve you in. No good can come of it…\p"
-    "……\p…Something terrible is coming to Icovale…\p"
+    msgbox(format("Prof. Sequoia: Look…\nThis isn't really something I want to involve you in. No good can come of it…\p"
+    "……\pSomething terrible is coming to Icovale…\p"
     "…I'm going to Lake Serenity to calm down. It connects to Route 2, which is east of Icovale. If you meet me there, maybe I'll explain what's going on.\p"
     "See you there, {PLAYER}.\nBe careful."), MSGBOX_DEFAULT)
     closemessage
@@ -127,38 +122,32 @@ script IcovaleOffice_TLOffice_OnFrame {
 movement IcovaleOffice_TLOffice_PanUp {
     walk_slow_diag_northwest
     walk_slow_up
-	step_end
 }
 
 movement IcovaleOffice_TLOffice_ProfWalkLeftTwiceFaceUp {
     walk_left * 2
     face_up
-	step_end
 }
 
 movement IcovaleOffice_TLOffice_ProfWalkRightTwiceFaceUp {
     walk_right * 4
     face_up
-	step_end
 }
 
 movement IcovaleOffice_TLOffice_PanDown {
     walk_diag_southeast
     walk_down
-	step_end
 }
 
 movement IcovaleOffice_TLOffice_ProfessorWalkDown {
     walk_right
     walk_down
     emote_exclamation_mark
-	step_end
 }
 
 movement IcovaleOffice_TLOffice_ProfessorExits {
     walk_right
     walk_down
-	step_end
 }
 
 script IcovaleOffice_TLOffice_OldWomanBoardroom {

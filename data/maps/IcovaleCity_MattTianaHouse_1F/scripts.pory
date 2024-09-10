@@ -1,0 +1,42 @@
+mapscripts IcovaleCity_MattTianaHouse_1F_MapScripts {}
+
+script IcovaleCity_MattTianaHouse_1F_Mom {
+        msgbox(format("My husband has been away on a business trip for weeks. My son has gone missing, too.\p"
+        "It's not all bad though. Sometimes, we make fun, family vlogs together!"), MSGBOX_NPC) 
+    }
+
+script IcovaleCity_MattTianaHouse_1F_Cody {
+        msgbox(format("…My name's Cody."), MSGBOX_NPC) 
+    }
+
+script IcovaleCity_MattTianaHouse_1F_Emma {
+        msgbox(format("My name's Emma!"), MSGBOX_NPC) 
+    }
+
+script IcovaleCity_MattTianaHouse_1F_Jake {
+        msgbox(format("Sup, I'm Jake."), MSGBOX_NPC) 
+    }
+
+script IcovaleCity_MattTianaHouse_1F_Ryan {
+        msgbox(format("I'm Ryan."), MSGBOX_NPC) 
+    }
+
+script IcovaleCity_MattTianaHouse_1F_Alex {
+        msgbox(format("I'm Alex!"), MSGBOX_NPC) 
+    }
+
+script IcovaleCity_MattTianaHouse_1F_Housekeeper {
+        lock
+        faceplayer
+        msgbox(format("We get some semblance of peace whenever the father goes away for work.\p"
+        "It's usually when he comes back that the “pranking” begins."), MSGBOX_DEFAULT)
+        applymovement(3, Common_Movement_FaceUp)
+        waitmovement(0) 
+        checkplayergender
+        if (var(VAR_RESULT) == MALE){
+            msgbox(format("If only Tiana was still here to keep the peace…"), MSGBOX_DEFAULT)
+        } else {
+            msgbox(format("If only Matt was still here to keep the peace…"), MSGBOX_DEFAULT)
+        }
+        release
+    }

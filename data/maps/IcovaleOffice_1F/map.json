@@ -125,14 +125,14 @@
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ICOVALE_CITY",
-      "dest_warp_id": "5"
+      "dest_warp_id": "4"
     },
     {
       "x": 13,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ICOVALE_CITY",
-      "dest_warp_id": "5"
+      "dest_warp_id": "4"
     },
     {
       "x": 21,
@@ -146,7 +146,7 @@
     {
       "type": "trigger",
       "x": 15,
-      "y": 7,
+      "y": 6,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",

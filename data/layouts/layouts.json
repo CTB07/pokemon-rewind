@@ -4650,6 +4650,66 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/IcovaleOffice_TLOffice/border.bin",
       "blockdata_filepath": "data/layouts/IcovaleOffice_TLOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY_MATT_TIANA_HOUSE_1F",
+      "name": "IcovaleCity_MattTianaHouse_1F_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/IcovaleCity_MattTianaHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity_MattTianaHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY_MATT_TIANA_HOUSE_2F",
+      "name": "IcovaleCity_MattTianaHouse_2F_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/IcovaleCity_MattTianaHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity_MattTianaHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY_TRAINER_SCHOOL",
+      "name": "IcovaleCity_TrainerSchool_Layout",
+      "width": 12,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonSchool",
+      "border_filepath": "data/layouts/IcovaleCity_TrainerSchool/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity_TrainerSchool/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY_POKEMON_CENTER_1F",
+      "name": "IcovaleCity_PokemonCenter_1F_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/IcovaleCity_PokemonCenter_1F/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity_PokemonCenter_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY_POKEMON_CENTER_2F",
+      "name": "IcovaleCity_PokemonCenter_2F_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/IcovaleCity_PokemonCenter_2F/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity_PokemonCenter_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY_MART",
+      "name": "IcovaleCity_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/IcovaleCity_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity_Mart/map.bin"
     }
   ]
 }

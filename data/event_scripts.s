@@ -1122,3 +1122,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/IcovaleOffice_2F_BLOffice/scripts.inc"
 
 	.include "data/maps/IcovaleOffice_TLOffice/scripts.inc"
+
+	.include "data/maps/IcovaleCity_MattTianaHouse_1F/scripts.inc"
+
+	.include "data/maps/IcovaleCity_MattTianaHouse_2F/scripts.inc"
+
+	.include "data/maps/IcovaleCity_TrainerSchool/scripts.inc"
+
+	.include "data/maps/IcovaleCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/IcovaleCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/IcovaleCity_Mart/scripts.inc"

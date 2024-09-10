@@ -1,0 +1,86 @@
+const LOCALID_RIVAL = 1
+const LOCALID_BULLIED = 2
+
+
+mapscripts IcovaleCity_TrainerSchool_MapScripts {}
+
+
+script IcovaleCity_TrainerSchool_RivalBully {
+    if (flag(FLAG_TEMP_1)){
+        lock
+        msgbox(format("It's best not to intervene."), MSGBOX_DEFAULT)
+        release
+        end
+    } else 
+    {lock
+    applymovement(LOCALID_RIVAL, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("{RIVAL}: I just got this sack of meat a few hours ago and I'm already kicking your ass this much?\pPlease.\nGive me your lunch money, kid."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_BULLIED, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    msgbox(format("W-Wait!\nI already gave you all my money from our battle.\pDon't you want to learn the type-matchups?"))
+    applymovement(LOCALID_RIVAL, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    switch (var(VAR_STARTER_MON)) {
+        case 0:
+            msgbox(format("{RIVAL}: All I need to know is that Fire beats Grass.\p"
+            "Now, give me that lunch money."), MSGBOX_DEFAULT)
+        case 1:
+            msgbox(format("{RIVAL}: All I need to know is that Water beats Fire.\p"
+            "Now, give me that lunch money."), MSGBOX_DEFAULT)
+        case 2:
+            msgbox(format("{RIVAL}: All I need to know is that Grass beats Water.\p"
+            "Now, give me that lunch money."), MSGBOX_DEFAULT)
+    }
+    applymovement(LOCALID_BULLIED, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    msgbox(format("I don't have lunch money! I pack my lunch!"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_RIVAL, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("{RIVAL}: Well…\p"
+    "Looks like we have a problem."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_BULLIED, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    msgbox(format("Relax, {RIVAL}!\nIt was just friendly competition!\pBeginner's luck, I suppose."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_RIVAL, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("{RIVAL}: Luck, luck, luck.\p"
+    "Everyone I'm battling's gonna need a whole lotta luck or whatever to actually have a chance.\p"
+    "Keep making excuses bud. I'm gonna ask this for the last time. Give me your lunch money, or you'll need luck to find out if you're going home or not."), MSGBOX_DEFAULT)
+    closemessage
+    setflag(FLAG_TEMP_1)
+    release
+    end
+    }
+}
+
+script IcovaleCity_TrainerSchool_FavoritePokemon {
+        msgbox(format("I've heard an Elite Four member from Johto say that you must battle with your favorites.\p"
+        "Well, I only like Mega Rayquaza! What does that mean?"), MSGBOX_NPC) 
+    }
+
+script IcovaleCity_TrainerSchool_ArceusZacian {
+        msgbox(format("I'm currently studying type charts.\p"
+        "Why Arceus chose to give the Steel and Fairy type to a Pokemon with 150 attack is beyond me."), MSGBOX_NPC) 
+    }
+
+script IcovaleCity_TrainerSchool_KyogreGroudon {
+        checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            msgbox(format("Hey, mister!\nI got a question for ya…\pWho's stronger? Kyogre or Groudon?\p"
+            "Because the way I see it, Kyogre is surrounded. What's under the ocean?\pThat's right.\nMore earth."), MSGBOX_NPC) 
+        } else {
+            msgbox(format("Hey, miss!\nI got a question for ya…\pWho's stronger? Kyogre or Groudon?\p"
+            "Because the way I see it, Kyogre is surrounded. What's under the ocean?\pThat's right.\nMore earth."), MSGBOX_NPC) 
+        }
+    }
+
+script IcovaleCity_TrainerSchool_OtherRegions {
+        msgbox(format("For whatever reason, border patrol bans any Pokémon not native to Vidioh from coming in.\p"
+        "They also stop people from bringing native Pokémon out of the region.\p"
+        "Seems rather convenient if you ask me."), MSGBOX_NPC) 
+    }

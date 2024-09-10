@@ -29,6 +29,25 @@ script IcovaleCity_CitySign {
     msgbox(format("ICOVALE CITY\n“A new era of Vidioh!”"), MSGBOX_SIGN)
 }
 
+script IcovaleCity_MattTianaHouseSign {
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        msgbox(format("Tiana's House"), MSGBOX_SIGN)
+    }
+    else {
+        msgbox(format("Matt's House"), MSGBOX_SIGN)
+    }
+}
+
+script IcovaleCity_ProfHouseSign {
+    msgbox(format("Prof. Sequoia's House"), MSGBOX_SIGN)
+}
+
+script IcovaleCity_ProfHouseLockedSign {
+    msgbox(format("“I'm not home at the moment.\n"
+    "Sorry!”\p-Prof. Sequoia"), MSGBOX_SIGN)
+}
+
 script IcovaleCity_OfficeSign {
     msgbox(format("Icovale Offices\n“Work is where the heart is!”"), MSGBOX_SIGN)
 }

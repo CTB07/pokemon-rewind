@@ -69,7 +69,13 @@
     "IcovaleOffice_2F",
     "IcovaleOffice_2F_BROffice",
     "IcovaleOffice_2F_BLOffice",
-    "IcovaleOffice_TLOffice"
+    "IcovaleOffice_TLOffice",
+    "IcovaleCity_MattTianaHouse_1F",
+    "IcovaleCity_MattTianaHouse_2F",
+    "IcovaleCity_TrainerSchool",
+    "IcovaleCity_PokemonCenter_1F",
+    "IcovaleCity_PokemonCenter_2F",
+    "IcovaleCity_Mart"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
