@@ -4504,7 +4504,7 @@
     {
       "id": "LAYOUT_ROUTE2",
       "name": "Route2_Layout",
-      "width": 60,
+      "width": 64,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -4710,6 +4710,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/IcovaleCity_Mart/border.bin",
       "blockdata_filepath": "data/layouts/IcovaleCity_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_SERENITY",
+      "name": "LakeSerenity_Layout",
+      "width": 39,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/LakeSerenity/border.bin",
+      "blockdata_filepath": "data/layouts/LakeSerenity/map.bin"
     }
   ]
 }

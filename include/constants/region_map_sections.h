@@ -217,7 +217,8 @@
 // Rewind
 #define MAPSEC_HOMEGE_TOWN                  0xD5
 #define MAPSEC_ICOVALE_CITY                 0xD6
-#define MAPSEC_NONE                         0xD7
+#define MAPSEC_LAKE_SERENITY                0xD7
+#define MAPSEC_NONE                         0xD8
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

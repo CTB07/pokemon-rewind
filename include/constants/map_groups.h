@@ -13,7 +13,8 @@
 #define MAP_ICOVALE_CITY (4 | (0 << 8))
 
 // gMapGroup_RewindDungeons
-#define MAP_NUVUE_FOREST (0 | (1 << 8))
+#define MAP_NUVUE_FOREST  (0 | (1 << 8))
+#define MAP_LAKE_SERENITY (1 | (1 << 8))
 
 // gMapGroup_IndoorHomege
 #define MAP_HOMEGE_TOWN_PLAYER_HOUSE_1F        (0 | (2 << 8))
