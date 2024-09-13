@@ -27,11 +27,6 @@ Route1_EventScript_Shizuku::
 	msgbox Route1_Text_ShizukuPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route1_EventScript_AlgoTechGruntF1:: 
-	trainerbattle_single TRAINER_ALGOTECH_GRUNT_F_1, Route1_Text_AlgoTechGruntF1Intro, Route1_Text_AlgoTechGruntF1Defeated
-	msgbox Route1_Text_AlgoTechGruntF1PostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route1_EventScript_HomelessMan::
 	lock
 	faceplayer

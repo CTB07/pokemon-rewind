@@ -4834,14 +4834,8 @@ Route1_Text_ShizukuPostBattle:
 	.string "I guess this music is only for studying,\n"
 	.string "not battling...$"
 
-Route1_Text_AlgoTechGruntF1Intro: 
-	.string "This area is off limits.\n"
-	.string "Get lost!$"
-
-Route1_Text_AlgoTechGruntF1Defeated: 
+LakeSerenity_Text_AlgoTechGruntFDefeated: 
 	.string "You've made a grave, grave mistake\n"
 	.string "messing with AlgoTech.$"
 
-Route1_Text_AlgoTechGruntF1PostBattle: 
-	.string "When the higher-ups find out about\n"
-	.string "you, you're done for.$"	
+

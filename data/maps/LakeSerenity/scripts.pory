@@ -1,1 +1,65 @@
-mapscripts LakeSerenity_MapScripts {}
+const LOCALID_PROF = 1
+
+mapscripts LakeSerenity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        random(2)
+        if (var(VAR_LAKE_SERENITY_STATE) <= 2 && var(VAR_LAKE_SERENITY_STATE) != 0) {
+            call(LakeSerenity_SetProfPosition)
+        }
+    }
+}
+
+script LakeSerenity_SetProfPosition{
+    setobjectxyperm(LOCALID_PROF, 28, 12)
+	setobjectmovementtype(LOCALID_PROF, MOVEMENT_TYPE_FACE_LEFT)
+}
+
+script LakeSerenity_ProfChase1_Trigger{
+    lock
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, LakeSerenity_PanUp)
+	waitmovement(0)
+    msgbox(format("Prof. Sequoia: W-Wait!\pCome back!"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, LakeSerenity_ProfessorRuns)
+	waitmovement(0)
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, LakeSerenity_PanDown)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    setobjectxy(LOCALID_PROF, 28, 12)
+	applymovement(LOCALID_PROF, Common_Movement_FaceLeft)
+    setvar(VAR_LAKE_SERENITY_STATE, 1)
+    release
+}
+
+movement LakeSerenity_PanUp {
+    walk_up * 5
+}
+
+movement LakeSerenity_ProfessorRuns{
+    walk_fast_up * 4
+    walk_fast_right * 2
+    walk_fast_up * 2
+}
+
+movement LakeSerenity_PanDown {
+    walk_down * 5
+}
+
+script LakeSerenity_ProfChase2_Trigger{
+    lock
+    playmoncry(SPECIES_PAROPEAT, CRY_MODE_NORMAL)
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceUp)
+	msgbox(format("???: Triiiix!"), MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    setvar(VAR_LAKE_SERENITY_STATE, 2)
+    release
+}
+
+movement LakeSerenity_SurpriseFaceUp {
+    emote_exclamation_mark
+    face_up
+}

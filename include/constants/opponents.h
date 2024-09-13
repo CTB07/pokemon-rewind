@@ -859,20 +859,26 @@
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 
-#define TRAINER_REWIND_RYAN                   1
-#define TRAINER_REWIND_BILLY                  2
-#define TRAINER_REWIND_SHIZUKU                3
-#define TRAINER_RIVAL_LAB_PAROPEAT            4
-#define TRAINER_RIVAL_LAB_PRIMATIO            5
-#define TRAINER_RIVAL_LAB_SUBSTEE             6
-#define TRAINER_TIANA_ROUTE_1_PAROPEAT        7
-#define TRAINER_TIANA_ROUTE_1_PRIMATIO        8
-#define TRAINER_TIANA_ROUTE_1_SUBSTEE         9
-#define TRAINER_MATT_ROUTE_1_PAROPEAT        10
-#define TRAINER_MATT_ROUTE_1_PRIMATIO        11
-#define TRAINER_MATT_ROUTE_1_SUBSTEE         12
-#define TRAINER_ALGOTECH_GRUNT_F_1           13
-#define TRAINER_HOMEGE_MOM                   14
+#define TRAINER_REWIND_RYAN                     1
+#define TRAINER_REWIND_BILLY                    2
+#define TRAINER_REWIND_SHIZUKU                  3
+#define TRAINER_RIVAL_LAB_PAROPEAT              4
+#define TRAINER_RIVAL_LAB_PRIMATIO              5
+#define TRAINER_RIVAL_LAB_SUBSTEE               6
+#define TRAINER_TIANA_ROUTE_1_PAROPEAT          7
+#define TRAINER_TIANA_ROUTE_1_PRIMATIO          8
+#define TRAINER_TIANA_ROUTE_1_SUBSTEE           9
+#define TRAINER_MATT_ROUTE_1_PAROPEAT          10
+#define TRAINER_MATT_ROUTE_1_PRIMATIO          11
+#define TRAINER_MATT_ROUTE_1_SUBSTEE           12
+#define TRAINER_LAKE_SERENITY_ALGOTECH_GRUNT_F 13
+#define TRAINER_HOMEGE_MOM                     14
+#define TRAINER_LAKE_SERENITY_ALGOTECH_GRUNT_M 15
+/*#define TRAINER_REWIND_SEBASTIAN             16
+#define TRAINER_REWIND_EMILY                 17
+#define TRAINER_REWIND_MILES                 18
+#define TRAINER_REWIND_TAYLOR                19*/
+
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled

@@ -102,6 +102,7 @@
 #define VAR_GENERAL                                     0x4051
 #define VAR_NICE_RIVAL_STATE                            0x4052
 #define VAR_ICOVALE_CITY_STATE                          0x4053
+#define VAR_LAKE_SERENITY_STATE                         0x4054
 
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
 #define VAR_OLDALE_TOWN_STATE                            0x4051

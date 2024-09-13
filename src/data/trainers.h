@@ -25,38 +25,6 @@
         {
         },
     },
-#line 303
-    [TRAINER_DECLAN] =
-    {
-#line 304
-        .trainerName = _("DECLAN"),
-#line 305
-        .trainerClass = TRAINER_CLASS_SWIMMER_M,
-#line 306
-        .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .encounterMusic_gender = 
-#line 308
-            TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-#line 309
-        .doubleBattle = FALSE,
-#line 310
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = 1,
-        .party = (const struct TrainerMon[])
-        {
-            {
-#line 312
-            .species = SPECIES_GYARADOS,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-#line 314
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-#line 313
-            .lvl = 34,
-            .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            },
-        },
-    },
 #line 316
     [TRAINER_GRUNT_RUSTURF_TUNNEL] =
     {
@@ -42054,10 +42022,10 @@ F_TRAINER_FEMALE |
         },
     },
 #line 17041
-    [TRAINER_ALGOTECH_GRUNT_F_1] =
+    [TRAINER_LAKE_SERENITY_ALGOTECH_GRUNT_F] =
     {
 #line 17042
-        .trainerName = _("Analyst"),
+        .trainerName = _("Grunt"),
 #line 17043
         .trainerClass = TRAINER_CLASS_ALGOTECH,
 #line 17044
@@ -42071,49 +42039,92 @@ F_TRAINER_FEMALE |
         .doubleBattle = FALSE,
 #line 17048
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = 1,
+        .partySize = 2,
         .party = (const struct TrainerMon[])
         {
             {
 #line 17050
-            .species = SPECIES_STANDAAD,
+            .species = SPECIES_HUGREAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17052
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
 #line 17051
-            .lvl = 5,
+            .lvl = 10,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+            {
+#line 17054
+            .species = SPECIES_PIKASH,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 17056
+            .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+#line 17055
+            .lvl = 13,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
-#line 17054
+#line 17058
+    [TRAINER_LAKE_SERENITY_ALGOTECH_GRUNT_M] =
+    {
+#line 17059
+        .trainerName = _("Grunt"),
+#line 17060
+        .trainerClass = TRAINER_CLASS_ALGOTECH,
+#line 17061
+        .trainerPic = TRAINER_PIC_ALGOTECH_GRUNT_M,
+        .encounterMusic_gender = 
+#line 17063
+            TRAINER_ENCOUNTER_MUSIC_AQUA,
+#line 17064
+        .doubleBattle = FALSE,
+#line 17065
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 17067
+            .species = SPECIES_STANDAAD,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 17069
+            .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+#line 17068
+            .lvl = 13,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            },
+        },
+    },
+#line 17071
     [TRAINER_HOMEGE_MOM] =
     {
-#line 17055
+#line 17072
         .trainerName = _("Mom"),
-#line 17056
+#line 17073
         .trainerPic = TRAINER_PIC_AROMA_LADY,
         .encounterMusic_gender = 
-#line 17057
+#line 17074
 F_TRAINER_FEMALE | 
-#line 17058
+#line 17075
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
-#line 17059
+#line 17076
         .doubleBattle = FALSE,
-#line 17060
+#line 17077
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
             {
-#line 17062
+#line 17079
             .species = SPECIES_STANDAAD,
-#line 17062
+#line 17079
             .gender = TRAINER_MON_FEMALE,
-#line 17064
+#line 17081
             .iv = TRAINER_PARTY_IVS(7, 7, 7, 7, 7, 7),
-#line 17063
+#line 17080
             .lvl = 5,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,

@@ -4524,7 +4524,7 @@
     {
       "id": "LAYOUT_ICOVALE_CITY",
       "name": "IcovaleCity_Layout",
-      "width": 55,
+      "width": 54,
       "height": 53,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Icovale",
