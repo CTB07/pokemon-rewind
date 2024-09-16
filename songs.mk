@@ -1283,3 +1283,6 @@ $(MID_SUBDIR)/mus_encounter_artist.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_gym_vsauce.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v110
+
+$(MID_SUBDIR)/mus_vsauce_theme.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -v110

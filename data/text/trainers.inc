@@ -4834,7 +4834,7 @@ Route1_Text_ShizukuPostBattle:
 	.string "I guess this music is only for studying,\n"
 	.string "not battling...$"
 
-LakeSerenity_Text_AlgoTechGruntFDefeated: 
+LakeSerenity_Text_AlgoTechGruntMDefeated: 
 	.string "You've made a grave, grave mistake\n"
 	.string "messing with AlgoTech.$"
 

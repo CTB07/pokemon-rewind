@@ -418,6 +418,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(RS_MAY, RubySapphireMay),
     TRAINER_SPRITE(RIVAL, Rival),
     TRAINER_SPRITE(ALGOTECH_GRUNT_F, AlgoTechGruntF),
+    TRAINER_SPRITE(ALGOTECH_GRUNT_M, AlgoTechGruntM),
+    TRAINER_SPRITE(ARTIST_F, ArtistF),
+    TRAINER_SPRITE(CLOWN, Clown),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

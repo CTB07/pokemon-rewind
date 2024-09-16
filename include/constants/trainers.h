@@ -110,10 +110,10 @@
 #define TRAINER_PIC_RS_MAY                92
 #define TRAINER_PIC_RIVAL                 93
 #define TRAINER_PIC_ALGOTECH_GRUNT_F      94
-#define TRAINER_PIC_ALGOTECH_GRUNT_M      94
-#define TRAINER_PIC_CLOWN                 95
-#define TRAINER_PIC_ARTIST_F              96
-#define TRAINER_PIC_COUNT                 97
+#define TRAINER_PIC_ALGOTECH_GRUNT_M      95
+#define TRAINER_PIC_CLOWN                 96
+#define TRAINER_PIC_ARTIST_F              97
+#define TRAINER_PIC_COUNT                 98
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

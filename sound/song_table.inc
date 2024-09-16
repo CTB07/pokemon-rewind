@@ -618,6 +618,7 @@ gSongTable::
 	song mus_encounter_f_ruin_maniac, 0, 0
 	song mus_encounter_artist, 0, 0
 	song mus_gym_vsauce, 0, 0
+	song mus_vsauce_theme, 0, 0
 
 	.align 2
 dummy_song_header:

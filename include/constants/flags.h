@@ -53,8 +53,8 @@
 #define FLAG_HIDE_PROF_ICOVALE_OFFICE    0x28 // Unused Flag
 #define FLAG_ITEM_MATT_TIANA_HOUSE_SILK_SCARF    0x29 // Unused Flag
 #define FLAG_VISITED_POKEMART    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
+#define FLAG_COLLISION    0x2B // Unused Flag
+#define FLAG_HIDE_ALGO_LAKE    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag

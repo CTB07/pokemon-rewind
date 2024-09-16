@@ -1270,6 +1270,7 @@ SECTIONS {
         sound/songs/midi/mus_encounter_f_ruin_maniac.o(.rodata);
         sound/songs/midi/mus_encounter_artist.o(.rodata);
         sound/songs/midi/mus_gym_vsauce.o(.rodata);
+        sound/songs/midi/mus_vsauce_theme.o(.rodata);
     } > ROM =0
 
     lib_rodata :

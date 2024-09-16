@@ -4682,6 +4682,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_ENCOUNTER_F_RUIN_MANIAC) \
     X(MUS_ENCOUNTER_ARTIST) \
     X(MUS_GYM_VSAUCE) \
+    X(MUS_VSAUCE_THEME) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

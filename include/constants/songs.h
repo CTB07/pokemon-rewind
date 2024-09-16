@@ -549,7 +549,8 @@
 #define MUS_ENCOUNTER_F_RUIN_MANIAC 614
 #define MUS_ENCOUNTER_ARTIST        615
 #define MUS_GYM_VSAUCE              616
-#define END_MUS                     MUS_GYM_VSAUCE
+#define MUS_VSAUCE_THEME            617
+#define END_MUS                     MUS_VSAUCE_THEME
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

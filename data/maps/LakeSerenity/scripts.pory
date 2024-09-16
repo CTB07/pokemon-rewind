@@ -1,10 +1,16 @@
 const LOCALID_PROF = 1
+const LOCALID_ALGO_F = 2
+const LOCALID_ALGO_M = 3
+const LOCALID_ALGOTRIX = 4
 
 mapscripts LakeSerenity_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        random(2)
+        setflag(FLAG_HIDE_ALGO_LAKE)
         if (var(VAR_LAKE_SERENITY_STATE) <= 2 && var(VAR_LAKE_SERENITY_STATE) != 0) {
             call(LakeSerenity_SetProfPosition)
+        } elif (var(VAR_LAKE_SERENITY_STATE) > 2){
+            setobjectxyperm(LOCALID_PROF, 0, 0)
+            setobjectxyperm(LOCALID_ALGOTRIX, 0, 0)
         }
     }
 }
@@ -49,6 +55,8 @@ movement LakeSerenity_PanDown {
 
 script LakeSerenity_ProfChase2_Trigger{
     lock
+    applymovement(LOCALID_PROF, Common_Movement_FaceLeft)
+    waitmovement(0)
     playmoncry(SPECIES_PAROPEAT, CRY_MODE_NORMAL)
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceUp)
@@ -62,4 +70,364 @@ script LakeSerenity_ProfChase2_Trigger{
 movement LakeSerenity_SurpriseFaceUp {
     emote_exclamation_mark
     face_up
+}
+
+script LakeSerenity_AlgoTech_Event{
+    lock
+    faceplayer
+    msgbox(format("Prof. Sequoia: Oh! Hey there, {PLAYER}!\nI'm glad you came."), MSGBOX_DEFAULT)
+    closemessage
+    if (var(VAR_FACING) == DIR_WEST){
+        applymovement(OBJ_EVENT_ID_PLAYER, LakeSerenity_PlayerMovementForAlgoTechEvent)
+        waitmovement(0)
+        applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+        waitmovement(0)
+    }
+    msgbox(format("Prof. Sequoia: I'm guessing you saw me haphazardly chasing whatever that thing was.\p"
+    "Whatever I was chasing, it just disappeared!\p"
+    "…Or did it?{PLAY_BGM}{MUS_VSAUCE_THEME}"), MSGBOX_DEFAULT)
+    closemessage
+    fadeoutbgm(0)
+    applymovement(LOCALID_PROF, Common_Movement_FaceLeft)
+    waitmovement(0)
+    delay(60)
+    applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: …\pYeah, it's gone."), MSGBOX_DEFAULT)
+    playbgm(MUS_LAKE_SERENITY, 1)
+    msgbox(format("I assume it must have been an undiscovered Pokémon. A brand new one, too."
+    "Of all the bizarre creatures I've seen in Vidioh over the past few decades, I've never seen anything like it. It looked a bit like a Hootube in a way."), MSGBOX_DEFAULT)
+    applymovement(LOCALID_PROF, Common_Movement_FaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: …"), MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: I apologize over what you had to witness a bit ago in the boardroom."
+    "I don't even know how you got up there to begin with, but I digress."), MSGBOX_DEFAULT)
+    applymovement(LOCALID_PROF, Common_Movement_FaceLeft)
+    waitmovement(0)
+    msgbox(format("That company had humble beginnings in Icovale. As the city grew, the company grew, too."), MSGBOX_DEFAULT)
+    applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+    waitmovement(0)
+    msgbox(format("Now it's being taken over by them. They're powerful and very dangerous.\p"
+    "Having lived in Homege your entire life, I wouldn't be surprised if you never heard of them before.\pThe corporation that took over…\nThey call themselves AlgoTe-"), MSGBOX_DEFAULT)
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceDown)
+    applymovement(LOCALID_PROF, LakeSerenity_SurpriseFaceDown)
+    waitmovement(0)
+    clearflag(FLAG_HIDE_ALGO_LAKE)
+    addobject(LOCALID_ALGO_F)
+    addobject(LOCALID_ALGO_M)
+    msgbox(format("???: Who are you? This is a restricted area.\nGet out now!"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_F, LakeSerenity_AlgoFStart)
+    delay(20)
+    applymovement(LOCALID_ALGO_M, LakeSerenity_AlgoMStart)
+    waitmovement(LOCALID_ALGO_M)
+    applymovement(LOCALID_PROF, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: {PLAYER}!"), MSGBOX_DEFAULT)
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: It's them!\nThey work for AlgoTech!"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement(LOCALID_PROF, Common_Movement_FaceRight)
+    applymovement(LOCALID_ALGO_F, Common_Movement_WalkInPlaceLeft)
+    waitmovement(LOCALID_ALGO_F)
+    msgbox(format("Ah, you've never heard of us, huh?\nThat's pretty refreshing. You'll be hearing from us a lot more if you don't get out now."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: I'm gonna have to disagree. I just saw a brand new Pokémon in this area, and, as the professor and also gym leader of the nearby city, I have the authority and especially responsibility to look into this."), MSGBOX_DEFAULT)
+    playse(SE_PIN)
+    applymovement(LOCALID_ALGO_F, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_ALGO_M, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    delay(60)
+    applymovement(LOCALID_ALGO_M, Common_Movement_WalkInPlaceFasterLeft)
+    waitmovement(0)
+    msgbox(format("It's here!?"), MSGBOX_DEFAULT)
+    applymovement(LOCALID_ALGO_M, Common_Movement_FaceUp)
+    applymovement(LOCALID_ALGO_F, Common_Movement_WalkInPlaceFasterDown)
+    msgbox(format("We'll have to tell the higher-ups about this later."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    applymovement(LOCALID_ALGO_M, Common_Movement_FaceLeft)
+    applymovement(LOCALID_ALGO_F, Common_Movement_FaceLeft)
+    msgbox(format("Prof. Sequoia: That Pokémon…\pIt was running from you, wasn't it?\nWhat does AlgoTech want with it?"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_F, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    msgbox(format("That's classified information. Leave now, or we'll be forced to remove you."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    msgbox(format("Prof. Sequoia: Ha…!\pMaybe you weren't listening earlier.\nI happen to be the gym leader of Icovale City.\pI'm not going to be intimidated by some low-level thugs."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_M, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    msgbox(format("Look, we don't care who you are.\pWe have strict orders to catch……\n…that Pokémon."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_F, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    msgbox(format("Quite frankly, we're out of patience.\pIf you're going to get in our way, then that means you're in AlgoTech's way!{PLAY_BGM}{MUS_ENCOUNTER_MAGMA}"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: I'll take the left one. The right thug is all on you.\pI'm counting on you, kid."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    applymovement(LOCALID_ALGO_M, Common_Movement_WalkLeft)
+    applymovement(LOCALID_ALGO_F, Common_Movement_WalkLeft)
+    waitmovement(0)
+    trainerbattle_no_intro(TRAINER_LAKE_SERENITY_ALGOTECH_GRUNT_M, LakeSerenity_Text_AlgoTechGruntMDefeated)
+    applymovement(LOCALID_ALGO_M, LakeSerenity_AlgoBlownBack)
+    applymovement(LOCALID_ALGO_F, LakeSerenity_AlgoBlownBack)
+    waitmovement(LOCALID_ALGO_F)
+    msgbox(format("Ughh…"), MSGBOX_DEFAULT)
+    applymovement(LOCALID_ALGO_M, Common_Movement_FaceUp)
+    applymovement(LOCALID_ALGO_F, Common_Movement_FaceDown)
+    msgbox(format("They're not going to be happy with us during debrief later."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: Before that debrief happens…"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, LakeSerenity_ApproachAlgo)
+    waitmovement(0)
+    msgbox(format("…we need some answers."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_FaceLeft)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: A little help here, {PLAYER}?"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_F, Common_Movement_FaceLeft)
+    applymovement(LOCALID_ALGO_M, Common_Movement_FaceLeft)
+    applymovement(OBJ_EVENT_ID_PLAYER, LakeSerenity_ApproachAlgo)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(LOCALID_PROF, Common_Movement_FaceRight)
+    msgbox(format("Prof. Sequoia: Now, then.\nWhat was that machine? A Pokémon?"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_F, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    msgbox(format("Okay, okay, fine!\nYes, it's a Pokémon.\pHowever, it's also property of AlgoTech."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: So what? You mean they made that thing?\pWhy? What do they plan on doing with it?"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_M, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    msgbox(format("We don't know. They don't tell us all of these things.\pYou said it yourself, we're low-level in the company."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_F, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    msgbox(format("They tell us to do something, we do it. No questions asked."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("………\n………"), MSGBOX_DEFAULT)
+    applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
+    msgbox(format("They don't know anything."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, Common_Movement_FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(LOCALID_PROF)
+    applymovement(LOCALID_PROF, LakeSerenity_StepBackFromAlgo)
+    applymovement(OBJ_EVENT_ID_PLAYER, LakeSerenity_StepBackFromAlgo)
+    waitmovement(LOCALID_PROF)
+    msgbox(format("Prof. Sequoia: Get of here."), MSGBOX_DEFAULT)
+    closemessage
+    playse(SE_LEDGE)
+    applymovement(LOCALID_ALGO_M, LakeSerenity_AlgoLeaveM)
+    delay(20)
+    playse(SE_LEDGE)
+    applymovement(LOCALID_ALGO_F, LakeSerenity_AlgoLeaveF)
+    delay(60)
+    applymovement(LOCALID_PROF, Common_Movement_FaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    waitmovement(LOCALID_ALGO_M)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, LakeSerenity_AlgoPanDown)
+	waitmovement(0)
+    delay(40)
+    msgbox(format("Sequoia, and…\n…{PLAYER}, was it?\p"
+    "……\n……\pYou're gonna regret this day."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ALGO_F, LakeSerenity_AlgoLeaveFContinued)
+    waitmovement(LOCALID_ALGO_F)
+    applymovement(OBJ_EVENT_ID_CAMERA, LakeSerenity_AlgoPanUp)
+	waitmovement(0)
+    special(RemoveCameraObject)
+    removeobject(LOCALID_ALGO_F)
+    removeobject(LOCALID_ALGO_M)
+    setflag(FLAG_HIDE_ALGO_LAKE)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
+    msgbox(format("Prof. Sequoia: Sorry about all the commotion, {PLAYER}.\p"
+    "I would've taken them both myself. Fairly easy actually, but I felt it'd be better you try it out yourself.\p"
+    "Those grunts were from AlgoTech, the biggest conglomerate in Vidioh and, from what we just learned, created whatever that Pokemon was.\p"
+    "I'll look into this later.\nMeanwhile, you go back to the gym and I'll be waiting.\pStay safe {PLAYER}!"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PROF, LakeSerenity_ProfessorLeaves)
+    waitmovement(0)
+    setobjectxy(LOCALID_PROF, 0, 0)
+    setvar(VAR_LAKE_SERENITY_STATE, 3)
+    release
+}
+
+movement LakeSerenity_PlayerMovementForAlgoTechEvent {
+    walk_down
+    walk_left
+    face_up
+}
+
+movement LakeSerenity_SurpriseFaceDown {
+    emote_exclamation_mark
+    face_down
+}
+
+movement LakeSerenity_AlgoFStart {
+    walk_up
+    walk_right * 2
+    walk_up
+    walk_right
+    walk_up
+    walk_right
+    walk_up
+    walk_right
+    walk_up * 4
+    face_left
+}
+
+movement LakeSerenity_AlgoMStart {
+    walk_up
+    walk_right * 3
+    walk_up
+    walk_right
+    walk_up
+    walk_right
+    walk_up
+    walk_right
+    walk_up * 3
+    face_left
+}
+
+movement LakeSerenity_AlgoBlownBack {
+    lock_facing_direction
+	walk_fast_right * 2
+	unlock_facing_direction
+}
+
+movement LakeSerenity_ApproachAlgo {
+    walk_diag_northeast
+    walk_right
+}
+
+movement LakeSerenity_StepBackFromAlgo {
+    lock_facing_direction
+	walk_left
+	unlock_facing_direction
+}
+
+movement LakeSerenity_AlgoLeaveF {
+    jump_down
+    walk_fast_down * 3
+    walk_fast_left * 2
+    walk_fast_down
+    walk_fast_left
+    face_up
+}
+
+movement LakeSerenity_AlgoLeaveM {
+    jump_down
+    walk_fast_down * 2
+    walk_fast_left * 2
+    walk_fast_down
+    walk_fast_left
+    walk_fast_down
+    walk_fast_left
+    walk_fast_down
+    walk_fast_left * 3
+    walk_fast_down
+    walk_fast_left * 4
+}
+
+movement LakeSerenity_AlgoLeaveFContinued {
+    walk_fast_down
+    walk_fast_left
+    walk_fast_down
+    walk_fast_left * 2
+    walk_fast_down
+    walk_fast_left * 4
+}
+
+movement LakeSerenity_AlgoPanDown {
+    walk_down * 2
+}
+
+movement LakeSerenity_AlgoPanUp {
+    walk_up * 2
+}
+
+movement LakeSerenity_ProfessorLeaves {
+    walk_right
+    walk_down * 4
+    walk_left
+    walk_down
+    walk_left
+    walk_down
+    walk_left
+    walk_down
+}
+
+script LakeSerenity_LakeSerenityPostAlgo_Trigger{
+    lock
+    playmoncry(SPECIES_PAROPEAT, CRY_MODE_NORMAL)
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceUp)
+	msgbox(format("???: Triiiix!"), MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, LakeSerenity_PanUp)
+	waitmovement(0)
+    delay(40)
+    applymovement(OBJ_EVENT_ID_CAMERA, LakeSerenity_PanDown)
+    applymovement(LOCALID_ALGOTRIX, LakeSerenity_AlgotrixApproaches)
+    waitmovement(LOCALID_ALGOTRIX)
+    playmoncry(SPECIES_PAROPEAT, CRY_MODE_WEAK)
+    msgbox(format("???: Trix?"), MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    delay(40)
+    applymovement(LOCALID_ALGOTRIX, LakeSerenity_AlgotrixDisappears)
+    waitmovement(LOCALID_ALGOTRIX)
+    setobjectxy(LOCALID_ALGOTRIX, 0, 0)
+    special(RemoveCameraObject)
+    setvar(VAR_LAKE_SERENITY_STATE, 4)
+    release
+}
+
+movement LakeSerenity_AlgotrixApproaches {
+    walk_down * 7
+}
+
+movement LakeSerenity_AlgotrixDisappears {
+    walk_fast_up * 7
 }
