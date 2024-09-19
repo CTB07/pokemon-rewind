@@ -304,6 +304,7 @@ const u8 gTrainerBackPic_RubySapphireMay[] = INCBIN_U8("graphics/trainers/back_p
 const u8 gTrainerBackPic_Wally[] = INCBIN_U8("graphics/trainers/back_pics/wally.4bpp");
 const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steven.4bpp");
 
+const u32 gTrainerBackPicPalette_Brendan[] = INCBIN_U32("graphics/trainers/back_pics/brendan.gbapal.lz");
 const u32 gTrainerBackPicPalette_Red[] = INCBIN_U32("graphics/trainers/back_pics/red.gbapal.lz");
 const u32 gTrainerBackPicPalette_Leaf[] = INCBIN_U32("graphics/trainers/back_pics/leaf.gbapal.lz");
 
@@ -483,6 +484,7 @@ const struct SpriteFrameImage gTrainerBackPicTable_Brendan[] =
     {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
     {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
     {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE},
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_May[] =
@@ -557,7 +559,7 @@ const struct SpriteFrameImage gTrainerBackPicTable_Steven[] =
 
 const struct TrainerBacksprite gTrainerBacksprites[] =
 {
-    TRAINER_BACK_SPRITE(BRENDAN, 4, Brendan, Palette_Brendan, Hoenn),
+    TRAINER_BACK_SPRITE(BRENDAN, 5, Brendan, BackPicPalette_Brendan, Kanto),
     TRAINER_BACK_SPRITE(MAY, 4, May, Palette_May, Hoenn),
     TRAINER_BACK_SPRITE(RED, 5, Red, BackPicPalette_Red, Kanto),
     TRAINER_BACK_SPRITE(LEAF, 5, Leaf, BackPicPalette_Leaf, Kanto),
