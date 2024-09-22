@@ -2762,4 +2762,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Normal moves become Water."),
         .aiRating = 8,
     },
+    [ABILITY_RUBBERY] =
+    {
+        .name = _("Rubbery"),
+        .description = COMPOUND_STRING("Halves damage at full HP."),
+        .aiRating = 8,
+        .breakable = TRUE,
+    },    
 };
