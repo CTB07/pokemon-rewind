@@ -10339,6 +10339,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
     switch (abilityDef)
     {
     case ABILITY_MULTISCALE:
+    case ABILITY_RUBBERY:
     case ABILITY_SHADOW_SHIELD:
         if (BATTLER_MAX_HP(battlerDef))
             return UQ_4_12(0.5);
@@ -10863,7 +10864,8 @@ uq4_12_t GetTypeEffectiveness(struct Pokemon *mon, u8 moveType)
                                        || abilityDef == ABILITY_STORM_DRAIN))
          || (moveType == TYPE_ELECTRIC && (abilityDef == ABILITY_LIGHTNING_ROD // TODO: Add Gen 3/4 config check
                                        || abilityDef == ABILITY_VOLT_ABSORB
-                                       || abilityDef == ABILITY_MOTOR_DRIVE)))
+                                       || abilityDef == ABILITY_MOTOR_DRIVE
+                                       || abilityDef == ABILITY_RUBBERY)))
         {
             modifier = UQ_4_12(0.0);
         }
