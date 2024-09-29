@@ -4720,6 +4720,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/LakeSerenity/border.bin",
       "blockdata_filepath": "data/layouts/LakeSerenity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICOVALE_CITY_GYM",
+      "name": "IcovaleCity_Gym_Layout",
+      "width": 12,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_IcovaleGym",
+      "border_filepath": "data/layouts/IcovaleCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/IcovaleCity_Gym/map.bin"
     }
   ]
 }

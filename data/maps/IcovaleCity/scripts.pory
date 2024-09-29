@@ -1,4 +1,20 @@
-mapscripts IcovaleCity_MapScripts {}
+const LOCALID_GYM_GUARD = 6
+
+mapscripts IcovaleCity_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        goto(IcovaleCity_OnTransition)
+    }
+}
+
+script IcovaleCity_OnTransition {
+    if(var(VAR_LAKE_SERENITY_STATE) >= 4){
+        call(IcovaleCity_SetGymGuardPos)
+    }
+}
+
+script IcovaleCity_SetGymGuardPos{
+    setobjectxyperm(LOCALID_GYM_GUARD, 17, 20)
+}
 
 script IcovaleCity_YoungsterFountain {
     msgbox(format("I heard from meemaw that there used to be a giant Crimbark tree on this very spot!"), MSGBOX_NPC)
@@ -50,4 +66,16 @@ script IcovaleCity_ProfHouseLockedSign {
 
 script IcovaleCity_OfficeSign {
     msgbox(format("Icovale Offices\n“Work is where the heart is!”"), MSGBOX_SIGN)
+}
+
+script IcovaleCity_GymGuard{
+    if (var(VAR_LAKE_SERENITY_STATE) > 4){
+        msgbox(format("Looks like Leader Sequoia is back at the gym!\pYou're free to go in now."), MSGBOX_NPC)
+    }
+    if (var(VAR_ICOVALE_CITY_STATE) == 1){
+        msgbox(format("Sorry, the gym leader isn't here at the moment.\pI heard he has a meeting at Icovale Offices.\pMaybe check there?"), MSGBOX_NPC)
+    } elif (var(VAR_LAKE_SERENITY_STATE) <= 3){
+        msgbox(format("The gym leader still isn't back yet.\pI did see him storm off though.\p"
+        "He's probably heading to Lake Serenity, east of Icovale, to clear his mind."), MSGBOX_NPC)
+    }
 }

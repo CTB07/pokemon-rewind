@@ -213,3 +213,6 @@ const u16 gMetatileAttributes_Homege[] = INCBIN_U16("data/tilesets/secondary/hom
 
 const u16 gMetatiles_Icovale[] = INCBIN_U16("data/tilesets/secondary/icovale/metatiles.bin");
 const u16 gMetatileAttributes_Icovale[] = INCBIN_U16("data/tilesets/secondary/icovale/metatile_attributes.bin");
+
+const u16 gMetatiles_IcovaleGym[] = INCBIN_U16("data/tilesets/secondary/icovale_gym/metatiles.bin");
+const u16 gMetatileAttributes_IcovaleGym[] = INCBIN_U16("data/tilesets/secondary/icovale_gym/metatile_attributes.bin");

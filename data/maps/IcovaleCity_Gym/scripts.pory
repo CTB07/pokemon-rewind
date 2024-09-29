@@ -1,0 +1,622 @@
+const LOCALID_SEQUOIA = 2
+const LOCALID_RICHBOY = 3
+const LOCALID_LASS = 4
+const LOCALID_YOUNGSTER = 5
+const LOCALID_CLOWN = 6
+
+mapscripts IcovaleCity_Gym_MapScripts {}
+
+script IcovaleCity_Gym_Guide{
+    msgbox(format("Yaaaah!\nHow's it going champ in the making?\pYou're here to challenge Sequoia, the Gym Leader, I presume?\pSequoia specializes"
+    "in Psychic-type Pokémon.\pListen closely, Psychic-type is especially weak to the Bug-type, so make sure you brought a few with you.\p"
+    "Heh, I hope you knew that already.\pBe prepared to present your intelligence to the class.\pThis Gym will test you on your Pokémon knowledge, trivia, and more!\p"
+    "So stand up straight!\nPut your thinking cap on!\pAnd, most importantly, don't be afraid to show everyone who you are!\pOh!\pI almost forgot.\p"
+    "Here's a Fresh Water to keep you hyrdated!"), MSGBOX_NPC)
+    giveitem(ITEM_FRESH_WATER)
+    msgbox(format("Knock 'em dead, {PLAYER}!"), MSGBOX_NPC)
+}
+
+script IcovaleCity_Gym_ClassClown{
+    msgbox(format("I'm the class clown!"), MSGBOX_NPC)
+}
+
+script IcovaleCity_Gym_ClassSnob{
+    msgbox(format("Hmph!\pI guess Sequoia just lets any trainer in here, huh?"), MSGBOX_NPC)
+}
+
+script IcovaleCity_Gym_ClassDedicatedRam{
+    msgbox(format("How much dedotated wam do you have?"), MSGBOX_NPC)
+}
+
+script IcovaleCity_Gym_ClassJam{
+    lock
+    msgbox(format("This girl's headphones are playing music too loud for her to hear anything you're saying."), MSGBOX_DEFAULT)
+    release
+}
+
+script IcovaleCity_Gym_Sequoia{
+    lock
+    faceplayer
+    if (!flag(FLAG_TEMP_1)){
+        msgbox(format("Sequoia: Ah, {PLAYER}!\pYou made it!\pOnce again, thank you for your help at the lake.\pLet's focus on the present!\p"
+        "Wanna know what I like a whole lot more than evil corporations?\pKNOWLEDGE!\p{RIVAL} was just here, and he passed my test with flying colors!"), MSGBOX_DEFAULT)
+    }
+    setflag(FLAG_TEMP_1)
+    msgbox(format("Sequoia: Do you think you're ready for my exam?"), MSGBOX_YESNO)
+    switch(var(VAR_RESULT)){
+        case YES:
+            msgbox(format("Sequoia: Perfect!\pLet's start with the first set of questions!"), MSGBOX_DEFAULT)
+            closemessage
+            goto(IcovaleCity_Gym_ExamStart)
+        case NO:
+            msgbox(format("Sequoia: Well, let me know whenever you're ready!"), MSGBOX_DEFAULT)
+            closemessage
+    }
+    release
+}
+
+script IcovaleCity_Gym_ExamStart{
+    if (var(VAR_FACING) == DIR_EAST){
+        msgbox(format("Sequoia: Excuse me, {PLAYER}.\pI'm going to asking the exam questions from that corner."), MSGBOX_DEFAULT)
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, IcovaleCity_Gym_PlayerMovesDown)
+        waitmovement(0)
+        applymovement(LOCALID_SEQUOIA, IcovaleCity_Gym_ProfMovesIntoPos)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, IcovaleCity_Gym_PlayerMovesIntoPos1)
+        waitmovement(0)
+
+    } else{
+        applymovement(LOCALID_SEQUOIA, IcovaleCity_Gym_ProfMovesIntoPos)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, IcovaleCity_Gym_PlayerMovesIntoPos2)
+        waitmovement(0)
+    }
+    msgbox(format("Sequoia: Alright!\pLet's get started!"), MSGBOX_DEFAULT)
+    closemessage
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+    applymovement(OBJ_EVENT_ID_CAMERA, IcovaleCity_Gym_PanDown)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    call(IcovaleCity_Gym_ExamQuestion)
+}
+
+script IcovaleCity_Gym_ExamQuestion{
+    addvar(VAR_TEMP_1, 1)
+    switch(var(VAR_TEMP_1)){
+        case 1:
+            message(format("Q1: What type is this gym?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Psychic", "Poison", "Normal")
+            closemessage
+            switch(var(VAR_RESULT)){
+                case 0:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+                default:
+                    call(IcovaleCity_Gym_WrongAnswer)
+            }
+        case 2:
+            message(format("Q2: Which of these types hit Steel/Psychic super-effectively?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Dark", "Ghost")
+            closemessage
+            switch(var(VAR_RESULT)){
+                default:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+            }
+        case 3:
+            message(format("Q3: Which city contains a giant sprawling bridge?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "San Torendo", "Toree City", "Huyon City")
+            closemessage
+            switch(var(VAR_RESULT)){
+                case 0:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+                default:
+                    call(IcovaleCity_Gym_WrongAnswer)
+            }
+        case 4:
+            message(format("Q4: Which of the following Pokémon can still evolve while holding an everstone?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Haunter", "Cosmoem", "Kadabra", "Kubfu")
+            closemessage
+            switch(var(VAR_RESULT)){
+                case 2:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+                default:
+                    call(IcovaleCity_Gym_WrongAnswer)
+            }
+        case 5:
+            message(format("Q5: What is the biggest company in all of Vidioh?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "AlgoTech", "Oran", "Beyond")
+            closemessage
+            switch(var(VAR_RESULT)){
+                case 0:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+                default:
+                    call(IcovaleCity_Gym_WrongAnswer)
+            }
+        case 6:
+            msgbox(format("Let's see if you've been paying attention!"), MSGBOX_DEFAULT)
+            closemessage
+            message(format("Q?: What question are you on?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "5", "6", "7", "301")
+            closemessage
+            switch(var(VAR_RESULT)){
+                case 1:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+                case 3:
+                    fadeoutbgm(1)
+                    delay(60)
+                    msgbox(format("Are…\p……\n……\pAre you serious?\pLike, you're not joking, right?\pYou don't actually think you're on question 301 right now, do you?\p"
+                    "We haven't even been here 5 minutes yet.\p……\n……\pAssuming it has been about 5 minutes, I would have had to ask you about 60 questions per minute.\p"
+                    "I…\pI need to know right now."), MSGBOX_DEFAULT)
+                    msgbox(format("Were you being serious when you answered 301?"), MSGBOX_YESNO)
+                    switch(var(VAR_RESULT)){
+                        case NO:
+                            msgbox(format("Oh, okay!\p……\n……\pWell, that still doesn't save you from answering wrong, so…"), MSGBOX_DEFAULT)
+                        case YES:
+                            delay(60)
+                            msgbox(format("Oh.\pOh no.\pThat's…"), MSGBOX_DEFAULT)
+                            closemessage
+                            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceLeft)
+                            waitmovement(0)
+                            delay(60)
+                            delay(60)
+                            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceRight)
+                            waitmovement(0)
+                            msgbox(format("W-we're just gonna pretend like you answered 5 or 7, o-okay?"), MSGBOX_DEFAULT)
+
+                    }
+                    closemessage
+                    fadeinbgm(1)
+                    call(IcovaleCity_Gym_WrongAnswer)
+                default:
+                    call(IcovaleCity_Gym_WrongAnswer)
+            }
+        case 7:
+            message(format("Q7: What city are we in?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Icovale", "Homege", "Toree")
+            closemessage
+            switch(var(VAR_RESULT)){
+                case 0:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+                default:
+                    call(IcovaleCity_Gym_WrongAnswer)
+            }
+        case 8:
+            message(format("Q8: Does a bear shit in the woods?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "Uh…", "What's a bear?")
+            closemessage
+            switch(var(VAR_RESULT)){
+                case 0:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+                default:
+                    call(IcovaleCity_Gym_WrongAnswer)
+            }
+        case 9:
+            message(format("Q9: Where is the Crimbark Forest located?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "South", "Southeast", "East")
+            closemessage
+            switch(var(VAR_RESULT)){
+                default:
+                    call(IcovaleCity_Gym_CorrectAnswer)
+                    msgbox(format("Another freebie.\pAny of those three answers would have been accepted."), MSGBOX_DEFAULT)
+                    closemessage
+            }
+        case 10:
+            message(format("Q10: Can you defeat the gym leader?"))
+            dynmultichoice(20, 0, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Yes", "No", "Maybe so")
+            closemessage
+            switch(var(VAR_RESULT)){
+                default:
+                    msgbox(format("I guess we'll find out in a few minutes!\pThis concludes the first part of my gym examination.\p"
+                    "Now, we can continue to the second part - the battling test.\pProve to me you have what it takes to continue your journey past Icovale City.\p"
+                    "I'll be waiting on the battlefield in the next room."), MSGBOX_DEFAULT)
+                    closemessage
+            }
+    }
+    if (var(VAR_TEMP_1) == 10){
+        goto(IcovaleCity_Gym_EndExamPartOne)
+    }
+    applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("Next question!"), MSGBOX_DEFAULT)
+    goto(IcovaleCity_Gym_ExamQuestion)
+}
+
+script IcovaleCity_Gym_CorrectAnswer{
+    playse(SE_DING_DONG)
+    waitse
+    applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("That's correct!"), MSGBOX_DEFAULT)
+    switch(var(VAR_TEMP_1)){
+        case 2:
+            msgbox(format("Bet I had you second-guessing yourself there, didn't I?\pLittle bit of a curveball to keep you on your toes.\pBoth answers were correct."), MSGBOX_DEFAULT)
+        case 6:
+            msgbox(format("Honestly, I would have been a little concerned if you said 301.\pI'm not sure how that got in there."), MSGBOX_DEFAULT)
+    }
+    closemessage
+}
+
+script IcovaleCity_Gym_WrongAnswer{
+    playse(SE_RG_POKE_JUMP_FAILURE)
+    waitse
+    applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+    waitmovement(0)
+    msgbox(format("That's incorrect."), MSGBOX_DEFAULT)
+    applymovement(LOCALID_SEQUOIA, Common_Movement_FaceDown)
+    waitmovement(0)
+    switch(var(VAR_TEMP_1)){
+        case 1:
+            msgbox(format("Richard, can you come to the front of the class and tell {PLAYER} the correct answer?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_RICHBOY, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Certainly."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_RICHBOY, IcovaleCity_Gym_RichBoyGoes)
+            waitmovement(0)
+            msgbox(format("The correct answer is Psychic.\pObviously, this is a Psychic-type gym since it tests you on your intelligence."), MSGBOX_DEFAULT)
+            applymovement(LOCALID_RICHBOY, Common_Movement_FaceLeft)
+            waitmovement(0)
+            msgbox(format("Something that you seem to be lacking.\pLet me show you what it means to be smart."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("You can go sit down now, Richard."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_RICHBOY, IcovaleCity_Gym_RichBoyToDesk)
+            waitmovement(0)
+        case 3:
+            msgbox(format("Claudia, can you come to the front of the class and tell {PLAYER} the correct answer?"), MSGBOX_DEFAULT)
+            closemessage
+            message(format("…………\n…………"))
+            delay(60)
+            waitmessage
+            msgbox(format("Claudia?"), MSGBOX_DEFAULT)
+            closemessage
+            message(format("…………\n…………"))
+            delay(60)
+            waitmessage
+            msgbox(format("CLAUDIA!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, Common_Movement_WalkInPlaceFasterUp)
+            waitmovement(0)
+            msgbox(format("Oh my gosh!\pLike, I'm so sorry!\pI had my headphones on!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("I can see that…\pCan you tell {PLAYER} the correct answer to the question?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Sure!\pUm…\n……\p…What was the question again?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceUp)
+            waitmovement(0)
+            msgbox(format("Oh, for the love of…!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceRight)
+            waitmovement(0)
+            msgbox(format("The correct answer is San Torendo, {PLAYER}."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceDown)
+            waitmovement(0)
+            msgbox(format("Just please battle {PLAYER}, Claudia."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Like, sure!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, IcovaleCity_Gym_LassGoes)
+            waitmovement(0)
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("You can go sit down now, Claudia."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, IcovaleCity_Gym_LassToDesk)
+            waitmovement(0)
+        case 4:
+            msgbox(format("This was a tricky one.\pKai, come to the front and tell everyone the correct answer!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Okay!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, IcovaleCity_Gym_YoungsterGoes)
+            waitmovement(0)
+            msgbox(format("The correct answer is…\p…Kubfu!\pBecause it evolves through a special event!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("What!?\pNo!\pThat's not right!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceLeft)
+            waitmovement(0)
+            msgbox(format("Woah, really?\pI thought for sure it had to be Kubfu…"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("Oh, Kai…\pWe literally just learned about this last class…\pJust…\n……pick a different answer."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceDown)
+            waitmovement(0)
+            msgbox(format("Hm…\p…Okay!\nI got it!\pIt has to be…\p…Cosmoem!\pBecause it's a special legendary Pokémon!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("That's…\p…That's also incorrect.\p50/50 chance here, Kai.\pHaunter or Kadabra."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceLeft)
+            waitmovement(0)
+            msgbox(format("Woah, no way!?\pIt can't be only one of them! They're both trade evolutions!\pGee, if I had to pick one of them, it would have to be…"), MSGBOX_DEFAULT)
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceDown)
+            waitmovement(0)
+            msgbox(format("…Haunter!\pBecause its ghost body isn't able to actually hold anything!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("…Kadabra.\pKadabra was the right answer."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceLeft)
+            waitmovement(0)
+            msgbox(format("Oh…\p…that actually makes sense!\pKadabra holds a spoon in his right hand because he's right handed!\p"
+            "So he probably uses his telekinesis to hold the everstone with his non-dominant left hand…\p…which turns it into a float stone!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("Uh, sure Kai.\pCan you battle {PLAYER}, please?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceLeft)
+            waitmovement(0)
+            msgbox(format("Yep!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceRight)
+            waitmovement(0)
+            msgbox(format("Hi-yah!\pHere comes super Kai!"), MSGBOX_DEFAULT)
+            closemessage
+            msgbox(format("You can go sit down now, Kai."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, IcovaleCity_Gym_YoungsterToDesk)
+            waitmovement(0)
+        case 5:
+            msgbox(format("……Screwball.\pCan you come to the front and answer the question?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_CLOWN, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Sure.\pBut first…"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_CLOWN, IcovaleCity_Gym_ClownGoes)
+            waitmovement(0)
+            msgbox(format("How about a snake balloon, kid?"), MSGBOX_DEFAULT)
+            applymovement(LOCALID_SEQUOIA, IcovaleCity_Gym_SequoiaShocked)
+            playse(SE_PIN)
+            waitmovement(0)
+            waitse
+            msgbox(format("No!\pNo, more snake balloons!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceLeft)
+            waitmovement(0)
+            msgbox(format("…Especially after last time."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceRight)
+            waitmovement(0)
+            msgbox(format("Just answer the question, Screwball."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_CLOWN, Common_Movement_WalkInPlaceLeft)
+            waitmovement(0)
+            msgbox(format("Fine, the correct answer is AlgoTech."), MSGBOX_DEFAULT)
+            closemessage
+            msgbox(format("You can go sit down now, Screwball."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_CLOWN, IcovaleCity_Gym_ClownToDesk)
+            waitmovement(0)
+        case 6:
+            msgbox(format("Richard, can you come to the front of the class and tell {PLAYER} the correct answer?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_RICHBOY, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Of course."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_RICHBOY, IcovaleCity_Gym_RichBoyGoes)
+            waitmovement(0)
+            msgbox(format("The correct answer is 6."), MSGBOX_DEFAULT)
+            applymovement(LOCALID_RICHBOY, Common_Movement_FaceLeft)
+            waitmovement(0)
+            msgbox(format("Y'know, the number that comes after 5, but before 7?\pHmph, you complete imbecile."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("You can go sit down now, Richard."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_RICHBOY, IcovaleCity_Gym_RichBoyToDesk)
+            waitmovement(0)
+        case 7:
+            msgbox(format("Claudia, can you come to the front of the class and tell {PLAYER} the correct answer?"), MSGBOX_DEFAULT)
+            closemessage
+            message(format("…………\n…………"))
+            delay(60)
+            waitmessage
+            msgbox(format("Claudia?"), MSGBOX_DEFAULT)
+            closemessage
+            message(format("…………\n…………"))
+            delay(60)
+            waitmessage
+            msgbox(format("CLAUDIA!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, Common_Movement_WalkInPlaceFasterUp)
+            waitmovement(0)
+            msgbox(format("Oh my gosh!\pLike, I'm so sorry!\pMy favorite song was playing!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("That's great…\pCan you tell {PLAYER} the correct answer to the question?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Yeah, no sweat!\pUm…\n……\p…What was the question again?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceUp)
+            waitmovement(0)
+            msgbox(format("I don't get paid enough for this…!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceRight)
+            waitmovement(0)
+            msgbox(format("The correct answer is Icovale, {PLAYER}."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_FaceDown)
+            waitmovement(0)
+            msgbox(format("Just please battle {PLAYER}, Claudia."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Yeah, whatevs!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, IcovaleCity_Gym_LassGoes)
+            waitmovement(0)
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("You can go sit down now, Claudia."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_LASS, IcovaleCity_Gym_LassToDesk)
+            waitmovement(0)
+        case 8:
+            msgbox(format("Kai, can you come to the front of the class and tell {PLAYER} the correct answer?"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceUp)
+            waitmovement(0)
+            msgbox(format("Uh-huh!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, IcovaleCity_Gym_YoungsterGoes)
+            waitmovement(0)
+            msgbox(format("Like people, a bear can shit wherever it so pleases!"), MSGBOX_DEFAULT)
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("What?\pNo!\pThis question is only asked in response to a question with an emphatic yes!\pIt's supposed to be obvious that, yes, a bear does in fact shit in the woods because that's where it lives!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceLeft)
+            waitmovement(0)
+            msgbox(format("Oh!!\p……\n……\p…I don't get it."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            msgbox(format("Just battle {PLAYER}, Kai."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceLeft)
+            waitmovement(0)
+            msgbox(format("You got it!"), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceRight)
+            waitmovement(0)
+            msgbox(format("Time to show you my dedotated wam!"), MSGBOX_DEFAULT)
+            closemessage
+            msgbox(format("You can go sit down now, Kai."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_YOUNGSTER, IcovaleCity_Gym_YoungsterToDesk)
+            waitmovement(0)
+    }
+}
+
+script IcovaleCity_Gym_EndExamPartOne{
+    applymovement(OBJ_EVENT_ID_CAMERA, IcovaleCity_Gym_PanUp)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    applymovement(LOCALID_SEQUOIA, IcovaleCity_Gym_NextRoom)
+    waitmovement(0)
+    release
+}
+
+movement IcovaleCity_Gym_PlayerMovesDown{
+    face_up
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
+}
+
+movement IcovaleCity_Gym_ProfMovesIntoPos{
+    walk_left * 3
+    face_right
+}
+
+movement IcovaleCity_Gym_PlayerMovesIntoPos1{
+    walk_up
+    walk_right
+    face_left
+}
+
+movement IcovaleCity_Gym_PlayerMovesIntoPos2{
+    walk_left
+}
+
+movement IcovaleCity_Gym_RichBoyGoes{
+    walk_left
+    walk_up * 3
+    walk_left
+    face_down
+}
+
+movement IcovaleCity_Gym_RichBoyToDesk{
+    walk_right
+    walk_down * 3
+    walk_right
+    face_up
+}
+
+movement IcovaleCity_Gym_LassGoes{
+    walk_right
+    walk_up * 3
+    face_down
+}
+
+movement IcovaleCity_Gym_LassToDesk{
+    walk_down * 3
+    walk_left
+    face_up
+}
+
+movement IcovaleCity_Gym_YoungsterGoes{
+    walk_right
+    walk_up * 5
+    face_down
+}
+
+movement IcovaleCity_Gym_YoungsterToDesk{
+    walk_down * 5
+    walk_left
+    face_up
+}
+
+movement IcovaleCity_Gym_ClownGoes{
+    walk_left
+    walk_up * 5
+    walk_left
+}
+
+movement IcovaleCity_Gym_ClownToDesk{
+    walk_right
+    walk_down * 5
+    walk_right
+    face_up
+}
+
+movement IcovaleCity_Gym_PanUp{
+    walk_up * 2
+}
+
+movement IcovaleCity_Gym_PanDown{
+    walk_down * 2
+}
+
+movement IcovaleCity_Gym_SequoiaShocked{
+    emote_exclamation_mark
+    walk_in_place_right
+}
+
+movement IcovaleCity_Gym_NextRoom{
+    walk_down
+    walk_right * 2
+    walk_down
+    walk_right * 3
+    walk_up
+    walk_right * 3
+    walk_up
+}

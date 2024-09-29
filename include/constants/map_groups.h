@@ -43,6 +43,7 @@
 #define MAP_ICOVALE_CITY_POKEMON_CENTER_1F   (14 | (3 << 8))
 #define MAP_ICOVALE_CITY_POKEMON_CENTER_2F   (15 | (3 << 8))
 #define MAP_ICOVALE_CITY_MART                (16 | (3 << 8))
+#define MAP_ICOVALE_CITY_GYM                 (17 | (3 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (4 << 8))

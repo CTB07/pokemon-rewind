@@ -847,3 +847,14 @@ const struct Tileset gTileset_Icovale =
     .metatileAttributes = gMetatileAttributes_Icovale,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_IcovaleGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IcovaleGym,
+    .palettes = gTilesetPalettes_IcovaleGym,
+    .metatiles = gMetatiles_IcovaleGym,
+    .metatileAttributes = gMetatileAttributes_IcovaleGym,
+    .callback = NULL,
+};

@@ -9350,7 +9350,7 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         break;
     }
 
-    // Move-specific base power changes
+    // Move-specific base power changes 
     switch (move)
     {
     case MOVE_WATER_SHURIKEN:

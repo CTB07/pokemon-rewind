@@ -100,7 +100,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "IcovaleCity_GymGuard",
       "flag": "0"
     }
   ],
@@ -159,6 +159,13 @@
       "y": 38,
       "elevation": 0,
       "dest_map": "MAP_ICOVALE_CITY_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ICOVALE_CITY_GYM",
       "dest_warp_id": "0"
     }
   ],

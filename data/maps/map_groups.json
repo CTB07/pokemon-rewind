@@ -76,7 +76,8 @@
     "IcovaleCity_TrainerSchool",
     "IcovaleCity_PokemonCenter_1F",
     "IcovaleCity_PokemonCenter_2F",
-    "IcovaleCity_Mart"
+    "IcovaleCity_Mart",
+    "IcovaleCity_Gym"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

@@ -1136,3 +1136,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/IcovaleCity_Mart/scripts.inc"
 
 	.include "data/maps/LakeSerenity/scripts.inc"
+
+	.include "data/maps/IcovaleCity_Gym/scripts.inc"

@@ -889,6 +889,8 @@ LakeSerenity_AlgotrixApproaches:
 	walk_down
 # 428 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
+# 428 "data/maps/LakeSerenity/scripts.pory"
+	walk_down
 	step_end
 
 # 431 "data/maps/LakeSerenity/scripts.pory"
