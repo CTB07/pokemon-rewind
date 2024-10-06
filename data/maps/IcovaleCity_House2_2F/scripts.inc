@@ -146,12 +146,10 @@ IcovaleCity_House2_2F_Text_DoesntLookLikeMonToMe::
 
 IcovaleCity_House2_2F_Text_YouDontWantToThatsOkay::
 # 77 "data/maps/IcovaleCity_House2_2F/scripts.pory"
-	.string "You don't want my {STR_VAR_2}?\n"
-	.string "Okay, well let me know if you change\l"
-	.string "your mind.\p"
+	.string "You don't want my Dreamie? Okay, well\n"
+	.string "let me know if you change your mind.\p"
 	.string "If you're having trouble finding a\n"
-	.string "{STR_VAR_1}, they should be on\l"
-	.string "Route 1.$"
+	.string "Paastel, they should be on Route 1.$"
 
 IcovaleCity_House2_2F_Text_AnyPokemonCanBeCute::
 # 82 "data/maps/IcovaleCity_House2_2F/scripts.pory"

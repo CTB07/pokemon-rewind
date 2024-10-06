@@ -113,7 +113,8 @@
 #define TRAINER_PIC_ALGOTECH_GRUNT_M      95
 #define TRAINER_PIC_CLOWN                 96
 #define TRAINER_PIC_ARTIST_F              97
-#define TRAINER_PIC_COUNT                 98
+#define TRAINER_PIC_SEQUOIA               98
+#define TRAINER_PIC_COUNT                 99
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -212,8 +213,9 @@
 #define FACILITY_CLASS_ALGOTECH_GRUNT_M      0x54
 #define FACILITY_CLASS_CLOWN                 0x55
 #define FACILITY_CLASS_ARTIST_F              0x56
+#define FACILITY_CLASS_LEADER_SEQUOIA        0x57
 
-#define FACILITY_CLASSES_COUNT               0x57
+#define FACILITY_CLASSES_COUNT               0x58
 
 #define RS_FACILITY_CLASS_AQUA_LEADER_ARCHIE    0x0
 #define RS_FACILITY_CLASS_AQUA_GRUNT_M          0x1

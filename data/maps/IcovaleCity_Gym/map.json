@@ -17,7 +17,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
       "x": 7,
-      "y": 10,
+      "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -30,7 +30,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PROFSEQUOIA",
       "x": 5,
-      "y": 2,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -38,12 +38,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "IcovaleCity_Gym_Sequoia",
-      "flag": "0"
+      "flag": "FLAG_HIDE_SEQUOIA_GYM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REWINDRICHBOY",
       "x": 8,
-      "y": 5,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -56,7 +56,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_REWINDLASS",
       "x": 3,
-      "y": 5,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -69,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_REWINDYOUNGSTER",
       "x": 3,
-      "y": 7,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -82,7 +82,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CLOWN",
       "x": 8,
-      "y": 7,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -96,14 +96,14 @@
   "warp_events": [
     {
       "x": 5,
-      "y": 12,
+      "y": 26,
       "elevation": 0,
       "dest_map": "MAP_ICOVALE_CITY",
       "dest_warp_id": "8"
     },
     {
       "x": 6,
-      "y": 12,
+      "y": 26,
       "elevation": 0,
       "dest_map": "MAP_ICOVALE_CITY",
       "dest_warp_id": "8"

@@ -4725,7 +4725,7 @@
       "id": "LAYOUT_ICOVALE_CITY_GYM",
       "name": "IcovaleCity_Gym_Layout",
       "width": 12,
-      "height": 14,
+      "height": 28,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_IcovaleGym",
       "border_filepath": "data/layouts/IcovaleCity_Gym/border.bin",

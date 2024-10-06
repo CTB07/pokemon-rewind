@@ -873,6 +873,11 @@
 #define TRAINER_MATT_ROUTE_1_SUBSTEE           12
 #define TRAINER_LAKE_SERENITY_ALGOTECH_GRUNT_M 13
 #define TRAINER_HOMEGE_MOM                     14
+#define TRAINER_LEADER_SEQUOIA                 15
+#define TRAINER_REWIND_RICHARD                 16
+#define TRAINER_REWIND_KAI                     17
+#define TRAINER_REWIND_SCREWBALL               18
+#define TRAINER_REWIND_CLAUDIA                 19
 /*#define TRAINER_REWIND_SEBASTIAN             16
 #define TRAINER_REWIND_EMILY                 17
 #define TRAINER_REWIND_MILES                 18

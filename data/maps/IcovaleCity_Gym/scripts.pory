@@ -4,24 +4,46 @@ const LOCALID_LASS = 4
 const LOCALID_YOUNGSTER = 5
 const LOCALID_CLOWN = 6
 
-mapscripts IcovaleCity_Gym_MapScripts {}
+mapscripts IcovaleCity_Gym_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_ICOVALE_CITY_STATE, 4: IcovaleCity_Gym_OnWarp4
+        VAR_ICOVALE_CITY_STATE, 5: IcovaleCity_Gym_OnWarp4
+    ]
+}
+
+script IcovaleCity_Gym_OnWarp4{
+    setobjectxyperm(LOCALID_SEQUOIA, 5, 4)
+	setobjectmovementtype(LOCALID_SEQUOIA, MOVEMENT_TYPE_FACE_DOWN)
+}
 
 script IcovaleCity_Gym_Guide{
-    msgbox(format("Yaaaah!\nHow's it going champ in the making?\pYou're here to challenge Sequoia, the Gym Leader, I presume?\pSequoia specializes"
-    "in Psychic-type Pokémon.\pListen closely, Psychic-type is especially weak to the Bug-type, so make sure you brought a few with you.\p"
-    "Heh, I hope you knew that already.\pBe prepared to present your intelligence to the class.\pThis Gym will test you on your Pokémon knowledge, trivia, and more!\p"
-    "So stand up straight!\nPut your thinking cap on!\pAnd, most importantly, don't be afraid to show everyone who you are!\pOh!\pI almost forgot.\p"
-    "Here's a Fresh Water to keep you hyrdated!"), MSGBOX_NPC)
-    giveitem(ITEM_FRESH_WATER)
+    if (var(VAR_ICOVALE_CITY_STATE) < 3){
+        msgbox(format("Yaaaah!\nHow's it going champ in the making?\pYou're here to challenge Sequoia, the Gym Leader, I presume?\pSequoia specializes"
+        "in Psychic-type Pokémon.\pListen closely, Psychic-type is especially weak to the Bug-type, so make sure you brought a few with you.\p"
+        "Heh, I hope you knew that already.\pBe prepared to present your intelligence to the class.\pThis Gym will test you on your Pokémon knowledge, trivia, and more!\p"
+        "So stand up straight!\nPut your thinking cap on!\pAnd, most importantly, don't be afraid to show everyone who you are!\pOh!\pI almost forgot.\p"
+        "Here's a Fresh Water to keep you hyrdated!"), MSGBOX_NPC)
+        giveitem(ITEM_FRESH_WATER)
+        setvar(VAR_ICOVALE_CITY_STATE, 3)
+    }
     msgbox(format("Knock 'em dead, {PLAYER}!"), MSGBOX_NPC)
 }
 
 script IcovaleCity_Gym_ClassClown{
-    msgbox(format("I'm the class clown!"), MSGBOX_NPC)
+    if(defeated(TRAINER_REWIND_SCREWBALL)){
+        msgbox(format("Offer's still on the table."), MSGBOX_NPC)
+    } else{
+        msgbox(format("I'm the class clown!"), MSGBOX_NPC)
+    }
 }
 
 script IcovaleCity_Gym_ClassSnob{
-    msgbox(format("Hmph!\pI guess Sequoia just lets any trainer in here, huh?"), MSGBOX_NPC)
+    if (var(VAR_ICOVALE_CITY_STATE) > 3){
+        msgbox(format("You must have cheated.\pNo one with such dirty clothes could have passed before me!"), MSGBOX_NPC)
+    }
+    else{
+        msgbox(format("Hmph!\pI guess Sequoia just lets any trainer in here, huh?"), MSGBOX_NPC)
+    }
 }
 
 script IcovaleCity_Gym_ClassDedicatedRam{
@@ -30,14 +52,45 @@ script IcovaleCity_Gym_ClassDedicatedRam{
 
 script IcovaleCity_Gym_ClassJam{
     lock
-    msgbox(format("This girl's headphones are playing music too loud for her to hear anything you're saying."), MSGBOX_DEFAULT)
+    if (var(VAR_ICOVALE_CITY_STATE) > 3){
+        msgbox(format("She still can't hear you."), MSGBOX_DEFAULT)
+    }
+    else{
+        msgbox(format("This girl's headphones are playing music too loud for her to hear anything you're saying."), MSGBOX_DEFAULT)
+    }
+    release
+}
+
+script IcovaleCity_Gym_LeaderSequoiaBattle{
+    msgbox(format("Sequoia: Well, {PLAYER}…\pIt looks like you've reached the second part of my exam.\pYou and {RIVAL} have come such a long way already!\p"
+    "After we were jumped by AlgoTech at Lake Serenity, I think I know what you're capable of.\pI'm asking you to show me…\pShow me that strength and battling knowledge again!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}"), MSGBOX_DEFAULT)
+    trainerbattle_no_intro(TRAINER_LEADER_SEQUOIA, IcovaleCity_Gym_LeaderSequoiaDefeat)
+    msgbox(format("And that's that.\pCongratulations, {PLAYER}!\nThis is your first of many!\pI am honored to make this a stepping stone in your journey.\pNow here."), MSGBOX_DEFAULT)
+    message(IcovaleCity_Gym_ReceivedCuriosityBadge)
+	waitmessage
+    call(Common_EventScript_PlayGymBadgeFanfare)
+    msgbox(format("This is the Curiosity Badge.\nIt represents our very first emotion that leads to invention, to discovery, to success.\p"
+    "“What happens if I bang these two rocks together?”\pA caveman must have thought, and the rest is history.\p"
+    "I'd advise not going to Serenity Town at the moment. There are several AlgoTech members that currently occupy the town.\pMaybe you could go to Crimbark?\nIt's on the route going south east from here.\p" 
+    "Anyways, good luck {PLAYER}!\pAs always, I'll see you around."), MSGBOX_DEFAULT)
+    setvar(VAR_ICOVALE_CITY_STATE, 5)
+    setflag(FLAG_BADGE01_GET)
+    release
+}
+
+script IcovaleCity_Gym_PostBattle{
+    msgbox(format("I'm going to relax back here for a bit.\pYou have a lot of potential, {PLAYER}.\pYou'll be a very strong trainer some day."), MSGBOX_DEFAULT)
     release
 }
 
 script IcovaleCity_Gym_Sequoia{
     lock
     faceplayer
-    if (!flag(FLAG_TEMP_1)){
+    if (var(VAR_ICOVALE_CITY_STATE) > 4){
+        goto(IcovaleCity_Gym_PostBattle)
+    }elif (var(VAR_ICOVALE_CITY_STATE) == 4){
+        goto(IcovaleCity_Gym_LeaderSequoiaBattle)
+    }elif (!flag(FLAG_TEMP_1)){
         msgbox(format("Sequoia: Ah, {PLAYER}!\pYou made it!\pOnce again, thank you for your help at the lake.\pLet's focus on the present!\p"
         "Wanna know what I like a whole lot more than evil corporations?\pKNOWLEDGE!\p{RIVAL} was just here, and he passed my test with flying colors!"), MSGBOX_DEFAULT)
     }
@@ -57,7 +110,7 @@ script IcovaleCity_Gym_Sequoia{
 
 script IcovaleCity_Gym_ExamStart{
     if (var(VAR_FACING) == DIR_EAST){
-        msgbox(format("Sequoia: Excuse me, {PLAYER}.\pI'm going to asking the exam questions from that corner."), MSGBOX_DEFAULT)
+        msgbox(format("Sequoia: Excuse me, {PLAYER}.\pI'm going to be asking the exam questions from that corner."), MSGBOX_DEFAULT)
         closemessage
         applymovement(OBJ_EVENT_ID_PLAYER, IcovaleCity_Gym_PlayerMovesDown)
         waitmovement(0)
@@ -75,10 +128,15 @@ script IcovaleCity_Gym_ExamStart{
     msgbox(format("Sequoia: Alright!\pLet's get started!"), MSGBOX_DEFAULT)
     closemessage
     special(SpawnCameraObject)
+    applymovement(LOCALID_RICHBOY, Common_Movement_FaceUp)
+    applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceUp)
+    applymovement(LOCALID_CLOWN, Common_Movement_FaceUp)
+    applymovement(LOCALID_LASS, Common_Movement_FaceUp)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
     applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
     applymovement(OBJ_EVENT_ID_CAMERA, IcovaleCity_Gym_PanDown)
     waitmovement(OBJ_EVENT_ID_CAMERA)
+    special(RemoveCameraObject)
     call(IcovaleCity_Gym_ExamQuestion)
 }
 
@@ -260,6 +318,7 @@ script IcovaleCity_Gym_WrongAnswer{
             waitmovement(0)
             msgbox(format("Something that you seem to be lacking.\pLet me show you what it means to be smart."), MSGBOX_DEFAULT)
             closemessage
+            trainerbattle_no_intro(TRAINER_REWIND_RICHARD, IcovaleCity_Gym_RichardDefeat)
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
             msgbox(format("You can go sit down now, Richard."), MSGBOX_DEFAULT)
@@ -309,6 +368,7 @@ script IcovaleCity_Gym_WrongAnswer{
             closemessage
             applymovement(LOCALID_LASS, IcovaleCity_Gym_LassGoes)
             waitmovement(0)
+            trainerbattle_no_intro(TRAINER_REWIND_CLAUDIA, IcovaleCity_Gym_ClaudiaDefeat)
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
             msgbox(format("You can go sit down now, Claudia."), MSGBOX_DEFAULT)
@@ -326,6 +386,8 @@ script IcovaleCity_Gym_WrongAnswer{
             waitmovement(0)
             msgbox(format("The correct answer is…\p…Kubfu!\pBecause it evolves through a special event!"), MSGBOX_DEFAULT)
             closemessage
+            playse(SE_RG_POKE_JUMP_FAILURE)
+            waitse
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
             msgbox(format("What!?\pNo!\pThat's not right!"), MSGBOX_DEFAULT)
@@ -336,15 +398,17 @@ script IcovaleCity_Gym_WrongAnswer{
             closemessage
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
-            msgbox(format("Oh, Kai…\pWe literally just learned about this last class…\pJust…\n……pick a different answer."), MSGBOX_DEFAULT)
+            msgbox(format("Oh, Kai…\pWe just learned about this last class…\pJust…\pPick a different answer."), MSGBOX_DEFAULT)
             closemessage
             applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceDown)
             waitmovement(0)
             msgbox(format("Hm…\p…Okay!\nI got it!\pIt has to be…\p…Cosmoem!\pBecause it's a special legendary Pokémon!"), MSGBOX_DEFAULT)
             closemessage
+            playse(SE_RG_POKE_JUMP_FAILURE)
+            waitse
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
-            msgbox(format("That's…\p…That's also incorrect.\p50/50 chance here, Kai.\pHaunter or Kadabra."), MSGBOX_DEFAULT)
+            msgbox(format("That's…\pThat's also incorrect.\p50/50 chance here, Kai.\pHaunter or Kadabra."), MSGBOX_DEFAULT)
             closemessage
             applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceLeft)
             waitmovement(0)
@@ -353,6 +417,8 @@ script IcovaleCity_Gym_WrongAnswer{
             waitmovement(0)
             msgbox(format("…Haunter!\pBecause its ghost body isn't able to actually hold anything!"), MSGBOX_DEFAULT)
             closemessage
+            playse(SE_RG_POKE_JUMP_FAILURE)
+            waitse
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
             msgbox(format("…Kadabra.\pKadabra was the right answer."), MSGBOX_DEFAULT)
@@ -374,6 +440,7 @@ script IcovaleCity_Gym_WrongAnswer{
             waitmovement(0)
             msgbox(format("Hi-yah!\pHere comes super Kai!"), MSGBOX_DEFAULT)
             closemessage
+            trainerbattle_no_intro(TRAINER_REWIND_KAI, IcovaleCity_Gym_KaiDefeat)
             msgbox(format("You can go sit down now, Kai."), MSGBOX_DEFAULT)
             closemessage
             applymovement(LOCALID_YOUNGSTER, IcovaleCity_Gym_YoungsterToDesk)
@@ -400,12 +467,15 @@ script IcovaleCity_Gym_WrongAnswer{
             closemessage
             applymovement(LOCALID_SEQUOIA, Common_Movement_FaceRight)
             waitmovement(0)
-            msgbox(format("Just answer the question, Screwball."), MSGBOX_DEFAULT)
+            msgbox(format("Just answer the question, Screwball.\pThen, battle {PLAYER}."), MSGBOX_DEFAULT)
             closemessage
-            applymovement(LOCALID_CLOWN, Common_Movement_WalkInPlaceLeft)
+            applymovement(LOCALID_CLOWN, Common_Movement_WalkInPlaceDown)
             waitmovement(0)
             msgbox(format("Fine, the correct answer is AlgoTech."), MSGBOX_DEFAULT)
             closemessage
+            applymovement(LOCALID_CLOWN, Common_Movement_FaceLeft)
+            waitmovement(0)
+            trainerbattle_no_intro(TRAINER_REWIND_SCREWBALL, IcovaleCity_Gym_ScrewballDefeat)
             msgbox(format("You can go sit down now, Screwball."), MSGBOX_DEFAULT)
             closemessage
             applymovement(LOCALID_CLOWN, IcovaleCity_Gym_ClownToDesk)
@@ -424,6 +494,7 @@ script IcovaleCity_Gym_WrongAnswer{
             waitmovement(0)
             msgbox(format("Y'know, the number that comes after 5, but before 7?\pHmph, you complete imbecile."), MSGBOX_DEFAULT)
             closemessage
+            trainerbattle_no_intro(TRAINER_REWIND_RICHARD, IcovaleCity_Gym_RichardDefeat)
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
             msgbox(format("You can go sit down now, Richard."), MSGBOX_DEFAULT)
@@ -473,6 +544,7 @@ script IcovaleCity_Gym_WrongAnswer{
             closemessage
             applymovement(LOCALID_LASS, IcovaleCity_Gym_LassGoes)
             waitmovement(0)
+            trainerbattle_no_intro(TRAINER_REWIND_CLAUDIA, IcovaleCity_Gym_ClaudiaDefeat)
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
             msgbox(format("You can go sit down now, Claudia."), MSGBOX_DEFAULT)
@@ -488,9 +560,11 @@ script IcovaleCity_Gym_WrongAnswer{
             closemessage
             applymovement(LOCALID_YOUNGSTER, IcovaleCity_Gym_YoungsterGoes)
             waitmovement(0)
-            msgbox(format("Like people, a bear can shit wherever it so pleases!"), MSGBOX_DEFAULT)
+            msgbox(format("Like people, a bear can shit wherever it pleases!"), MSGBOX_DEFAULT)
             applymovement(LOCALID_SEQUOIA, Common_Movement_WalkInPlaceRight)
             waitmovement(0)
+            playse(SE_RG_POKE_JUMP_FAILURE)
+            waitse
             msgbox(format("What?\pNo!\pThis question is only asked in response to a question with an emphatic yes!\pIt's supposed to be obvious that, yes, a bear does in fact shit in the woods because that's where it lives!"), MSGBOX_DEFAULT)
             closemessage
             applymovement(LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceLeft)
@@ -507,8 +581,9 @@ script IcovaleCity_Gym_WrongAnswer{
             closemessage
             applymovement(LOCALID_YOUNGSTER, Common_Movement_FaceRight)
             waitmovement(0)
-            msgbox(format("Time to show you my dedotated wam!"), MSGBOX_DEFAULT)
+            msgbox(format("Time to show you what I'm made of!"), MSGBOX_DEFAULT)
             closemessage
+            trainerbattle_no_intro(TRAINER_REWIND_KAI, IcovaleCity_Gym_KaiDefeat)
             msgbox(format("You can go sit down now, Kai."), MSGBOX_DEFAULT)
             closemessage
             applymovement(LOCALID_YOUNGSTER, IcovaleCity_Gym_YoungsterToDesk)
@@ -517,11 +592,18 @@ script IcovaleCity_Gym_WrongAnswer{
 }
 
 script IcovaleCity_Gym_EndExamPartOne{
+    special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, IcovaleCity_Gym_PanUp)
     waitmovement(0)
     special(RemoveCameraObject)
     applymovement(LOCALID_SEQUOIA, IcovaleCity_Gym_NextRoom)
     waitmovement(0)
+    setobjectxyperm(LOCALID_SEQUOIA, 5, 4)
+	applymovement(LOCALID_SEQUOIA, Common_Movement_FaceDown)
+    setobjectxy(LOCALID_SEQUOIA, 5, 4)
+    playse(SE_EXIT)
+    waitse
+    setvar(VAR_ICOVALE_CITY_STATE, 4)
     release
 }
 
@@ -564,7 +646,7 @@ movement IcovaleCity_Gym_RichBoyToDesk{
 movement IcovaleCity_Gym_LassGoes{
     walk_right
     walk_up * 3
-    face_down
+    face_right
 }
 
 movement IcovaleCity_Gym_LassToDesk{
@@ -618,5 +700,29 @@ movement IcovaleCity_Gym_NextRoom{
     walk_right * 3
     walk_up
     walk_right * 3
-    walk_up
+    walk_up * 2
+}
+
+text IcovaleCity_Gym_RichardDefeat{
+    "Upstart…\namateur…!"
+}
+
+text IcovaleCity_Gym_ScrewballDefeat{
+    "You want some meth, kid?"
+}
+
+text IcovaleCity_Gym_ClaudiaDefeat{
+    "What!?\nNo way!"
+}
+
+text IcovaleCity_Gym_KaiDefeat{
+    "How much dedotated wam\ndoes it take to win?"
+}
+
+text IcovaleCity_Gym_LeaderSequoiaDefeat{
+    "What an incredible battle!"
+}
+
+text IcovaleCity_Gym_ReceivedCuriosityBadge{
+	"{PLAYER} received the Curiosity Badge\nfrom Sequoia."
 }

@@ -68,547 +68,547 @@ LakeSerenity_ProfChase1_Trigger::
 # 35 "data/maps/LakeSerenity/scripts.pory"
 	special RemoveCameraObject
 # 36 "data/maps/LakeSerenity/scripts.pory"
-	setobjectxy 1, 28, 12
+	setobjectxyperm 1, 28, 12
 # 37 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
 # 38 "data/maps/LakeSerenity/scripts.pory"
-	setvar VAR_LAKE_SERENITY_STATE, 1
+	setobjectxy 1, 28, 12
 # 39 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
+# 40 "data/maps/LakeSerenity/scripts.pory"
+	setvar VAR_LAKE_SERENITY_STATE, 1
+# 41 "data/maps/LakeSerenity/scripts.pory"
 	release
 	return
 
 
-# 42 "data/maps/LakeSerenity/scripts.pory"
+# 44 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_PanUp:
-# 43 "data/maps/LakeSerenity/scripts.pory"
+# 45 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
-# 43 "data/maps/LakeSerenity/scripts.pory"
+# 45 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
-# 43 "data/maps/LakeSerenity/scripts.pory"
+# 45 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
-# 43 "data/maps/LakeSerenity/scripts.pory"
+# 45 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
-# 43 "data/maps/LakeSerenity/scripts.pory"
+# 45 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
 	step_end
 
-# 46 "data/maps/LakeSerenity/scripts.pory"
+# 48 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_ProfessorRuns:
-# 47 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_up
-# 47 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_up
-# 47 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_up
-# 47 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_up
-# 48 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_right
-# 48 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_right
 # 49 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
 # 49 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_up
+# 49 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_up
+# 49 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_up
+# 50 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_right
+# 50 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_right
+# 51 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_up
+# 51 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 52 "data/maps/LakeSerenity/scripts.pory"
+# 54 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_PanDown:
-# 53 "data/maps/LakeSerenity/scripts.pory"
+# 55 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 53 "data/maps/LakeSerenity/scripts.pory"
+# 55 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 53 "data/maps/LakeSerenity/scripts.pory"
+# 55 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 53 "data/maps/LakeSerenity/scripts.pory"
+# 55 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 53 "data/maps/LakeSerenity/scripts.pory"
+# 55 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
 	step_end
 
 LakeSerenity_ProfChase2_Trigger::
-# 57 "data/maps/LakeSerenity/scripts.pory"
-	lock
-# 58 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
 # 59 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
+	lock
 # 60 "data/maps/LakeSerenity/scripts.pory"
-	playmoncry SPECIES_PAROPEAT, CRY_MODE_NORMAL
+	applymovement 1, Common_Movement_FaceLeft
 # 61 "data/maps/LakeSerenity/scripts.pory"
-	playse SE_PIN
+	waitmovement 0
 # 62 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceUp
+	playmoncry SPECIES_PAROPEAT, CRY_MODE_NORMAL
 # 63 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_ProfChase2_Trigger_Text_0, MSGBOX_DEFAULT
+	playse SE_PIN
 # 64 "data/maps/LakeSerenity/scripts.pory"
-	waitmoncry
+	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceUp
 # 65 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
+	msgbox LakeSerenity_ProfChase2_Trigger_Text_0, MSGBOX_DEFAULT
 # 66 "data/maps/LakeSerenity/scripts.pory"
-	setvar VAR_LAKE_SERENITY_STATE, 2
+	waitmoncry
 # 67 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 68 "data/maps/LakeSerenity/scripts.pory"
+	setvar VAR_LAKE_SERENITY_STATE, 2
+# 69 "data/maps/LakeSerenity/scripts.pory"
 	release
 	return
 
 
-# 70 "data/maps/LakeSerenity/scripts.pory"
-LakeSerenity_SurpriseFaceUp:
-# 71 "data/maps/LakeSerenity/scripts.pory"
-	emote_exclamation_mark
 # 72 "data/maps/LakeSerenity/scripts.pory"
+LakeSerenity_SurpriseFaceUp:
+# 73 "data/maps/LakeSerenity/scripts.pory"
+	emote_exclamation_mark
+# 74 "data/maps/LakeSerenity/scripts.pory"
 	face_up
 	step_end
 
 LakeSerenity_AlgoTech_Event::
-# 76 "data/maps/LakeSerenity/scripts.pory"
-	lock
-# 77 "data/maps/LakeSerenity/scripts.pory"
-	faceplayer
 # 78 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_0, MSGBOX_DEFAULT
+	lock
 # 79 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
+	faceplayer
 # 80 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_0, MSGBOX_DEFAULT
+# 81 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 82 "data/maps/LakeSerenity/scripts.pory"
 	compare VAR_FACING, DIR_WEST
 	goto_if_eq LakeSerenity_AlgoTech_Event_2
 LakeSerenity_AlgoTech_Event_1:
-# 86 "data/maps/LakeSerenity/scripts.pory"
+# 88 "data/maps/LakeSerenity/scripts.pory"
 	msgbox LakeSerenity_AlgoTech_Event_Text_1, MSGBOX_DEFAULT
-# 89 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 90 "data/maps/LakeSerenity/scripts.pory"
-	fadeoutbgm 0
 # 91 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
+	closemessage
 # 92 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
+	fadeoutbgm 0
 # 93 "data/maps/LakeSerenity/scripts.pory"
-	delay 60
-# 94 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
-# 95 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 96 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_2, MSGBOX_DEFAULT
-# 97 "data/maps/LakeSerenity/scripts.pory"
-	playbgm MUS_LAKE_SERENITY, 1
-# 98 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_3, MSGBOX_DEFAULT
-# 100 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceUp
-# 101 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 102 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_4, MSGBOX_DEFAULT
-# 103 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 104 "data/maps/LakeSerenity/scripts.pory"
-	delay 60
-# 105 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
-# 106 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 107 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_5, MSGBOX_DEFAULT
-# 109 "data/maps/LakeSerenity/scripts.pory"
 	applymovement 1, Common_Movement_FaceLeft
-# 110 "data/maps/LakeSerenity/scripts.pory"
+# 94 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
-# 111 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_6, MSGBOX_DEFAULT
-# 112 "data/maps/LakeSerenity/scripts.pory"
+# 95 "data/maps/LakeSerenity/scripts.pory"
+	delay 60
+# 96 "data/maps/LakeSerenity/scripts.pory"
 	applymovement 1, Common_Movement_FaceDown
-# 113 "data/maps/LakeSerenity/scripts.pory"
+# 97 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
-# 114 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_7, MSGBOX_DEFAULT
-# 116 "data/maps/LakeSerenity/scripts.pory"
-	playse SE_PIN
-# 117 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceDown
-# 118 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, LakeSerenity_SurpriseFaceDown
-# 119 "data/maps/LakeSerenity/scripts.pory"
+# 98 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_2, MSGBOX_DEFAULT
+# 99 "data/maps/LakeSerenity/scripts.pory"
+	playbgm MUS_LAKE_SERENITY, 1
+# 100 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_3, MSGBOX_DEFAULT
+# 102 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceUp
+# 103 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
-# 120 "data/maps/LakeSerenity/scripts.pory"
-	clearflag FLAG_HIDE_ALGO_LAKE
-# 121 "data/maps/LakeSerenity/scripts.pory"
-	addobject 2
-# 122 "data/maps/LakeSerenity/scripts.pory"
-	addobject 3
-# 123 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_8, MSGBOX_DEFAULT
-# 124 "data/maps/LakeSerenity/scripts.pory"
+# 104 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_4, MSGBOX_DEFAULT
+# 105 "data/maps/LakeSerenity/scripts.pory"
 	closemessage
+# 106 "data/maps/LakeSerenity/scripts.pory"
+	delay 60
+# 107 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceDown
+# 108 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 109 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_5, MSGBOX_DEFAULT
+# 111 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
+# 112 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 113 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_6, MSGBOX_DEFAULT
+# 114 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceDown
+# 115 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 116 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_7, MSGBOX_DEFAULT
+# 118 "data/maps/LakeSerenity/scripts.pory"
+	playse SE_PIN
+# 119 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceDown
+# 120 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, LakeSerenity_SurpriseFaceDown
+# 121 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 122 "data/maps/LakeSerenity/scripts.pory"
+	clearflag FLAG_HIDE_ALGO_LAKE
+# 123 "data/maps/LakeSerenity/scripts.pory"
+	addobject 2
+# 124 "data/maps/LakeSerenity/scripts.pory"
+	addobject 3
 # 125 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, LakeSerenity_AlgoFStart
+	msgbox LakeSerenity_AlgoTech_Event_Text_8, MSGBOX_DEFAULT
 # 126 "data/maps/LakeSerenity/scripts.pory"
-	delay 20
+	closemessage
 # 127 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, LakeSerenity_AlgoMStart
+	applymovement 2, LakeSerenity_AlgoFStart
 # 128 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 3
+	delay 20
 # 129 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceRight
+	applymovement 3, LakeSerenity_AlgoMStart
 # 130 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 3
 # 131 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
+	applymovement 1, Common_Movement_FaceRight
 # 132 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_9, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 133 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceDown
-# 134 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
+# 134 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_9, MSGBOX_DEFAULT
 # 135 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	applymovement 1, Common_Movement_WalkInPlaceDown
 # 136 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
 # 137 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_10, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 138 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
+	waitmovement 0
 # 139 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	msgbox LakeSerenity_AlgoTech_Event_Text_10, MSGBOX_DEFAULT
 # 140 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceRight
+	closemessage
 # 141 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_WalkInPlaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 142 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 2
+	applymovement 1, Common_Movement_FaceRight
 # 143 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_11, MSGBOX_DEFAULT
+	applymovement 2, Common_Movement_WalkInPlaceLeft
 # 144 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
+	waitmovement 2
 # 145 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceRight
+	msgbox LakeSerenity_AlgoTech_Event_Text_11, MSGBOX_DEFAULT
 # 146 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
+	closemessage
 # 147 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_12, MSGBOX_DEFAULT
+	applymovement 1, Common_Movement_WalkInPlaceRight
 # 148 "data/maps/LakeSerenity/scripts.pory"
-	playse SE_PIN
+	waitmovement 0
 # 149 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_ExclamationMark
+	msgbox LakeSerenity_AlgoTech_Event_Text_12, MSGBOX_DEFAULT
 # 150 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_ExclamationMark
+	playse SE_PIN
 # 151 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
+	applymovement 2, Common_Movement_ExclamationMark
 # 152 "data/maps/LakeSerenity/scripts.pory"
-	delay 60
+	applymovement 3, Common_Movement_ExclamationMark
 # 153 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
 # 154 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 155 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_13, MSGBOX_DEFAULT
-# 156 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_FaceUp
-# 157 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_WalkInPlaceFasterDown
-# 158 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_14, MSGBOX_DEFAULT
-# 159 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 160 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceRight
-# 161 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 162 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 163 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_FaceLeft
-# 164 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_FaceLeft
-# 165 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_15, MSGBOX_DEFAULT
-# 166 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 167 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_WalkInPlaceLeft
-# 168 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 169 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 170 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_16, MSGBOX_DEFAULT
-# 171 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 172 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceRight
-# 173 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 174 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 175 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_17, MSGBOX_DEFAULT
-# 176 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 177 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_WalkInPlaceLeft
-# 178 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 179 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 180 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_18, MSGBOX_DEFAULT
-# 181 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 182 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_WalkInPlaceLeft
-# 183 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 184 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_19, MSGBOX_DEFAULT
-# 185 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 186 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
-# 187 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 188 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 189 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_20, MSGBOX_DEFAULT
-# 190 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 191 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_WalkRight
-# 192 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
-# 193 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_WalkLeft
-# 194 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_WalkLeft
-# 195 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 196 "data/maps/LakeSerenity/scripts.pory"
-	trainerbattle_no_intro TRAINER_LAKE_SERENITY_ALGOTECH_GRUNT_M, LakeSerenity_Text_AlgoTechGruntMDefeated
-# 197 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, LakeSerenity_AlgoBlownBack
-# 198 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, LakeSerenity_AlgoBlownBack
-# 199 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 2
-# 200 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_21, MSGBOX_DEFAULT
-# 201 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_FaceUp
-# 202 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_FaceDown
-# 203 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_22, MSGBOX_DEFAULT
-# 204 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 205 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceRight
-# 206 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 207 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_23, MSGBOX_DEFAULT
-# 208 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 209 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, LakeSerenity_ApproachAlgo
-# 210 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 211 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_24, MSGBOX_DEFAULT
-# 212 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 213 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceLeft
-# 214 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 215 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_25, MSGBOX_DEFAULT
-# 216 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 217 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_FaceLeft
-# 218 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_FaceLeft
-# 219 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_ApproachAlgo
-# 220 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
-# 221 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceRight
-# 222 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_26, MSGBOX_DEFAULT
-# 223 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 224 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_WalkInPlaceLeft
-# 225 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 226 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_27, MSGBOX_DEFAULT
-# 227 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 228 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceRight
-# 229 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 230 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_28, MSGBOX_DEFAULT
-# 231 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 232 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, Common_Movement_WalkInPlaceLeft
-# 233 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 234 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_29, MSGBOX_DEFAULT
-# 235 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 236 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, Common_Movement_WalkInPlaceLeft
-# 237 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 238 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_30, MSGBOX_DEFAULT
-# 239 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 240 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceRight
-# 241 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 242 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_31, MSGBOX_DEFAULT
-# 243 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
-# 244 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 245 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 246 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_32, MSGBOX_DEFAULT
-# 247 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 248 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceRight
-# 249 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-# 250 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 1
-# 251 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, LakeSerenity_StepBackFromAlgo
-# 252 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_StepBackFromAlgo
-# 253 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 1
-# 254 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_33, MSGBOX_DEFAULT
-# 255 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
-# 256 "data/maps/LakeSerenity/scripts.pory"
-	playse SE_LEDGE
-# 257 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 3, LakeSerenity_AlgoLeaveM
-# 258 "data/maps/LakeSerenity/scripts.pory"
-	delay 20
-# 259 "data/maps/LakeSerenity/scripts.pory"
-	playse SE_LEDGE
-# 260 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, LakeSerenity_AlgoLeaveF
-# 261 "data/maps/LakeSerenity/scripts.pory"
 	delay 60
-# 262 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
-# 263 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
-# 264 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 3
-# 265 "data/maps/LakeSerenity/scripts.pory"
-	special SpawnCameraObject
-# 266 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, LakeSerenity_AlgoPanDown
-# 267 "data/maps/LakeSerenity/scripts.pory"
+# 155 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, Common_Movement_WalkInPlaceFasterLeft
+# 156 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
-# 268 "data/maps/LakeSerenity/scripts.pory"
-	delay 40
-# 269 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_34, MSGBOX_DEFAULT
-# 271 "data/maps/LakeSerenity/scripts.pory"
+# 157 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_13, MSGBOX_DEFAULT
+# 158 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, Common_Movement_FaceUp
+# 159 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_WalkInPlaceFasterDown
+# 160 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_14, MSGBOX_DEFAULT
+# 161 "data/maps/LakeSerenity/scripts.pory"
 	closemessage
-# 272 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 2, LakeSerenity_AlgoLeaveFContinued
-# 273 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 2
-# 274 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, LakeSerenity_AlgoPanUp
-# 275 "data/maps/LakeSerenity/scripts.pory"
+# 162 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_WalkInPlaceRight
+# 163 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
-# 276 "data/maps/LakeSerenity/scripts.pory"
-	special RemoveCameraObject
-# 277 "data/maps/LakeSerenity/scripts.pory"
-	removeobject 2
-# 278 "data/maps/LakeSerenity/scripts.pory"
-	removeobject 3
-# 279 "data/maps/LakeSerenity/scripts.pory"
-	setflag FLAG_HIDE_ALGO_LAKE
-# 280 "data/maps/LakeSerenity/scripts.pory"
+# 164 "data/maps/LakeSerenity/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 281 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 282 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_AlgoTech_Event_Text_35, MSGBOX_DEFAULT
-# 286 "data/maps/LakeSerenity/scripts.pory"
+# 165 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, Common_Movement_FaceLeft
+# 166 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_FaceLeft
+# 167 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_15, MSGBOX_DEFAULT
+# 168 "data/maps/LakeSerenity/scripts.pory"
 	closemessage
-# 287 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, LakeSerenity_ProfessorLeaves
-# 288 "data/maps/LakeSerenity/scripts.pory"
+# 169 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_WalkInPlaceLeft
+# 170 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
+# 171 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 172 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_16, MSGBOX_DEFAULT
+# 173 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 174 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_WalkInPlaceRight
+# 175 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 176 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 177 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_17, MSGBOX_DEFAULT
+# 178 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 179 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, Common_Movement_WalkInPlaceLeft
+# 180 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 181 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 182 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_18, MSGBOX_DEFAULT
+# 183 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 184 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_WalkInPlaceLeft
+# 185 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 186 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_19, MSGBOX_DEFAULT
+# 187 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 188 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceDown
+# 189 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 190 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 191 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_20, MSGBOX_DEFAULT
+# 192 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 193 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_WalkRight
+# 194 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+# 195 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, Common_Movement_WalkLeft
+# 196 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_WalkLeft
+# 197 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 198 "data/maps/LakeSerenity/scripts.pory"
+	trainerbattle_no_intro TRAINER_LAKE_SERENITY_ALGOTECH_GRUNT_M, LakeSerenity_Text_AlgoTechGruntMDefeated
+# 199 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, LakeSerenity_AlgoBlownBack
+# 200 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, LakeSerenity_AlgoBlownBack
+# 201 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 2
+# 202 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_21, MSGBOX_DEFAULT
+# 203 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, Common_Movement_FaceUp
+# 204 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_FaceDown
+# 205 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_22, MSGBOX_DEFAULT
+# 206 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 207 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_WalkInPlaceRight
+# 208 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 209 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_23, MSGBOX_DEFAULT
+# 210 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 211 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, LakeSerenity_ApproachAlgo
+# 212 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 213 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_24, MSGBOX_DEFAULT
+# 214 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 215 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceLeft
+# 216 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 217 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_25, MSGBOX_DEFAULT
+# 218 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 219 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_FaceLeft
+# 220 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, Common_Movement_FaceLeft
+# 221 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_ApproachAlgo
+# 222 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 223 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceRight
+# 224 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_26, MSGBOX_DEFAULT
+# 225 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 226 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_WalkInPlaceLeft
+# 227 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 228 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_27, MSGBOX_DEFAULT
+# 229 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 230 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_WalkInPlaceRight
+# 231 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 232 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_28, MSGBOX_DEFAULT
+# 233 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 234 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, Common_Movement_WalkInPlaceLeft
+# 235 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 236 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_29, MSGBOX_DEFAULT
+# 237 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 238 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, Common_Movement_WalkInPlaceLeft
+# 239 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 240 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_30, MSGBOX_DEFAULT
+# 241 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 242 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_WalkInPlaceRight
+# 243 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 244 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_31, MSGBOX_DEFAULT
+# 245 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceDown
+# 246 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 247 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 248 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_32, MSGBOX_DEFAULT
+# 249 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 250 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceRight
+# 251 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 252 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 1
+# 253 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, LakeSerenity_StepBackFromAlgo
+# 254 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_StepBackFromAlgo
+# 255 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 1
+# 256 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_33, MSGBOX_DEFAULT
+# 257 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 258 "data/maps/LakeSerenity/scripts.pory"
+	playse SE_LEDGE
+# 259 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 3, LakeSerenity_AlgoLeaveM
+# 260 "data/maps/LakeSerenity/scripts.pory"
+	delay 20
+# 261 "data/maps/LakeSerenity/scripts.pory"
+	playse SE_LEDGE
+# 262 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, LakeSerenity_AlgoLeaveF
+# 263 "data/maps/LakeSerenity/scripts.pory"
+	delay 60
+# 264 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceDown
+# 265 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+# 266 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 3
+# 267 "data/maps/LakeSerenity/scripts.pory"
+	special SpawnCameraObject
+# 268 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, LakeSerenity_AlgoPanDown
+# 269 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 270 "data/maps/LakeSerenity/scripts.pory"
+	delay 40
+# 271 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_34, MSGBOX_DEFAULT
+# 273 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 274 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 2, LakeSerenity_AlgoLeaveFContinued
+# 275 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 2
+# 276 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, LakeSerenity_AlgoPanUp
+# 277 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 278 "data/maps/LakeSerenity/scripts.pory"
+	special RemoveCameraObject
+# 279 "data/maps/LakeSerenity/scripts.pory"
+	removeobject 2
+# 280 "data/maps/LakeSerenity/scripts.pory"
+	removeobject 3
+# 281 "data/maps/LakeSerenity/scripts.pory"
+	setflag FLAG_HIDE_ALGO_LAKE
+# 282 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 283 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 284 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_AlgoTech_Event_Text_35, MSGBOX_DEFAULT
+# 288 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
 # 289 "data/maps/LakeSerenity/scripts.pory"
-	setobjectxy 1, 0, 0
+	applymovement 1, LakeSerenity_ProfessorLeaves
 # 290 "data/maps/LakeSerenity/scripts.pory"
-	setvar VAR_LAKE_SERENITY_STATE, 3
+	waitmovement 0
 # 291 "data/maps/LakeSerenity/scripts.pory"
+	setobjectxy 1, 0, 0
+# 292 "data/maps/LakeSerenity/scripts.pory"
+	setvar VAR_LAKE_SERENITY_STATE, 3
+# 293 "data/maps/LakeSerenity/scripts.pory"
 	release
 	return
 
 LakeSerenity_AlgoTech_Event_2:
-# 81 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_PlayerMovementForAlgoTechEvent
-# 82 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
 # 83 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 1, Common_Movement_FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_PlayerMovementForAlgoTechEvent
 # 84 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 85 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 1, Common_Movement_FaceDown
+# 86 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 0
 	goto LakeSerenity_AlgoTech_Event_1
 
 
-# 294 "data/maps/LakeSerenity/scripts.pory"
-LakeSerenity_PlayerMovementForAlgoTechEvent:
-# 295 "data/maps/LakeSerenity/scripts.pory"
-	walk_down
 # 296 "data/maps/LakeSerenity/scripts.pory"
-	walk_left
+LakeSerenity_PlayerMovementForAlgoTechEvent:
 # 297 "data/maps/LakeSerenity/scripts.pory"
+	walk_down
+# 298 "data/maps/LakeSerenity/scripts.pory"
+	walk_left
+# 299 "data/maps/LakeSerenity/scripts.pory"
 	face_up
 	step_end
 
-# 300 "data/maps/LakeSerenity/scripts.pory"
-LakeSerenity_SurpriseFaceDown:
-# 301 "data/maps/LakeSerenity/scripts.pory"
-	emote_exclamation_mark
 # 302 "data/maps/LakeSerenity/scripts.pory"
+LakeSerenity_SurpriseFaceDown:
+# 303 "data/maps/LakeSerenity/scripts.pory"
+	emote_exclamation_mark
+# 304 "data/maps/LakeSerenity/scripts.pory"
 	face_down
 	step_end
 
-# 305 "data/maps/LakeSerenity/scripts.pory"
+# 307 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgoFStart:
-# 306 "data/maps/LakeSerenity/scripts.pory"
-	walk_up
-# 307 "data/maps/LakeSerenity/scripts.pory"
-	walk_right
-# 307 "data/maps/LakeSerenity/scripts.pory"
-	walk_right
 # 308 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
+# 309 "data/maps/LakeSerenity/scripts.pory"
+	walk_right
 # 309 "data/maps/LakeSerenity/scripts.pory"
 	walk_right
 # 310 "data/maps/LakeSerenity/scripts.pory"
@@ -621,28 +621,28 @@ LakeSerenity_AlgoFStart:
 	walk_right
 # 314 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
-# 314 "data/maps/LakeSerenity/scripts.pory"
-	walk_up
-# 314 "data/maps/LakeSerenity/scripts.pory"
-	walk_up
-# 314 "data/maps/LakeSerenity/scripts.pory"
-	walk_up
 # 315 "data/maps/LakeSerenity/scripts.pory"
+	walk_right
+# 316 "data/maps/LakeSerenity/scripts.pory"
+	walk_up
+# 316 "data/maps/LakeSerenity/scripts.pory"
+	walk_up
+# 316 "data/maps/LakeSerenity/scripts.pory"
+	walk_up
+# 316 "data/maps/LakeSerenity/scripts.pory"
+	walk_up
+# 317 "data/maps/LakeSerenity/scripts.pory"
 	face_left
 	step_end
 
-# 318 "data/maps/LakeSerenity/scripts.pory"
+# 320 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgoMStart:
-# 319 "data/maps/LakeSerenity/scripts.pory"
-	walk_up
-# 320 "data/maps/LakeSerenity/scripts.pory"
-	walk_right
-# 320 "data/maps/LakeSerenity/scripts.pory"
-	walk_right
-# 320 "data/maps/LakeSerenity/scripts.pory"
-	walk_right
 # 321 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
+# 322 "data/maps/LakeSerenity/scripts.pory"
+	walk_right
+# 322 "data/maps/LakeSerenity/scripts.pory"
+	walk_right
 # 322 "data/maps/LakeSerenity/scripts.pory"
 	walk_right
 # 323 "data/maps/LakeSerenity/scripts.pory"
@@ -655,80 +655,80 @@ LakeSerenity_AlgoMStart:
 	walk_right
 # 327 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
-# 327 "data/maps/LakeSerenity/scripts.pory"
-	walk_up
-# 327 "data/maps/LakeSerenity/scripts.pory"
-	walk_up
 # 328 "data/maps/LakeSerenity/scripts.pory"
+	walk_right
+# 329 "data/maps/LakeSerenity/scripts.pory"
+	walk_up
+# 329 "data/maps/LakeSerenity/scripts.pory"
+	walk_up
+# 329 "data/maps/LakeSerenity/scripts.pory"
+	walk_up
+# 330 "data/maps/LakeSerenity/scripts.pory"
 	face_left
 	step_end
 
-# 331 "data/maps/LakeSerenity/scripts.pory"
+# 333 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgoBlownBack:
-# 332 "data/maps/LakeSerenity/scripts.pory"
-	lock_facing_direction
-# 333 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_right
-# 333 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_right
 # 334 "data/maps/LakeSerenity/scripts.pory"
+	lock_facing_direction
+# 335 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_right
+# 335 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_right
+# 336 "data/maps/LakeSerenity/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 337 "data/maps/LakeSerenity/scripts.pory"
-LakeSerenity_ApproachAlgo:
-# 338 "data/maps/LakeSerenity/scripts.pory"
-	walk_diag_northeast
 # 339 "data/maps/LakeSerenity/scripts.pory"
+LakeSerenity_ApproachAlgo:
+# 340 "data/maps/LakeSerenity/scripts.pory"
+	walk_diag_northeast
+# 341 "data/maps/LakeSerenity/scripts.pory"
 	walk_right
 	step_end
 
-# 342 "data/maps/LakeSerenity/scripts.pory"
-LakeSerenity_StepBackFromAlgo:
-# 343 "data/maps/LakeSerenity/scripts.pory"
-	lock_facing_direction
 # 344 "data/maps/LakeSerenity/scripts.pory"
-	walk_left
+LakeSerenity_StepBackFromAlgo:
 # 345 "data/maps/LakeSerenity/scripts.pory"
+	lock_facing_direction
+# 346 "data/maps/LakeSerenity/scripts.pory"
+	walk_left
+# 347 "data/maps/LakeSerenity/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 348 "data/maps/LakeSerenity/scripts.pory"
+# 350 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgoLeaveF:
-# 349 "data/maps/LakeSerenity/scripts.pory"
+# 351 "data/maps/LakeSerenity/scripts.pory"
 	jump_down
-# 350 "data/maps/LakeSerenity/scripts.pory"
+# 352 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_down
-# 350 "data/maps/LakeSerenity/scripts.pory"
+# 352 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_down
-# 350 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_down
-# 351 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_left
-# 351 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_left
 # 352 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_down
 # 353 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
+# 353 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_left
 # 354 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_down
+# 355 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_left
+# 356 "data/maps/LakeSerenity/scripts.pory"
 	face_up
 	step_end
 
-# 357 "data/maps/LakeSerenity/scripts.pory"
+# 359 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgoLeaveM:
-# 358 "data/maps/LakeSerenity/scripts.pory"
+# 360 "data/maps/LakeSerenity/scripts.pory"
 	jump_down
-# 359 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_down
-# 359 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_down
-# 360 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_left
-# 360 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_left
 # 361 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_down
+# 361 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_down
+# 362 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_left
 # 362 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
 # 363 "data/maps/LakeSerenity/scripts.pory"
@@ -739,10 +739,6 @@ LakeSerenity_AlgoLeaveM:
 	walk_fast_down
 # 366 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
-# 366 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_left
-# 366 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_left
 # 367 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_down
 # 368 "data/maps/LakeSerenity/scripts.pory"
@@ -751,20 +747,22 @@ LakeSerenity_AlgoLeaveM:
 	walk_fast_left
 # 368 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
-# 368 "data/maps/LakeSerenity/scripts.pory"
+# 369 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_down
+# 370 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_left
+# 370 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_left
+# 370 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_left
+# 370 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 371 "data/maps/LakeSerenity/scripts.pory"
-LakeSerenity_AlgoLeaveFContinued:
-# 372 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_down
 # 373 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_left
+LakeSerenity_AlgoLeaveFContinued:
 # 374 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_down
-# 375 "data/maps/LakeSerenity/scripts.pory"
-	walk_fast_left
 # 375 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
 # 376 "data/maps/LakeSerenity/scripts.pory"
@@ -773,42 +771,44 @@ LakeSerenity_AlgoLeaveFContinued:
 	walk_fast_left
 # 377 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
-# 377 "data/maps/LakeSerenity/scripts.pory"
+# 378 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_down
+# 379 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
-# 377 "data/maps/LakeSerenity/scripts.pory"
+# 379 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_left
+# 379 "data/maps/LakeSerenity/scripts.pory"
+	walk_fast_left
+# 379 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 380 "data/maps/LakeSerenity/scripts.pory"
+# 382 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgoPanDown:
-# 381 "data/maps/LakeSerenity/scripts.pory"
+# 383 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 381 "data/maps/LakeSerenity/scripts.pory"
+# 383 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
 	step_end
 
-# 384 "data/maps/LakeSerenity/scripts.pory"
+# 386 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgoPanUp:
-# 385 "data/maps/LakeSerenity/scripts.pory"
+# 387 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
-# 385 "data/maps/LakeSerenity/scripts.pory"
+# 387 "data/maps/LakeSerenity/scripts.pory"
 	walk_up
 	step_end
 
-# 388 "data/maps/LakeSerenity/scripts.pory"
+# 390 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_ProfessorLeaves:
-# 389 "data/maps/LakeSerenity/scripts.pory"
-	walk_right
-# 390 "data/maps/LakeSerenity/scripts.pory"
-	walk_down
-# 390 "data/maps/LakeSerenity/scripts.pory"
-	walk_down
-# 390 "data/maps/LakeSerenity/scripts.pory"
-	walk_down
-# 390 "data/maps/LakeSerenity/scripts.pory"
-	walk_down
 # 391 "data/maps/LakeSerenity/scripts.pory"
-	walk_left
+	walk_right
+# 392 "data/maps/LakeSerenity/scripts.pory"
+	walk_down
+# 392 "data/maps/LakeSerenity/scripts.pory"
+	walk_down
+# 392 "data/maps/LakeSerenity/scripts.pory"
+	walk_down
 # 392 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
 # 393 "data/maps/LakeSerenity/scripts.pory"
@@ -819,95 +819,99 @@ LakeSerenity_ProfessorLeaves:
 	walk_left
 # 396 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
+# 397 "data/maps/LakeSerenity/scripts.pory"
+	walk_left
+# 398 "data/maps/LakeSerenity/scripts.pory"
+	walk_down
 	step_end
 
 LakeSerenity_LakeSerenityPostAlgo_Trigger::
-# 400 "data/maps/LakeSerenity/scripts.pory"
-	lock
-# 401 "data/maps/LakeSerenity/scripts.pory"
-	playmoncry SPECIES_PAROPEAT, CRY_MODE_NORMAL
 # 402 "data/maps/LakeSerenity/scripts.pory"
-	playse SE_PIN
+	lock
 # 403 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceUp
+	playmoncry SPECIES_PAROPEAT, CRY_MODE_NORMAL
 # 404 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_ProfChase2_Trigger_Text_0, MSGBOX_DEFAULT
+	playse SE_PIN
 # 405 "data/maps/LakeSerenity/scripts.pory"
-	waitmoncry
+	applymovement OBJ_EVENT_ID_PLAYER, LakeSerenity_SurpriseFaceUp
 # 406 "data/maps/LakeSerenity/scripts.pory"
-	closemessage
+	msgbox LakeSerenity_ProfChase2_Trigger_Text_0, MSGBOX_DEFAULT
 # 407 "data/maps/LakeSerenity/scripts.pory"
-	special SpawnCameraObject
-# 408 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, LakeSerenity_PanUp
-# 409 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 0
-# 410 "data/maps/LakeSerenity/scripts.pory"
-	delay 40
-# 411 "data/maps/LakeSerenity/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, LakeSerenity_PanDown
-# 412 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 4, LakeSerenity_AlgotrixApproaches
-# 413 "data/maps/LakeSerenity/scripts.pory"
-	waitmovement 4
-# 414 "data/maps/LakeSerenity/scripts.pory"
-	playmoncry SPECIES_PAROPEAT, CRY_MODE_WEAK
-# 415 "data/maps/LakeSerenity/scripts.pory"
-	msgbox LakeSerenity_LakeSerenityPostAlgo_Trigger_Text_0, MSGBOX_DEFAULT
-# 416 "data/maps/LakeSerenity/scripts.pory"
 	waitmoncry
-# 417 "data/maps/LakeSerenity/scripts.pory"
+# 408 "data/maps/LakeSerenity/scripts.pory"
 	closemessage
-# 418 "data/maps/LakeSerenity/scripts.pory"
+# 409 "data/maps/LakeSerenity/scripts.pory"
+	special SpawnCameraObject
+# 410 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, LakeSerenity_PanUp
+# 411 "data/maps/LakeSerenity/scripts.pory"
+	waitmovement 0
+# 412 "data/maps/LakeSerenity/scripts.pory"
 	delay 40
-# 419 "data/maps/LakeSerenity/scripts.pory"
-	applymovement 4, LakeSerenity_AlgotrixDisappears
-# 420 "data/maps/LakeSerenity/scripts.pory"
+# 413 "data/maps/LakeSerenity/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, LakeSerenity_PanDown
+# 414 "data/maps/LakeSerenity/scripts.pory"
+	applymovement 4, LakeSerenity_AlgotrixApproaches
+# 415 "data/maps/LakeSerenity/scripts.pory"
 	waitmovement 4
+# 416 "data/maps/LakeSerenity/scripts.pory"
+	playmoncry SPECIES_PAROPEAT, CRY_MODE_WEAK
+# 417 "data/maps/LakeSerenity/scripts.pory"
+	msgbox LakeSerenity_LakeSerenityPostAlgo_Trigger_Text_0, MSGBOX_DEFAULT
+# 418 "data/maps/LakeSerenity/scripts.pory"
+	waitmoncry
+# 419 "data/maps/LakeSerenity/scripts.pory"
+	closemessage
+# 420 "data/maps/LakeSerenity/scripts.pory"
+	delay 40
 # 421 "data/maps/LakeSerenity/scripts.pory"
-	setobjectxy 4, 0, 0
+	applymovement 4, LakeSerenity_AlgotrixDisappears
 # 422 "data/maps/LakeSerenity/scripts.pory"
-	special RemoveCameraObject
+	waitmovement 4
 # 423 "data/maps/LakeSerenity/scripts.pory"
-	setvar VAR_LAKE_SERENITY_STATE, 4
+	setobjectxy 4, 0, 0
 # 424 "data/maps/LakeSerenity/scripts.pory"
+	special RemoveCameraObject
+# 425 "data/maps/LakeSerenity/scripts.pory"
+	setvar VAR_LAKE_SERENITY_STATE, 4
+# 426 "data/maps/LakeSerenity/scripts.pory"
 	release
 	return
 
 
-# 427 "data/maps/LakeSerenity/scripts.pory"
+# 429 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgotrixApproaches:
-# 428 "data/maps/LakeSerenity/scripts.pory"
+# 430 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 428 "data/maps/LakeSerenity/scripts.pory"
+# 430 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 428 "data/maps/LakeSerenity/scripts.pory"
+# 430 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 428 "data/maps/LakeSerenity/scripts.pory"
+# 430 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 428 "data/maps/LakeSerenity/scripts.pory"
+# 430 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 428 "data/maps/LakeSerenity/scripts.pory"
+# 430 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
-# 428 "data/maps/LakeSerenity/scripts.pory"
+# 430 "data/maps/LakeSerenity/scripts.pory"
 	walk_down
 	step_end
 
-# 431 "data/maps/LakeSerenity/scripts.pory"
+# 433 "data/maps/LakeSerenity/scripts.pory"
 LakeSerenity_AlgotrixDisappears:
-# 432 "data/maps/LakeSerenity/scripts.pory"
+# 434 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
-# 432 "data/maps/LakeSerenity/scripts.pory"
+# 434 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
-# 432 "data/maps/LakeSerenity/scripts.pory"
+# 434 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
-# 432 "data/maps/LakeSerenity/scripts.pory"
+# 434 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
-# 432 "data/maps/LakeSerenity/scripts.pory"
+# 434 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
-# 432 "data/maps/LakeSerenity/scripts.pory"
+# 434 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
-# 432 "data/maps/LakeSerenity/scripts.pory"
+# 434 "data/maps/LakeSerenity/scripts.pory"
 	walk_fast_up
 	step_end
 
@@ -917,17 +921,17 @@ LakeSerenity_ProfChase1_Trigger_Text_0:
 	.string "Come back!$"
 
 LakeSerenity_ProfChase2_Trigger_Text_0:
-# 63 "data/maps/LakeSerenity/scripts.pory"
+# 65 "data/maps/LakeSerenity/scripts.pory"
 	.string "???: Triiiix!$"
 
 LakeSerenity_AlgoTech_Event_Text_0:
-# 78 "data/maps/LakeSerenity/scripts.pory"
+# 80 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: Oh! Hey there,\n"
 	.string "{PLAYER}!\n"
 	.string "I'm glad you came.$"
 
 LakeSerenity_AlgoTech_Event_Text_1:
-# 86 "data/maps/LakeSerenity/scripts.pory"
+# 88 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: I'm guessing you saw me\n"
 	.string "haphazardly chasing whatever that\l"
 	.string "thing was.\p"
@@ -936,12 +940,12 @@ LakeSerenity_AlgoTech_Event_Text_1:
 	.string "…Or did it?{PLAY_BGM}{MUS_VSAUCE_THEME}$"
 
 LakeSerenity_AlgoTech_Event_Text_2:
-# 96 "data/maps/LakeSerenity/scripts.pory"
+# 98 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: …\p"
 	.string "Yeah, it's gone.$"
 
 LakeSerenity_AlgoTech_Event_Text_3:
-# 98 "data/maps/LakeSerenity/scripts.pory"
+# 100 "data/maps/LakeSerenity/scripts.pory"
 	.string "I assume it must have been an\n"
 	.string "undiscovered Pokémon. A brand new one,\l"
 	.string "too. Of all the bizarre creatures I've\l"
@@ -951,11 +955,11 @@ LakeSerenity_AlgoTech_Event_Text_3:
 	.string "way.$"
 
 LakeSerenity_AlgoTech_Event_Text_4:
-# 102 "data/maps/LakeSerenity/scripts.pory"
+# 104 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: …$"
 
 LakeSerenity_AlgoTech_Event_Text_5:
-# 107 "data/maps/LakeSerenity/scripts.pory"
+# 109 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: I apologize over what\n"
 	.string "you had to witness a bit ago in the\l"
 	.string "boardroom. I don't even know how you\l"
@@ -963,13 +967,13 @@ LakeSerenity_AlgoTech_Event_Text_5:
 	.string "digress.$"
 
 LakeSerenity_AlgoTech_Event_Text_6:
-# 111 "data/maps/LakeSerenity/scripts.pory"
+# 113 "data/maps/LakeSerenity/scripts.pory"
 	.string "That company had humble beginnings in\n"
 	.string "Icovale. As the city grew, the company\l"
 	.string "grew, too.$"
 
 LakeSerenity_AlgoTech_Event_Text_7:
-# 114 "data/maps/LakeSerenity/scripts.pory"
+# 116 "data/maps/LakeSerenity/scripts.pory"
 	.string "Now it's being taken over by them.\n"
 	.string "They're powerful and very dangerous.\p"
 	.string "Having lived in Homege your entire life,\n"
@@ -979,29 +983,29 @@ LakeSerenity_AlgoTech_Event_Text_7:
 	.string "They call themselves AlgoTe-$"
 
 LakeSerenity_AlgoTech_Event_Text_8:
-# 123 "data/maps/LakeSerenity/scripts.pory"
+# 125 "data/maps/LakeSerenity/scripts.pory"
 	.string "???: Who are you? This is a restricted\n"
 	.string "area.\n"
 	.string "Get out now!$"
 
 LakeSerenity_AlgoTech_Event_Text_9:
-# 132 "data/maps/LakeSerenity/scripts.pory"
+# 134 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: {PLAYER}!$"
 
 LakeSerenity_AlgoTech_Event_Text_10:
-# 137 "data/maps/LakeSerenity/scripts.pory"
+# 139 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: It's them!\n"
 	.string "They work for AlgoTech!$"
 
 LakeSerenity_AlgoTech_Event_Text_11:
-# 143 "data/maps/LakeSerenity/scripts.pory"
+# 145 "data/maps/LakeSerenity/scripts.pory"
 	.string "Ah, you've never heard of us, huh?\n"
 	.string "That's pretty refreshing. You'll be\l"
 	.string "hearing from us a lot more if you don't\l"
 	.string "get out now.$"
 
 LakeSerenity_AlgoTech_Event_Text_12:
-# 147 "data/maps/LakeSerenity/scripts.pory"
+# 149 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: I'm gonna have to\n"
 	.string "disagree. I just saw a brand new\l"
 	.string "Pokémon in this area, and, as the\l"
@@ -1011,27 +1015,27 @@ LakeSerenity_AlgoTech_Event_Text_12:
 	.string "this.$"
 
 LakeSerenity_AlgoTech_Event_Text_13:
-# 155 "data/maps/LakeSerenity/scripts.pory"
+# 157 "data/maps/LakeSerenity/scripts.pory"
 	.string "It's here!?$"
 
 LakeSerenity_AlgoTech_Event_Text_14:
-# 158 "data/maps/LakeSerenity/scripts.pory"
+# 160 "data/maps/LakeSerenity/scripts.pory"
 	.string "We'll have to tell the higher-ups about\n"
 	.string "this later.$"
 
 LakeSerenity_AlgoTech_Event_Text_15:
-# 165 "data/maps/LakeSerenity/scripts.pory"
+# 167 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: That Pokémon…\p"
 	.string "It was running from you, wasn't it?\n"
 	.string "What does AlgoTech want with it?$"
 
 LakeSerenity_AlgoTech_Event_Text_16:
-# 170 "data/maps/LakeSerenity/scripts.pory"
+# 172 "data/maps/LakeSerenity/scripts.pory"
 	.string "That's classified information. Leave\n"
 	.string "now, or we'll be forced to remove you.$"
 
 LakeSerenity_AlgoTech_Event_Text_17:
-# 175 "data/maps/LakeSerenity/scripts.pory"
+# 177 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: Ha…!\p"
 	.string "Maybe you weren't listening earlier.\n"
 	.string "I happen to be the gym leader of\l"
@@ -1040,90 +1044,90 @@ LakeSerenity_AlgoTech_Event_Text_17:
 	.string "low-level thugs.$"
 
 LakeSerenity_AlgoTech_Event_Text_18:
-# 180 "data/maps/LakeSerenity/scripts.pory"
+# 182 "data/maps/LakeSerenity/scripts.pory"
 	.string "Look, we don't care who you are.\p"
 	.string "We have strict orders to catch……\n"
 	.string "…that Pokémon.$"
 
 LakeSerenity_AlgoTech_Event_Text_19:
-# 184 "data/maps/LakeSerenity/scripts.pory"
+# 186 "data/maps/LakeSerenity/scripts.pory"
 	.string "Quite frankly, we're out of patience.\p"
 	.string "If you're going to get in our way, then\n"
 	.string "that means you're in AlgoTech's way!{PLAY_BGM}{MUS_ENCOUNTER_MAGMA}$"
 
 LakeSerenity_AlgoTech_Event_Text_20:
-# 189 "data/maps/LakeSerenity/scripts.pory"
+# 191 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: I'll take the left one.\n"
 	.string "The right thug is all on you.\p"
 	.string "I'm counting on you, kid.$"
 
 LakeSerenity_AlgoTech_Event_Text_21:
-# 200 "data/maps/LakeSerenity/scripts.pory"
+# 202 "data/maps/LakeSerenity/scripts.pory"
 	.string "Ughh…$"
 
 LakeSerenity_AlgoTech_Event_Text_22:
-# 203 "data/maps/LakeSerenity/scripts.pory"
+# 205 "data/maps/LakeSerenity/scripts.pory"
 	.string "They're not going to be happy with us\n"
 	.string "during debrief later.$"
 
 LakeSerenity_AlgoTech_Event_Text_23:
-# 207 "data/maps/LakeSerenity/scripts.pory"
+# 209 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: Before that debrief\n"
 	.string "happens…$"
 
 LakeSerenity_AlgoTech_Event_Text_24:
-# 211 "data/maps/LakeSerenity/scripts.pory"
+# 213 "data/maps/LakeSerenity/scripts.pory"
 	.string "…we need some answers.$"
 
 LakeSerenity_AlgoTech_Event_Text_25:
-# 215 "data/maps/LakeSerenity/scripts.pory"
+# 217 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: A little help here,\n"
 	.string "{PLAYER}?$"
 
 LakeSerenity_AlgoTech_Event_Text_26:
-# 222 "data/maps/LakeSerenity/scripts.pory"
+# 224 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: Now, then.\n"
 	.string "What was that machine? A Pokémon?$"
 
 LakeSerenity_AlgoTech_Event_Text_27:
-# 226 "data/maps/LakeSerenity/scripts.pory"
+# 228 "data/maps/LakeSerenity/scripts.pory"
 	.string "Okay, okay, fine!\n"
 	.string "Yes, it's a Pokémon.\p"
 	.string "However, it's also property of AlgoTech.$"
 
 LakeSerenity_AlgoTech_Event_Text_28:
-# 230 "data/maps/LakeSerenity/scripts.pory"
+# 232 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: So what? You mean they\n"
 	.string "made that thing?\p"
 	.string "Why? What do they plan on doing with it?$"
 
 LakeSerenity_AlgoTech_Event_Text_29:
-# 234 "data/maps/LakeSerenity/scripts.pory"
+# 236 "data/maps/LakeSerenity/scripts.pory"
 	.string "We don't know. They don't tell us all of\n"
 	.string "these things.\p"
 	.string "You said it yourself, we're low-level in\n"
 	.string "the company.$"
 
 LakeSerenity_AlgoTech_Event_Text_30:
-# 238 "data/maps/LakeSerenity/scripts.pory"
+# 240 "data/maps/LakeSerenity/scripts.pory"
 	.string "They tell us to do something, we do it.\n"
 	.string "No questions asked.$"
 
 LakeSerenity_AlgoTech_Event_Text_31:
-# 242 "data/maps/LakeSerenity/scripts.pory"
+# 244 "data/maps/LakeSerenity/scripts.pory"
 	.string "………\n"
 	.string "………$"
 
 LakeSerenity_AlgoTech_Event_Text_32:
-# 246 "data/maps/LakeSerenity/scripts.pory"
+# 248 "data/maps/LakeSerenity/scripts.pory"
 	.string "They don't know anything.$"
 
 LakeSerenity_AlgoTech_Event_Text_33:
-# 254 "data/maps/LakeSerenity/scripts.pory"
+# 256 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: Get of here.$"
 
 LakeSerenity_AlgoTech_Event_Text_34:
-# 269 "data/maps/LakeSerenity/scripts.pory"
+# 271 "data/maps/LakeSerenity/scripts.pory"
 	.string "Sequoia, and…\n"
 	.string "…{PLAYER}, was it?\p"
 	.string "……\n"
@@ -1131,7 +1135,7 @@ LakeSerenity_AlgoTech_Event_Text_34:
 	.string "You're gonna regret this day.$"
 
 LakeSerenity_AlgoTech_Event_Text_35:
-# 282 "data/maps/LakeSerenity/scripts.pory"
+# 284 "data/maps/LakeSerenity/scripts.pory"
 	.string "Prof. Sequoia: Sorry about all the\n"
 	.string "commotion, {PLAYER}.\p"
 	.string "I would've taken them both myself.\n"
@@ -1147,5 +1151,5 @@ LakeSerenity_AlgoTech_Event_Text_35:
 	.string "Stay safe {PLAYER}!$"
 
 LakeSerenity_LakeSerenityPostAlgo_Trigger_Text_0:
-# 415 "data/maps/LakeSerenity/scripts.pory"
+# 417 "data/maps/LakeSerenity/scripts.pory"
 	.string "???: Trix?$"

@@ -69,10 +69,10 @@ script IcovaleCity_OfficeSign {
 }
 
 script IcovaleCity_GymGuard{
-    if (var(VAR_LAKE_SERENITY_STATE) > 4){
+    if (var(VAR_LAKE_SERENITY_STATE) >= 4){
         msgbox(format("Looks like Leader Sequoia is back at the gym!\pYou're free to go in now."), MSGBOX_NPC)
     }
-    if (var(VAR_ICOVALE_CITY_STATE) == 1){
+    if (var(VAR_ICOVALE_CITY_STATE) <= 1){
         msgbox(format("Sorry, the gym leader isn't here at the moment.\pI heard he has a meeting at Icovale Offices.\pMaybe check there?"), MSGBOX_NPC)
     } elif (var(VAR_LAKE_SERENITY_STATE) <= 3){
         msgbox(format("The gym leader still isn't back yet.\pI did see him storm off though.\p"

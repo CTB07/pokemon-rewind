@@ -75,8 +75,8 @@ text IcovaleCity_House2_2F_Text_DoesntLookLikeMonToMe{
 }
 
 text IcovaleCity_House2_2F_Text_YouDontWantToThatsOkay{
-    format("You don't want my {STR_VAR_2}? Okay, well let me know if you change your mind.\p"
-    "If you're having trouble finding a {STR_VAR_1}, they should be on Route 1.")
+    format("You don't want my Dreamie? Okay, well let me know if you change your mind.\p"
+    "If you're having trouble finding a Paastel, they should be on Route 1.")
 }
 
 text IcovaleCity_House2_2F_Text_AnyPokemonCanBeCute{

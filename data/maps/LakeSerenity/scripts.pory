@@ -33,6 +33,8 @@ script LakeSerenity_ProfChase1_Trigger{
     applymovement(OBJ_EVENT_ID_CAMERA, LakeSerenity_PanDown)
     waitmovement(0)
     special(RemoveCameraObject)
+    setobjectxyperm(LOCALID_PROF, 28, 12)
+	setobjectmovementtype(LOCALID_PROF, MOVEMENT_TYPE_FACE_LEFT)
     setobjectxy(LOCALID_PROF, 28, 12)
 	applymovement(LOCALID_PROF, Common_Movement_FaceLeft)
     setvar(VAR_LAKE_SERENITY_STATE, 1)

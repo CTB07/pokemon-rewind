@@ -100,11 +100,11 @@ IcovaleCity_OfficeSign::
 IcovaleCity_GymGuard::
 # 72 "data/maps/IcovaleCity/scripts.pory"
 	compare VAR_LAKE_SERENITY_STATE, 4
-	goto_if_gt IcovaleCity_GymGuard_2
+	goto_if_ge IcovaleCity_GymGuard_2
 IcovaleCity_GymGuard_1:
 # 75 "data/maps/IcovaleCity/scripts.pory"
 	compare VAR_ICOVALE_CITY_STATE, 1
-	goto_if_eq IcovaleCity_GymGuard_4
+	goto_if_le IcovaleCity_GymGuard_4
 # 77 "data/maps/IcovaleCity/scripts.pory"
 	compare VAR_LAKE_SERENITY_STATE, 3
 	goto_if_le IcovaleCity_GymGuard_5

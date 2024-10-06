@@ -298,7 +298,7 @@ AI: Check Bad Move
 
 Carvanha
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe*/
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DECLAN ===
 Name: DECLAN
@@ -379,7 +379,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Carvanha
 Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe*/
 
 === TRAINER_GRUNT_MUSEUM_1 ===
 Name: GRUNT
@@ -17066,3 +17066,121 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Standaad (F)
 Level: 5
 IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+
+=== TRAINER_LEADER_SEQUOIA ===
+Name: Sequoia
+Class: Leader
+Pic: Sequoia
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability 
+Mugshot: Pink
+
+Murmic (F)
+Ability: Therapist
+Level: 14
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Psych Out
+- Confusion
+- Supersonic
+- Disarming Voice
+
+Kwizbee (M)
+Ability: Simple
+Level: 14
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Absorb
+- Bug Bite
+- Defense Curl
+- Confusion
+
+Hootube (M) 
+Ability: Synchronize
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rewind
+- Whirlwind
+- Play Nice
+- Aerial Ace
+
+=== TRAINER_REWIND_RICHARD ===
+Name: Richard
+Class: Rich Boy
+Pic: Rich Boy
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability 
+
+Pupyro
+Level: 13
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Ember
+- Snarl
+- Confusion
+- Magic Coat
+
+=== TRAINER_REWIND_SCREWBALL ===
+Name: Screwball
+Class: Clown
+Pic: Clown
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability 
+
+Grubfeed
+Ability: Swarm 
+Level: 12
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+- Bug Bite
+- Absorb
+- Poison Sting
+- String Shot
+
+Grubfeed
+Ability: Swarm 
+Level: 12
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+- Bug Bite
+- Absorb
+- Poison Sting
+- String Shot
+
+=== TRAINER_REWIND_KAI ===
+Name: Kai
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability 
+
+Murmic
+Ability: Therapist 
+Level: 12
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+
+Grubfeed
+Ability: Swarm 
+Level: 12
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+
+=== TRAINER_REWIND_CLAUDIA ===
+Name: Claudia
+Class: Lass
+Pic: Lass
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability 
+
+Murmic
+Ability: Echo Chamber 
+Level: 13
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Echoed Voice
+- Disarming Voice
+- Psych Out
+- Attract
