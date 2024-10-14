@@ -5,15 +5,37 @@ const LOCALID_YOUNGSTER = 5
 const LOCALID_CLOWN = 6
 
 mapscripts IcovaleCity_Gym_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        switch(var(VAR_ICOVALE_CITY_STATE)){
+            case 4:
+                if(flag(FLAG_DONT_TELEPORT_SEQUOIA)){
+                    setobjectxyperm(LOCALID_SEQUOIA, 10, 6)
+                    setobjectmovementtype(LOCALID_SEQUOIA, MOVEMENT_TYPE_FACE_LEFT) 
+                } else{
+                    setobjectxyperm(LOCALID_SEQUOIA, 5, 3)
+                    setobjectmovementtype(LOCALID_SEQUOIA, MOVEMENT_TYPE_FACE_DOWN) 
+                }
+            case 5:
+                setobjectxyperm(LOCALID_SEQUOIA, 5, 3)
+                setobjectmovementtype(LOCALID_SEQUOIA, MOVEMENT_TYPE_FACE_DOWN)  
+        } 
+    }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_ICOVALE_CITY_STATE, 4: IcovaleCity_Gym_OnWarp4
-        VAR_ICOVALE_CITY_STATE, 5: IcovaleCity_Gym_OnWarp4
+        VAR_TEMP_0, 0 {
+            if(flag(FLAG_DONT_TELEPORT_SEQUOIA)){
+                turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)   
+            }
+            setvar(VAR_TEMP_0, 1)
+        }
     ]
-}
-
-script IcovaleCity_Gym_OnWarp4{
-    setobjectxyperm(LOCALID_SEQUOIA, 5, 4)
-	setobjectmovementtype(LOCALID_SEQUOIA, MOVEMENT_TYPE_FACE_DOWN)
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0 {
+            if(flag(FLAG_DONT_TELEPORT_SEQUOIA)){
+                call(IcovaleCity_Gym_LeaderSequoiaBattleContinued)   
+            }
+            setvar(VAR_TEMP_1, 1)
+        }
+    ]
 }
 
 script IcovaleCity_Gym_Guide{
@@ -62,9 +84,29 @@ script IcovaleCity_Gym_ClassJam{
 }
 
 script IcovaleCity_Gym_LeaderSequoiaBattle{
-    msgbox(format("Sequoia: Well, {PLAYER}…\pIt looks like you've reached the second part of my exam.\pYou and {RIVAL} have come such a long way already!\p"
-    "After we were jumped by AlgoTech at Lake Serenity, I think I know what you're capable of.\pI'm asking you to show me…\pShow me that strength and battling knowledge again!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}"), MSGBOX_DEFAULT)
+    setflag(FLAG_DONT_TELEPORT_SEQUOIA)
+    msgbox(format("Sequoia: Well, {PLAYER}…\pIt looks like you've reached the second part of my exam.\pBefore we continue this conversation, let's get into battle positions."), MSGBOX_DEFAULT)
+    warpsilent(MAP_ICOVALE_CITY_GYM, 1, 6)
+    waitstate
+}
+
+script IcovaleCity_Gym_LeaderSequoiaBattleContinued{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, IcovaleCity_Gym_PanRight)
+    waitmovement(0)
+    clearflag(FLAG_DONT_TELEPORT_SEQUOIA)
+    msgbox(format("You and {RIVAL} have come such a long way already!\pAfter we were jumped by AlgoTech at Lake Serenity, I think I know what you're capable of.\p"
+    "I'm asking you to show me…\pShow me that strength and battling knowledge again!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}"), MSGBOX_DEFAULT)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    applymovement(LOCALID_SEQUOIA, Common_Movement_WalkLeft)
+    waitmovement(0)
+    special(RemoveCameraObject)
     trainerbattle_no_intro(TRAINER_LEADER_SEQUOIA, IcovaleCity_Gym_LeaderSequoiaDefeat)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, IcovaleCity_Gym_PanLeft)
+    applymovement(LOCALID_SEQUOIA, IcovaleCity_Gym_SequoiaApproach)
+    waitmovement(LOCALID_SEQUOIA)
+    special(RemoveCameraObject)
     msgbox(format("And that's that.\pCongratulations, {PLAYER}!\nThis is your first of many!\pI am honored to make this a stepping stone in your journey.\pNow here."), MSGBOX_DEFAULT)
     message(IcovaleCity_Gym_ReceivedCuriosityBadge)
 	waitmessage
@@ -598,9 +640,9 @@ script IcovaleCity_Gym_EndExamPartOne{
     special(RemoveCameraObject)
     applymovement(LOCALID_SEQUOIA, IcovaleCity_Gym_NextRoom)
     waitmovement(0)
-    setobjectxyperm(LOCALID_SEQUOIA, 5, 4)
+    setobjectxyperm(LOCALID_SEQUOIA, 5, 3)
 	applymovement(LOCALID_SEQUOIA, Common_Movement_FaceDown)
-    setobjectxy(LOCALID_SEQUOIA, 5, 4)
+    setobjectxy(LOCALID_SEQUOIA, 5, 3)
     playse(SE_EXIT)
     waitse
     setvar(VAR_ICOVALE_CITY_STATE, 4)
@@ -701,6 +743,18 @@ movement IcovaleCity_Gym_NextRoom{
     walk_up
     walk_right * 3
     walk_up * 2
+}
+
+movement IcovaleCity_Gym_PanRight{
+    walk_right * 4
+}
+
+movement IcovaleCity_Gym_PanLeft{
+    walk_left * 4
+}
+
+movement IcovaleCity_Gym_SequoiaApproach{
+    walk_left * 6
 }
 
 text IcovaleCity_Gym_RichardDefeat{

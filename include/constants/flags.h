@@ -56,7 +56,7 @@
 #define FLAG_COLLISION    0x2B // Unused Flag
 #define FLAG_HIDE_ALGO_LAKE    0x2C // Unused Flag
 #define FLAG_HIDE_SEQUOIA_GYM    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
+#define FLAG_DONT_TELEPORT_SEQUOIA    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag

@@ -41898,7 +41898,7 @@ F_TRAINER_FEMALE |
 #line 17059
         .trainerName = _("Mom"),
 #line 17060
-        .trainerPic = TRAINER_PIC_AROMA_LADY,
+        .trainerPic = TRAINER_PIC_MOM,
         .encounterMusic_gender = 
 #line 17061
 F_TRAINER_FEMALE | 
